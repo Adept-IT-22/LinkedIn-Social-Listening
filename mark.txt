@@ -1,0 +1,2990 @@
+[
+    {
+        "actor": {
+            "urn": "urn:li:member:1355258308",
+            "image": {
+                "accessibilityTextAttributes": [],
+                "attributes": [
+                    {
+                        "sourceType": "PROFILE_PICTURE",
+                        "miniProfile": {
+                            "firstName": "Mark",
+                            "lastName": "Mathenge",
+                            "dashEntityUrn": "urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "occupation": "Software Engineer | Problem Solver | Lifelong Learner",
+                            "objectUrn": "urn:li:member:1355258308",
+                            "entityUrn": "urn:li:fs_miniProfile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "backgroundImage": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "200_800/profile-displaybackgroundimage-shrink_200_800/0/1736940716800?e=1743638400&v=beta&t=-TPtab4YFVFz6EAfvF4Rk43K3VS4SsFB8XYoP4VOBAg",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 1400,
+                                            "fileIdentifyingUrlPathSegment": "350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736940716800?e=1743638400&v=beta&t=kcti8IgcsPUTC9sNswYJEXU-qmvPlMfAA-1UY0uWHuE",
+                                            "expiresAt": 1743638400000,
+                                            "height": 350
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D16AQEPQSw7tu7YuQ/profile-displaybackgroundimage-shrink_"
+                                }
+                            },
+                            "publicIdentifier": "mark-mathenge-004a59319",
+                            "picture": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 100,
+                                            "fileIdentifyingUrlPathSegment": "100_100/profile-displayphoto-shrink_100_100/0/1731922256336?e=1743638400&v=beta&t=G85yKKgf0oOvyYIip1ytVZTKffcyeMH9iCIqziYpCEQ",
+                                            "expiresAt": 1743638400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 200,
+                                            "fileIdentifyingUrlPathSegment": "200_200/profile-displayphoto-shrink_200_200/0/1731922256336?e=1743638400&v=beta&t=awLuetucpAuOj6hUlM4x996KWy7h4KeUse1hF0yHF_g",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "400_400/profile-displayphoto-shrink_400_400/0/1731922256336?e=1743638400&v=beta&t=UWXpxxLuTSDk4ysr0KrBYQ2eMEbYYp5A7Y2rj3GLcaU",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "800_800/profile-displayphoto-shrink_800_800/0/1731922256343?e=1743638400&v=beta&t=_4qZRm9eV5gRI9Ua_Alj6Q7gUroFNT6qtXnoTh2F3Sw",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEPnyvW1y1zdA/profile-displayphoto-shrink_"
+                                }
+                            },
+                            "trackingId": "p76G5OzORn2k5FCD9qGweQ=="
+                        }
+                    }
+                ]
+            },
+            "supplementaryActorInfo": {
+                "textDirection": "USER_LOCALE",
+                "accessibilityText": " \u2022 3rd+",
+                "text": " \u2022 3rd+"
+            },
+            "name": {
+                "textDirection": "FIRST_STRONG",
+                "attributes": [
+                    {
+                        "start": 0,
+                        "length": 13,
+                        "miniProfile": {
+                            "firstName": "Mark",
+                            "lastName": "Mathenge",
+                            "dashEntityUrn": "urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "occupation": "Software Engineer | Problem Solver | Lifelong Learner",
+                            "objectUrn": "urn:li:member:1355258308",
+                            "entityUrn": "urn:li:fs_miniProfile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "backgroundImage": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "200_800/profile-displaybackgroundimage-shrink_200_800/0/1736940716800?e=1743638400&v=beta&t=-TPtab4YFVFz6EAfvF4Rk43K3VS4SsFB8XYoP4VOBAg",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 1400,
+                                            "fileIdentifyingUrlPathSegment": "350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736940716800?e=1743638400&v=beta&t=kcti8IgcsPUTC9sNswYJEXU-qmvPlMfAA-1UY0uWHuE",
+                                            "expiresAt": 1743638400000,
+                                            "height": 350
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D16AQEPQSw7tu7YuQ/profile-displaybackgroundimage-shrink_"
+                                }
+                            },
+                            "publicIdentifier": "mark-mathenge-004a59319",
+                            "picture": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 100,
+                                            "fileIdentifyingUrlPathSegment": "100_100/profile-displayphoto-shrink_100_100/0/1731922256336?e=1743638400&v=beta&t=G85yKKgf0oOvyYIip1ytVZTKffcyeMH9iCIqziYpCEQ",
+                                            "expiresAt": 1743638400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 200,
+                                            "fileIdentifyingUrlPathSegment": "200_200/profile-displayphoto-shrink_200_200/0/1731922256336?e=1743638400&v=beta&t=awLuetucpAuOj6hUlM4x996KWy7h4KeUse1hF0yHF_g",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "400_400/profile-displayphoto-shrink_400_400/0/1731922256336?e=1743638400&v=beta&t=UWXpxxLuTSDk4ysr0KrBYQ2eMEbYYp5A7Y2rj3GLcaU",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "800_800/profile-displayphoto-shrink_800_800/0/1731922256343?e=1743638400&v=beta&t=_4qZRm9eV5gRI9Ua_Alj6Q7gUroFNT6qtXnoTh2F3Sw",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEPnyvW1y1zdA/profile-displayphoto-shrink_"
+                                }
+                            },
+                            "trackingId": "p76G5OzORn2k5FCD9qGweQ=="
+                        },
+                        "type": "PROFILE_FULLNAME"
+                    }
+                ],
+                "text": "Mark Mathenge",
+                "accessibilityText": "Mark Mathenge"
+            },
+            "subDescription": {
+                "textDirection": "USER_LOCALE",
+                "attributes": [
+                    {
+                        "start": 6,
+                        "length": 1,
+                        "artDecoIcon": "IC_GLOBE_16DP",
+                        "type": "ART_DECO_ICON"
+                    }
+                ],
+                "text": "1mo \u2022   ",
+                "accessibilityText": "1 month ago"
+            },
+            "navigationContext": {
+                "trackingActionType": "viewAttributedMember",
+                "accessibilityText": "View Mark Mathenge\u2019s profile",
+                "actionTarget": "https://www.linkedin.com/in/mark-mathenge-004a59319?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4"
+            },
+            "description": {
+                "textDirection": "USER_LOCALE",
+                "accessibilityText": "Software Engineer | Problem Solver | Lifelong Learner",
+                "text": "Software Engineer | Problem Solver | Lifelong Learner"
+            },
+            "followAction": {
+                "followTrackingActionType": "followMember",
+                "followingInfo": {
+                    "followingType": "DEFAULT",
+                    "entityUrn": "urn:li:fs_followingInfo:urn:li:member:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                    "dashFollowingStateUrn": "urn:li:fsd_followingState:urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                    "following": false,
+                    "trackingUrn": "urn:li:member:1355258308"
+                },
+                "unfollowTrackingActionType": "unfollowMember",
+                "type": "FOLLOW_TOGGLE",
+                "trackingActionType": "followMember"
+            }
+        },
+        "dashEntityUrn": "urn:li:fsd_update:(urn:li:activity:7272161670024638464,MEMBER_SHARES,EMPTY,DEFAULT,false)",
+        "updateMetadata": {
+            "urn": "urn:li:activity:7272161670024638464",
+            "actionsPosition": "ACTOR_COMPONENT",
+            "updateActions": {
+                "actions": [
+                    {
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_BOOKMARK_OUTLINE_MEDIUM"
+                                }
+                            ]
+                        },
+                        "actionType": "SAVE",
+                        "saveAction": {
+                            "entityUrn": "urn:li:fs_saveAction:(SAVE,urn:li:activity:7272161670024638464)",
+                            "saved": false,
+                            "dashEntityUrn": "urn:li:fsd_saveState:(SAVE,urn:li:activity:7272161670024638464)"
+                        },
+                        "text": "Save"
+                    },
+                    {
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_LINK_MEDIUM"
+                                }
+                            ]
+                        },
+                        "actionType": "SHARE_VIA",
+                        "text": "Copy link to post",
+                        "url": "https://www.linkedin.com/posts/mark-mathenge-004a59319_lms-employeetraining-smes-activity-7272161670024638464-m4vy?utm_source=share&utm_medium=member_desktop"
+                    },
+                    {
+                        "actionType": "REPORT",
+                        "targetUrn": "urn:li:ugcPost:7272161549555798016",
+                        "contentSource": "UGC_POST",
+                        "authorProfileId": "ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                        "authorUrn": "urn:li:member:1355258308",
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_REPORT_MEDIUM"
+                                }
+                            ]
+                        },
+                        "secondaryAction": {
+                            "icon": {
+                                "accessibilityTextAttributes": [],
+                                "attributes": [
+                                    {
+                                        "sourceType": "SYSTEM_IMAGE",
+                                        "systemImage": "SYS_ICN_VISIBILITY_OFF_MEDIUM"
+                                    }
+                                ]
+                            },
+                            "actionType": "HIDE_UPDATE",
+                            "targetUrn": "urn:li:activity:7272161670024638464",
+                            "text": "Hide this post",
+                            "confirmationAction": {
+                                "title": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "Post removed"
+                                },
+                                "description": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "You'll no longer see this post in your feed."
+                                },
+                                "undoable": true
+                            }
+                        },
+                        "text": "Report post",
+                        "confirmationAction": {
+                            "title": {
+                                "textDirection": "USER_LOCALE",
+                                "text": "Thank you for your report"
+                            },
+                            "description": {
+                                "textDirection": "USER_LOCALE",
+                                "text": "We appreciate you letting us know"
+                            },
+                            "undoable": false
+                        }
+                    }
+                ],
+                "entityUrn": "urn:li:fs_updateV2Actions:(urn:li:activity:7272161670024638464,MEMBER_SHARES,EMPTY,-,-)",
+                "dashEntityUrn": "urn:li:fsd_updateActions:(urn:li:activity:7272161670024638464,MEMBER_SHARES,EMPTY,urn:li:reason:-,urn:li:adCreative:-)"
+            },
+            "actionTriggerEnabled": false,
+            "detailPageType": "FEED_DETAIL",
+            "shareAudience": "PUBLIC",
+            "shareUrn": "urn:li:ugcPost:7272161549555798016",
+            "excludedFromSeen": false,
+            "rootShare": true,
+            "trackingData": {
+                "requestId": "41d96127-cbf4-415f-86f6-d48484f2a4b3",
+                "trackingId": "M6bQBWiiMX8jPtz99POq/w=="
+            }
+        },
+        "socialContent": {
+            "updateSaveActionToolTipLegoTrackingToken": "34ZpnFFkTBxr71PqmgCc2UMfmlOrSdjtOoZsC5gr6litOoZp6Zdr6litOoNfmhBt7dBtn5BkCRRrypejQBkildfk3RVgD9Bp79ft6lDp6BT9ChBpmpvrCBxrlZKrSBQoS5vpnpxsPRAinhBpShFtOoMfmVLqnhFsSZgt6lDp6BT9z0Kc3RBsCZzkT9D9zROol1Ipl9OpOoZp6Zdr6lisCsCc3RKrSBQqndLk71RrT9D9z4Zp6lQsSlRsmlirnles7lLsCsCrCZFt6dxnSlSoncZp4BMtmZOpOpejQBkildfk3RVgD9Bp79L9DhItm5CpmgZp4BQrClJpSlP9DhItm5CpmgZp4BQrSNP9DhItm5CpmgZp4BQtmZVomMCsThKpmRFsClMu6lvsC5ynSNxqmdLsRZApmlCfmlJokVBpS5M9D9BpS5VrToZp4BMs64Cd34Nc3cNfmh9rCZFsT9BtyoNcjsNdj4OdzgNfmh9tioNc34OoPdBcPgTdz0JcS5zeiRzd3gQbjwRpmgJdSgRem5Cp3oZp4BQu6lQrCZz",
+            "shareUrl": "https://www.linkedin.com/posts/mark-mathenge-004a59319_lms-employeetraining-smes-activity-7272161670024638464-m4vy?utm_source=combined_share_message&utm_medium=member_desktop"
+        },
+        "entityUrn": "urn:li:fs_updateV2:(urn:li:activity:7272161670024638464,MEMBER_SHARES,EMPTY,DEFAULT,false)",
+        "content": {
+            "com.linkedin.voyager.feed.render.LinkedInVideoComponent": {
+                "headlineBackgroundColor": "DEFAULT",
+                "saveAction": {
+                    "entityUrn": "urn:li:fs_saveAction:(SAVE,urn:li:activity:7272161670024638464)",
+                    "saved": false,
+                    "dashEntityUrn": "urn:li:fsd_saveState:(SAVE,urn:li:activity:7272161670024638464)"
+                },
+                "mediaDisplayVariant": "CLASSIC",
+                "tapTargets": [],
+                "videoPlayMetadata": {
+                    "duration": 24633,
+                    "thumbnail": {
+                        "artifacts": [
+                            {
+                                "width": 1280,
+                                "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4E05AQGeQgOaKsrlgQ",
+                                "fileIdentifyingUrlPathSegment": "high/videocover-high/0/1733818433793?e=1738846800&v=beta&t=x3-PN7n8UiE6pNeUFHNQs3_BqRsf1nxqivS4zDmp-GE",
+                                "expiresAt": 1738846800000,
+                                "height": 720
+                            },
+                            {
+                                "width": 640,
+                                "digitalmediaAsset": "urn:li:digitalmediaAsset:urn:li:digitalmediaAsset:D4E05AQGeQgOaKsrlgQ",
+                                "fileIdentifyingUrlPathSegment": "low/videocover-low/0/1733818433803?e=1738846800&v=beta&t=UtQYnuY5yOwC7gTclMepKR9Cz6hS9Z8NHDkyOiExZf0",
+                                "expiresAt": 1738846800000,
+                                "height": 360
+                            }
+                        ],
+                        "rootUrl": "https://media.licdn.com/dms/image/v2/D4E05AQGeQgOaKsrlgQ/videocover-"
+                    },
+                    "progressiveStreams": [
+                        {
+                            "width": 1280,
+                            "streamingLocations": [
+                                {
+                                    "url": "https://dms.licdn.com/playlist/vid/v2/D4E05AQGeQgOaKsrlgQ/mp4-720p-30fp-crf28/mp4-720p-30fp-crf28/0/1733818436184?e=1738846800&v=beta&t=z-cbOCdke6O8-XOwQai0ZoFj_a6-XEAsKjcVD2mCZ5c",
+                                    "expiresAt": 1738846800000
+                                }
+                            ],
+                            "mediaType": "video/mp4",
+                            "size": 0,
+                            "bitRate": 657741,
+                            "height": 720
+                        },
+                        {
+                            "width": 1138,
+                            "streamingLocations": [
+                                {
+                                    "url": "https://dms.licdn.com/playlist/vid/v2/D4E05AQGeQgOaKsrlgQ/mp4-640p-30fp-crf28/mp4-640p-30fp-crf28/0/1733818436158?e=1738846800&v=beta&t=USdlKiypxeLEZ7o_Qy4L7o0w88FIc66FDWO0p9Fe29k",
+                                    "expiresAt": 1738846800000
+                                }
+                            ],
+                            "mediaType": "video/mp4",
+                            "size": 0,
+                            "bitRate": 511557,
+                            "height": 640
+                        }
+                    ],
+                    "transcripts": [
+                        {
+                            "captionFormat": "WEBVTT",
+                            "locale": {
+                                "country": "US",
+                                "language": "en"
+                            },
+                            "captionFile": "https://dms.licdn.com/playlist/vid/v2/D4E05AQGeQgOaKsrlgQ/video-auto-caption-webvtt-acs-singleton/video-auto-caption-webvtt-acs-singleton/0/1733818443823?e=1738846800&v=beta&t=c65QbKl6l7E5YgDLf5tgYIcO3kMOqM5y5VfUuoyS7jY",
+                            "isAutogenerated": true
+                        },
+                        {
+                            "captionFormat": "SRT",
+                            "locale": {
+                                "country": "US",
+                                "language": "en"
+                            },
+                            "captionFile": "https://dms.licdn.com/playlist/vid/v2/D4E05AQGeQgOaKsrlgQ/video-auto-caption-srt-acs-singleton/video-auto-caption-srt-acs-singleton/0/1733818443820?e=1738846800&v=beta&t=kpt-8poyk1csVIazBVRXahlvRvyKF1iCOPbrz0Iri1c",
+                            "isAutogenerated": true
+                        }
+                    ],
+                    "entityUrn": "urn:li:digitalmediaAsset:D4E05AQGeQgOaKsrlgQ",
+                    "provider": "UGC",
+                    "aspectRatio": 1.7777778,
+                    "media": "urn:li:digitalmediaAsset:D4E05AQGeQgOaKsrlgQ",
+                    "adaptiveStreams": [
+                        {
+                            "initialBitRate": 1596000,
+                            "protocol": "HLS",
+                            "mediaType": "application/vnd.apple.mpegURL",
+                            "masterPlaylists": [
+                                {
+                                    "url": "https://dms.licdn.com/playlist/vid/dynamic/D4E05AQGeQgOaKsrlgQ/BAgUjjmj1JqqBFPWg?e=1738846800&v=beta&t=FHRax8-n8sONB_HdG41YveQdOHOdYmL8UguIX2KcsuY",
+                                    "expiresAt": 1738846800000
+                                }
+                            ]
+                        }
+                    ],
+                    "trackingId": "M6bQBWiiMX8jPtz99POq/w=="
+                }
+            }
+        },
+        "commentary": {
+            "numLines": 3,
+            "text": {
+                "textDirection": "FIRST_STRONG",
+                "text": "Learning Management Systems (LMS) are vital for SMEs. They streamline training and onboarding while cutting costs and saving time. They provide centralized, engaging content that boosts skills, enhances retention, and supports continuous learning. LMS platforms help SMEs stay competitive by automating training, tracking progress, and fostering innovation\u2014all within a scalable, cost-effective solution.\n\nReady to transform your employee training and onboarding? Contact us @ contact.adept@adept-techno.com or +254111025200\n#LMS #EmployeeTraining #SMEs #Onboarding #WorkplaceLearning"
+            }
+        },
+        "socialDetail": {
+            "reactionElements": [],
+            "dashEntityUrn": "urn:li:fsd_socialDetail:(urn:li:ugcPost:7272161549555798016,urn:li:ugcPost:7272161549555798016,urn:li:highlightedReply:-)",
+            "comments": {
+                "paging": {
+                    "start": 0,
+                    "count": 0,
+                    "total": 0,
+                    "links": []
+                },
+                "elements": []
+            },
+            "socialPermissions": {
+                "dashEntityUrn": "urn:li:fsd_socialPermissions:(urn:li:ugcPost:7272161549555798016,urn:li:fsd_profile:ACoAAFcmqh8BOLMt_98okGkv02lBPUD-UdUfwEE)",
+                "canPostComments": true,
+                "entityUrn": "urn:li:fs_socialPermissions:(urn:li:ugcPost:7272161549555798016,urn:li:fs_profile:(ACoAAFcmqh8BOLMt_98okGkv02lBPUD-UdUfwEE,en_US))",
+                "messagePermission": "PUBLIC",
+                "canShare": true,
+                "canReact": true
+            },
+            "showPremiumAnalytics": false,
+            "hideFirstPrompt": true,
+            "liked": false,
+            "showShareButton": true,
+            "totalShares": 0,
+            "urn": "urn:li:ugcPost:7272161549555798016",
+            "threadId": "ugcPost:7272161549555798016",
+            "allowedCommentersScope": "ALL",
+            "totalSocialActivityCounts": {
+                "socialDetailEntityUrn": "urn:li:fs_socialDetail:urn:li:ugcPost:7272161549555798016",
+                "urn": "urn:li:ugcPost:7272161549555798016",
+                "numComments": 0,
+                "dashEntityUrn": "urn:li:fsd_socialActivityCounts:urn:li:ugcPost:7272161549555798016",
+                "reactionTypeCounts": [
+                    {
+                        "count": 3,
+                        "reactionType": "LIKE"
+                    }
+                ],
+                "entityUrn": "urn:li:fs_socialActivityCounts:urn:li:ugcPost:7272161549555798016",
+                "numShares": 0,
+                "numLikes": 3,
+                "liked": false
+            },
+            "entityUrn": "urn:li:fs_socialDetail:urn:li:ugcPost:7272161549555798016",
+            "commentingDisabled": false,
+            "likes": {
+                "paging": {
+                    "count": 0,
+                    "start": 0,
+                    "total": 3,
+                    "links": []
+                },
+                "elements": []
+            }
+        }
+    },
+    {
+        "actor": {
+            "urn": "urn:li:member:1355258308",
+            "image": {
+                "accessibilityTextAttributes": [],
+                "attributes": [
+                    {
+                        "sourceType": "PROFILE_PICTURE",
+                        "miniProfile": {
+                            "firstName": "Mark",
+                            "lastName": "Mathenge",
+                            "dashEntityUrn": "urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "occupation": "Software Engineer | Problem Solver | Lifelong Learner",
+                            "objectUrn": "urn:li:member:1355258308",
+                            "entityUrn": "urn:li:fs_miniProfile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "backgroundImage": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "200_800/profile-displaybackgroundimage-shrink_200_800/0/1736940716800?e=1743638400&v=beta&t=-TPtab4YFVFz6EAfvF4Rk43K3VS4SsFB8XYoP4VOBAg",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 1400,
+                                            "fileIdentifyingUrlPathSegment": "350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736940716800?e=1743638400&v=beta&t=kcti8IgcsPUTC9sNswYJEXU-qmvPlMfAA-1UY0uWHuE",
+                                            "expiresAt": 1743638400000,
+                                            "height": 350
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D16AQEPQSw7tu7YuQ/profile-displaybackgroundimage-shrink_"
+                                }
+                            },
+                            "publicIdentifier": "mark-mathenge-004a59319",
+                            "picture": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 100,
+                                            "fileIdentifyingUrlPathSegment": "100_100/profile-displayphoto-shrink_100_100/0/1731922256336?e=1743638400&v=beta&t=G85yKKgf0oOvyYIip1ytVZTKffcyeMH9iCIqziYpCEQ",
+                                            "expiresAt": 1743638400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 200,
+                                            "fileIdentifyingUrlPathSegment": "200_200/profile-displayphoto-shrink_200_200/0/1731922256336?e=1743638400&v=beta&t=awLuetucpAuOj6hUlM4x996KWy7h4KeUse1hF0yHF_g",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "400_400/profile-displayphoto-shrink_400_400/0/1731922256336?e=1743638400&v=beta&t=UWXpxxLuTSDk4ysr0KrBYQ2eMEbYYp5A7Y2rj3GLcaU",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "800_800/profile-displayphoto-shrink_800_800/0/1731922256343?e=1743638400&v=beta&t=_4qZRm9eV5gRI9Ua_Alj6Q7gUroFNT6qtXnoTh2F3Sw",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEPnyvW1y1zdA/profile-displayphoto-shrink_"
+                                }
+                            },
+                            "trackingId": "p76G5OzORn2k5FCD9qGweQ=="
+                        }
+                    }
+                ]
+            },
+            "supplementaryActorInfo": {
+                "textDirection": "USER_LOCALE",
+                "accessibilityText": " \u2022 3rd+",
+                "text": " \u2022 3rd+"
+            },
+            "name": {
+                "textDirection": "FIRST_STRONG",
+                "attributes": [
+                    {
+                        "start": 0,
+                        "length": 13,
+                        "miniProfile": {
+                            "firstName": "Mark",
+                            "lastName": "Mathenge",
+                            "dashEntityUrn": "urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "occupation": "Software Engineer | Problem Solver | Lifelong Learner",
+                            "objectUrn": "urn:li:member:1355258308",
+                            "entityUrn": "urn:li:fs_miniProfile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "backgroundImage": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "200_800/profile-displaybackgroundimage-shrink_200_800/0/1736940716800?e=1743638400&v=beta&t=-TPtab4YFVFz6EAfvF4Rk43K3VS4SsFB8XYoP4VOBAg",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 1400,
+                                            "fileIdentifyingUrlPathSegment": "350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736940716800?e=1743638400&v=beta&t=kcti8IgcsPUTC9sNswYJEXU-qmvPlMfAA-1UY0uWHuE",
+                                            "expiresAt": 1743638400000,
+                                            "height": 350
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D16AQEPQSw7tu7YuQ/profile-displaybackgroundimage-shrink_"
+                                }
+                            },
+                            "publicIdentifier": "mark-mathenge-004a59319",
+                            "picture": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 100,
+                                            "fileIdentifyingUrlPathSegment": "100_100/profile-displayphoto-shrink_100_100/0/1731922256336?e=1743638400&v=beta&t=G85yKKgf0oOvyYIip1ytVZTKffcyeMH9iCIqziYpCEQ",
+                                            "expiresAt": 1743638400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 200,
+                                            "fileIdentifyingUrlPathSegment": "200_200/profile-displayphoto-shrink_200_200/0/1731922256336?e=1743638400&v=beta&t=awLuetucpAuOj6hUlM4x996KWy7h4KeUse1hF0yHF_g",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "400_400/profile-displayphoto-shrink_400_400/0/1731922256336?e=1743638400&v=beta&t=UWXpxxLuTSDk4ysr0KrBYQ2eMEbYYp5A7Y2rj3GLcaU",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "800_800/profile-displayphoto-shrink_800_800/0/1731922256343?e=1743638400&v=beta&t=_4qZRm9eV5gRI9Ua_Alj6Q7gUroFNT6qtXnoTh2F3Sw",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEPnyvW1y1zdA/profile-displayphoto-shrink_"
+                                }
+                            },
+                            "trackingId": "p76G5OzORn2k5FCD9qGweQ=="
+                        },
+                        "type": "PROFILE_FULLNAME"
+                    }
+                ],
+                "text": "Mark Mathenge",
+                "accessibilityText": "Mark Mathenge"
+            },
+            "subDescription": {
+                "textDirection": "USER_LOCALE",
+                "attributes": [
+                    {
+                        "start": 6,
+                        "length": 1,
+                        "artDecoIcon": "IC_GLOBE_16DP",
+                        "type": "ART_DECO_ICON"
+                    }
+                ],
+                "text": "2mo \u2022   ",
+                "accessibilityText": "2 months ago"
+            },
+            "navigationContext": {
+                "trackingActionType": "viewAttributedMember",
+                "accessibilityText": "View Mark Mathenge\u2019s profile",
+                "actionTarget": "https://www.linkedin.com/in/mark-mathenge-004a59319?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4"
+            },
+            "description": {
+                "textDirection": "USER_LOCALE",
+                "accessibilityText": "Software Engineer | Problem Solver | Lifelong Learner",
+                "text": "Software Engineer | Problem Solver | Lifelong Learner"
+            },
+            "followAction": {
+                "followTrackingActionType": "followMember",
+                "followingInfo": {
+                    "followingType": "DEFAULT",
+                    "entityUrn": "urn:li:fs_followingInfo:urn:li:member:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                    "dashFollowingStateUrn": "urn:li:fsd_followingState:urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                    "following": false,
+                    "trackingUrn": "urn:li:member:1355258308"
+                },
+                "unfollowTrackingActionType": "unfollowMember",
+                "type": "FOLLOW_TOGGLE",
+                "trackingActionType": "followMember"
+            }
+        },
+        "dashEntityUrn": "urn:li:fsd_update:(urn:li:activity:7268156161747537921,MEMBER_SHARES,EMPTY,DEFAULT,false)",
+        "updateMetadata": {
+            "urn": "urn:li:activity:7268156161747537921",
+            "actionsPosition": "ACTOR_COMPONENT",
+            "updateActions": {
+                "actions": [
+                    {
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_BOOKMARK_OUTLINE_MEDIUM"
+                                }
+                            ]
+                        },
+                        "actionType": "SAVE",
+                        "saveAction": {
+                            "entityUrn": "urn:li:fs_saveAction:(SAVE,urn:li:activity:7268156161747537921)",
+                            "saved": false,
+                            "dashEntityUrn": "urn:li:fsd_saveState:(SAVE,urn:li:activity:7268156161747537921)"
+                        },
+                        "text": "Save"
+                    },
+                    {
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_LINK_MEDIUM"
+                                }
+                            ]
+                        },
+                        "actionType": "SHARE_VIA",
+                        "text": "Copy link to post",
+                        "url": "https://www.linkedin.com/posts/mark-mathenge-004a59319_learningmanagementsystems-lms-edtech-activity-7268156161747537921-_FrM?utm_source=share&utm_medium=member_desktop"
+                    },
+                    {
+                        "actionType": "REPORT",
+                        "targetUrn": "urn:li:share:7268156160753483776",
+                        "contentSource": "UGC_POST",
+                        "authorProfileId": "ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                        "authorUrn": "urn:li:member:1355258308",
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_REPORT_MEDIUM"
+                                }
+                            ]
+                        },
+                        "secondaryAction": {
+                            "icon": {
+                                "accessibilityTextAttributes": [],
+                                "attributes": [
+                                    {
+                                        "sourceType": "SYSTEM_IMAGE",
+                                        "systemImage": "SYS_ICN_VISIBILITY_OFF_MEDIUM"
+                                    }
+                                ]
+                            },
+                            "actionType": "HIDE_UPDATE",
+                            "targetUrn": "urn:li:activity:7268156161747537921",
+                            "text": "Hide this post",
+                            "confirmationAction": {
+                                "title": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "Post removed"
+                                },
+                                "description": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "You'll no longer see this post in your feed."
+                                },
+                                "undoable": true
+                            }
+                        },
+                        "text": "Report post",
+                        "confirmationAction": {
+                            "title": {
+                                "textDirection": "USER_LOCALE",
+                                "text": "Thank you for your report"
+                            },
+                            "description": {
+                                "textDirection": "USER_LOCALE",
+                                "text": "We appreciate you letting us know"
+                            },
+                            "undoable": false
+                        }
+                    }
+                ],
+                "entityUrn": "urn:li:fs_updateV2Actions:(urn:li:activity:7268156161747537921,MEMBER_SHARES,EMPTY,-,-)",
+                "dashEntityUrn": "urn:li:fsd_updateActions:(urn:li:activity:7268156161747537921,MEMBER_SHARES,EMPTY,urn:li:reason:-,urn:li:adCreative:-)"
+            },
+            "actionTriggerEnabled": false,
+            "detailPageType": "FEED_DETAIL",
+            "shareAudience": "PUBLIC",
+            "shareUrn": "urn:li:share:7268156160753483776",
+            "excludedFromSeen": false,
+            "rootShare": true,
+            "trackingData": {
+                "requestId": "41d96127-cbf4-415f-86f6-d48484f2a4b3",
+                "trackingId": "EgGdNBHCcxaRhulSyxHDcw=="
+            }
+        },
+        "socialContent": {
+            "updateSaveActionToolTipLegoTrackingToken": "34ZpnFFkTBxr71PqmgCc2UMfmlOrSdjtOoZsC5gr6litOoZp6Zdr6litOoNfmhBt7dBtn5BkCRRrypejQBkildfk3RVgD9Bp79ft6lDp6BT9ChBpmpvrCBxrlZKrSBQoS5vpnpxsPRAinhBpShFtOoMfmVLqnhFsSZgt6lDp6BT9z0Kc3RBsCZzkT9D9zROol1Ipl9OpOoZp6Zdr6lisCsCc3RKrSBQqndLk71RrT9D9z4Zp6lQsSlRsmlirnles7lLsCsCrCZFt6dxnSlSoncZp4BMtmZOpOpejQBkildfk3RVgD9Bp79L9DhItm5CpmgZp4BQrClJpSlP9DhItm5CpmgZp4BQrSNP9DhItm5CpmgZp4BQtmZVomMCsThKpmRFsClMu6lvsC5ynSNxqmdLsRZApmlCfmlJokVBpS5M9D9BpS5VrToZp4BMs64Cd34Nc3cNfmh9rCZFsT9BtyoNcjsNdj4OdzgNfmh9tioNc34OoPdBcPgTdz0JcS5zeiRzd3gQbjwRpmgJdSgRem5Cp3oZp4BQu6lQrCZz",
+            "shareUrl": "https://www.linkedin.com/posts/mark-mathenge-004a59319_learningmanagementsystems-lms-edtech-activity-7268156161747537921-_FrM?utm_source=combined_share_message&utm_medium=member_desktop"
+        },
+        "entityUrn": "urn:li:fs_updateV2:(urn:li:activity:7268156161747537921,MEMBER_SHARES,EMPTY,DEFAULT,false)",
+        "content": {
+            "com.linkedin.voyager.feed.render.ImageComponent": {
+                "images": [
+                    {
+                        "accessibilityTextSourceType": "USER",
+                        "attributes": [
+                            {
+                                "useCropping": true,
+                                "mediaUrn": "urn:li:digitalmediaAsset:D4D22AQGLOaw3-V3ZjA",
+                                "sourceType": "VECTOR",
+                                "vectorImage": {
+                                    "digitalmediaAsset": "urn:li:digitalmediaAsset:D4D22AQGLOaw3-V3ZjA",
+                                    "artifacts": [
+                                        {
+                                            "width": 1200,
+                                            "fileIdentifyingUrlPathSegment": "2048_1536/feedshare-shrink_2048_1536/0/1732863463829?e=1741219200&v=beta&t=rtzIREq9x4JXVkOQXe-bUhv1H6LlBllOCHtfzILh4J0",
+                                            "expiresAt": 1741219200000,
+                                            "height": 1200
+                                        },
+                                        {
+                                            "width": 20,
+                                            "fileIdentifyingUrlPathSegment": "20/feedshare-shrink_20/0/1732863463790?e=1741219200&v=beta&t=REsPaSLn2W6xxNqb55vJVgmGT1DEHaT88rBo4x9naBI",
+                                            "expiresAt": 1741219200000,
+                                            "height": 20
+                                        },
+                                        {
+                                            "width": 1200,
+                                            "fileIdentifyingUrlPathSegment": "1280/feedshare-shrink_1280/0/1732863463790?e=1741219200&v=beta&t=ry1vf_GNRTsBq5Na-wifml9srkzF1BgRW8VoxdjOsPE",
+                                            "expiresAt": 1741219200000,
+                                            "height": 1200
+                                        },
+                                        {
+                                            "width": 480,
+                                            "fileIdentifyingUrlPathSegment": "480/feedshare-shrink_480/0/1732863463790?e=1741219200&v=beta&t=G-rB__foCKiD8-23e8hBI3ElRVREoyZ01QrhSdFFW04",
+                                            "expiresAt": 1741219200000,
+                                            "height": 480
+                                        },
+                                        {
+                                            "width": 160,
+                                            "fileIdentifyingUrlPathSegment": "160/feedshare-shrink_160/0/1732863463771?e=1741219200&v=beta&t=AAlxO6qCIMmueoRHwB_gQOFiMoumvpDC7wHpGW2PKfQ",
+                                            "expiresAt": 1741219200000,
+                                            "height": 160
+                                        },
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "800/feedshare-shrink_800/0/1732863463771?e=1741219200&v=beta&t=FhNXF-rlP64Bs5mJD2a3laK80eqvr9m2geXztI-6rBM",
+                                            "expiresAt": 1741219200000,
+                                            "height": 800
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D22AQGLOaw3-V3ZjA/feedshare-shrink_"
+                                },
+                                "displayAspectRatio": 1.0
+                            }
+                        ],
+                        "editableAccessibilityText": true,
+                        "accessibilityTextAttributes": [],
+                        "accessibilityText": ""
+                    }
+                ],
+                "showTemplateCta": false
+            }
+        },
+        "commentary": {
+            "numLines": 3,
+            "text": {
+                "textDirection": "FIRST_STRONG",
+                "text": "#LearningManagementSystems (LMS) are revolutionizing education. They have become vital tools for streamlining course delivery, facilitating virtual classrooms, and tracking student progress. By providing centralized access to resources, adaptive learning paths, and real-time analytics, #LMS empowers educators to personalize learning and foster engagement. \nThese platforms have improved access to quality education, democratized learning opportunities, and enhanced efficiency in administration, making them indispensable in the modern educational landscape.\n\nReady to simplify teaching and empower your students? Reach us at: contact.adept@adept-techno.com\n\n#EdTech #eLearning #DigitalEducation #BlendedLearning #RemoteLearning"
+            }
+        },
+        "socialDetail": {
+            "reactionElements": [],
+            "dashEntityUrn": "urn:li:fsd_socialDetail:(urn:li:activity:7268156161747537921,urn:li:activity:7268156161747537921,urn:li:highlightedReply:-)",
+            "comments": {
+                "paging": {
+                    "start": 0,
+                    "count": 0,
+                    "total": 0,
+                    "links": []
+                },
+                "elements": []
+            },
+            "socialPermissions": {
+                "dashEntityUrn": "urn:li:fsd_socialPermissions:(urn:li:activity:7268156161747537921,urn:li:fsd_profile:ACoAAFcmqh8BOLMt_98okGkv02lBPUD-UdUfwEE)",
+                "canPostComments": true,
+                "entityUrn": "urn:li:fs_socialPermissions:(urn:li:activity:7268156161747537921,urn:li:fs_profile:(ACoAAFcmqh8BOLMt_98okGkv02lBPUD-UdUfwEE,en_US))",
+                "messagePermission": "PUBLIC",
+                "canShare": true,
+                "canReact": true
+            },
+            "showPremiumAnalytics": false,
+            "hideFirstPrompt": true,
+            "liked": false,
+            "showShareButton": true,
+            "totalShares": 1,
+            "urn": "urn:li:activity:7268156161747537921",
+            "threadId": "activity:7268156161747537921",
+            "allowedCommentersScope": "ALL",
+            "totalSocialActivityCounts": {
+                "socialDetailEntityUrn": "urn:li:fs_socialDetail:urn:li:activity:7268156161747537921",
+                "urn": "urn:li:activity:7268156161747537921",
+                "numComments": 0,
+                "dashEntityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7268156161747537921",
+                "reactionTypeCounts": [
+                    {
+                        "count": 9,
+                        "reactionType": "LIKE"
+                    }
+                ],
+                "entityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7268156161747537921",
+                "numShares": 1,
+                "numLikes": 9,
+                "liked": false
+            },
+            "entityUrn": "urn:li:fs_socialDetail:urn:li:activity:7268156161747537921",
+            "commentingDisabled": false,
+            "likes": {
+                "paging": {
+                    "count": 0,
+                    "start": 0,
+                    "total": 9,
+                    "links": []
+                },
+                "elements": []
+            }
+        }
+    },
+    {
+        "actor": {
+            "urn": "urn:li:member:1355258308",
+            "image": {
+                "accessibilityTextAttributes": [],
+                "attributes": [
+                    {
+                        "sourceType": "PROFILE_PICTURE",
+                        "miniProfile": {
+                            "firstName": "Mark",
+                            "lastName": "Mathenge",
+                            "dashEntityUrn": "urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "occupation": "Software Engineer | Problem Solver | Lifelong Learner",
+                            "objectUrn": "urn:li:member:1355258308",
+                            "entityUrn": "urn:li:fs_miniProfile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "backgroundImage": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "200_800/profile-displaybackgroundimage-shrink_200_800/0/1736940716800?e=1743638400&v=beta&t=-TPtab4YFVFz6EAfvF4Rk43K3VS4SsFB8XYoP4VOBAg",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 1400,
+                                            "fileIdentifyingUrlPathSegment": "350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736940716800?e=1743638400&v=beta&t=kcti8IgcsPUTC9sNswYJEXU-qmvPlMfAA-1UY0uWHuE",
+                                            "expiresAt": 1743638400000,
+                                            "height": 350
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D16AQEPQSw7tu7YuQ/profile-displaybackgroundimage-shrink_"
+                                }
+                            },
+                            "publicIdentifier": "mark-mathenge-004a59319",
+                            "picture": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 100,
+                                            "fileIdentifyingUrlPathSegment": "100_100/profile-displayphoto-shrink_100_100/0/1731922256336?e=1743638400&v=beta&t=G85yKKgf0oOvyYIip1ytVZTKffcyeMH9iCIqziYpCEQ",
+                                            "expiresAt": 1743638400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 200,
+                                            "fileIdentifyingUrlPathSegment": "200_200/profile-displayphoto-shrink_200_200/0/1731922256336?e=1743638400&v=beta&t=awLuetucpAuOj6hUlM4x996KWy7h4KeUse1hF0yHF_g",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "400_400/profile-displayphoto-shrink_400_400/0/1731922256336?e=1743638400&v=beta&t=UWXpxxLuTSDk4ysr0KrBYQ2eMEbYYp5A7Y2rj3GLcaU",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "800_800/profile-displayphoto-shrink_800_800/0/1731922256343?e=1743638400&v=beta&t=_4qZRm9eV5gRI9Ua_Alj6Q7gUroFNT6qtXnoTh2F3Sw",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEPnyvW1y1zdA/profile-displayphoto-shrink_"
+                                }
+                            },
+                            "trackingId": "p76G5OzORn2k5FCD9qGweQ=="
+                        }
+                    }
+                ]
+            },
+            "supplementaryActorInfo": {
+                "textDirection": "USER_LOCALE",
+                "accessibilityText": " \u2022 3rd+",
+                "text": " \u2022 3rd+"
+            },
+            "name": {
+                "textDirection": "FIRST_STRONG",
+                "attributes": [
+                    {
+                        "start": 0,
+                        "length": 13,
+                        "miniProfile": {
+                            "firstName": "Mark",
+                            "lastName": "Mathenge",
+                            "dashEntityUrn": "urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "occupation": "Software Engineer | Problem Solver | Lifelong Learner",
+                            "objectUrn": "urn:li:member:1355258308",
+                            "entityUrn": "urn:li:fs_miniProfile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "backgroundImage": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "200_800/profile-displaybackgroundimage-shrink_200_800/0/1736940716800?e=1743638400&v=beta&t=-TPtab4YFVFz6EAfvF4Rk43K3VS4SsFB8XYoP4VOBAg",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 1400,
+                                            "fileIdentifyingUrlPathSegment": "350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736940716800?e=1743638400&v=beta&t=kcti8IgcsPUTC9sNswYJEXU-qmvPlMfAA-1UY0uWHuE",
+                                            "expiresAt": 1743638400000,
+                                            "height": 350
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D16AQEPQSw7tu7YuQ/profile-displaybackgroundimage-shrink_"
+                                }
+                            },
+                            "publicIdentifier": "mark-mathenge-004a59319",
+                            "picture": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 100,
+                                            "fileIdentifyingUrlPathSegment": "100_100/profile-displayphoto-shrink_100_100/0/1731922256336?e=1743638400&v=beta&t=G85yKKgf0oOvyYIip1ytVZTKffcyeMH9iCIqziYpCEQ",
+                                            "expiresAt": 1743638400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 200,
+                                            "fileIdentifyingUrlPathSegment": "200_200/profile-displayphoto-shrink_200_200/0/1731922256336?e=1743638400&v=beta&t=awLuetucpAuOj6hUlM4x996KWy7h4KeUse1hF0yHF_g",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "400_400/profile-displayphoto-shrink_400_400/0/1731922256336?e=1743638400&v=beta&t=UWXpxxLuTSDk4ysr0KrBYQ2eMEbYYp5A7Y2rj3GLcaU",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "800_800/profile-displayphoto-shrink_800_800/0/1731922256343?e=1743638400&v=beta&t=_4qZRm9eV5gRI9Ua_Alj6Q7gUroFNT6qtXnoTh2F3Sw",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEPnyvW1y1zdA/profile-displayphoto-shrink_"
+                                }
+                            },
+                            "trackingId": "p76G5OzORn2k5FCD9qGweQ=="
+                        },
+                        "type": "PROFILE_FULLNAME"
+                    }
+                ],
+                "text": "Mark Mathenge",
+                "accessibilityText": "Mark Mathenge"
+            },
+            "subDescription": {
+                "textDirection": "USER_LOCALE",
+                "attributes": [
+                    {
+                        "start": 15,
+                        "length": 1,
+                        "artDecoIcon": "IC_GLOBE_16DP",
+                        "type": "ART_DECO_ICON"
+                    }
+                ],
+                "text": "2mo \u2022 Edited \u2022   ",
+                "accessibilityText": "2 months ago"
+            },
+            "navigationContext": {
+                "trackingActionType": "viewAttributedMember",
+                "accessibilityText": "View Mark Mathenge\u2019s profile",
+                "actionTarget": "https://www.linkedin.com/in/mark-mathenge-004a59319?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4"
+            },
+            "description": {
+                "textDirection": "USER_LOCALE",
+                "accessibilityText": "Software Engineer | Problem Solver | Lifelong Learner",
+                "text": "Software Engineer | Problem Solver | Lifelong Learner"
+            },
+            "followAction": {
+                "followTrackingActionType": "followMember",
+                "followingInfo": {
+                    "followingType": "DEFAULT",
+                    "entityUrn": "urn:li:fs_followingInfo:urn:li:member:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                    "dashFollowingStateUrn": "urn:li:fsd_followingState:urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                    "following": false,
+                    "trackingUrn": "urn:li:member:1355258308"
+                },
+                "unfollowTrackingActionType": "unfollowMember",
+                "type": "FOLLOW_TOGGLE",
+                "trackingActionType": "followMember"
+            }
+        },
+        "dashEntityUrn": "urn:li:fsd_update:(urn:li:activity:7264603625279119360,MEMBER_SHARES,EMPTY,DEFAULT,false)",
+        "updateMetadata": {
+            "urn": "urn:li:activity:7264603625279119360",
+            "actionsPosition": "ACTOR_COMPONENT",
+            "updateActions": {
+                "actions": [
+                    {
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_BOOKMARK_OUTLINE_MEDIUM"
+                                }
+                            ]
+                        },
+                        "actionType": "SAVE",
+                        "saveAction": {
+                            "entityUrn": "urn:li:fs_saveAction:(SAVE,urn:li:activity:7264603625279119360)",
+                            "saved": false,
+                            "dashEntityUrn": "urn:li:fsd_saveState:(SAVE,urn:li:activity:7264603625279119360)"
+                        },
+                        "text": "Save"
+                    },
+                    {
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_LINK_MEDIUM"
+                                }
+                            ]
+                        },
+                        "actionType": "SHARE_VIA",
+                        "text": "Copy link to post",
+                        "url": "https://www.linkedin.com/posts/mark-mathenge-004a59319_aws-cloudcomputing-smallbusiness-activity-7264603625279119360-jfhZ?utm_source=share&utm_medium=member_desktop"
+                    },
+                    {
+                        "actionType": "REPORT",
+                        "targetUrn": "urn:li:share:7264603624058593280",
+                        "contentSource": "UGC_POST",
+                        "authorProfileId": "ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                        "authorUrn": "urn:li:member:1355258308",
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_REPORT_MEDIUM"
+                                }
+                            ]
+                        },
+                        "secondaryAction": {
+                            "icon": {
+                                "accessibilityTextAttributes": [],
+                                "attributes": [
+                                    {
+                                        "sourceType": "SYSTEM_IMAGE",
+                                        "systemImage": "SYS_ICN_VISIBILITY_OFF_MEDIUM"
+                                    }
+                                ]
+                            },
+                            "actionType": "HIDE_UPDATE",
+                            "targetUrn": "urn:li:activity:7264603625279119360",
+                            "text": "Hide this post",
+                            "confirmationAction": {
+                                "title": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "Post removed"
+                                },
+                                "description": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "You'll no longer see this post in your feed."
+                                },
+                                "undoable": true
+                            }
+                        },
+                        "text": "Report post",
+                        "confirmationAction": {
+                            "title": {
+                                "textDirection": "USER_LOCALE",
+                                "text": "Thank you for your report"
+                            },
+                            "description": {
+                                "textDirection": "USER_LOCALE",
+                                "text": "We appreciate you letting us know"
+                            },
+                            "undoable": false
+                        }
+                    }
+                ],
+                "entityUrn": "urn:li:fs_updateV2Actions:(urn:li:activity:7264603625279119360,MEMBER_SHARES,EMPTY,-,-)",
+                "dashEntityUrn": "urn:li:fsd_updateActions:(urn:li:activity:7264603625279119360,MEMBER_SHARES,EMPTY,urn:li:reason:-,urn:li:adCreative:-)"
+            },
+            "actionTriggerEnabled": false,
+            "detailPageType": "FEED_DETAIL",
+            "shareAudience": "PUBLIC",
+            "shareUrn": "urn:li:share:7264603624058593280",
+            "excludedFromSeen": false,
+            "rootShare": true,
+            "trackingData": {
+                "requestId": "41d96127-cbf4-415f-86f6-d48484f2a4b3",
+                "trackingId": "X4sIxk2BMgeG1ItliGrR9A=="
+            }
+        },
+        "socialContent": {
+            "updateSaveActionToolTipLegoTrackingToken": "34ZpnFFkTBxr71PqmgCc2UMfmlOrSdjtOoZsC5gr6litOoZp6Zdr6litOoNfmhBt7dBtn5BkCRRrypejQBkildfk3RVgD9Bp79ft6lDp6BT9ChBpmpvrCBxrlZKrSBQoS5vpnpxsPRAinhBpShFtOoMfmVLqnhFsSZgt6lDp6BT9z0Kc3RBsCZzkT9D9zROol1Ipl9OpOoZp6Zdr6lisCsCc3RKrSBQqndLk71RrT9D9z4Zp6lQsSlRsmlirnles7lLsCsCrCZFt6dxnSlSoncZp4BMtmZOpOpejQBkildfk3RVgD9Bp79L9DhItm5CpmgZp4BQrClJpSlP9DhItm5CpmgZp4BQrSNP9DhItm5CpmgZp4BQtmZVomMCsThKpmRFsClMu6lvsC5ynSNxqmdLsRZApmlCfmlJokVBpS5M9D9BpS5VrToZp4BMs64Cd34Nc3cNfmh9rCZFsT9BtyoNcjsNdj4OdzgNfmh9tioNc34OoPdBcPgTdz0JcS5zeiRzd3gQbjwRpmgJdSgRem5Cp3oZp4BQu6lQrCZz",
+            "shareUrl": "https://www.linkedin.com/posts/mark-mathenge-004a59319_aws-cloudcomputing-smallbusiness-activity-7264603625279119360-jfhZ?utm_source=combined_share_message&utm_medium=member_desktop"
+        },
+        "entityUrn": "urn:li:fs_updateV2:(urn:li:activity:7264603625279119360,MEMBER_SHARES,EMPTY,DEFAULT,false)",
+        "content": {
+            "com.linkedin.voyager.feed.render.ImageComponent": {
+                "images": [
+                    {
+                        "accessibilityTextSourceType": "USER",
+                        "attributes": [
+                            {
+                                "useCropping": true,
+                                "mediaUrn": "urn:li:digitalmediaAsset:D4D22AQEZW7jUEck9hQ",
+                                "sourceType": "VECTOR",
+                                "vectorImage": {
+                                    "digitalmediaAsset": "urn:li:digitalmediaAsset:D4D22AQEZW7jUEck9hQ",
+                                    "artifacts": [
+                                        {
+                                            "width": 1200,
+                                            "fileIdentifyingUrlPathSegment": "2048_1536/feedshare-shrink_2048_1536/0/1732016473325?e=1741219200&v=beta&t=pG9GnYhtAdE57-knMA7rsCVY5khywnC14bO3gLLWPQY",
+                                            "expiresAt": 1741219200000,
+                                            "height": 1200
+                                        },
+                                        {
+                                            "width": 20,
+                                            "fileIdentifyingUrlPathSegment": "20/feedshare-shrink_20/0/1732016473296?e=1741219200&v=beta&t=NBwGwR2xB1dvNhmwDNzr_rzcSz03sY6nh4prc4jcsFo",
+                                            "expiresAt": 1741219200000,
+                                            "height": 20
+                                        },
+                                        {
+                                            "width": 1200,
+                                            "fileIdentifyingUrlPathSegment": "1280/feedshare-shrink_1280/0/1732016473296?e=1741219200&v=beta&t=eyBUO7R8dXPAA8YU72mlizlMgbVomTth_W1lkubjz7Y",
+                                            "expiresAt": 1741219200000,
+                                            "height": 1200
+                                        },
+                                        {
+                                            "width": 480,
+                                            "fileIdentifyingUrlPathSegment": "480/feedshare-shrink_480/0/1732016473296?e=1741219200&v=beta&t=RiNlGDMceapkxpHaseiasJDQyn2Gr_NYsVX8pJT0ySw",
+                                            "expiresAt": 1741219200000,
+                                            "height": 480
+                                        },
+                                        {
+                                            "width": 160,
+                                            "fileIdentifyingUrlPathSegment": "160/feedshare-shrink_160/0/1732016473281?e=1741219200&v=beta&t=9CRK6r9RWb0y3ml_GjeNaY0iZWqH-7IcdIsuM5QDXUo",
+                                            "expiresAt": 1741219200000,
+                                            "height": 160
+                                        },
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "800/feedshare-shrink_800/0/1732016473281?e=1741219200&v=beta&t=-pqi7svbvW-zjvTyz4CbMQpoxlZqzpDOMS9YxqO4S8U",
+                                            "expiresAt": 1741219200000,
+                                            "height": 800
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D22AQEZW7jUEck9hQ/feedshare-shrink_"
+                                },
+                                "displayAspectRatio": 1.0
+                            }
+                        ],
+                        "editableAccessibilityText": true,
+                        "accessibilityTextAttributes": [],
+                        "accessibilityText": ""
+                    }
+                ],
+                "showTemplateCta": false
+            }
+        },
+        "commentary": {
+            "numLines": 3,
+            "text": {
+                "textDirection": "FIRST_STRONG",
+                "text": "In the world of cloud computing, AWS is king. Among their payment tiers is one that allows SMEs to access the same security and scalability benefits enjoyed by Fortune 500 companies through their free tier payment. Here, SMEs can access certain AWS features without any payment for the first 12 months.\n\nIn an increasingly competitive global market, organizations without much financial muscle need to take every inch they can get and turn it into a mile, and AWS provides them with a way of doing just that.\n\nLooking to reduce operational costs, host your applications securely and scale effortlessly? Reach us at +254 111 025 200 or contact.adept@adept-techno.com\n\n#AWS #CloudComputing #SmallBusiness #SMEs #TechInnovation #BusinessGrowth #Scalability #CostEfficiency #CloudSolutions #AWSFreeTier"
+            }
+        },
+        "socialDetail": {
+            "reactionElements": [],
+            "dashEntityUrn": "urn:li:fsd_socialDetail:(urn:li:activity:7264603625279119360,urn:li:activity:7264603625279119360,urn:li:highlightedReply:-)",
+            "comments": {
+                "paging": {
+                    "start": 0,
+                    "count": 0,
+                    "total": 0,
+                    "links": []
+                },
+                "elements": []
+            },
+            "socialPermissions": {
+                "dashEntityUrn": "urn:li:fsd_socialPermissions:(urn:li:activity:7264603625279119360,urn:li:fsd_profile:ACoAAFcmqh8BOLMt_98okGkv02lBPUD-UdUfwEE)",
+                "canPostComments": true,
+                "entityUrn": "urn:li:fs_socialPermissions:(urn:li:activity:7264603625279119360,urn:li:fs_profile:(ACoAAFcmqh8BOLMt_98okGkv02lBPUD-UdUfwEE,en_US))",
+                "messagePermission": "PUBLIC",
+                "canShare": true,
+                "canReact": true
+            },
+            "showPremiumAnalytics": false,
+            "hideFirstPrompt": true,
+            "liked": false,
+            "showShareButton": true,
+            "totalShares": 0,
+            "urn": "urn:li:activity:7264603625279119360",
+            "threadId": "activity:7264603625279119360",
+            "allowedCommentersScope": "ALL",
+            "totalSocialActivityCounts": {
+                "socialDetailEntityUrn": "urn:li:fs_socialDetail:urn:li:activity:7264603625279119360",
+                "urn": "urn:li:activity:7264603625279119360",
+                "numComments": 0,
+                "dashEntityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7264603625279119360",
+                "reactionTypeCounts": [
+                    {
+                        "count": 1,
+                        "reactionType": "LIKE"
+                    }
+                ],
+                "entityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7264603625279119360",
+                "numShares": 0,
+                "numLikes": 1,
+                "liked": false
+            },
+            "entityUrn": "urn:li:fs_socialDetail:urn:li:activity:7264603625279119360",
+            "commentingDisabled": false,
+            "likes": {
+                "paging": {
+                    "count": 0,
+                    "start": 0,
+                    "total": 1,
+                    "links": []
+                },
+                "elements": []
+            }
+        }
+    },
+    {
+        "actor": {
+            "urn": "urn:li:member:1355258308",
+            "image": {
+                "accessibilityTextAttributes": [],
+                "attributes": [
+                    {
+                        "sourceType": "PROFILE_PICTURE",
+                        "miniProfile": {
+                            "firstName": "Mark",
+                            "lastName": "Mathenge",
+                            "dashEntityUrn": "urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "occupation": "Software Engineer | Problem Solver | Lifelong Learner",
+                            "objectUrn": "urn:li:member:1355258308",
+                            "entityUrn": "urn:li:fs_miniProfile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "backgroundImage": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "200_800/profile-displaybackgroundimage-shrink_200_800/0/1736940716800?e=1743638400&v=beta&t=-TPtab4YFVFz6EAfvF4Rk43K3VS4SsFB8XYoP4VOBAg",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 1400,
+                                            "fileIdentifyingUrlPathSegment": "350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736940716800?e=1743638400&v=beta&t=kcti8IgcsPUTC9sNswYJEXU-qmvPlMfAA-1UY0uWHuE",
+                                            "expiresAt": 1743638400000,
+                                            "height": 350
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D16AQEPQSw7tu7YuQ/profile-displaybackgroundimage-shrink_"
+                                }
+                            },
+                            "publicIdentifier": "mark-mathenge-004a59319",
+                            "picture": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 100,
+                                            "fileIdentifyingUrlPathSegment": "100_100/profile-displayphoto-shrink_100_100/0/1731922256336?e=1743638400&v=beta&t=G85yKKgf0oOvyYIip1ytVZTKffcyeMH9iCIqziYpCEQ",
+                                            "expiresAt": 1743638400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 200,
+                                            "fileIdentifyingUrlPathSegment": "200_200/profile-displayphoto-shrink_200_200/0/1731922256336?e=1743638400&v=beta&t=awLuetucpAuOj6hUlM4x996KWy7h4KeUse1hF0yHF_g",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "400_400/profile-displayphoto-shrink_400_400/0/1731922256336?e=1743638400&v=beta&t=UWXpxxLuTSDk4ysr0KrBYQ2eMEbYYp5A7Y2rj3GLcaU",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "800_800/profile-displayphoto-shrink_800_800/0/1731922256343?e=1743638400&v=beta&t=_4qZRm9eV5gRI9Ua_Alj6Q7gUroFNT6qtXnoTh2F3Sw",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEPnyvW1y1zdA/profile-displayphoto-shrink_"
+                                }
+                            },
+                            "trackingId": "p76G5OzORn2k5FCD9qGweQ=="
+                        }
+                    }
+                ]
+            },
+            "supplementaryActorInfo": {
+                "textDirection": "USER_LOCALE",
+                "accessibilityText": " \u2022 3rd+",
+                "text": " \u2022 3rd+"
+            },
+            "name": {
+                "textDirection": "FIRST_STRONG",
+                "attributes": [
+                    {
+                        "start": 0,
+                        "length": 13,
+                        "miniProfile": {
+                            "firstName": "Mark",
+                            "lastName": "Mathenge",
+                            "dashEntityUrn": "urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "occupation": "Software Engineer | Problem Solver | Lifelong Learner",
+                            "objectUrn": "urn:li:member:1355258308",
+                            "entityUrn": "urn:li:fs_miniProfile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "backgroundImage": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "200_800/profile-displaybackgroundimage-shrink_200_800/0/1736940716800?e=1743638400&v=beta&t=-TPtab4YFVFz6EAfvF4Rk43K3VS4SsFB8XYoP4VOBAg",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 1400,
+                                            "fileIdentifyingUrlPathSegment": "350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736940716800?e=1743638400&v=beta&t=kcti8IgcsPUTC9sNswYJEXU-qmvPlMfAA-1UY0uWHuE",
+                                            "expiresAt": 1743638400000,
+                                            "height": 350
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D16AQEPQSw7tu7YuQ/profile-displaybackgroundimage-shrink_"
+                                }
+                            },
+                            "publicIdentifier": "mark-mathenge-004a59319",
+                            "picture": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 100,
+                                            "fileIdentifyingUrlPathSegment": "100_100/profile-displayphoto-shrink_100_100/0/1731922256336?e=1743638400&v=beta&t=G85yKKgf0oOvyYIip1ytVZTKffcyeMH9iCIqziYpCEQ",
+                                            "expiresAt": 1743638400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 200,
+                                            "fileIdentifyingUrlPathSegment": "200_200/profile-displayphoto-shrink_200_200/0/1731922256336?e=1743638400&v=beta&t=awLuetucpAuOj6hUlM4x996KWy7h4KeUse1hF0yHF_g",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "400_400/profile-displayphoto-shrink_400_400/0/1731922256336?e=1743638400&v=beta&t=UWXpxxLuTSDk4ysr0KrBYQ2eMEbYYp5A7Y2rj3GLcaU",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "800_800/profile-displayphoto-shrink_800_800/0/1731922256343?e=1743638400&v=beta&t=_4qZRm9eV5gRI9Ua_Alj6Q7gUroFNT6qtXnoTh2F3Sw",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEPnyvW1y1zdA/profile-displayphoto-shrink_"
+                                }
+                            },
+                            "trackingId": "p76G5OzORn2k5FCD9qGweQ=="
+                        },
+                        "type": "PROFILE_FULLNAME"
+                    }
+                ],
+                "text": "Mark Mathenge",
+                "accessibilityText": "Mark Mathenge"
+            },
+            "subDescription": {
+                "textDirection": "USER_LOCALE",
+                "attributes": [
+                    {
+                        "start": 6,
+                        "length": 1,
+                        "artDecoIcon": "IC_GLOBE_16DP",
+                        "type": "ART_DECO_ICON"
+                    }
+                ],
+                "text": "2mo \u2022   ",
+                "accessibilityText": "2 months ago"
+            },
+            "navigationContext": {
+                "trackingActionType": "viewAttributedMember",
+                "accessibilityText": "View Mark Mathenge\u2019s profile",
+                "actionTarget": "https://www.linkedin.com/in/mark-mathenge-004a59319?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4"
+            },
+            "description": {
+                "textDirection": "USER_LOCALE",
+                "accessibilityText": "Software Engineer | Problem Solver | Lifelong Learner",
+                "text": "Software Engineer | Problem Solver | Lifelong Learner"
+            },
+            "followAction": {
+                "followTrackingActionType": "followMember",
+                "followingInfo": {
+                    "followingType": "DEFAULT",
+                    "entityUrn": "urn:li:fs_followingInfo:urn:li:member:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                    "dashFollowingStateUrn": "urn:li:fsd_followingState:urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                    "following": false,
+                    "trackingUrn": "urn:li:member:1355258308"
+                },
+                "unfollowTrackingActionType": "unfollowMember",
+                "type": "FOLLOW_TOGGLE",
+                "trackingActionType": "followMember"
+            }
+        },
+        "dashEntityUrn": "urn:li:fsd_update:(urn:li:activity:7261741195796643840,MEMBER_SHARES,EMPTY,DEFAULT,false)",
+        "updateMetadata": {
+            "urn": "urn:li:activity:7261741195796643840",
+            "actionsPosition": "ACTOR_COMPONENT",
+            "updateActions": {
+                "actions": [
+                    {
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_BOOKMARK_OUTLINE_MEDIUM"
+                                }
+                            ]
+                        },
+                        "actionType": "SAVE",
+                        "saveAction": {
+                            "entityUrn": "urn:li:fs_saveAction:(SAVE,urn:li:activity:7261741195796643840)",
+                            "saved": false,
+                            "dashEntityUrn": "urn:li:fsd_saveState:(SAVE,urn:li:activity:7261741195796643840)"
+                        },
+                        "text": "Save"
+                    },
+                    {
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_LINK_MEDIUM"
+                                }
+                            ]
+                        },
+                        "actionType": "SHARE_VIA",
+                        "text": "Copy link to post",
+                        "url": "https://www.linkedin.com/posts/mark-mathenge-004a59319_learningmanagementsystems-elearning-onlinelearning-activity-7261741195796643840-lT4B?utm_source=share&utm_medium=member_desktop"
+                    },
+                    {
+                        "actionType": "REPORT",
+                        "targetUrn": "urn:li:share:7261741194756378625",
+                        "contentSource": "UGC_POST",
+                        "authorProfileId": "ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                        "authorUrn": "urn:li:member:1355258308",
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_REPORT_MEDIUM"
+                                }
+                            ]
+                        },
+                        "secondaryAction": {
+                            "icon": {
+                                "accessibilityTextAttributes": [],
+                                "attributes": [
+                                    {
+                                        "sourceType": "SYSTEM_IMAGE",
+                                        "systemImage": "SYS_ICN_VISIBILITY_OFF_MEDIUM"
+                                    }
+                                ]
+                            },
+                            "actionType": "HIDE_UPDATE",
+                            "targetUrn": "urn:li:activity:7261741195796643840",
+                            "text": "Hide this post",
+                            "confirmationAction": {
+                                "title": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "Post removed"
+                                },
+                                "description": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "You'll no longer see this post in your feed."
+                                },
+                                "undoable": true
+                            }
+                        },
+                        "text": "Report post",
+                        "confirmationAction": {
+                            "title": {
+                                "textDirection": "USER_LOCALE",
+                                "text": "Thank you for your report"
+                            },
+                            "description": {
+                                "textDirection": "USER_LOCALE",
+                                "text": "We appreciate you letting us know"
+                            },
+                            "undoable": false
+                        }
+                    }
+                ],
+                "entityUrn": "urn:li:fs_updateV2Actions:(urn:li:activity:7261741195796643840,MEMBER_SHARES,EMPTY,-,-)",
+                "dashEntityUrn": "urn:li:fsd_updateActions:(urn:li:activity:7261741195796643840,MEMBER_SHARES,EMPTY,urn:li:reason:-,urn:li:adCreative:-)"
+            },
+            "actionTriggerEnabled": false,
+            "detailPageType": "FEED_DETAIL",
+            "shareAudience": "PUBLIC",
+            "shareUrn": "urn:li:share:7261741194756378625",
+            "excludedFromSeen": false,
+            "rootShare": true,
+            "trackingData": {
+                "requestId": "41d96127-cbf4-415f-86f6-d48484f2a4b3",
+                "trackingId": "cNdVvssPggeEP/wpZ9FQUQ=="
+            }
+        },
+        "socialContent": {
+            "updateSaveActionToolTipLegoTrackingToken": "34ZpnFFkTBxr71PqmgCc2UMfmlOrSdjtOoZsC5gr6litOoZp6Zdr6litOoNfmhBt7dBtn5BkCRRrypejQBkildfk3RVgD9Bp79ft6lDp6BT9ChBpmpvrCBxrlZKrSBQoS5vpnpxsPRAinhBpShFtOoMfmVLqnhFsSZgt6lDp6BT9z0Kc3RBsCZzkT9D9zROol1Ipl9OpOoZp6Zdr6lisCsCc3RKrSBQqndLk71RrT9D9z4Zp6lQsSlRsmlirnles7lLsCsCrCZFt6dxnSlSoncZp4BMtmZOpOpejQBkildfk3RVgD9Bp79L9DhItm5CpmgZp4BQrClJpSlP9DhItm5CpmgZp4BQrSNP9DhItm5CpmgZp4BQtmZVomMCsThKpmRFsClMu6lvsC5ynSNxqmdLsRZApmlCfmlJokVBpS5M9D9BpS5VrToZp4BMs64Cd34Nc3cNfmh9rCZFsT9BtyoNcjsNdj4OdzgNfmh9tioNc34OoPdBcPgTdz0JcS5zeiRzd3gQbjwRpmgJdSgRem5Cp3oZp4BQu6lQrCZz",
+            "shareUrl": "https://www.linkedin.com/posts/mark-mathenge-004a59319_learningmanagementsystems-elearning-onlinelearning-activity-7261741195796643840-lT4B?utm_source=combined_share_message&utm_medium=member_desktop"
+        },
+        "entityUrn": "urn:li:fs_updateV2:(urn:li:activity:7261741195796643840,MEMBER_SHARES,EMPTY,DEFAULT,false)",
+        "content": {
+            "com.linkedin.voyager.feed.render.ImageComponent": {
+                "images": [
+                    {
+                        "accessibilityTextSourceType": "USER",
+                        "attributes": [
+                            {
+                                "useCropping": true,
+                                "mediaUrn": "urn:li:digitalmediaAsset:D4D22AQGnkPySjNHawg",
+                                "sourceType": "VECTOR",
+                                "vectorImage": {
+                                    "digitalmediaAsset": "urn:li:digitalmediaAsset:D4D22AQGnkPySjNHawg",
+                                    "artifacts": [
+                                        {
+                                            "width": 1200,
+                                            "fileIdentifyingUrlPathSegment": "2048_1536/feedshare-shrink_2048_1536/0/1731334016728?e=1741219200&v=beta&t=7frWHgXMNdZEJpwM9bcFNhIsF9wwnCR7Cw7ny_rbLj8",
+                                            "expiresAt": 1741219200000,
+                                            "height": 1200
+                                        },
+                                        {
+                                            "width": 20,
+                                            "fileIdentifyingUrlPathSegment": "20/feedshare-shrink_20/0/1731334016708?e=1741219200&v=beta&t=KTHWXyDND0yjcwBA3WLQdzUY7e7YjCZA4v8wpavspa8",
+                                            "expiresAt": 1741219200000,
+                                            "height": 20
+                                        },
+                                        {
+                                            "width": 1200,
+                                            "fileIdentifyingUrlPathSegment": "1280/feedshare-shrink_1280/0/1731334016708?e=1741219200&v=beta&t=bkVOBnXXKmU9iLxuBCw0y3ium0FaLddxxZ35ZGMa7eA",
+                                            "expiresAt": 1741219200000,
+                                            "height": 1200
+                                        },
+                                        {
+                                            "width": 480,
+                                            "fileIdentifyingUrlPathSegment": "480/feedshare-shrink_480/0/1731334016708?e=1741219200&v=beta&t=p6H0PQP-vDmrDnS9pjnhujruPfKF515EO_vUfML5bZk",
+                                            "expiresAt": 1741219200000,
+                                            "height": 480
+                                        },
+                                        {
+                                            "width": 160,
+                                            "fileIdentifyingUrlPathSegment": "160/feedshare-shrink_160/0/1731334016719?e=1741219200&v=beta&t=rhh_RnF4D4z8SvPT6WWS6Zf7iIvNGwEAynvS2n5fC70",
+                                            "expiresAt": 1741219200000,
+                                            "height": 160
+                                        },
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "800/feedshare-shrink_800/0/1731334016719?e=1741219200&v=beta&t=7TdFDNnve0OVvOowa3rdjXXmZX5y6BzV031duDrKWyY",
+                                            "expiresAt": 1741219200000,
+                                            "height": 800
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D22AQGnkPySjNHawg/feedshare-shrink_"
+                                },
+                                "displayAspectRatio": 1.0
+                            }
+                        ],
+                        "editableAccessibilityText": true,
+                        "accessibilityTextAttributes": [],
+                        "accessibilityText": ""
+                    }
+                ],
+                "showTemplateCta": false
+            }
+        },
+        "commentary": {
+            "numLines": 3,
+            "text": {
+                "textDirection": "FIRST_STRONG",
+                "text": "#LearningManagementSystems have many benefits for both students and educators. Not only do they provide cost-effective learning solutions, they also allow remote education and personalized learning while accurately tracking student progress\n\nThese online learning platforms also provide course content management allowing educators to efficiently manage, update, and deliver course content to a larger audience with ease. \n\nThis digital transformation in education creates a flexible, scalable, and interactive educational environment that can adapt to the evolving needs of both students and educators.\n\nLooking to enhance your students' learning experience? Reach us at contact.adept@adept-techno.com\n\n#eLearning #OnlineLearning #EdTech #EducationalInnovation #LearningSolutions"
+            }
+        },
+        "socialDetail": {
+            "reactionElements": [],
+            "dashEntityUrn": "urn:li:fsd_socialDetail:(urn:li:activity:7261741195796643840,urn:li:activity:7261741195796643840,urn:li:highlightedReply:-)",
+            "comments": {
+                "paging": {
+                    "start": 0,
+                    "count": 0,
+                    "total": 1,
+                    "links": []
+                },
+                "elements": []
+            },
+            "socialPermissions": {
+                "dashEntityUrn": "urn:li:fsd_socialPermissions:(urn:li:activity:7261741195796643840,urn:li:fsd_profile:ACoAAFcmqh8BOLMt_98okGkv02lBPUD-UdUfwEE)",
+                "canPostComments": true,
+                "entityUrn": "urn:li:fs_socialPermissions:(urn:li:activity:7261741195796643840,urn:li:fs_profile:(ACoAAFcmqh8BOLMt_98okGkv02lBPUD-UdUfwEE,en_US))",
+                "messagePermission": "PUBLIC",
+                "canShare": true,
+                "canReact": true
+            },
+            "showPremiumAnalytics": false,
+            "hideFirstPrompt": true,
+            "liked": false,
+            "showShareButton": true,
+            "totalShares": 0,
+            "urn": "urn:li:activity:7261741195796643840",
+            "threadId": "activity:7261741195796643840",
+            "allowedCommentersScope": "ALL",
+            "totalSocialActivityCounts": {
+                "socialDetailEntityUrn": "urn:li:fs_socialDetail:urn:li:activity:7261741195796643840",
+                "urn": "urn:li:activity:7261741195796643840",
+                "numComments": 1,
+                "dashEntityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7261741195796643840",
+                "reactionTypeCounts": [
+                    {
+                        "count": 3,
+                        "reactionType": "LIKE"
+                    }
+                ],
+                "entityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7261741195796643840",
+                "numShares": 0,
+                "numLikes": 3,
+                "liked": false
+            },
+            "entityUrn": "urn:li:fs_socialDetail:urn:li:activity:7261741195796643840",
+            "commentingDisabled": false,
+            "likes": {
+                "paging": {
+                    "count": 0,
+                    "start": 0,
+                    "total": 3,
+                    "links": []
+                },
+                "elements": []
+            }
+        }
+    },
+    {
+        "actor": {
+            "urn": "urn:li:member:1355258308",
+            "image": {
+                "accessibilityTextAttributes": [],
+                "attributes": [
+                    {
+                        "sourceType": "PROFILE_PICTURE",
+                        "miniProfile": {
+                            "firstName": "Mark",
+                            "lastName": "Mathenge",
+                            "dashEntityUrn": "urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "occupation": "Software Engineer | Problem Solver | Lifelong Learner",
+                            "objectUrn": "urn:li:member:1355258308",
+                            "entityUrn": "urn:li:fs_miniProfile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "backgroundImage": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "200_800/profile-displaybackgroundimage-shrink_200_800/0/1736940716800?e=1743638400&v=beta&t=-TPtab4YFVFz6EAfvF4Rk43K3VS4SsFB8XYoP4VOBAg",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 1400,
+                                            "fileIdentifyingUrlPathSegment": "350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736940716800?e=1743638400&v=beta&t=kcti8IgcsPUTC9sNswYJEXU-qmvPlMfAA-1UY0uWHuE",
+                                            "expiresAt": 1743638400000,
+                                            "height": 350
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D16AQEPQSw7tu7YuQ/profile-displaybackgroundimage-shrink_"
+                                }
+                            },
+                            "publicIdentifier": "mark-mathenge-004a59319",
+                            "picture": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 100,
+                                            "fileIdentifyingUrlPathSegment": "100_100/profile-displayphoto-shrink_100_100/0/1731922256336?e=1743638400&v=beta&t=G85yKKgf0oOvyYIip1ytVZTKffcyeMH9iCIqziYpCEQ",
+                                            "expiresAt": 1743638400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 200,
+                                            "fileIdentifyingUrlPathSegment": "200_200/profile-displayphoto-shrink_200_200/0/1731922256336?e=1743638400&v=beta&t=awLuetucpAuOj6hUlM4x996KWy7h4KeUse1hF0yHF_g",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "400_400/profile-displayphoto-shrink_400_400/0/1731922256336?e=1743638400&v=beta&t=UWXpxxLuTSDk4ysr0KrBYQ2eMEbYYp5A7Y2rj3GLcaU",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "800_800/profile-displayphoto-shrink_800_800/0/1731922256343?e=1743638400&v=beta&t=_4qZRm9eV5gRI9Ua_Alj6Q7gUroFNT6qtXnoTh2F3Sw",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEPnyvW1y1zdA/profile-displayphoto-shrink_"
+                                }
+                            },
+                            "trackingId": "p76G5OzORn2k5FCD9qGweQ=="
+                        }
+                    }
+                ]
+            },
+            "supplementaryActorInfo": {
+                "textDirection": "USER_LOCALE",
+                "accessibilityText": " \u2022 3rd+",
+                "text": " \u2022 3rd+"
+            },
+            "name": {
+                "textDirection": "FIRST_STRONG",
+                "attributes": [
+                    {
+                        "start": 0,
+                        "length": 13,
+                        "miniProfile": {
+                            "firstName": "Mark",
+                            "lastName": "Mathenge",
+                            "dashEntityUrn": "urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "occupation": "Software Engineer | Problem Solver | Lifelong Learner",
+                            "objectUrn": "urn:li:member:1355258308",
+                            "entityUrn": "urn:li:fs_miniProfile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "backgroundImage": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "200_800/profile-displaybackgroundimage-shrink_200_800/0/1736940716800?e=1743638400&v=beta&t=-TPtab4YFVFz6EAfvF4Rk43K3VS4SsFB8XYoP4VOBAg",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 1400,
+                                            "fileIdentifyingUrlPathSegment": "350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736940716800?e=1743638400&v=beta&t=kcti8IgcsPUTC9sNswYJEXU-qmvPlMfAA-1UY0uWHuE",
+                                            "expiresAt": 1743638400000,
+                                            "height": 350
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D16AQEPQSw7tu7YuQ/profile-displaybackgroundimage-shrink_"
+                                }
+                            },
+                            "publicIdentifier": "mark-mathenge-004a59319",
+                            "picture": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 100,
+                                            "fileIdentifyingUrlPathSegment": "100_100/profile-displayphoto-shrink_100_100/0/1731922256336?e=1743638400&v=beta&t=G85yKKgf0oOvyYIip1ytVZTKffcyeMH9iCIqziYpCEQ",
+                                            "expiresAt": 1743638400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 200,
+                                            "fileIdentifyingUrlPathSegment": "200_200/profile-displayphoto-shrink_200_200/0/1731922256336?e=1743638400&v=beta&t=awLuetucpAuOj6hUlM4x996KWy7h4KeUse1hF0yHF_g",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "400_400/profile-displayphoto-shrink_400_400/0/1731922256336?e=1743638400&v=beta&t=UWXpxxLuTSDk4ysr0KrBYQ2eMEbYYp5A7Y2rj3GLcaU",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "800_800/profile-displayphoto-shrink_800_800/0/1731922256343?e=1743638400&v=beta&t=_4qZRm9eV5gRI9Ua_Alj6Q7gUroFNT6qtXnoTh2F3Sw",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEPnyvW1y1zdA/profile-displayphoto-shrink_"
+                                }
+                            },
+                            "trackingId": "p76G5OzORn2k5FCD9qGweQ=="
+                        },
+                        "type": "PROFILE_FULLNAME"
+                    }
+                ],
+                "text": "Mark Mathenge",
+                "accessibilityText": "Mark Mathenge"
+            },
+            "subDescription": {
+                "textDirection": "USER_LOCALE",
+                "attributes": [
+                    {
+                        "start": 6,
+                        "length": 1,
+                        "artDecoIcon": "IC_GLOBE_16DP",
+                        "type": "ART_DECO_ICON"
+                    }
+                ],
+                "text": "2mo \u2022   ",
+                "accessibilityText": "3 months ago"
+            },
+            "navigationContext": {
+                "trackingActionType": "viewAttributedMember",
+                "accessibilityText": "View Mark Mathenge\u2019s profile",
+                "actionTarget": "https://www.linkedin.com/in/mark-mathenge-004a59319?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4"
+            },
+            "description": {
+                "textDirection": "USER_LOCALE",
+                "accessibilityText": "Software Engineer | Problem Solver | Lifelong Learner",
+                "text": "Software Engineer | Problem Solver | Lifelong Learner"
+            },
+            "followAction": {
+                "followTrackingActionType": "followMember",
+                "followingInfo": {
+                    "followingType": "DEFAULT",
+                    "entityUrn": "urn:li:fs_followingInfo:urn:li:member:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                    "dashFollowingStateUrn": "urn:li:fsd_followingState:urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                    "following": false,
+                    "trackingUrn": "urn:li:member:1355258308"
+                },
+                "unfollowTrackingActionType": "unfollowMember",
+                "type": "FOLLOW_TOGGLE",
+                "trackingActionType": "followMember"
+            }
+        },
+        "dashEntityUrn": "urn:li:fsd_update:(urn:li:activity:7260151760604844032,MEMBER_SHARES,EMPTY,DEFAULT,false)",
+        "updateMetadata": {
+            "urn": "urn:li:activity:7260151760604844032",
+            "actionsPosition": "ACTOR_COMPONENT",
+            "updateActions": {
+                "actions": [
+                    {
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_BOOKMARK_OUTLINE_MEDIUM"
+                                }
+                            ]
+                        },
+                        "actionType": "SAVE",
+                        "saveAction": {
+                            "entityUrn": "urn:li:fs_saveAction:(SAVE,urn:li:activity:7260151760604844032)",
+                            "saved": false,
+                            "dashEntityUrn": "urn:li:fsd_saveState:(SAVE,urn:li:activity:7260151760604844032)"
+                        },
+                        "text": "Save"
+                    },
+                    {
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_LINK_MEDIUM"
+                                }
+                            ]
+                        },
+                        "actionType": "SHARE_VIA",
+                        "text": "Copy link to post",
+                        "url": "https://www.linkedin.com/posts/mark-mathenge-004a59319_get-started-with-power-automate-activity-7260151760604844032-wmjX?utm_source=share&utm_medium=member_desktop"
+                    },
+                    {
+                        "actionType": "REPORT",
+                        "targetUrn": "urn:li:share:7260151760135069696",
+                        "contentSource": "UGC_POST",
+                        "authorProfileId": "ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                        "authorUrn": "urn:li:member:1355258308",
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_REPORT_MEDIUM"
+                                }
+                            ]
+                        },
+                        "secondaryAction": {
+                            "icon": {
+                                "accessibilityTextAttributes": [],
+                                "attributes": [
+                                    {
+                                        "sourceType": "SYSTEM_IMAGE",
+                                        "systemImage": "SYS_ICN_VISIBILITY_OFF_MEDIUM"
+                                    }
+                                ]
+                            },
+                            "actionType": "HIDE_UPDATE",
+                            "targetUrn": "urn:li:activity:7260151760604844032",
+                            "text": "Hide this post",
+                            "confirmationAction": {
+                                "title": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "Post removed"
+                                },
+                                "description": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "You'll no longer see this post in your feed."
+                                },
+                                "undoable": true
+                            }
+                        },
+                        "text": "Report post",
+                        "confirmationAction": {
+                            "title": {
+                                "textDirection": "USER_LOCALE",
+                                "text": "Thank you for your report"
+                            },
+                            "description": {
+                                "textDirection": "USER_LOCALE",
+                                "text": "We appreciate you letting us know"
+                            },
+                            "undoable": false
+                        }
+                    }
+                ],
+                "entityUrn": "urn:li:fs_updateV2Actions:(urn:li:activity:7260151760604844032,MEMBER_SHARES,EMPTY,-,-)",
+                "dashEntityUrn": "urn:li:fsd_updateActions:(urn:li:activity:7260151760604844032,MEMBER_SHARES,EMPTY,urn:li:reason:-,urn:li:adCreative:-)"
+            },
+            "actionTriggerEnabled": false,
+            "detailPageType": "FEED_DETAIL",
+            "shareAudience": "PUBLIC",
+            "shareUrn": "urn:li:share:7260151760135069696",
+            "excludedFromSeen": false,
+            "rootShare": true,
+            "trackingData": {
+                "requestId": "41d96127-cbf4-415f-86f6-d48484f2a4b3",
+                "trackingId": "W4rAqQegK4iDYTMSut45mA=="
+            }
+        },
+        "socialContent": {
+            "updateSaveActionToolTipLegoTrackingToken": "34ZpnFFkTBxr71PqmgCc2UMfmlOrSdjtOoZsC5gr6litOoZp6Zdr6litOoNfmhBt7dBtn5BkCRRrypejQBkildfk3RVgD9Bp79ft6lDp6BT9ChBpmpvrCBxrlZKrSBQoS5vpnpxsPRAinhBpShFtOoMfmVLqnhFsSZgt6lDp6BT9z0Kc3RBsCZzkT9D9zROol1Ipl9OpOoZp6Zdr6lisCsCc3RKrSBQqndLk71RrT9D9z4Zp6lQsSlRsmlirnles7lLsCsCrCZFt6dxnSlSoncZp4BMtmZOpOpejQBkildfk3RVgD9Bp79L9DhItm5CpmgZp4BQrClJpSlP9DhItm5CpmgZp4BQrSNP9DhItm5CpmgZp4BQtmZVomMCsThKpmRFsClMu6lvsC5ynSNxqmdLsRZApmlCfmlJokVBpS5M9D9BpS5VrToZp4BMs64Cd34Nc3cNfmh9rCZFsT9BtyoNcjsNdj4OdzgNfmh9tioNc34OoPdBcPgTdz0JcS5zeiRzd3gQbjwRpmgJdSgRem5Cp3oZp4BQu6lQrCZz",
+            "shareUrl": "https://www.linkedin.com/posts/mark-mathenge-004a59319_get-started-with-power-automate-activity-7260151760604844032-wmjX?utm_source=combined_share_message&utm_medium=member_desktop"
+        },
+        "entityUrn": "urn:li:fs_updateV2:(urn:li:activity:7260151760604844032,MEMBER_SHARES,EMPTY,DEFAULT,false)",
+        "content": {
+            "com.linkedin.voyager.feed.render.ArticleComponent": {
+                "urn": "urn:li:article:8039233517573162392",
+                "headlineBackgroundColor": "DEFAULT",
+                "swapTitleAndSubtitle": false,
+                "saveAction": {
+                    "entityUrn": "urn:li:fs_saveAction:(SAVE,urn:li:article:8039233517573162392)",
+                    "saved": false,
+                    "dashEntityUrn": "urn:li:fsd_saveState:(SAVE,urn:li:article:8039233517573162392)"
+                },
+                "smallImage": {
+                    "accessibilityTextSourceType": "USER",
+                    "attributes": [
+                        {
+                            "useCropping": true,
+                            "sourceType": "VECTOR",
+                            "vectorImage": {
+                                "artifacts": [
+                                    {
+                                        "width": 642,
+                                        "fileIdentifyingUrlPathSegment": "800/articleshare-shrink_800/0/1730955060899?e=1738846800&v=beta&t=2gsOaI9hnJiuGVEi7OaszkZ-o6IYN2B5QMXUgjtqC6E",
+                                        "expiresAt": 1738846800000,
+                                        "height": 321
+                                    },
+                                    {
+                                        "width": 642,
+                                        "fileIdentifyingUrlPathSegment": "1280_800/articleshare-shrink_1280_800/0/1730955060899?e=1738846800&v=beta&t=Fi0KKu4br85tAmKNviRQ9cxTD0NRmH6_RsJhCwyKDfQ",
+                                        "expiresAt": 1738846800000,
+                                        "height": 321
+                                    },
+                                    {
+                                        "width": 160,
+                                        "fileIdentifyingUrlPathSegment": "160/articleshare-shrink_160/0/1730955060899?e=1738846800&v=beta&t=D1VkRUbk0d89qgMgNZ2exoC23U4GvQ42lgYYoHx4rPA",
+                                        "expiresAt": 1738846800000,
+                                        "height": 80
+                                    },
+                                    {
+                                        "width": 480,
+                                        "fileIdentifyingUrlPathSegment": "480/articleshare-shrink_480/0/1730955060899?e=1738846800&v=beta&t=ws--cEM8Nj8Wk2Xyv_gIWzW8kljz8AtRYqiTR58_0pY",
+                                        "expiresAt": 1738846800000,
+                                        "height": 240
+                                    }
+                                ],
+                                "rootUrl": "https://media.licdn.com/dms/image/sync/v2/D4D27AQEm6UlDu6obMA/articleshare-shrink_"
+                            },
+                            "displayAspectRatio": 0.5625
+                        }
+                    ],
+                    "accessibilityTextAttributes": [],
+                    "accessibilityText": "Get started with Power Automate"
+                },
+                "subtitle": {
+                    "textDirection": "USER_LOCALE",
+                    "text": "learn.microsoft.com"
+                },
+                "navigationContext": {
+                    "trackingActionType": "viewLink",
+                    "accessibilityText": "Open article: Get started with Power Automate by learn.microsoft.com",
+                    "actionTarget": "https://learn.microsoft.com/api/achievements/share/en-us/MarkMathenge-8701/APBCNYP7?sharingId=CEE96A0AB52E7EE6"
+                },
+                "showSmallTitle": false,
+                "type": "EXTERNAL_FULL",
+                "title": {
+                    "textDirection": "FIRST_STRONG",
+                    "text": "Get started with Power Automate"
+                }
+            }
+        },
+        "commentary": {
+            "numLines": 3,
+            "text": {
+                "textDirection": "FIRST_STRONG",
+                "text": "Today I earned my \"Get started with Power Automate\" badge! I\u2019m so proud to be celebrating this achievement and hope this inspires you to start your own @MicrosoftLearn journey!"
+            }
+        },
+        "socialDetail": {
+            "reactionElements": [],
+            "dashEntityUrn": "urn:li:fsd_socialDetail:(urn:li:activity:7260151760604844032,urn:li:activity:7260151760604844032,urn:li:highlightedReply:-)",
+            "comments": {
+                "paging": {
+                    "start": 0,
+                    "count": 0,
+                    "total": 0,
+                    "links": []
+                },
+                "elements": []
+            },
+            "socialPermissions": {
+                "dashEntityUrn": "urn:li:fsd_socialPermissions:(urn:li:activity:7260151760604844032,urn:li:fsd_profile:ACoAAFcmqh8BOLMt_98okGkv02lBPUD-UdUfwEE)",
+                "canPostComments": true,
+                "entityUrn": "urn:li:fs_socialPermissions:(urn:li:activity:7260151760604844032,urn:li:fs_profile:(ACoAAFcmqh8BOLMt_98okGkv02lBPUD-UdUfwEE,en_US))",
+                "messagePermission": "PUBLIC",
+                "canShare": true,
+                "canReact": true
+            },
+            "showPremiumAnalytics": false,
+            "hideFirstPrompt": true,
+            "liked": false,
+            "showShareButton": true,
+            "totalShares": 0,
+            "urn": "urn:li:activity:7260151760604844032",
+            "threadId": "activity:7260151760604844032",
+            "allowedCommentersScope": "ALL",
+            "totalSocialActivityCounts": {
+                "socialDetailEntityUrn": "urn:li:fs_socialDetail:urn:li:activity:7260151760604844032",
+                "urn": "urn:li:activity:7260151760604844032",
+                "numComments": 0,
+                "dashEntityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7260151760604844032",
+                "reactionTypeCounts": [],
+                "entityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7260151760604844032",
+                "numShares": 0,
+                "numLikes": 0,
+                "liked": false
+            },
+            "entityUrn": "urn:li:fs_socialDetail:urn:li:activity:7260151760604844032",
+            "commentingDisabled": false,
+            "likes": {
+                "paging": {
+                    "count": 0,
+                    "start": 0,
+                    "total": 0,
+                    "links": []
+                },
+                "elements": []
+            }
+        }
+    },
+    {
+        "actor": {
+            "urn": "urn:li:member:1355258308",
+            "image": {
+                "accessibilityTextAttributes": [],
+                "attributes": [
+                    {
+                        "sourceType": "PROFILE_PICTURE",
+                        "miniProfile": {
+                            "firstName": "Mark",
+                            "lastName": "Mathenge",
+                            "dashEntityUrn": "urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "occupation": "Software Engineer | Problem Solver | Lifelong Learner",
+                            "objectUrn": "urn:li:member:1355258308",
+                            "entityUrn": "urn:li:fs_miniProfile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "backgroundImage": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "200_800/profile-displaybackgroundimage-shrink_200_800/0/1736940716800?e=1743638400&v=beta&t=-TPtab4YFVFz6EAfvF4Rk43K3VS4SsFB8XYoP4VOBAg",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 1400,
+                                            "fileIdentifyingUrlPathSegment": "350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736940716800?e=1743638400&v=beta&t=kcti8IgcsPUTC9sNswYJEXU-qmvPlMfAA-1UY0uWHuE",
+                                            "expiresAt": 1743638400000,
+                                            "height": 350
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D16AQEPQSw7tu7YuQ/profile-displaybackgroundimage-shrink_"
+                                }
+                            },
+                            "publicIdentifier": "mark-mathenge-004a59319",
+                            "picture": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 100,
+                                            "fileIdentifyingUrlPathSegment": "100_100/profile-displayphoto-shrink_100_100/0/1731922256336?e=1743638400&v=beta&t=G85yKKgf0oOvyYIip1ytVZTKffcyeMH9iCIqziYpCEQ",
+                                            "expiresAt": 1743638400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 200,
+                                            "fileIdentifyingUrlPathSegment": "200_200/profile-displayphoto-shrink_200_200/0/1731922256336?e=1743638400&v=beta&t=awLuetucpAuOj6hUlM4x996KWy7h4KeUse1hF0yHF_g",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "400_400/profile-displayphoto-shrink_400_400/0/1731922256336?e=1743638400&v=beta&t=UWXpxxLuTSDk4ysr0KrBYQ2eMEbYYp5A7Y2rj3GLcaU",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "800_800/profile-displayphoto-shrink_800_800/0/1731922256343?e=1743638400&v=beta&t=_4qZRm9eV5gRI9Ua_Alj6Q7gUroFNT6qtXnoTh2F3Sw",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEPnyvW1y1zdA/profile-displayphoto-shrink_"
+                                }
+                            },
+                            "trackingId": "p76G5OzORn2k5FCD9qGweQ=="
+                        }
+                    }
+                ]
+            },
+            "supplementaryActorInfo": {
+                "textDirection": "USER_LOCALE",
+                "accessibilityText": " \u2022 3rd+",
+                "text": " \u2022 3rd+"
+            },
+            "name": {
+                "textDirection": "FIRST_STRONG",
+                "attributes": [
+                    {
+                        "start": 0,
+                        "length": 13,
+                        "miniProfile": {
+                            "firstName": "Mark",
+                            "lastName": "Mathenge",
+                            "dashEntityUrn": "urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "occupation": "Software Engineer | Problem Solver | Lifelong Learner",
+                            "objectUrn": "urn:li:member:1355258308",
+                            "entityUrn": "urn:li:fs_miniProfile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "backgroundImage": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "200_800/profile-displaybackgroundimage-shrink_200_800/0/1736940716800?e=1743638400&v=beta&t=-TPtab4YFVFz6EAfvF4Rk43K3VS4SsFB8XYoP4VOBAg",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 1400,
+                                            "fileIdentifyingUrlPathSegment": "350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736940716800?e=1743638400&v=beta&t=kcti8IgcsPUTC9sNswYJEXU-qmvPlMfAA-1UY0uWHuE",
+                                            "expiresAt": 1743638400000,
+                                            "height": 350
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D16AQEPQSw7tu7YuQ/profile-displaybackgroundimage-shrink_"
+                                }
+                            },
+                            "publicIdentifier": "mark-mathenge-004a59319",
+                            "picture": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 100,
+                                            "fileIdentifyingUrlPathSegment": "100_100/profile-displayphoto-shrink_100_100/0/1731922256336?e=1743638400&v=beta&t=G85yKKgf0oOvyYIip1ytVZTKffcyeMH9iCIqziYpCEQ",
+                                            "expiresAt": 1743638400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 200,
+                                            "fileIdentifyingUrlPathSegment": "200_200/profile-displayphoto-shrink_200_200/0/1731922256336?e=1743638400&v=beta&t=awLuetucpAuOj6hUlM4x996KWy7h4KeUse1hF0yHF_g",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "400_400/profile-displayphoto-shrink_400_400/0/1731922256336?e=1743638400&v=beta&t=UWXpxxLuTSDk4ysr0KrBYQ2eMEbYYp5A7Y2rj3GLcaU",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "800_800/profile-displayphoto-shrink_800_800/0/1731922256343?e=1743638400&v=beta&t=_4qZRm9eV5gRI9Ua_Alj6Q7gUroFNT6qtXnoTh2F3Sw",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEPnyvW1y1zdA/profile-displayphoto-shrink_"
+                                }
+                            },
+                            "trackingId": "p76G5OzORn2k5FCD9qGweQ=="
+                        },
+                        "type": "PROFILE_FULLNAME"
+                    }
+                ],
+                "text": "Mark Mathenge",
+                "accessibilityText": "Mark Mathenge"
+            },
+            "subDescription": {
+                "textDirection": "USER_LOCALE",
+                "attributes": [
+                    {
+                        "start": 6,
+                        "length": 1,
+                        "artDecoIcon": "IC_GLOBE_16DP",
+                        "type": "ART_DECO_ICON"
+                    }
+                ],
+                "text": "2mo \u2022   ",
+                "accessibilityText": "3 months ago"
+            },
+            "navigationContext": {
+                "trackingActionType": "viewAttributedMember",
+                "accessibilityText": "View Mark Mathenge\u2019s profile",
+                "actionTarget": "https://www.linkedin.com/in/mark-mathenge-004a59319?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4"
+            },
+            "description": {
+                "textDirection": "USER_LOCALE",
+                "accessibilityText": "Software Engineer | Problem Solver | Lifelong Learner",
+                "text": "Software Engineer | Problem Solver | Lifelong Learner"
+            },
+            "followAction": {
+                "followTrackingActionType": "followMember",
+                "followingInfo": {
+                    "followingType": "DEFAULT",
+                    "entityUrn": "urn:li:fs_followingInfo:urn:li:member:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                    "dashFollowingStateUrn": "urn:li:fsd_followingState:urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                    "following": false,
+                    "trackingUrn": "urn:li:member:1355258308"
+                },
+                "unfollowTrackingActionType": "unfollowMember",
+                "type": "FOLLOW_TOGGLE",
+                "trackingActionType": "followMember"
+            }
+        },
+        "dashEntityUrn": "urn:li:fsd_update:(urn:li:activity:7259917770895572992,MEMBER_SHARES,EMPTY,DEFAULT,false)",
+        "updateMetadata": {
+            "urn": "urn:li:activity:7259917770895572992",
+            "actionsPosition": "ACTOR_COMPONENT",
+            "updateActions": {
+                "actions": [
+                    {
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_BOOKMARK_OUTLINE_MEDIUM"
+                                }
+                            ]
+                        },
+                        "actionType": "SAVE",
+                        "saveAction": {
+                            "entityUrn": "urn:li:fs_saveAction:(SAVE,urn:li:activity:7259917770895572992)",
+                            "saved": false,
+                            "dashEntityUrn": "urn:li:fsd_saveState:(SAVE,urn:li:activity:7259917770895572992)"
+                        },
+                        "text": "Save"
+                    },
+                    {
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_LINK_MEDIUM"
+                                }
+                            ]
+                        },
+                        "actionType": "SHARE_VIA",
+                        "text": "Copy link to post",
+                        "url": "https://www.linkedin.com/posts/mark-mathenge-004a59319_automation-businessautomation-processautomation-activity-7259917770895572992-CDym?utm_source=share&utm_medium=member_desktop"
+                    },
+                    {
+                        "actionType": "REPORT",
+                        "targetUrn": "urn:li:share:7259917769914130432",
+                        "contentSource": "UGC_POST",
+                        "authorProfileId": "ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                        "authorUrn": "urn:li:member:1355258308",
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_REPORT_MEDIUM"
+                                }
+                            ]
+                        },
+                        "secondaryAction": {
+                            "icon": {
+                                "accessibilityTextAttributes": [],
+                                "attributes": [
+                                    {
+                                        "sourceType": "SYSTEM_IMAGE",
+                                        "systemImage": "SYS_ICN_VISIBILITY_OFF_MEDIUM"
+                                    }
+                                ]
+                            },
+                            "actionType": "HIDE_UPDATE",
+                            "targetUrn": "urn:li:activity:7259917770895572992",
+                            "text": "Hide this post",
+                            "confirmationAction": {
+                                "title": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "Post removed"
+                                },
+                                "description": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "You'll no longer see this post in your feed."
+                                },
+                                "undoable": true
+                            }
+                        },
+                        "text": "Report post",
+                        "confirmationAction": {
+                            "title": {
+                                "textDirection": "USER_LOCALE",
+                                "text": "Thank you for your report"
+                            },
+                            "description": {
+                                "textDirection": "USER_LOCALE",
+                                "text": "We appreciate you letting us know"
+                            },
+                            "undoable": false
+                        }
+                    }
+                ],
+                "entityUrn": "urn:li:fs_updateV2Actions:(urn:li:activity:7259917770895572992,MEMBER_SHARES,EMPTY,-,-)",
+                "dashEntityUrn": "urn:li:fsd_updateActions:(urn:li:activity:7259917770895572992,MEMBER_SHARES,EMPTY,urn:li:reason:-,urn:li:adCreative:-)"
+            },
+            "actionTriggerEnabled": false,
+            "detailPageType": "FEED_DETAIL",
+            "shareAudience": "PUBLIC",
+            "shareUrn": "urn:li:share:7259917769914130432",
+            "excludedFromSeen": false,
+            "rootShare": true,
+            "trackingData": {
+                "requestId": "41d96127-cbf4-415f-86f6-d48484f2a4b3",
+                "trackingId": "v9qMMMDXf8U7FhR87BGRJg=="
+            }
+        },
+        "socialContent": {
+            "updateSaveActionToolTipLegoTrackingToken": "34ZpnFFkTBxr71PqmgCc2UMfmlOrSdjtOoZsC5gr6litOoZp6Zdr6litOoNfmhBt7dBtn5BkCRRrypejQBkildfk3RVgD9Bp79ft6lDp6BT9ChBpmpvrCBxrlZKrSBQoS5vpnpxsPRAinhBpShFtOoMfmVLqnhFsSZgt6lDp6BT9z0Kc3RBsCZzkT9D9zROol1Ipl9OpOoZp6Zdr6lisCsCc3RKrSBQqndLk71RrT9D9z4Zp6lQsSlRsmlirnles7lLsCsCrCZFt6dxnSlSoncZp4BMtmZOpOpejQBkildfk3RVgD9Bp79L9DhItm5CpmgZp4BQrClJpSlP9DhItm5CpmgZp4BQrSNP9DhItm5CpmgZp4BQtmZVomMCsThKpmRFsClMu6lvsC5ynSNxqmdLsRZApmlCfmlJokVBpS5M9D9BpS5VrToZp4BMs64Cd34Nc3cNfmh9rCZFsT9BtyoNcjsNdj4OdzgNfmh9tioNc34OoPdBcPgTdz0JcS5zeiRzd3gQbjwRpmgJdSgRem5Cp3oZp4BQu6lQrCZz",
+            "shareUrl": "https://www.linkedin.com/posts/mark-mathenge-004a59319_automation-businessautomation-processautomation-activity-7259917770895572992-CDym?utm_source=combined_share_message&utm_medium=member_desktop"
+        },
+        "entityUrn": "urn:li:fs_updateV2:(urn:li:activity:7259917770895572992,MEMBER_SHARES,EMPTY,DEFAULT,false)",
+        "content": {
+            "com.linkedin.voyager.feed.render.ImageComponent": {
+                "images": [
+                    {
+                        "accessibilityTextSourceType": "USER",
+                        "attributes": [
+                            {
+                                "useCropping": true,
+                                "mediaUrn": "urn:li:digitalmediaAsset:D4D22AQFnAuIi06cwiw",
+                                "sourceType": "VECTOR",
+                                "vectorImage": {
+                                    "digitalmediaAsset": "urn:li:digitalmediaAsset:D4D22AQFnAuIi06cwiw",
+                                    "artifacts": [
+                                        {
+                                            "width": 1200,
+                                            "fileIdentifyingUrlPathSegment": "2048_1536/feedshare-shrink_2048_1536/0/1730899278576?e=1741219200&v=beta&t=A8Abfcouez2nEf_gLdUgTHPHEgSOlE2rvblnt2flsRM",
+                                            "expiresAt": 1741219200000,
+                                            "height": 1200
+                                        },
+                                        {
+                                            "width": 20,
+                                            "fileIdentifyingUrlPathSegment": "20/feedshare-shrink_20/0/1730899278512?e=1741219200&v=beta&t=8fr6Udk0Z0agxJCYohBLVJrBpG-Cz2w9J-eC9-2M6fk",
+                                            "expiresAt": 1741219200000,
+                                            "height": 20
+                                        },
+                                        {
+                                            "width": 1200,
+                                            "fileIdentifyingUrlPathSegment": "1280/feedshare-shrink_1280/0/1730899278512?e=1741219200&v=beta&t=3-zSf24EEzkRf1SbswhbDRhBWtbDV0bdXzEHVAGjZ0c",
+                                            "expiresAt": 1741219200000,
+                                            "height": 1200
+                                        },
+                                        {
+                                            "width": 480,
+                                            "fileIdentifyingUrlPathSegment": "480/feedshare-shrink_480/0/1730899278512?e=1741219200&v=beta&t=l4wQ6R8JVxjF1yTPfTkLxScXkLKzz9bxKiBg-8x1DAs",
+                                            "expiresAt": 1741219200000,
+                                            "height": 480
+                                        },
+                                        {
+                                            "width": 160,
+                                            "fileIdentifyingUrlPathSegment": "160/feedshare-shrink_160/0/1730899278494?e=1741219200&v=beta&t=EinBJZMJW8ktDNhrlRV4FwrEycjDRGVCdr6hQ4_Gf20",
+                                            "expiresAt": 1741219200000,
+                                            "height": 160
+                                        },
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "800/feedshare-shrink_800/0/1730899278494?e=1741219200&v=beta&t=BhXvWPzZOJicM2vrXH6osvVzaS804bjQlW5NnjDe_rE",
+                                            "expiresAt": 1741219200000,
+                                            "height": 800
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D22AQFnAuIi06cwiw/feedshare-shrink_"
+                                },
+                                "displayAspectRatio": 1.0
+                            }
+                        ],
+                        "editableAccessibilityText": true,
+                        "accessibilityTextAttributes": [],
+                        "accessibilityText": ""
+                    }
+                ],
+                "showTemplateCta": false
+            }
+        },
+        "commentary": {
+            "numLines": 3,
+            "text": {
+                "textDirection": "FIRST_STRONG",
+                "text": "Customer experience is every organization's North star. According to the\u00a0\nHarvard Business Review, customers who had pleasant past experiences spend\u00a0140% more than those who didn't. \n\n#Automation enhances customer experience by:\n\n-Creating a sense of attention and care by personalizing automated responses.\n-Always providing immediate, accurate and polite responses via chatbots.\n-Empowering customers to easily find solutions to their questions using self-service\u00a0options.\n-Tailoring each customer's experience according to their preferences and behavior using AI.\n\nFor further inquiries, reach out to us at contact.adept@adept-techno.com\n\n#BusinessAutomation #ProcessAutomation #BoostProductivity #CustomerExperience #CustomerSatisfaction"
+            }
+        },
+        "socialDetail": {
+            "reactionElements": [],
+            "dashEntityUrn": "urn:li:fsd_socialDetail:(urn:li:activity:7259917770895572992,urn:li:activity:7259917770895572992,urn:li:highlightedReply:-)",
+            "comments": {
+                "paging": {
+                    "start": 0,
+                    "count": 0,
+                    "total": 0,
+                    "links": []
+                },
+                "elements": []
+            },
+            "socialPermissions": {
+                "dashEntityUrn": "urn:li:fsd_socialPermissions:(urn:li:activity:7259917770895572992,urn:li:fsd_profile:ACoAAFcmqh8BOLMt_98okGkv02lBPUD-UdUfwEE)",
+                "canPostComments": true,
+                "entityUrn": "urn:li:fs_socialPermissions:(urn:li:activity:7259917770895572992,urn:li:fs_profile:(ACoAAFcmqh8BOLMt_98okGkv02lBPUD-UdUfwEE,en_US))",
+                "messagePermission": "PUBLIC",
+                "canShare": true,
+                "canReact": true
+            },
+            "showPremiumAnalytics": false,
+            "hideFirstPrompt": true,
+            "liked": false,
+            "showShareButton": true,
+            "totalShares": 0,
+            "urn": "urn:li:activity:7259917770895572992",
+            "threadId": "activity:7259917770895572992",
+            "allowedCommentersScope": "ALL",
+            "totalSocialActivityCounts": {
+                "socialDetailEntityUrn": "urn:li:fs_socialDetail:urn:li:activity:7259917770895572992",
+                "urn": "urn:li:activity:7259917770895572992",
+                "numComments": 0,
+                "dashEntityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7259917770895572992",
+                "reactionTypeCounts": [],
+                "entityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7259917770895572992",
+                "numShares": 0,
+                "numLikes": 0,
+                "liked": false
+            },
+            "entityUrn": "urn:li:fs_socialDetail:urn:li:activity:7259917770895572992",
+            "commentingDisabled": false,
+            "likes": {
+                "paging": {
+                    "count": 0,
+                    "start": 0,
+                    "total": 0,
+                    "links": []
+                },
+                "elements": []
+            }
+        }
+    },
+    {
+        "actor": {
+            "urn": "urn:li:member:1355258308",
+            "image": {
+                "accessibilityTextAttributes": [],
+                "attributes": [
+                    {
+                        "sourceType": "PROFILE_PICTURE",
+                        "miniProfile": {
+                            "firstName": "Mark",
+                            "lastName": "Mathenge",
+                            "dashEntityUrn": "urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "occupation": "Software Engineer | Problem Solver | Lifelong Learner",
+                            "objectUrn": "urn:li:member:1355258308",
+                            "entityUrn": "urn:li:fs_miniProfile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "backgroundImage": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "200_800/profile-displaybackgroundimage-shrink_200_800/0/1736940716800?e=1743638400&v=beta&t=-TPtab4YFVFz6EAfvF4Rk43K3VS4SsFB8XYoP4VOBAg",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 1400,
+                                            "fileIdentifyingUrlPathSegment": "350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736940716800?e=1743638400&v=beta&t=kcti8IgcsPUTC9sNswYJEXU-qmvPlMfAA-1UY0uWHuE",
+                                            "expiresAt": 1743638400000,
+                                            "height": 350
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D16AQEPQSw7tu7YuQ/profile-displaybackgroundimage-shrink_"
+                                }
+                            },
+                            "publicIdentifier": "mark-mathenge-004a59319",
+                            "picture": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 100,
+                                            "fileIdentifyingUrlPathSegment": "100_100/profile-displayphoto-shrink_100_100/0/1731922256336?e=1743638400&v=beta&t=G85yKKgf0oOvyYIip1ytVZTKffcyeMH9iCIqziYpCEQ",
+                                            "expiresAt": 1743638400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 200,
+                                            "fileIdentifyingUrlPathSegment": "200_200/profile-displayphoto-shrink_200_200/0/1731922256336?e=1743638400&v=beta&t=awLuetucpAuOj6hUlM4x996KWy7h4KeUse1hF0yHF_g",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "400_400/profile-displayphoto-shrink_400_400/0/1731922256336?e=1743638400&v=beta&t=UWXpxxLuTSDk4ysr0KrBYQ2eMEbYYp5A7Y2rj3GLcaU",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "800_800/profile-displayphoto-shrink_800_800/0/1731922256343?e=1743638400&v=beta&t=_4qZRm9eV5gRI9Ua_Alj6Q7gUroFNT6qtXnoTh2F3Sw",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEPnyvW1y1zdA/profile-displayphoto-shrink_"
+                                }
+                            },
+                            "trackingId": "p76G5OzORn2k5FCD9qGweQ=="
+                        }
+                    }
+                ]
+            },
+            "supplementaryActorInfo": {
+                "textDirection": "USER_LOCALE",
+                "accessibilityText": " \u2022 3rd+",
+                "text": " \u2022 3rd+"
+            },
+            "name": {
+                "textDirection": "FIRST_STRONG",
+                "attributes": [
+                    {
+                        "start": 0,
+                        "length": 13,
+                        "miniProfile": {
+                            "firstName": "Mark",
+                            "lastName": "Mathenge",
+                            "dashEntityUrn": "urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "occupation": "Software Engineer | Problem Solver | Lifelong Learner",
+                            "objectUrn": "urn:li:member:1355258308",
+                            "entityUrn": "urn:li:fs_miniProfile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                            "backgroundImage": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "200_800/profile-displaybackgroundimage-shrink_200_800/0/1736940716800?e=1743638400&v=beta&t=-TPtab4YFVFz6EAfvF4Rk43K3VS4SsFB8XYoP4VOBAg",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 1400,
+                                            "fileIdentifyingUrlPathSegment": "350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1736940716800?e=1743638400&v=beta&t=kcti8IgcsPUTC9sNswYJEXU-qmvPlMfAA-1UY0uWHuE",
+                                            "expiresAt": 1743638400000,
+                                            "height": 350
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D16AQEPQSw7tu7YuQ/profile-displaybackgroundimage-shrink_"
+                                }
+                            },
+                            "publicIdentifier": "mark-mathenge-004a59319",
+                            "picture": {
+                                "com.linkedin.common.VectorImage": {
+                                    "artifacts": [
+                                        {
+                                            "width": 100,
+                                            "fileIdentifyingUrlPathSegment": "100_100/profile-displayphoto-shrink_100_100/0/1731922256336?e=1743638400&v=beta&t=G85yKKgf0oOvyYIip1ytVZTKffcyeMH9iCIqziYpCEQ",
+                                            "expiresAt": 1743638400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 200,
+                                            "fileIdentifyingUrlPathSegment": "200_200/profile-displayphoto-shrink_200_200/0/1731922256336?e=1743638400&v=beta&t=awLuetucpAuOj6hUlM4x996KWy7h4KeUse1hF0yHF_g",
+                                            "expiresAt": 1743638400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "400_400/profile-displayphoto-shrink_400_400/0/1731922256336?e=1743638400&v=beta&t=UWXpxxLuTSDk4ysr0KrBYQ2eMEbYYp5A7Y2rj3GLcaU",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        },
+                                        {
+                                            "width": 389,
+                                            "fileIdentifyingUrlPathSegment": "800_800/profile-displayphoto-shrink_800_800/0/1731922256343?e=1743638400&v=beta&t=_4qZRm9eV5gRI9Ua_Alj6Q7gUroFNT6qtXnoTh2F3Sw",
+                                            "expiresAt": 1743638400000,
+                                            "height": 389
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D03AQEPnyvW1y1zdA/profile-displayphoto-shrink_"
+                                }
+                            },
+                            "trackingId": "p76G5OzORn2k5FCD9qGweQ=="
+                        },
+                        "type": "PROFILE_FULLNAME"
+                    }
+                ],
+                "text": "Mark Mathenge",
+                "accessibilityText": "Mark Mathenge"
+            },
+            "subDescription": {
+                "textDirection": "USER_LOCALE",
+                "attributes": [
+                    {
+                        "start": 15,
+                        "length": 1,
+                        "artDecoIcon": "IC_GLOBE_16DP",
+                        "type": "ART_DECO_ICON"
+                    }
+                ],
+                "text": "3mo \u2022 Edited \u2022   ",
+                "accessibilityText": "3 months ago"
+            },
+            "navigationContext": {
+                "trackingActionType": "viewAttributedMember",
+                "accessibilityText": "View Mark Mathenge\u2019s profile",
+                "actionTarget": "https://www.linkedin.com/in/mark-mathenge-004a59319?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4"
+            },
+            "description": {
+                "textDirection": "USER_LOCALE",
+                "accessibilityText": "Software Engineer | Problem Solver | Lifelong Learner",
+                "text": "Software Engineer | Problem Solver | Lifelong Learner"
+            },
+            "followAction": {
+                "followTrackingActionType": "followMember",
+                "followingInfo": {
+                    "followingType": "DEFAULT",
+                    "entityUrn": "urn:li:fs_followingInfo:urn:li:member:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                    "dashFollowingStateUrn": "urn:li:fsd_followingState:urn:li:fsd_profile:ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                    "following": false,
+                    "trackingUrn": "urn:li:member:1355258308"
+                },
+                "unfollowTrackingActionType": "unfollowMember",
+                "type": "FOLLOW_TOGGLE",
+                "trackingActionType": "followMember"
+            }
+        },
+        "dashEntityUrn": "urn:li:fsd_update:(urn:li:activity:7255475075137654786,MEMBER_SHARES,EMPTY,DEFAULT,false)",
+        "updateMetadata": {
+            "urn": "urn:li:activity:7255475075137654786",
+            "actionsPosition": "ACTOR_COMPONENT",
+            "updateActions": {
+                "actions": [
+                    {
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_BOOKMARK_OUTLINE_MEDIUM"
+                                }
+                            ]
+                        },
+                        "actionType": "SAVE",
+                        "saveAction": {
+                            "entityUrn": "urn:li:fs_saveAction:(SAVE,urn:li:activity:7255475075137654786)",
+                            "saved": false,
+                            "dashEntityUrn": "urn:li:fsd_saveState:(SAVE,urn:li:activity:7255475075137654786)"
+                        },
+                        "text": "Save"
+                    },
+                    {
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_LINK_MEDIUM"
+                                }
+                            ]
+                        },
+                        "actionType": "SHARE_VIA",
+                        "text": "Copy link to post",
+                        "url": "https://www.linkedin.com/posts/mark-mathenge-004a59319_automation-businessautomation-processautomation-activity-7255475075137654786-8w8r?utm_source=share&utm_medium=member_desktop"
+                    },
+                    {
+                        "actionType": "REPORT",
+                        "targetUrn": "urn:li:share:7255475074353217537",
+                        "contentSource": "UGC_POST",
+                        "authorProfileId": "ACoAAFDHmcQBO_TZVR2JoOnZ7UE59Va6vkTaAW4",
+                        "authorUrn": "urn:li:member:1355258308",
+                        "icon": {
+                            "accessibilityTextAttributes": [],
+                            "attributes": [
+                                {
+                                    "sourceType": "SYSTEM_IMAGE",
+                                    "systemImage": "SYS_ICN_REPORT_MEDIUM"
+                                }
+                            ]
+                        },
+                        "secondaryAction": {
+                            "icon": {
+                                "accessibilityTextAttributes": [],
+                                "attributes": [
+                                    {
+                                        "sourceType": "SYSTEM_IMAGE",
+                                        "systemImage": "SYS_ICN_VISIBILITY_OFF_MEDIUM"
+                                    }
+                                ]
+                            },
+                            "actionType": "HIDE_UPDATE",
+                            "targetUrn": "urn:li:activity:7255475075137654786",
+                            "text": "Hide this post",
+                            "confirmationAction": {
+                                "title": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "Post removed"
+                                },
+                                "description": {
+                                    "textDirection": "USER_LOCALE",
+                                    "text": "You'll no longer see this post in your feed."
+                                },
+                                "undoable": true
+                            }
+                        },
+                        "text": "Report post",
+                        "confirmationAction": {
+                            "title": {
+                                "textDirection": "USER_LOCALE",
+                                "text": "Thank you for your report"
+                            },
+                            "description": {
+                                "textDirection": "USER_LOCALE",
+                                "text": "We appreciate you letting us know"
+                            },
+                            "undoable": false
+                        }
+                    }
+                ],
+                "entityUrn": "urn:li:fs_updateV2Actions:(urn:li:activity:7255475075137654786,MEMBER_SHARES,EMPTY,-,-)",
+                "dashEntityUrn": "urn:li:fsd_updateActions:(urn:li:activity:7255475075137654786,MEMBER_SHARES,EMPTY,urn:li:reason:-,urn:li:adCreative:-)"
+            },
+            "actionTriggerEnabled": false,
+            "detailPageType": "FEED_DETAIL",
+            "shareAudience": "PUBLIC",
+            "shareUrn": "urn:li:share:7255475074353217537",
+            "excludedFromSeen": false,
+            "rootShare": true,
+            "trackingData": {
+                "requestId": "41d96127-cbf4-415f-86f6-d48484f2a4b3",
+                "trackingId": "kbc3VS0C6Y1w2RFZOP5DLA=="
+            }
+        },
+        "socialContent": {
+            "updateSaveActionToolTipLegoTrackingToken": "34ZpnFFkTBxr71PqmgCc2UMfmlOrSdjtOoZsC5gr6litOoZp6Zdr6litOoNfmhBt7dBtn5BkCRRrypejQBkildfk3RVgD9Bp79ft6lDp6BT9ChBpmpvrCBxrlZKrSBQoS5vpnpxsPRAinhBpShFtOoMfmVLqnhFsSZgt6lDp6BT9z0Kc3RBsCZzkT9D9zROol1Ipl9OpOoZp6Zdr6lisCsCc3RKrSBQqndLk71RrT9D9z4Zp6lQsSlRsmlirnles7lLsCsCrCZFt6dxnSlSoncZp4BMtmZOpOpejQBkildfk3RVgD9Bp79L9DhItm5CpmgZp4BQrClJpSlP9DhItm5CpmgZp4BQrSNP9DhItm5CpmgZp4BQtmZVomMCsThKpmRFsClMu6lvsC5ynSNxqmdLsRZApmlCfmlJokVBpS5M9D9BpS5VrToZp4BMs64Cd34Nc3cNfmh9rCZFsT9BtyoNcjsNdj4OdzgNfmh9tioNc34OoPdBcPgTdz0JcS5zeiRzd3gQbjwRpmgJdSgRem5Cp3oZp4BQu6lQrCZz",
+            "shareUrl": "https://www.linkedin.com/posts/mark-mathenge-004a59319_automation-businessautomation-processautomation-activity-7255475075137654786-8w8r?utm_source=combined_share_message&utm_medium=member_desktop"
+        },
+        "entityUrn": "urn:li:fs_updateV2:(urn:li:activity:7255475075137654786,MEMBER_SHARES,EMPTY,DEFAULT,false)",
+        "content": {
+            "com.linkedin.voyager.feed.render.ImageComponent": {
+                "images": [
+                    {
+                        "accessibilityTextSourceType": "USER",
+                        "attributes": [
+                            {
+                                "useCropping": false,
+                                "mediaUrn": "urn:li:digitalmediaAsset:D4E22AQHkF3lSAkHl6g",
+                                "sourceType": "VECTOR",
+                                "vectorImage": {
+                                    "digitalmediaAsset": "urn:li:digitalmediaAsset:D4E22AQHkF3lSAkHl6g",
+                                    "artifacts": [
+                                        {
+                                            "width": 614,
+                                            "fileIdentifyingUrlPathSegment": "2048_1536/feedshare-shrink_2048_1536/0/1729840056666?e=1741219200&v=beta&t=ABVXNVwyTBzvfP3_hagAzw7jn5UUaaMg6NVQ9zeXcTI",
+                                            "expiresAt": 1741219200000,
+                                            "height": 1536
+                                        },
+                                        {
+                                            "width": 20,
+                                            "fileIdentifyingUrlPathSegment": "20/feedshare-shrink_20/0/1729840056650?e=1741219200&v=beta&t=I5pAr-Zze-PWDhulLf31dODIK-WK8uaQ77tka3qLiy8",
+                                            "expiresAt": 1741219200000,
+                                            "height": 50
+                                        },
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "1280/feedshare-shrink_1280/0/1729840056650?e=1741219200&v=beta&t=KAZkDe-W3aKB7EOu0-AYQKTNNnLrk62T42Kf-dM6bkQ",
+                                            "expiresAt": 1741219200000,
+                                            "height": 2000
+                                        },
+                                        {
+                                            "width": 480,
+                                            "fileIdentifyingUrlPathSegment": "480/feedshare-shrink_480/0/1729840056650?e=1741219200&v=beta&t=hUsLbKKSepU7DkGCQZ5RZhVvkQs1UfPb4O7wUBFYjcw",
+                                            "expiresAt": 1741219200000,
+                                            "height": 1200
+                                        },
+                                        {
+                                            "width": 160,
+                                            "fileIdentifyingUrlPathSegment": "160/feedshare-shrink_160/0/1729840056651?e=1741219200&v=beta&t=snZQ3xG23cO_rSdX4NHIiNwVRpyLVo6Op1zBKj3fnsg",
+                                            "expiresAt": 1741219200000,
+                                            "height": 400
+                                        },
+                                        {
+                                            "width": 800,
+                                            "fileIdentifyingUrlPathSegment": "800/feedshare-shrink_800/0/1729840056651?e=1741219200&v=beta&t=NmOhjKYgxLC47jy_SyFhVRbBSv-S05656UrLHoRE-js",
+                                            "expiresAt": 1741219200000,
+                                            "height": 2000
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4E22AQHkF3lSAkHl6g/feedshare-shrink_"
+                                },
+                                "displayAspectRatio": 1.25
+                            }
+                        ],
+                        "editableAccessibilityText": true,
+                        "accessibilityTextAttributes": [],
+                        "accessibilityText": ""
+                    }
+                ],
+                "showTemplateCta": false
+            }
+        },
+        "commentary": {
+            "numLines": 3,
+            "text": {
+                "textDirection": "FIRST_STRONG",
+                "text": "The effects of #Automation in the workplace cannot be understated. Repetitive, manual tasks which were previously performed by human beings are now automated, resulting in reduced human error, a massive upside in both customer and employee satisfaction, and tremendous financial gains.\n\nBelow are 5 reasons why organizations should prioritize business automation. \n\nLooking to automate your business processes? Reach out to us at contact.adept@adept-techno.com\n\n#BusinessAutomation #ProcessAutomation #WorkflowEfficiency #BoostProductivity"
+            }
+        },
+        "socialDetail": {
+            "reactionElements": [],
+            "dashEntityUrn": "urn:li:fsd_socialDetail:(urn:li:activity:7255475075137654786,urn:li:activity:7255475075137654786,urn:li:highlightedReply:-)",
+            "comments": {
+                "paging": {
+                    "start": 0,
+                    "count": 0,
+                    "total": 0,
+                    "links": []
+                },
+                "elements": []
+            },
+            "socialPermissions": {
+                "dashEntityUrn": "urn:li:fsd_socialPermissions:(urn:li:activity:7255475075137654786,urn:li:fsd_profile:ACoAAFcmqh8BOLMt_98okGkv02lBPUD-UdUfwEE)",
+                "canPostComments": true,
+                "entityUrn": "urn:li:fs_socialPermissions:(urn:li:activity:7255475075137654786,urn:li:fs_profile:(ACoAAFcmqh8BOLMt_98okGkv02lBPUD-UdUfwEE,en_US))",
+                "messagePermission": "PUBLIC",
+                "canShare": true,
+                "canReact": true
+            },
+            "showPremiumAnalytics": false,
+            "hideFirstPrompt": true,
+            "liked": false,
+            "showShareButton": true,
+            "totalShares": 0,
+            "urn": "urn:li:activity:7255475075137654786",
+            "threadId": "activity:7255475075137654786",
+            "allowedCommentersScope": "ALL",
+            "totalSocialActivityCounts": {
+                "socialDetailEntityUrn": "urn:li:fs_socialDetail:urn:li:activity:7255475075137654786",
+                "urn": "urn:li:activity:7255475075137654786",
+                "numComments": 0,
+                "dashEntityUrn": "urn:li:fsd_socialActivityCounts:urn:li:activity:7255475075137654786",
+                "reactionTypeCounts": [],
+                "entityUrn": "urn:li:fs_socialActivityCounts:urn:li:activity:7255475075137654786",
+                "numShares": 0,
+                "numLikes": 0,
+                "liked": false
+            },
+            "entityUrn": "urn:li:fs_socialDetail:urn:li:activity:7255475075137654786",
+            "commentingDisabled": false,
+            "likes": {
+                "paging": {
+                    "count": 0,
+                    "start": 0,
+                    "total": 0,
+                    "links": []
+                },
+                "elements": []
+            }
+        }
+    }
+]
