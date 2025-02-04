@@ -1,0 +1,2373 @@
+[
+    {
+        "template": "CONTENT_B",
+        "actorNavigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/in/ACoAAC5aMkcB2HMfPHGpkUhPFyvVC97OaMnZm14?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAC5aMkcB2HMfPHGpkUhPFyvVC97OaMnZm14"
+        },
+        "trackingUrn": "urn:li:activity:7291135558775410689",
+        "controlName": null,
+        "interstitialComponent": null,
+        "primaryActions": [],
+        "entityCustomTrackingInfo": null,
+        "title": {
+            "textDirection": "FIRST_STRONG",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Foysal Rabby",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": "View Foysal Rabby\u2019s profile"
+        },
+        "overflowActions": [],
+        "searchActionType": null,
+        "actorInsights": [],
+        "insightsResolutionResults": [
+            {
+                "jobPostingInsight": null,
+                "relationshipsInsight": null,
+                "serviceProviderRatingInsight": null,
+                "simpleInsight": null,
+                "jobPostingFooterInsight": null,
+                "socialActivityCountsInsight": null,
+                "labelsInsight": null
+            }
+        ],
+        "badgeIcon": null,
+        "entityUrn": "urn:li:fsd_entityResultViewModel:(urn:li:activity:7291135558775410689,SEARCH_SRP,DEFAULT)",
+        "showAdditionalCluster": false,
+        "ringStatus": null,
+        "primarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Founder & CEO at Selefe | Building Selefe | Raising Pre-Seed",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "badgeText": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "\u2022 3rd+",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "trackingId": "vrBmH0XmS6G0YjKQj0+puQ==",
+        "summary": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "\ud83d\udce2 We're Hiring: Call Center Executive at Selefe! \ud83d\ude80",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "actorNavigationUrl": "https://www.linkedin.com/in/ACoAAC5aMkcB2HMfPHGpkUhPFyvVC97OaMnZm14?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAC5aMkcB2HMfPHGpkUhPFyvVC97OaMnZm14",
+        "addEntityToSearchHistory": false,
+        "image": {
+            "_type": "com.linkedin.voyager.dash.common.image.ImageViewModel",
+            "attributes": [
+                {
+                    "scalingType": null,
+                    "_type": "com.linkedin.voyager.dash.common.image.ImageAttribute",
+                    "detailData": {
+                        "profilePictureWithoutFrame": null,
+                        "profilePictureWithRingStatus": null,
+                        "companyLogo": null,
+                        "icon": null,
+                        "systemImage": null,
+                        "nonEntityGroupLogo": null,
+                        "vectorImage": null,
+                        "nonEntityProfessionalEventLogo": null,
+                        "profilePicture": null,
+                        "imageUrl": null,
+                        "professionalEventLogo": null,
+                        "nonEntityCompanyLogo": null,
+                        "nonEntitySchoolLogo": null,
+                        "groupLogo": null,
+                        "schoolLogo": null,
+                        "ghostImage": null,
+                        "nonEntityProfilePicture": {
+                            "_type": "com.linkedin.voyager.dash.common.image.NonEntityProfilePicture",
+                            "ringStatus": null,
+                            "_recipeType": "com.linkedin.4b009c1d6ea192a94bda77fb9ace3a7d",
+                            "vectorImage": {
+                                "_type": "com.linkedin.common.VectorImage",
+                                "attribution": null,
+                                "_recipeType": "com.linkedin.28db8575bcf1c65bdc4bc15948d50ee9",
+                                "digitalmediaAsset": null,
+                                "artifacts": [
+                                    {
+                                        "width": 100,
+                                        "_type": "com.linkedin.common.VectorArtifact",
+                                        "_recipeType": "com.linkedin.f0f435b4425ee2990eba8f0a4d614944",
+                                        "fileIdentifyingUrlPathSegment": "https://media.licdn.com/dms/image/v2/D5635AQFte2i2nCgWgA/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1738341883271?e=1739268000&v=beta&t=sCOCwA-IcnpZH80E0NqZEmo-7S9B-hIlFhBED32XvKc",
+                                        "expiresAt": 1739268000000,
+                                        "height": 100
+                                    }
+                                ],
+                                "rootUrl": ""
+                            },
+                            "profile": {
+                                "_recipeType": "com.linkedin.e0372afc4a18480b00ca7e4906904fd7",
+                                "_type": "com.linkedin.voyager.dash.identity.profile.Profile",
+                                "entityUrn": "urn:li:fsd_profile:ACoAAC5aMkcB2HMfPHGpkUhPFyvVC97OaMnZm14"
+                            }
+                        }
+                    },
+                    "tintColor": null,
+                    "_recipeType": "com.linkedin.eb94fbb1518f790c4545aafdf571c64e",
+                    "tapTargets": [],
+                    "displayAspectRatio": null
+                }
+            ],
+            "actionTarget": null,
+            "_recipeType": "com.linkedin.fe5b8a3ac5a4a165c17f53b7eae4209b",
+            "accessibilityTextAttributes": [],
+            "totalCount": null,
+            "accessibilityText": "Foysal Rabby"
+        },
+        "lazyLoadedActions": {
+            "_recipeType": "com.linkedin.92ece182782ae4412e712925cd97f9fe",
+            "_type": "com.linkedin.voyager.dash.search.LazyLoadedActions",
+            "entityUrn": "urn:li:fsd_lazyLoadedActions:(urn:li:activity:7291135558775410689,CONTENT,SEARCH_SRP)"
+        },
+        "secondarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "3d \u2022  ",
+            "attributesV2": [
+                {
+                    "start": 5,
+                    "length": 1,
+                    "_type": "com.linkedin.voyager.dash.common.text.TextAttribute",
+                    "detailData": {
+                        "jobPostingName": null,
+                        "hyperlink": null,
+                        "profileFamiliarName": null,
+                        "color": null,
+                        "companyName": null,
+                        "icon": "IC_GLOBE_16DP",
+                        "epoch": null,
+                        "systemImage": null,
+                        "textLink": null,
+                        "listItemStyle": null,
+                        "groupName": null,
+                        "hyperlinkOpenExternally": null,
+                        "listStyle": null,
+                        "profileFullName": null,
+                        "stringFieldReference": null,
+                        "learningCourseName": null,
+                        "profileMention": null,
+                        "style": null,
+                        "schoolName": null,
+                        "hashtag": null
+                    },
+                    "_recipeType": "com.linkedin.b8a09c2c7547138a1c3aebdda8a94e12"
+                }
+            ],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "_type": "com.linkedin.voyager.dash.search.EntityResultViewModel",
+        "entityEmbeddedObject": {
+            "summary": null,
+            "image": {
+                "_type": "com.linkedin.voyager.dash.common.image.ImageViewModel",
+                "attributes": [
+                    {
+                        "scalingType": "ASPECT_FILL",
+                        "_type": "com.linkedin.voyager.dash.common.image.ImageAttribute",
+                        "detailData": {
+                            "profilePictureWithoutFrame": null,
+                            "profilePictureWithRingStatus": null,
+                            "companyLogo": null,
+                            "icon": null,
+                            "systemImage": null,
+                            "nonEntityGroupLogo": null,
+                            "vectorImage": null,
+                            "nonEntityProfessionalEventLogo": null,
+                            "profilePicture": null,
+                            "imageUrl": null,
+                            "professionalEventLogo": null,
+                            "nonEntityCompanyLogo": {
+                                "_type": "com.linkedin.voyager.dash.common.image.NonEntityCompanyLogo",
+                                "company": {
+                                    "_recipeType": "com.linkedin.2c2374bef3eaba3e079b4a11e2f7bea8",
+                                    "_type": "com.linkedin.voyager.dash.organization.Company",
+                                    "entityUrn": "urn:li:fsd_company:89488579"
+                                },
+                                "_recipeType": "com.linkedin.3be27b5a0eb7edd91e98b14c0290096c",
+                                "vectorImage": {
+                                    "_type": "com.linkedin.common.VectorImage",
+                                    "attribution": null,
+                                    "_recipeType": "com.linkedin.28db8575bcf1c65bdc4bc15948d50ee9",
+                                    "digitalmediaAsset": null,
+                                    "artifacts": [
+                                        {
+                                            "width": 200,
+                                            "_type": "com.linkedin.common.VectorArtifact",
+                                            "_recipeType": "com.linkedin.f0f435b4425ee2990eba8f0a4d614944",
+                                            "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1686070115252?e=1746662400&v=beta&t=14DWpn5SRxlelXLoWgfKRVsKq_tqDjQ6ZwsNW7YGx9k",
+                                            "expiresAt": 1746662400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 100,
+                                            "_type": "com.linkedin.common.VectorArtifact",
+                                            "_recipeType": "com.linkedin.f0f435b4425ee2990eba8f0a4d614944",
+                                            "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1686070115252?e=1746662400&v=beta&t=QOS8hyiwSaGO9nhYzyUCyk8O3eTnCx8P7_0fIqKQ_Wk",
+                                            "expiresAt": 1746662400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 400,
+                                            "_type": "com.linkedin.common.VectorArtifact",
+                                            "_recipeType": "com.linkedin.f0f435b4425ee2990eba8f0a4d614944",
+                                            "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1686070115252?e=1746662400&v=beta&t=Yr5XmGOVcaOFzX4pmbDQ7atuV1SJq5NMqvlWt2M3n-8",
+                                            "expiresAt": 1746662400000,
+                                            "height": 400
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D560BAQE4STsdS99Abg/company-logo_"
+                                }
+                            },
+                            "nonEntitySchoolLogo": null,
+                            "groupLogo": null,
+                            "schoolLogo": null,
+                            "ghostImage": null,
+                            "nonEntityProfilePicture": null
+                        },
+                        "tintColor": null,
+                        "_recipeType": "com.linkedin.eb94fbb1518f790c4545aafdf571c64e",
+                        "tapTargets": [],
+                        "displayAspectRatio": null
+                    }
+                ],
+                "actionTarget": null,
+                "_recipeType": "com.linkedin.fe5b8a3ac5a4a165c17f53b7eae4209b",
+                "accessibilityTextAttributes": [],
+                "totalCount": null,
+                "accessibilityText": "Image preview"
+            },
+            "headerThumbnail": null,
+            "secondarySubtitle": null,
+            "trackingUrn": null,
+            "_type": "com.linkedin.voyager.dash.search.EntityEmbeddedObject",
+            "primaryActions": [],
+            "showPlayButton": false,
+            "title": {
+                "textDirection": "FIRST_STRONG",
+                "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+                "text": "Customer Support Executive \u2013 Call Center",
+                "attributesV2": [],
+                "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+                "accessibilityTextAttributesV2": [],
+                "accessibilityText": null
+            },
+            "_recipeType": "com.linkedin.bd93318ac5710b71fba68ebb50fd5bfd",
+            "renderStyle": "DEFAULT_CONTENT",
+            "primarySubtitle": {
+                "textDirection": "USER_LOCALE",
+                "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+                "text": "Job by Selefe",
+                "attributesV2": [],
+                "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+                "accessibilityTextAttributesV2": [],
+                "accessibilityText": null
+            },
+            "headerTitle": null
+        },
+        "navigationUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7291135558775410689?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7291135558775410689%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29",
+        "unreadIndicatorDetails": null,
+        "_recipeType": "com.linkedin.cf4b25c18907ea8eafe915c8bfa24109",
+        "target": {
+            "updateV2Urn": "urn:li:fs_updateV2:(urn:li:activity:7291135558775410689,BLENDED_SEARCH_FEED,EMPTY,DEFAULT,false)",
+            "profile": null
+        },
+        "actorTrackingUrn": "urn:li:member:777663047",
+        "navigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/feed/update/urn:li:activity:7291135558775410689?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7291135558775410689%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29"
+        }
+    },
+    {
+        "template": "CONTENT_B",
+        "actorNavigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/in/ACoAAC6QaK0B06e-5mV568GgO-Sqdu05Ce6E7xk?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAC6QaK0B06e-5mV568GgO-Sqdu05Ce6E7xk"
+        },
+        "trackingUrn": "urn:li:activity:7291178406770024448",
+        "controlName": null,
+        "interstitialComponent": null,
+        "primaryActions": [],
+        "entityCustomTrackingInfo": null,
+        "title": {
+            "textDirection": "FIRST_STRONG",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Hada Elmazahry",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": "View Hada Elmazahry\u2019s profile"
+        },
+        "overflowActions": [],
+        "searchActionType": null,
+        "actorInsights": [],
+        "insightsResolutionResults": [
+            {
+                "jobPostingInsight": null,
+                "relationshipsInsight": null,
+                "serviceProviderRatingInsight": null,
+                "simpleInsight": null,
+                "jobPostingFooterInsight": null,
+                "socialActivityCountsInsight": null,
+                "labelsInsight": null
+            }
+        ],
+        "badgeIcon": null,
+        "entityUrn": "urn:li:fsd_entityResultViewModel:(urn:li:activity:7291178406770024448,SEARCH_SRP,DEFAULT)",
+        "showAdditionalCluster": false,
+        "ringStatus": null,
+        "primarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Senior Talent Acquisition at RAYA CX",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "badgeText": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "\u2022 3rd+",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "trackingId": "F91qcLmkQ12JmsazUK84jw==",
+        "summary": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "I\u2019m #hiring for a Call Center Trainer ( Fluent in English) at Raya CX\u2026 ",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "actorNavigationUrl": "https://www.linkedin.com/in/ACoAAC6QaK0B06e-5mV568GgO-Sqdu05Ce6E7xk?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAC6QaK0B06e-5mV568GgO-Sqdu05Ce6E7xk",
+        "addEntityToSearchHistory": false,
+        "image": {
+            "_type": "com.linkedin.voyager.dash.common.image.ImageViewModel",
+            "attributes": [
+                {
+                    "scalingType": null,
+                    "_type": "com.linkedin.voyager.dash.common.image.ImageAttribute",
+                    "detailData": {
+                        "profilePictureWithoutFrame": null,
+                        "profilePictureWithRingStatus": null,
+                        "companyLogo": null,
+                        "icon": null,
+                        "systemImage": null,
+                        "nonEntityGroupLogo": null,
+                        "vectorImage": null,
+                        "nonEntityProfessionalEventLogo": null,
+                        "profilePicture": null,
+                        "imageUrl": null,
+                        "professionalEventLogo": null,
+                        "nonEntityCompanyLogo": null,
+                        "nonEntitySchoolLogo": null,
+                        "groupLogo": null,
+                        "schoolLogo": null,
+                        "ghostImage": null,
+                        "nonEntityProfilePicture": {
+                            "_type": "com.linkedin.voyager.dash.common.image.NonEntityProfilePicture",
+                            "ringStatus": null,
+                            "_recipeType": "com.linkedin.4b009c1d6ea192a94bda77fb9ace3a7d",
+                            "vectorImage": {
+                                "_type": "com.linkedin.common.VectorImage",
+                                "attribution": null,
+                                "_recipeType": "com.linkedin.28db8575bcf1c65bdc4bc15948d50ee9",
+                                "digitalmediaAsset": null,
+                                "artifacts": [
+                                    {
+                                        "width": 100,
+                                        "_type": "com.linkedin.common.VectorArtifact",
+                                        "_recipeType": "com.linkedin.f0f435b4425ee2990eba8f0a4d614944",
+                                        "fileIdentifyingUrlPathSegment": "https://media.licdn.com/dms/image/v2/D4D35AQFa3NjdhVz3hQ/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1719440397673?e=1739268000&v=beta&t=3ygq5O678lK_4f7Skex86YowDWYdHQzMQ1T3_FmMcv4",
+                                        "expiresAt": 1739268000000,
+                                        "height": 100
+                                    }
+                                ],
+                                "rootUrl": ""
+                            },
+                            "profile": {
+                                "_recipeType": "com.linkedin.e0372afc4a18480b00ca7e4906904fd7",
+                                "_type": "com.linkedin.voyager.dash.identity.profile.Profile",
+                                "entityUrn": "urn:li:fsd_profile:ACoAAC6QaK0B06e-5mV568GgO-Sqdu05Ce6E7xk"
+                            }
+                        }
+                    },
+                    "tintColor": null,
+                    "_recipeType": "com.linkedin.eb94fbb1518f790c4545aafdf571c64e",
+                    "tapTargets": [],
+                    "displayAspectRatio": null
+                }
+            ],
+            "actionTarget": null,
+            "_recipeType": "com.linkedin.fe5b8a3ac5a4a165c17f53b7eae4209b",
+            "accessibilityTextAttributes": [],
+            "totalCount": null,
+            "accessibilityText": "Hada Elmazahry"
+        },
+        "lazyLoadedActions": {
+            "_recipeType": "com.linkedin.92ece182782ae4412e712925cd97f9fe",
+            "_type": "com.linkedin.voyager.dash.search.LazyLoadedActions",
+            "entityUrn": "urn:li:fsd_lazyLoadedActions:(urn:li:activity:7291178406770024448,CONTENT,SEARCH_SRP)"
+        },
+        "secondarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "3d \u2022  ",
+            "attributesV2": [
+                {
+                    "start": 5,
+                    "length": 1,
+                    "_type": "com.linkedin.voyager.dash.common.text.TextAttribute",
+                    "detailData": {
+                        "jobPostingName": null,
+                        "hyperlink": null,
+                        "profileFamiliarName": null,
+                        "color": null,
+                        "companyName": null,
+                        "icon": "IC_GLOBE_16DP",
+                        "epoch": null,
+                        "systemImage": null,
+                        "textLink": null,
+                        "listItemStyle": null,
+                        "groupName": null,
+                        "hyperlinkOpenExternally": null,
+                        "listStyle": null,
+                        "profileFullName": null,
+                        "stringFieldReference": null,
+                        "learningCourseName": null,
+                        "profileMention": null,
+                        "style": null,
+                        "schoolName": null,
+                        "hashtag": null
+                    },
+                    "_recipeType": "com.linkedin.b8a09c2c7547138a1c3aebdda8a94e12"
+                }
+            ],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "_type": "com.linkedin.voyager.dash.search.EntityResultViewModel",
+        "entityEmbeddedObject": {
+            "summary": null,
+            "image": {
+                "_type": "com.linkedin.voyager.dash.common.image.ImageViewModel",
+                "attributes": [
+                    {
+                        "scalingType": "ASPECT_FILL",
+                        "_type": "com.linkedin.voyager.dash.common.image.ImageAttribute",
+                        "detailData": {
+                            "profilePictureWithoutFrame": null,
+                            "profilePictureWithRingStatus": null,
+                            "companyLogo": null,
+                            "icon": null,
+                            "systemImage": null,
+                            "nonEntityGroupLogo": null,
+                            "vectorImage": null,
+                            "nonEntityProfessionalEventLogo": null,
+                            "profilePicture": null,
+                            "imageUrl": null,
+                            "professionalEventLogo": null,
+                            "nonEntityCompanyLogo": {
+                                "_type": "com.linkedin.voyager.dash.common.image.NonEntityCompanyLogo",
+                                "company": {
+                                    "_recipeType": "com.linkedin.2c2374bef3eaba3e079b4a11e2f7bea8",
+                                    "_type": "com.linkedin.voyager.dash.organization.Company",
+                                    "entityUrn": "urn:li:fsd_company:1012685"
+                                },
+                                "_recipeType": "com.linkedin.3be27b5a0eb7edd91e98b14c0290096c",
+                                "vectorImage": {
+                                    "_type": "com.linkedin.common.VectorImage",
+                                    "attribution": null,
+                                    "_recipeType": "com.linkedin.28db8575bcf1c65bdc4bc15948d50ee9",
+                                    "digitalmediaAsset": null,
+                                    "artifacts": [
+                                        {
+                                            "width": 200,
+                                            "_type": "com.linkedin.common.VectorArtifact",
+                                            "_recipeType": "com.linkedin.f0f435b4425ee2990eba8f0a4d614944",
+                                            "fileIdentifyingUrlPathSegment": "200_200/company-logo_200_200/0/1730135241560/rayacx_logo?e=1746662400&v=beta&t=Keo7D8g2gpsWMAkaoSOYB7mKJK1ASS2m5TO3KoDawWo",
+                                            "expiresAt": 1746662400000,
+                                            "height": 200
+                                        },
+                                        {
+                                            "width": 100,
+                                            "_type": "com.linkedin.common.VectorArtifact",
+                                            "_recipeType": "com.linkedin.f0f435b4425ee2990eba8f0a4d614944",
+                                            "fileIdentifyingUrlPathSegment": "100_100/company-logo_100_100/0/1730135241560/rayacx_logo?e=1746662400&v=beta&t=OuUQcTE8CPhiGkf7oFEfhn24xeKwBDF_w8PfB1awRwc",
+                                            "expiresAt": 1746662400000,
+                                            "height": 100
+                                        },
+                                        {
+                                            "width": 400,
+                                            "_type": "com.linkedin.common.VectorArtifact",
+                                            "_recipeType": "com.linkedin.f0f435b4425ee2990eba8f0a4d614944",
+                                            "fileIdentifyingUrlPathSegment": "400_400/company-logo_400_400/0/1730135241560/rayacx_logo?e=1746662400&v=beta&t=Pbptt3JNTRp7xAlZoqMKrAr9fUpwIuApkve4vHTpM4w",
+                                            "expiresAt": 1746662400000,
+                                            "height": 400
+                                        }
+                                    ],
+                                    "rootUrl": "https://media.licdn.com/dms/image/v2/D4D0BAQH5j5SGoeOSPQ/company-logo_"
+                                }
+                            },
+                            "nonEntitySchoolLogo": null,
+                            "groupLogo": null,
+                            "schoolLogo": null,
+                            "ghostImage": null,
+                            "nonEntityProfilePicture": null
+                        },
+                        "tintColor": null,
+                        "_recipeType": "com.linkedin.eb94fbb1518f790c4545aafdf571c64e",
+                        "tapTargets": [],
+                        "displayAspectRatio": null
+                    }
+                ],
+                "actionTarget": null,
+                "_recipeType": "com.linkedin.fe5b8a3ac5a4a165c17f53b7eae4209b",
+                "accessibilityTextAttributes": [],
+                "totalCount": null,
+                "accessibilityText": "Image preview"
+            },
+            "headerThumbnail": null,
+            "secondarySubtitle": null,
+            "trackingUrn": null,
+            "_type": "com.linkedin.voyager.dash.search.EntityEmbeddedObject",
+            "primaryActions": [],
+            "showPlayButton": false,
+            "title": {
+                "textDirection": "FIRST_STRONG",
+                "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+                "text": "Call Center Trainer ( Fluent in English)\u00a0 ",
+                "attributesV2": [
+                    {
+                        "start": 41,
+                        "length": 1,
+                        "_type": "com.linkedin.voyager.dash.common.text.TextAttribute",
+                        "detailData": {
+                            "jobPostingName": null,
+                            "hyperlink": null,
+                            "profileFamiliarName": null,
+                            "color": null,
+                            "companyName": null,
+                            "icon": null,
+                            "systemImage": "SYS_ICN_VERIFIED_SMALL",
+                            "epoch": null,
+                            "textLink": null,
+                            "listItemStyle": null,
+                            "groupName": null,
+                            "hyperlinkOpenExternally": null,
+                            "listStyle": null,
+                            "profileFullName": null,
+                            "stringFieldReference": null,
+                            "learningCourseName": null,
+                            "profileMention": null,
+                            "style": null,
+                            "schoolName": null,
+                            "hashtag": null
+                        },
+                        "_recipeType": "com.linkedin.b8a09c2c7547138a1c3aebdda8a94e12"
+                    }
+                ],
+                "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+                "accessibilityTextAttributesV2": [],
+                "accessibilityText": null
+            },
+            "_recipeType": "com.linkedin.bd93318ac5710b71fba68ebb50fd5bfd",
+            "renderStyle": "DEFAULT_CONTENT",
+            "primarySubtitle": {
+                "textDirection": "USER_LOCALE",
+                "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+                "text": "Job by Raya CX",
+                "attributesV2": [],
+                "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+                "accessibilityTextAttributesV2": [],
+                "accessibilityText": null
+            },
+            "headerTitle": null
+        },
+        "navigationUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7291178406770024448?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7291178406770024448%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29",
+        "unreadIndicatorDetails": null,
+        "_recipeType": "com.linkedin.cf4b25c18907ea8eafe915c8bfa24109",
+        "target": {
+            "updateV2Urn": "urn:li:fs_updateV2:(urn:li:activity:7291178406770024448,BLENDED_SEARCH_FEED,EMPTY,DEFAULT,false)",
+            "profile": null
+        },
+        "actorTrackingUrn": "urn:li:member:781215917",
+        "navigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/feed/update/urn:li:activity:7291178406770024448?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7291178406770024448%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29"
+        }
+    },
+    {
+        "template": "CONTENT_A",
+        "actorNavigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/in/ACoAAC6_w24BL4TBAag-Qwo3_2VGp9O7NUuqolA?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAC6_w24BL4TBAag-Qwo3_2VGp9O7NUuqolA"
+        },
+        "trackingUrn": "urn:li:activity:7291812478512996352",
+        "controlName": null,
+        "interstitialComponent": null,
+        "primaryActions": [],
+        "entityCustomTrackingInfo": null,
+        "title": {
+            "textDirection": "FIRST_STRONG",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Nourhan Karam",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": "View Nourhan Karam\u2019s profile"
+        },
+        "overflowActions": [],
+        "searchActionType": null,
+        "actorInsights": [],
+        "insightsResolutionResults": [
+            {
+                "jobPostingInsight": null,
+                "relationshipsInsight": null,
+                "serviceProviderRatingInsight": null,
+                "simpleInsight": null,
+                "jobPostingFooterInsight": null,
+                "socialActivityCountsInsight": null,
+                "labelsInsight": null
+            }
+        ],
+        "badgeIcon": null,
+        "entityUrn": "urn:li:fsd_entityResultViewModel:(urn:li:activity:7291812478512996352,SEARCH_SRP,DEFAULT)",
+        "showAdditionalCluster": false,
+        "ringStatus": null,
+        "primarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "International and offshoring Recruitment specialist ,Talent Acquisition Specialist",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "badgeText": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "\u2022 3rd+",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "trackingId": "hHev5Y4sQjG535om/gTw+g==",
+        "summary": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "*We're Hiring: Call Center Operations Manager \u2013 National Accounts* \ud83d\udce2  \n\nAre you a skilled leader with a passion for optimizing call center operations? Join our team!  \n\n\u2705 *Qualifications:*  \n\ud83d\udd39 Contact Center & Operations Management experience  \n\ud83d\udd39 Strong decision-making & problem-solving abilities  \n\ud83d\udd39 Customer satisfaction & analytical skills  \n\ud83d\udd39 Workforce Management expertise  \n\ud83d\udd39 Excellent communication & interpersonal skills  \n\ud83d\udd39 Bachelor's degree in Business Administration or related field  \n\ud83d\udd39 Previous experience in a similar role in the call center industry  \n\n\ud83d\udce9 For more info, send a WhatsApp message to *01017679607* mentioning *CCM*.  \n\n#Hiring #CallCenterJobs #OperationsManager #CareerOpportunity",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "actorNavigationUrl": "https://www.linkedin.com/in/ACoAAC6_w24BL4TBAag-Qwo3_2VGp9O7NUuqolA?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAC6_w24BL4TBAag-Qwo3_2VGp9O7NUuqolA",
+        "addEntityToSearchHistory": false,
+        "image": {
+            "_type": "com.linkedin.voyager.dash.common.image.ImageViewModel",
+            "attributes": [
+                {
+                    "scalingType": null,
+                    "_type": "com.linkedin.voyager.dash.common.image.ImageAttribute",
+                    "detailData": {
+                        "profilePictureWithoutFrame": null,
+                        "profilePictureWithRingStatus": null,
+                        "companyLogo": null,
+                        "icon": null,
+                        "systemImage": null,
+                        "nonEntityGroupLogo": null,
+                        "vectorImage": null,
+                        "nonEntityProfessionalEventLogo": null,
+                        "profilePicture": null,
+                        "imageUrl": null,
+                        "professionalEventLogo": null,
+                        "nonEntityCompanyLogo": null,
+                        "nonEntitySchoolLogo": null,
+                        "groupLogo": null,
+                        "schoolLogo": null,
+                        "ghostImage": null,
+                        "nonEntityProfilePicture": {
+                            "_type": "com.linkedin.voyager.dash.common.image.NonEntityProfilePicture",
+                            "ringStatus": null,
+                            "_recipeType": "com.linkedin.4b009c1d6ea192a94bda77fb9ace3a7d",
+                            "vectorImage": {
+                                "_type": "com.linkedin.common.VectorImage",
+                                "attribution": null,
+                                "_recipeType": "com.linkedin.28db8575bcf1c65bdc4bc15948d50ee9",
+                                "digitalmediaAsset": null,
+                                "artifacts": [
+                                    {
+                                        "width": 100,
+                                        "_type": "com.linkedin.common.VectorArtifact",
+                                        "_recipeType": "com.linkedin.f0f435b4425ee2990eba8f0a4d614944",
+                                        "fileIdentifyingUrlPathSegment": "https://media.licdn.com/dms/image/v2/D4D35AQF1TGGbXaPXaw/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1719448922231?e=1739268000&v=beta&t=ZJwcQc1-yTN2FSoU5uka1RR7hCEJ9J4r0x6OXY_cNig",
+                                        "expiresAt": 1739268000000,
+                                        "height": 100
+                                    }
+                                ],
+                                "rootUrl": ""
+                            },
+                            "profile": {
+                                "_recipeType": "com.linkedin.e0372afc4a18480b00ca7e4906904fd7",
+                                "_type": "com.linkedin.voyager.dash.identity.profile.Profile",
+                                "entityUrn": "urn:li:fsd_profile:ACoAAC6_w24BL4TBAag-Qwo3_2VGp9O7NUuqolA"
+                            }
+                        }
+                    },
+                    "tintColor": null,
+                    "_recipeType": "com.linkedin.eb94fbb1518f790c4545aafdf571c64e",
+                    "tapTargets": [],
+                    "displayAspectRatio": null
+                }
+            ],
+            "actionTarget": null,
+            "_recipeType": "com.linkedin.fe5b8a3ac5a4a165c17f53b7eae4209b",
+            "accessibilityTextAttributes": [],
+            "totalCount": null,
+            "accessibilityText": "Nourhan Karam"
+        },
+        "lazyLoadedActions": {
+            "_recipeType": "com.linkedin.92ece182782ae4412e712925cd97f9fe",
+            "_type": "com.linkedin.voyager.dash.search.LazyLoadedActions",
+            "entityUrn": "urn:li:fsd_lazyLoadedActions:(urn:li:activity:7291812478512996352,CONTENT,SEARCH_SRP)"
+        },
+        "secondarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "1d \u2022  ",
+            "attributesV2": [
+                {
+                    "start": 5,
+                    "length": 1,
+                    "_type": "com.linkedin.voyager.dash.common.text.TextAttribute",
+                    "detailData": {
+                        "jobPostingName": null,
+                        "hyperlink": null,
+                        "profileFamiliarName": null,
+                        "color": null,
+                        "companyName": null,
+                        "icon": "IC_GLOBE_16DP",
+                        "epoch": null,
+                        "systemImage": null,
+                        "textLink": null,
+                        "listItemStyle": null,
+                        "groupName": null,
+                        "hyperlinkOpenExternally": null,
+                        "listStyle": null,
+                        "profileFullName": null,
+                        "stringFieldReference": null,
+                        "learningCourseName": null,
+                        "profileMention": null,
+                        "style": null,
+                        "schoolName": null,
+                        "hashtag": null
+                    },
+                    "_recipeType": "com.linkedin.b8a09c2c7547138a1c3aebdda8a94e12"
+                }
+            ],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "_type": "com.linkedin.voyager.dash.search.EntityResultViewModel",
+        "entityEmbeddedObject": {
+            "summary": null,
+            "image": null,
+            "headerThumbnail": null,
+            "secondarySubtitle": null,
+            "trackingUrn": null,
+            "_type": "com.linkedin.voyager.dash.search.EntityEmbeddedObject",
+            "primaryActions": [],
+            "showPlayButton": false,
+            "_recipeType": "com.linkedin.bd93318ac5710b71fba68ebb50fd5bfd",
+            "title": null,
+            "renderStyle": "DEFAULT_CONTENT",
+            "primarySubtitle": null,
+            "headerTitle": null
+        },
+        "navigationUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7291812478512996352?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7291812478512996352%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29",
+        "unreadIndicatorDetails": null,
+        "_recipeType": "com.linkedin.cf4b25c18907ea8eafe915c8bfa24109",
+        "target": {
+            "updateV2Urn": "urn:li:fs_updateV2:(urn:li:activity:7291812478512996352,BLENDED_SEARCH_FEED,EMPTY,DEFAULT,false)",
+            "profile": null
+        },
+        "actorTrackingUrn": "urn:li:member:784319342",
+        "navigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/feed/update/urn:li:activity:7291812478512996352?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7291812478512996352%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29"
+        }
+    },
+    {
+        "template": "CONTENT_A",
+        "actorNavigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/in/ACoAAEGxtDIB529iBLVgM2So9AsfZhLk85uVVgo?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAEGxtDIB529iBLVgM2So9AsfZhLk85uVVgo"
+        },
+        "trackingUrn": "urn:li:activity:7291824049784025088",
+        "controlName": null,
+        "interstitialComponent": null,
+        "primaryActions": [],
+        "entityCustomTrackingInfo": null,
+        "title": {
+            "textDirection": "FIRST_STRONG",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Radwa Essam",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": "View Radwa Essam\u2019s profile"
+        },
+        "overflowActions": [],
+        "searchActionType": null,
+        "actorInsights": [],
+        "insightsResolutionResults": [
+            {
+                "jobPostingInsight": null,
+                "relationshipsInsight": null,
+                "serviceProviderRatingInsight": null,
+                "simpleInsight": null,
+                "jobPostingFooterInsight": null,
+                "socialActivityCountsInsight": null,
+                "labelsInsight": null
+            }
+        ],
+        "badgeIcon": null,
+        "entityUrn": "urn:li:fsd_entityResultViewModel:(urn:li:activity:7291824049784025088,SEARCH_SRP,DEFAULT)",
+        "showAdditionalCluster": false,
+        "ringStatus": null,
+        "primarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Senior Recruitment Specialist",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "badgeText": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "\u2022 3rd+",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "trackingId": "2hp7sfGqQQWT/0ruJyRLjQ==",
+        "summary": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "*We're Hiring: Call Center #Operations_Manager \u2013 National Accounts* \ud83d\udce2 \n\nAre you a skilled leader with a passion for optimizing call center operations? Join our team! \n\n\u2705 *Qualifications:*  \n\n\ud83d\udd39 Contact Center & Operations Management experience \n\ud83d\udd39 Strong decision-making & problem-solving abilities \n\ud83d\udd39 Customer satisfaction & analytical skills \n\ud83d\udd39 Workforce Management expertise \n\ud83d\udd39 Excellent communication & interpersonal skills \n\ud83d\udd39 Bachelor's degree in Business Administration or related field \n\ud83d\udd39 Previous experience in a similar role in the call center industry \n\n\ud83d\udce9 For more info, send a WhatsApp message to *01017679607* mentioning *CCM*. \n\n#Hiring #CallCenterJobs #OperationsManager #CareerOpportunity",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "actorNavigationUrl": "https://www.linkedin.com/in/ACoAAEGxtDIB529iBLVgM2So9AsfZhLk85uVVgo?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAEGxtDIB529iBLVgM2So9AsfZhLk85uVVgo",
+        "addEntityToSearchHistory": false,
+        "image": {
+            "_type": "com.linkedin.voyager.dash.common.image.ImageViewModel",
+            "attributes": [
+                {
+                    "scalingType": null,
+                    "_type": "com.linkedin.voyager.dash.common.image.ImageAttribute",
+                    "detailData": {
+                        "profilePictureWithoutFrame": null,
+                        "profilePictureWithRingStatus": null,
+                        "companyLogo": null,
+                        "icon": null,
+                        "systemImage": null,
+                        "nonEntityGroupLogo": null,
+                        "vectorImage": null,
+                        "nonEntityProfessionalEventLogo": null,
+                        "profilePicture": null,
+                        "imageUrl": null,
+                        "professionalEventLogo": null,
+                        "nonEntityCompanyLogo": null,
+                        "nonEntitySchoolLogo": null,
+                        "groupLogo": null,
+                        "schoolLogo": null,
+                        "ghostImage": null,
+                        "nonEntityProfilePicture": {
+                            "_type": "com.linkedin.voyager.dash.common.image.NonEntityProfilePicture",
+                            "ringStatus": null,
+                            "_recipeType": "com.linkedin.4b009c1d6ea192a94bda77fb9ace3a7d",
+                            "vectorImage": {
+                                "_type": "com.linkedin.common.VectorImage",
+                                "attribution": null,
+                                "_recipeType": "com.linkedin.28db8575bcf1c65bdc4bc15948d50ee9",
+                                "digitalmediaAsset": null,
+                                "artifacts": [
+                                    {
+                                        "width": 100,
+                                        "_type": "com.linkedin.common.VectorArtifact",
+                                        "_recipeType": "com.linkedin.f0f435b4425ee2990eba8f0a4d614944",
+                                        "fileIdentifyingUrlPathSegment": "https://media.licdn.com/dms/image/v2/D4D35AQHJJf9GNP6zSQ/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1734432346657?e=1739268000&v=beta&t=4hOffjQ667Sttm_1SRSacpM0m_ecbLj0yC0jUqXnhNs",
+                                        "expiresAt": 1739268000000,
+                                        "height": 100
+                                    }
+                                ],
+                                "rootUrl": ""
+                            },
+                            "profile": {
+                                "_recipeType": "com.linkedin.e0372afc4a18480b00ca7e4906904fd7",
+                                "_type": "com.linkedin.voyager.dash.identity.profile.Profile",
+                                "entityUrn": "urn:li:fsd_profile:ACoAAEGxtDIB529iBLVgM2So9AsfZhLk85uVVgo"
+                            }
+                        }
+                    },
+                    "tintColor": null,
+                    "_recipeType": "com.linkedin.eb94fbb1518f790c4545aafdf571c64e",
+                    "tapTargets": [],
+                    "displayAspectRatio": null
+                }
+            ],
+            "actionTarget": null,
+            "_recipeType": "com.linkedin.fe5b8a3ac5a4a165c17f53b7eae4209b",
+            "accessibilityTextAttributes": [],
+            "totalCount": null,
+            "accessibilityText": "Radwa Essam"
+        },
+        "lazyLoadedActions": {
+            "_recipeType": "com.linkedin.92ece182782ae4412e712925cd97f9fe",
+            "_type": "com.linkedin.voyager.dash.search.LazyLoadedActions",
+            "entityUrn": "urn:li:fsd_lazyLoadedActions:(urn:li:activity:7291824049784025088,CONTENT,SEARCH_SRP)"
+        },
+        "secondarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "1d \u2022  ",
+            "attributesV2": [
+                {
+                    "start": 5,
+                    "length": 1,
+                    "_type": "com.linkedin.voyager.dash.common.text.TextAttribute",
+                    "detailData": {
+                        "jobPostingName": null,
+                        "hyperlink": null,
+                        "profileFamiliarName": null,
+                        "color": null,
+                        "companyName": null,
+                        "icon": "IC_GLOBE_16DP",
+                        "epoch": null,
+                        "systemImage": null,
+                        "textLink": null,
+                        "listItemStyle": null,
+                        "groupName": null,
+                        "hyperlinkOpenExternally": null,
+                        "listStyle": null,
+                        "profileFullName": null,
+                        "stringFieldReference": null,
+                        "learningCourseName": null,
+                        "profileMention": null,
+                        "style": null,
+                        "schoolName": null,
+                        "hashtag": null
+                    },
+                    "_recipeType": "com.linkedin.b8a09c2c7547138a1c3aebdda8a94e12"
+                }
+            ],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "_type": "com.linkedin.voyager.dash.search.EntityResultViewModel",
+        "entityEmbeddedObject": {
+            "summary": null,
+            "image": null,
+            "headerThumbnail": null,
+            "secondarySubtitle": null,
+            "trackingUrn": null,
+            "_type": "com.linkedin.voyager.dash.search.EntityEmbeddedObject",
+            "primaryActions": [],
+            "showPlayButton": false,
+            "_recipeType": "com.linkedin.bd93318ac5710b71fba68ebb50fd5bfd",
+            "title": null,
+            "renderStyle": "DEFAULT_CONTENT",
+            "primarySubtitle": null,
+            "headerTitle": null
+        },
+        "navigationUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7291824049784025088?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7291824049784025088%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29",
+        "unreadIndicatorDetails": null,
+        "_recipeType": "com.linkedin.cf4b25c18907ea8eafe915c8bfa24109",
+        "target": {
+            "updateV2Urn": "urn:li:fs_updateV2:(urn:li:activity:7291824049784025088,BLENDED_SEARCH_FEED,EMPTY,DEFAULT,false)",
+            "profile": null
+        },
+        "actorTrackingUrn": "urn:li:member:1102165042",
+        "navigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/feed/update/urn:li:activity:7291824049784025088?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7291824049784025088%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29"
+        }
+    },
+    {
+        "template": "CONTENT_A",
+        "actorNavigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/in/ACoAAB4Jkj8BDPKuMYx-uOTBZDN7y-QBrg74f4I?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAB4Jkj8BDPKuMYx-uOTBZDN7y-QBrg74f4I"
+        },
+        "trackingUrn": "urn:li:activity:7292153449469665282",
+        "controlName": null,
+        "interstitialComponent": null,
+        "primaryActions": [],
+        "entityCustomTrackingInfo": null,
+        "title": {
+            "textDirection": "FIRST_STRONG",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "kristynn mwikali",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": "View kristynn mwikali\u2019s profile"
+        },
+        "overflowActions": [],
+        "searchActionType": null,
+        "actorInsights": [],
+        "insightsResolutionResults": [
+            {
+                "jobPostingInsight": null,
+                "relationshipsInsight": null,
+                "serviceProviderRatingInsight": null,
+                "simpleInsight": null,
+                "jobPostingFooterInsight": null,
+                "socialActivityCountsInsight": null,
+                "labelsInsight": null
+            }
+        ],
+        "badgeIcon": null,
+        "entityUrn": "urn:li:fsd_entityResultViewModel:(urn:li:activity:7292153449469665282,SEARCH_SRP,DEFAULT)",
+        "showAdditionalCluster": false,
+        "ringStatus": null,
+        "primarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "--",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "badgeText": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "\u2022 3rd+",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "trackingId": "IBPXsC4DQNC2UOcPw855rg==",
+        "summary": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Hello, we offer call center services to companies and businesses.Contact us for affordable prices and sure growth of your brand through us.",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "actorNavigationUrl": "https://www.linkedin.com/in/ACoAAB4Jkj8BDPKuMYx-uOTBZDN7y-QBrg74f4I?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAB4Jkj8BDPKuMYx-uOTBZDN7y-QBrg74f4I",
+        "addEntityToSearchHistory": false,
+        "image": {
+            "_type": "com.linkedin.voyager.dash.common.image.ImageViewModel",
+            "attributes": [
+                {
+                    "scalingType": null,
+                    "_type": "com.linkedin.voyager.dash.common.image.ImageAttribute",
+                    "detailData": {
+                        "profilePictureWithoutFrame": null,
+                        "profilePictureWithRingStatus": null,
+                        "companyLogo": null,
+                        "icon": null,
+                        "systemImage": null,
+                        "nonEntityGroupLogo": null,
+                        "vectorImage": null,
+                        "nonEntityProfessionalEventLogo": null,
+                        "profilePicture": null,
+                        "imageUrl": null,
+                        "professionalEventLogo": null,
+                        "nonEntityCompanyLogo": null,
+                        "nonEntitySchoolLogo": null,
+                        "groupLogo": null,
+                        "schoolLogo": null,
+                        "ghostImage": null,
+                        "nonEntityProfilePicture": {
+                            "_type": "com.linkedin.voyager.dash.common.image.NonEntityProfilePicture",
+                            "ringStatus": null,
+                            "_recipeType": "com.linkedin.4b009c1d6ea192a94bda77fb9ace3a7d",
+                            "vectorImage": {
+                                "_type": "com.linkedin.common.VectorImage",
+                                "attribution": null,
+                                "_recipeType": "com.linkedin.28db8575bcf1c65bdc4bc15948d50ee9",
+                                "digitalmediaAsset": null,
+                                "artifacts": [
+                                    {
+                                        "width": 100,
+                                        "_type": "com.linkedin.common.VectorArtifact",
+                                        "_recipeType": "com.linkedin.f0f435b4425ee2990eba8f0a4d614944",
+                                        "fileIdentifyingUrlPathSegment": "https://media.licdn.com/dms/image/v2/D4D03AQFo_qkwV8U6XA/profile-displayphoto-shrink_100_100/B4DZTLzyb2GkAg-/0/1738586138934?e=1744243200&v=beta&t=j_5s8nW9SGCeUrnassxSu7ZpYMqPdBvv_kbJEHUl6hM",
+                                        "expiresAt": 1744243200000,
+                                        "height": 100
+                                    }
+                                ],
+                                "rootUrl": ""
+                            },
+                            "profile": {
+                                "_recipeType": "com.linkedin.e0372afc4a18480b00ca7e4906904fd7",
+                                "_type": "com.linkedin.voyager.dash.identity.profile.Profile",
+                                "entityUrn": "urn:li:fsd_profile:ACoAAB4Jkj8BDPKuMYx-uOTBZDN7y-QBrg74f4I"
+                            }
+                        }
+                    },
+                    "tintColor": null,
+                    "_recipeType": "com.linkedin.eb94fbb1518f790c4545aafdf571c64e",
+                    "tapTargets": [],
+                    "displayAspectRatio": null
+                }
+            ],
+            "actionTarget": null,
+            "_recipeType": "com.linkedin.fe5b8a3ac5a4a165c17f53b7eae4209b",
+            "accessibilityTextAttributes": [],
+            "totalCount": null,
+            "accessibilityText": "kristynn mwikali"
+        },
+        "lazyLoadedActions": {
+            "_recipeType": "com.linkedin.92ece182782ae4412e712925cd97f9fe",
+            "_type": "com.linkedin.voyager.dash.search.LazyLoadedActions",
+            "entityUrn": "urn:li:fsd_lazyLoadedActions:(urn:li:activity:7292153449469665282,CONTENT,SEARCH_SRP)"
+        },
+        "secondarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "21h \u2022  ",
+            "attributesV2": [
+                {
+                    "start": 6,
+                    "length": 1,
+                    "_type": "com.linkedin.voyager.dash.common.text.TextAttribute",
+                    "detailData": {
+                        "jobPostingName": null,
+                        "hyperlink": null,
+                        "profileFamiliarName": null,
+                        "color": null,
+                        "companyName": null,
+                        "icon": "IC_GLOBE_16DP",
+                        "epoch": null,
+                        "systemImage": null,
+                        "textLink": null,
+                        "listItemStyle": null,
+                        "groupName": null,
+                        "hyperlinkOpenExternally": null,
+                        "listStyle": null,
+                        "profileFullName": null,
+                        "stringFieldReference": null,
+                        "learningCourseName": null,
+                        "profileMention": null,
+                        "style": null,
+                        "schoolName": null,
+                        "hashtag": null
+                    },
+                    "_recipeType": "com.linkedin.b8a09c2c7547138a1c3aebdda8a94e12"
+                }
+            ],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "_type": "com.linkedin.voyager.dash.search.EntityResultViewModel",
+        "entityEmbeddedObject": {
+            "summary": null,
+            "image": null,
+            "headerThumbnail": null,
+            "secondarySubtitle": null,
+            "trackingUrn": null,
+            "_type": "com.linkedin.voyager.dash.search.EntityEmbeddedObject",
+            "primaryActions": [],
+            "showPlayButton": false,
+            "_recipeType": "com.linkedin.bd93318ac5710b71fba68ebb50fd5bfd",
+            "title": null,
+            "renderStyle": "DEFAULT_CONTENT",
+            "primarySubtitle": null,
+            "headerTitle": null
+        },
+        "navigationUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7292153449469665282?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7292153449469665282%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29",
+        "unreadIndicatorDetails": null,
+        "_recipeType": "com.linkedin.cf4b25c18907ea8eafe915c8bfa24109",
+        "target": {
+            "updateV2Urn": "urn:li:fs_updateV2:(urn:li:activity:7292153449469665282,BLENDED_SEARCH_FEED,EMPTY,DEFAULT,false)",
+            "profile": null
+        },
+        "actorTrackingUrn": "urn:li:member:503943743",
+        "navigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/feed/update/urn:li:activity:7292153449469665282?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7292153449469665282%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29"
+        }
+    },
+    {
+        "template": "CONTENT_A",
+        "actorNavigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/in/ACoAACvjExMBLCqBgDBCIdYhvr4ArwisUPESXN4?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACvjExMBLCqBgDBCIdYhvr4ArwisUPESXN4"
+        },
+        "trackingUrn": "urn:li:activity:7291848678741274625",
+        "controlName": null,
+        "interstitialComponent": null,
+        "primaryActions": [],
+        "entityCustomTrackingInfo": null,
+        "title": {
+            "textDirection": "FIRST_STRONG",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "huda ibrahim",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": "View huda ibrahim\u2019s profile"
+        },
+        "overflowActions": [],
+        "searchActionType": null,
+        "actorInsights": [],
+        "insightsResolutionResults": [
+            {
+                "jobPostingInsight": null,
+                "relationshipsInsight": null,
+                "serviceProviderRatingInsight": null,
+                "simpleInsight": null,
+                "jobPostingFooterInsight": null,
+                "socialActivityCountsInsight": null,
+                "labelsInsight": null
+            }
+        ],
+        "badgeIcon": null,
+        "entityUrn": "urn:li:fsd_entityResultViewModel:(urn:li:activity:7291848678741274625,SEARCH_SRP,DEFAULT)",
+        "showAdditionalCluster": false,
+        "ringStatus": null,
+        "primarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Recruiter/ Freelancer / Mass hiring",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "badgeText": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "\u2022 3rd+",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "trackingId": "/Y8v4criQ6Cde+Kg4eMzhg==",
+        "summary": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "*We're Hiring: Call Center Operations Manager \u2013 National Accounts* \ud83d\udce2  \n\nAre you a skilled leader with a passion for optimizing call center operations? Join our team!  \n\n\u2705 *Qualifications:*  \n\ud83d\udd39 Contact Center & Operations Management experience  \n\ud83d\udd39 Strong decision-making & problem-solving abilities  \n\ud83d\udd39 Customer satisfaction & analytical skills  \n\ud83d\udd39 Workforce Management expertise  \n\ud83d\udd39 Excellent communication & interpersonal skills  \n\ud83d\udd39 Bachelor's degree in Business Administration or related field  \n\ud83d\udd39 Previous experience in a similar role in the call center industry  \n\n\ud83d\udce9 For more info, send a WhatsApp message to *01017679607* mentioning *CCM*.  \n\n#Hiring #CallCenterJobs #OperationsManager #CareerOpportunity",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "actorNavigationUrl": "https://www.linkedin.com/in/ACoAACvjExMBLCqBgDBCIdYhvr4ArwisUPESXN4?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACvjExMBLCqBgDBCIdYhvr4ArwisUPESXN4",
+        "addEntityToSearchHistory": false,
+        "image": {
+            "_type": "com.linkedin.voyager.dash.common.image.ImageViewModel",
+            "attributes": [
+                {
+                    "scalingType": null,
+                    "_type": "com.linkedin.voyager.dash.common.image.ImageAttribute",
+                    "detailData": {
+                        "profilePictureWithoutFrame": null,
+                        "profilePictureWithRingStatus": null,
+                        "companyLogo": null,
+                        "icon": null,
+                        "systemImage": null,
+                        "nonEntityGroupLogo": null,
+                        "vectorImage": null,
+                        "nonEntityProfessionalEventLogo": null,
+                        "profilePicture": null,
+                        "imageUrl": null,
+                        "professionalEventLogo": null,
+                        "nonEntityCompanyLogo": null,
+                        "nonEntitySchoolLogo": null,
+                        "groupLogo": null,
+                        "schoolLogo": null,
+                        "ghostImage": null,
+                        "nonEntityProfilePicture": {
+                            "_type": "com.linkedin.voyager.dash.common.image.NonEntityProfilePicture",
+                            "ringStatus": null,
+                            "_recipeType": "com.linkedin.4b009c1d6ea192a94bda77fb9ace3a7d",
+                            "vectorImage": {
+                                "_type": "com.linkedin.common.VectorImage",
+                                "attribution": null,
+                                "_recipeType": "com.linkedin.28db8575bcf1c65bdc4bc15948d50ee9",
+                                "digitalmediaAsset": null,
+                                "artifacts": [
+                                    {
+                                        "width": 100,
+                                        "_type": "com.linkedin.common.VectorArtifact",
+                                        "_recipeType": "com.linkedin.f0f435b4425ee2990eba8f0a4d614944",
+                                        "fileIdentifyingUrlPathSegment": "https://media.licdn.com/dms/image/v2/D4D35AQEGQDWF5HMeYw/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1738584107625?e=1739268000&v=beta&t=v2YOPD9flyKIDYioGcun8t8hm9hUEKmGy1FsZMnfdNw",
+                                        "expiresAt": 1739268000000,
+                                        "height": 100
+                                    }
+                                ],
+                                "rootUrl": ""
+                            },
+                            "profile": {
+                                "_recipeType": "com.linkedin.e0372afc4a18480b00ca7e4906904fd7",
+                                "_type": "com.linkedin.voyager.dash.identity.profile.Profile",
+                                "entityUrn": "urn:li:fsd_profile:ACoAACvjExMBLCqBgDBCIdYhvr4ArwisUPESXN4"
+                            }
+                        }
+                    },
+                    "tintColor": null,
+                    "_recipeType": "com.linkedin.eb94fbb1518f790c4545aafdf571c64e",
+                    "tapTargets": [],
+                    "displayAspectRatio": null
+                }
+            ],
+            "actionTarget": null,
+            "_recipeType": "com.linkedin.fe5b8a3ac5a4a165c17f53b7eae4209b",
+            "accessibilityTextAttributes": [],
+            "totalCount": null,
+            "accessibilityText": "huda ibrahim"
+        },
+        "lazyLoadedActions": {
+            "_recipeType": "com.linkedin.92ece182782ae4412e712925cd97f9fe",
+            "_type": "com.linkedin.voyager.dash.search.LazyLoadedActions",
+            "entityUrn": "urn:li:fsd_lazyLoadedActions:(urn:li:activity:7291848678741274625,CONTENT,SEARCH_SRP)"
+        },
+        "secondarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "1d \u2022  ",
+            "attributesV2": [
+                {
+                    "start": 5,
+                    "length": 1,
+                    "_type": "com.linkedin.voyager.dash.common.text.TextAttribute",
+                    "detailData": {
+                        "jobPostingName": null,
+                        "hyperlink": null,
+                        "profileFamiliarName": null,
+                        "color": null,
+                        "companyName": null,
+                        "icon": "IC_GLOBE_16DP",
+                        "epoch": null,
+                        "systemImage": null,
+                        "textLink": null,
+                        "listItemStyle": null,
+                        "groupName": null,
+                        "hyperlinkOpenExternally": null,
+                        "listStyle": null,
+                        "profileFullName": null,
+                        "stringFieldReference": null,
+                        "learningCourseName": null,
+                        "profileMention": null,
+                        "style": null,
+                        "schoolName": null,
+                        "hashtag": null
+                    },
+                    "_recipeType": "com.linkedin.b8a09c2c7547138a1c3aebdda8a94e12"
+                }
+            ],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "_type": "com.linkedin.voyager.dash.search.EntityResultViewModel",
+        "entityEmbeddedObject": {
+            "summary": null,
+            "image": null,
+            "headerThumbnail": null,
+            "secondarySubtitle": null,
+            "trackingUrn": null,
+            "_type": "com.linkedin.voyager.dash.search.EntityEmbeddedObject",
+            "primaryActions": [],
+            "showPlayButton": false,
+            "_recipeType": "com.linkedin.bd93318ac5710b71fba68ebb50fd5bfd",
+            "title": null,
+            "renderStyle": "DEFAULT_CONTENT",
+            "primarySubtitle": null,
+            "headerTitle": null
+        },
+        "navigationUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7291848678741274625?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7291848678741274625%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29",
+        "unreadIndicatorDetails": null,
+        "_recipeType": "com.linkedin.cf4b25c18907ea8eafe915c8bfa24109",
+        "target": {
+            "updateV2Urn": "urn:li:fs_updateV2:(urn:li:activity:7291848678741274625,BLENDED_SEARCH_FEED,EMPTY,DEFAULT,false)",
+            "profile": null
+        },
+        "actorTrackingUrn": "urn:li:member:736301843",
+        "navigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/feed/update/urn:li:activity:7291848678741274625?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7291848678741274625%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29"
+        }
+    },
+    {
+        "template": "CONTENT_A",
+        "actorNavigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/in/ACoAACvDCHQBxfqm0r6ZuXVhBIzlOs7jErvz1wo?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACvDCHQBxfqm0r6ZuXVhBIzlOs7jErvz1wo"
+        },
+        "trackingUrn": "urn:li:activity:7291771826936934401",
+        "controlName": null,
+        "interstitialComponent": null,
+        "primaryActions": [],
+        "entityCustomTrackingInfo": null,
+        "title": {
+            "textDirection": "FIRST_STRONG",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Amera Adel",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": "View Amera Adel\u2019s profile"
+        },
+        "overflowActions": [],
+        "searchActionType": null,
+        "actorInsights": [],
+        "insightsResolutionResults": [
+            {
+                "jobPostingInsight": null,
+                "relationshipsInsight": null,
+                "serviceProviderRatingInsight": null,
+                "simpleInsight": null,
+                "jobPostingFooterInsight": null,
+                "socialActivityCountsInsight": null,
+                "labelsInsight": null
+            }
+        ],
+        "badgeIcon": null,
+        "entityUrn": "urn:li:fsd_entityResultViewModel:(urn:li:activity:7291771826936934401,SEARCH_SRP,DEFAULT)",
+        "showAdditionalCluster": false,
+        "ringStatus": null,
+        "primarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Senior Talent Acquisition and HRIS Specialist at Atheel CC",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "badgeText": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "\u2022 3rd+",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "trackingId": "eFvS1V8AQPGymNYbAmjJfw==",
+        "summary": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "We're Hiring: Call Center Operations Manager \u2013 National Accounts \ud83d\udce2  \n\nAre you a skilled leader with a passion for optimizing call center operations? Join our team!  \n\n\u2705 Qualifications:  \n\ud83d\udd39 Contact Center & Operations Management experience  \n\ud83d\udd39 Strong decision-making & problem-solving abilities  \n\ud83d\udd39 Customer satisfaction & analytical skills  \n\ud83d\udd39 Workforce Management expertise  \n\ud83d\udd39 Excellent communication & interpersonal skills  \n\ud83d\udd39 Bachelor's degree in Business Administration or related field  \n\ud83d\udd39 Previous experience in a similar role in the call center industry  \n\n\ud83d\udce9 For more info, send a WhatsApp message to 01017679607 mentioning CCM.  \n\n#Hiring #CallCenterJobs #OperationsManager #CareerOpportunity",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "actorNavigationUrl": "https://www.linkedin.com/in/ACoAACvDCHQBxfqm0r6ZuXVhBIzlOs7jErvz1wo?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACvDCHQBxfqm0r6ZuXVhBIzlOs7jErvz1wo",
+        "addEntityToSearchHistory": false,
+        "image": {
+            "_type": "com.linkedin.voyager.dash.common.image.ImageViewModel",
+            "attributes": [
+                {
+                    "scalingType": null,
+                    "_type": "com.linkedin.voyager.dash.common.image.ImageAttribute",
+                    "detailData": {
+                        "profilePictureWithoutFrame": null,
+                        "profilePictureWithRingStatus": null,
+                        "companyLogo": null,
+                        "icon": null,
+                        "systemImage": null,
+                        "nonEntityGroupLogo": null,
+                        "vectorImage": null,
+                        "nonEntityProfessionalEventLogo": null,
+                        "profilePicture": null,
+                        "imageUrl": null,
+                        "professionalEventLogo": null,
+                        "nonEntityCompanyLogo": null,
+                        "nonEntitySchoolLogo": null,
+                        "groupLogo": null,
+                        "schoolLogo": null,
+                        "ghostImage": null,
+                        "nonEntityProfilePicture": {
+                            "_type": "com.linkedin.voyager.dash.common.image.NonEntityProfilePicture",
+                            "ringStatus": null,
+                            "_recipeType": "com.linkedin.4b009c1d6ea192a94bda77fb9ace3a7d",
+                            "profile": {
+                                "_recipeType": "com.linkedin.e0372afc4a18480b00ca7e4906904fd7",
+                                "_type": "com.linkedin.voyager.dash.identity.profile.Profile",
+                                "entityUrn": "urn:li:fsd_profile:ACoAACvDCHQBxfqm0r6ZuXVhBIzlOs7jErvz1wo"
+                            },
+                            "vectorImage": null
+                        }
+                    },
+                    "tintColor": null,
+                    "_recipeType": "com.linkedin.eb94fbb1518f790c4545aafdf571c64e",
+                    "tapTargets": [],
+                    "displayAspectRatio": null
+                }
+            ],
+            "actionTarget": null,
+            "_recipeType": "com.linkedin.fe5b8a3ac5a4a165c17f53b7eae4209b",
+            "accessibilityTextAttributes": [],
+            "totalCount": null,
+            "accessibilityText": "Amera Adel"
+        },
+        "lazyLoadedActions": {
+            "_recipeType": "com.linkedin.92ece182782ae4412e712925cd97f9fe",
+            "_type": "com.linkedin.voyager.dash.search.LazyLoadedActions",
+            "entityUrn": "urn:li:fsd_lazyLoadedActions:(urn:li:activity:7291771826936934401,CONTENT,SEARCH_SRP)"
+        },
+        "secondarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "1d \u2022  ",
+            "attributesV2": [
+                {
+                    "start": 5,
+                    "length": 1,
+                    "_type": "com.linkedin.voyager.dash.common.text.TextAttribute",
+                    "detailData": {
+                        "jobPostingName": null,
+                        "hyperlink": null,
+                        "profileFamiliarName": null,
+                        "color": null,
+                        "companyName": null,
+                        "icon": "IC_GLOBE_16DP",
+                        "epoch": null,
+                        "systemImage": null,
+                        "textLink": null,
+                        "listItemStyle": null,
+                        "groupName": null,
+                        "hyperlinkOpenExternally": null,
+                        "listStyle": null,
+                        "profileFullName": null,
+                        "stringFieldReference": null,
+                        "learningCourseName": null,
+                        "profileMention": null,
+                        "style": null,
+                        "schoolName": null,
+                        "hashtag": null
+                    },
+                    "_recipeType": "com.linkedin.b8a09c2c7547138a1c3aebdda8a94e12"
+                }
+            ],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "_type": "com.linkedin.voyager.dash.search.EntityResultViewModel",
+        "entityEmbeddedObject": {
+            "summary": null,
+            "image": null,
+            "headerThumbnail": null,
+            "secondarySubtitle": null,
+            "trackingUrn": null,
+            "_type": "com.linkedin.voyager.dash.search.EntityEmbeddedObject",
+            "primaryActions": [],
+            "showPlayButton": false,
+            "_recipeType": "com.linkedin.bd93318ac5710b71fba68ebb50fd5bfd",
+            "title": null,
+            "renderStyle": "DEFAULT_CONTENT",
+            "primarySubtitle": null,
+            "headerTitle": null
+        },
+        "navigationUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7291771826936934401?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7291771826936934401%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29",
+        "unreadIndicatorDetails": null,
+        "_recipeType": "com.linkedin.cf4b25c18907ea8eafe915c8bfa24109",
+        "target": {
+            "updateV2Urn": "urn:li:fs_updateV2:(urn:li:activity:7291771826936934401,BLENDED_SEARCH_FEED,EMPTY,DEFAULT,false)",
+            "profile": null
+        },
+        "actorTrackingUrn": "urn:li:member:734201972",
+        "navigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/feed/update/urn:li:activity:7291771826936934401?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7291771826936934401%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29"
+        }
+    },
+    {
+        "template": "CONTENT_B",
+        "actorNavigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/in/ACoAAAtxSzkBW6B7DKfpjZeHzkOKigng_GR_QVg?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAtxSzkBW6B7DKfpjZeHzkOKigng_GR_QVg"
+        },
+        "trackingUrn": "urn:li:activity:7289294490891177984",
+        "controlName": null,
+        "interstitialComponent": null,
+        "primaryActions": [],
+        "entityCustomTrackingInfo": null,
+        "title": {
+            "textDirection": "FIRST_STRONG",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Fatima Baballa, PMP\u00ae",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": "View Fatima Baballa, PMP\u00ae\u2019s profile"
+        },
+        "overflowActions": [],
+        "searchActionType": null,
+        "actorInsights": [],
+        "insightsResolutionResults": [
+            {
+                "jobPostingInsight": null,
+                "relationshipsInsight": null,
+                "serviceProviderRatingInsight": null,
+                "simpleInsight": null,
+                "jobPostingFooterInsight": null,
+                "socialActivityCountsInsight": null,
+                "labelsInsight": null
+            }
+        ],
+        "badgeIcon": null,
+        "entityUrn": "urn:li:fsd_entityResultViewModel:(urn:li:activity:7289294490891177984,SEARCH_SRP,DEFAULT)",
+        "showAdditionalCluster": false,
+        "ringStatus": null,
+        "primarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Digital Services & Migration Manager specialized in: Customer Experience | Digital Transformation | Process Excellence |",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "badgeText": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "\u2022 3rd+",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "trackingId": "JWAsDMIXR2GVM7j97oD6eQ==",
+        "summary": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "\u0625\u0630\u0646\u060c \u0644\u0645\u0627\u0630\u0627 \u0628\u062f\u0623\u0646\u0627 \u0646\u0637\u0644\u0642 \u0639\u0644\u064a\u0647 \u0627\u0633\u0645 \u0645\u0631\u0643\u0632 \u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0628\u062f\u0644\u0627\u064b \u0645\u0646 \u0645\u0631\u0643\u0632 \u0627\u0644\u0627\u062a\u0635\u0627\u0644 \ud83e\udd14\u061f\n\u0644\u0644\u0625\u062c\u0627\u0628\u0629 \u0639\u0644\u0649 \u0647\u0630\u0627 \u0627\u0644\u0633\u0624\u0627\u0644\u060c \u0646\u062d\u062a\u0627\u062c \u0625\u0644\u0649 \u0625\u0644\u0642\u0627\u0621 \u0646\u0638\u0631\u0629 \u0639\u0644\u0649 \u062a\u0627\u0631\u064a\u062e \u0645\u0631\u0627\u0643\u0632 \u0627\u0644\u0627\u062a\u0635\u0627\u0644 \u0648\u0641\u0647\u0645 \u062a\u0637\u0648\u0631\u0647\u0627 \n\nSo, why did we start calling it Contact Centre instead of Call Centre \ud83e\udd14?\nTo answer this question, we need to look at the history of Call Centres and understand their evolution.\n\n\n\n#CallCenter #ContactCenter #DigitalTransformation #IVR #Omnichannel #CustomerExperience",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "actorNavigationUrl": "https://www.linkedin.com/in/ACoAAAtxSzkBW6B7DKfpjZeHzkOKigng_GR_QVg?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAtxSzkBW6B7DKfpjZeHzkOKigng_GR_QVg",
+        "addEntityToSearchHistory": false,
+        "image": {
+            "_type": "com.linkedin.voyager.dash.common.image.ImageViewModel",
+            "attributes": [
+                {
+                    "scalingType": null,
+                    "_type": "com.linkedin.voyager.dash.common.image.ImageAttribute",
+                    "detailData": {
+                        "profilePictureWithoutFrame": null,
+                        "profilePictureWithRingStatus": null,
+                        "companyLogo": null,
+                        "icon": null,
+                        "systemImage": null,
+                        "nonEntityGroupLogo": null,
+                        "vectorImage": null,
+                        "nonEntityProfessionalEventLogo": null,
+                        "profilePicture": null,
+                        "imageUrl": null,
+                        "professionalEventLogo": null,
+                        "nonEntityCompanyLogo": null,
+                        "nonEntitySchoolLogo": null,
+                        "groupLogo": null,
+                        "schoolLogo": null,
+                        "ghostImage": null,
+                        "nonEntityProfilePicture": {
+                            "_type": "com.linkedin.voyager.dash.common.image.NonEntityProfilePicture",
+                            "ringStatus": null,
+                            "_recipeType": "com.linkedin.4b009c1d6ea192a94bda77fb9ace3a7d",
+                            "vectorImage": {
+                                "_type": "com.linkedin.common.VectorImage",
+                                "attribution": null,
+                                "_recipeType": "com.linkedin.28db8575bcf1c65bdc4bc15948d50ee9",
+                                "digitalmediaAsset": null,
+                                "artifacts": [
+                                    {
+                                        "width": 100,
+                                        "_type": "com.linkedin.common.VectorArtifact",
+                                        "_recipeType": "com.linkedin.f0f435b4425ee2990eba8f0a4d614944",
+                                        "fileIdentifyingUrlPathSegment": "https://media.licdn.com/dms/image/v2/D4E35AQEsQFrXUmXLow/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1737991423314?e=1739268000&v=beta&t=BQFkMZJN4qK5kx932-1m-zPrRxVoDiGhFKp7GMLUChA",
+                                        "expiresAt": 1739268000000,
+                                        "height": 100
+                                    }
+                                ],
+                                "rootUrl": ""
+                            },
+                            "profile": {
+                                "_recipeType": "com.linkedin.e0372afc4a18480b00ca7e4906904fd7",
+                                "_type": "com.linkedin.voyager.dash.identity.profile.Profile",
+                                "entityUrn": "urn:li:fsd_profile:ACoAAAtxSzkBW6B7DKfpjZeHzkOKigng_GR_QVg"
+                            }
+                        }
+                    },
+                    "tintColor": null,
+                    "_recipeType": "com.linkedin.eb94fbb1518f790c4545aafdf571c64e",
+                    "tapTargets": [],
+                    "displayAspectRatio": null
+                }
+            ],
+            "actionTarget": null,
+            "_recipeType": "com.linkedin.fe5b8a3ac5a4a165c17f53b7eae4209b",
+            "accessibilityTextAttributes": [],
+            "totalCount": null,
+            "accessibilityText": "Fatima Baballa, PMP\u00ae"
+        },
+        "lazyLoadedActions": {
+            "_recipeType": "com.linkedin.92ece182782ae4412e712925cd97f9fe",
+            "_type": "com.linkedin.voyager.dash.search.LazyLoadedActions",
+            "entityUrn": "urn:li:fsd_lazyLoadedActions:(urn:li:activity:7289294490891177984,CONTENT,SEARCH_SRP)"
+        },
+        "secondarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "1w \u2022  ",
+            "attributesV2": [
+                {
+                    "start": 5,
+                    "length": 1,
+                    "_type": "com.linkedin.voyager.dash.common.text.TextAttribute",
+                    "detailData": {
+                        "jobPostingName": null,
+                        "hyperlink": null,
+                        "profileFamiliarName": null,
+                        "color": null,
+                        "companyName": null,
+                        "icon": "IC_GLOBE_16DP",
+                        "epoch": null,
+                        "systemImage": null,
+                        "textLink": null,
+                        "listItemStyle": null,
+                        "groupName": null,
+                        "hyperlinkOpenExternally": null,
+                        "listStyle": null,
+                        "profileFullName": null,
+                        "stringFieldReference": null,
+                        "learningCourseName": null,
+                        "profileMention": null,
+                        "style": null,
+                        "schoolName": null,
+                        "hashtag": null
+                    },
+                    "_recipeType": "com.linkedin.b8a09c2c7547138a1c3aebdda8a94e12"
+                }
+            ],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "_type": "com.linkedin.voyager.dash.search.EntityResultViewModel",
+        "entityEmbeddedObject": {
+            "summary": null,
+            "image": {
+                "_type": "com.linkedin.voyager.dash.common.image.ImageViewModel",
+                "attributes": [
+                    {
+                        "scalingType": "ASPECT_FILL",
+                        "_type": "com.linkedin.voyager.dash.common.image.ImageAttribute",
+                        "detailData": {
+                            "profilePictureWithoutFrame": null,
+                            "profilePictureWithRingStatus": null,
+                            "companyLogo": null,
+                            "icon": null,
+                            "systemImage": null,
+                            "nonEntityGroupLogo": null,
+                            "vectorImage": null,
+                            "nonEntityProfessionalEventLogo": null,
+                            "profilePicture": null,
+                            "imageUrl": {
+                                "_type": "com.linkedin.voyager.dash.common.ImageUrl",
+                                "originalImageUrl": null,
+                                "originalHeight": null,
+                                "_recipeType": "com.linkedin.f2e92768122faa3236a3da8d98ae1bad",
+                                "url": "https://media.licdn.com/dms/image/v2/D4D1FAQEhlZWmpJMrDw/feedshare-document-cover-images_480/B4DZSjF.OFHIBM-/0/1737903047242?e=1739268000&v=beta&t=PEh-wBCrU6nt_AiqbPWOmPjV4vVJNkQWeI1k5dM25rc",
+                                "originalWidth": null
+                            },
+                            "professionalEventLogo": null,
+                            "nonEntityCompanyLogo": null,
+                            "nonEntitySchoolLogo": null,
+                            "groupLogo": null,
+                            "schoolLogo": null,
+                            "ghostImage": null,
+                            "nonEntityProfilePicture": null
+                        },
+                        "tintColor": null,
+                        "_recipeType": "com.linkedin.eb94fbb1518f790c4545aafdf571c64e",
+                        "tapTargets": [],
+                        "displayAspectRatio": null
+                    }
+                ],
+                "actionTarget": null,
+                "_recipeType": "com.linkedin.fe5b8a3ac5a4a165c17f53b7eae4209b",
+                "accessibilityTextAttributes": [],
+                "totalCount": null,
+                "accessibilityText": "Image preview"
+            },
+            "headerThumbnail": null,
+            "secondarySubtitle": null,
+            "trackingUrn": null,
+            "_type": "com.linkedin.voyager.dash.search.EntityEmbeddedObject",
+            "primaryActions": [],
+            "showPlayButton": false,
+            "title": {
+                "textDirection": "USER_LOCALE",
+                "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+                "text": "Call Center to Contact Center part 1",
+                "attributesV2": [],
+                "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+                "accessibilityTextAttributesV2": [],
+                "accessibilityText": null
+            },
+            "_recipeType": "com.linkedin.bd93318ac5710b71fba68ebb50fd5bfd",
+            "renderStyle": "DEFAULT_CONTENT",
+            "primarySubtitle": null,
+            "headerTitle": null
+        },
+        "navigationUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7289294490891177984?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7289294490891177984%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29",
+        "unreadIndicatorDetails": null,
+        "_recipeType": "com.linkedin.cf4b25c18907ea8eafe915c8bfa24109",
+        "target": {
+            "updateV2Urn": "urn:li:fs_updateV2:(urn:li:activity:7289294490891177984,BLENDED_SEARCH_FEED,EMPTY,DEFAULT,false)",
+            "profile": null
+        },
+        "actorTrackingUrn": "urn:li:member:191974201",
+        "navigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/feed/update/urn:li:activity:7289294490891177984?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7289294490891177984%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29"
+        }
+    },
+    {
+        "template": "CONTENT_B",
+        "actorNavigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/in/ACoAAC9hTLUBxBqHum9WEy1i62ItkhShOHXgEXY?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAC9hTLUBxBqHum9WEy1i62ItkhShOHXgEXY"
+        },
+        "trackingUrn": "urn:li:activity:7290291188882903042",
+        "controlName": null,
+        "interstitialComponent": null,
+        "primaryActions": [],
+        "entityCustomTrackingInfo": null,
+        "title": {
+            "textDirection": "FIRST_STRONG",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Ugonna Ezihe",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": "View Ugonna Ezihe\u2019s profile"
+        },
+        "overflowActions": [],
+        "searchActionType": null,
+        "actorInsights": [],
+        "insightsResolutionResults": [
+            {
+                "jobPostingInsight": null,
+                "relationshipsInsight": null,
+                "serviceProviderRatingInsight": null,
+                "simpleInsight": null,
+                "jobPostingFooterInsight": null,
+                "socialActivityCountsInsight": null,
+                "labelsInsight": null
+            }
+        ],
+        "badgeIcon": null,
+        "entityUrn": "urn:li:fsd_entityResultViewModel:(urn:li:activity:7290291188882903042,SEARCH_SRP,DEFAULT)",
+        "showAdditionalCluster": false,
+        "ringStatus": null,
+        "primarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Data Analyst || Customer Success Specialist || Fintech || Virtual assistant || E-commerce.",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "badgeText": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "\u2022 3rd+",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "trackingId": "w2sZt77uS3e06XvKTLUiwA==",
+        "summary": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "This was a call center case study project that I worked on, analyzing key metrics such as customer interactions, agent performance, and service efficiency to generate actionable insights.",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "actorNavigationUrl": "https://www.linkedin.com/in/ACoAAC9hTLUBxBqHum9WEy1i62ItkhShOHXgEXY?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAC9hTLUBxBqHum9WEy1i62ItkhShOHXgEXY",
+        "addEntityToSearchHistory": false,
+        "image": {
+            "_type": "com.linkedin.voyager.dash.common.image.ImageViewModel",
+            "attributes": [
+                {
+                    "scalingType": null,
+                    "_type": "com.linkedin.voyager.dash.common.image.ImageAttribute",
+                    "detailData": {
+                        "profilePictureWithoutFrame": null,
+                        "profilePictureWithRingStatus": null,
+                        "companyLogo": null,
+                        "icon": null,
+                        "systemImage": null,
+                        "nonEntityGroupLogo": null,
+                        "vectorImage": null,
+                        "nonEntityProfessionalEventLogo": null,
+                        "profilePicture": null,
+                        "imageUrl": null,
+                        "professionalEventLogo": null,
+                        "nonEntityCompanyLogo": null,
+                        "nonEntitySchoolLogo": null,
+                        "groupLogo": null,
+                        "schoolLogo": null,
+                        "ghostImage": null,
+                        "nonEntityProfilePicture": {
+                            "_type": "com.linkedin.voyager.dash.common.image.NonEntityProfilePicture",
+                            "ringStatus": null,
+                            "_recipeType": "com.linkedin.4b009c1d6ea192a94bda77fb9ace3a7d",
+                            "vectorImage": {
+                                "_type": "com.linkedin.common.VectorImage",
+                                "attribution": null,
+                                "_recipeType": "com.linkedin.28db8575bcf1c65bdc4bc15948d50ee9",
+                                "digitalmediaAsset": null,
+                                "artifacts": [
+                                    {
+                                        "width": 100,
+                                        "_type": "com.linkedin.common.VectorArtifact",
+                                        "_recipeType": "com.linkedin.f0f435b4425ee2990eba8f0a4d614944",
+                                        "fileIdentifyingUrlPathSegment": "https://media.licdn.com/dms/image/v2/C4D03AQFFQsXqhF9KMw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1657182119800?e=1744243200&v=beta&t=FfKlDfFs-Z0OhGXUaIH9Q3k0GGkauzqJnL9K35blEmQ",
+                                        "expiresAt": 1744243200000,
+                                        "height": 100
+                                    }
+                                ],
+                                "rootUrl": ""
+                            },
+                            "profile": {
+                                "_recipeType": "com.linkedin.e0372afc4a18480b00ca7e4906904fd7",
+                                "_type": "com.linkedin.voyager.dash.identity.profile.Profile",
+                                "entityUrn": "urn:li:fsd_profile:ACoAAC9hTLUBxBqHum9WEy1i62ItkhShOHXgEXY"
+                            }
+                        }
+                    },
+                    "tintColor": null,
+                    "_recipeType": "com.linkedin.eb94fbb1518f790c4545aafdf571c64e",
+                    "tapTargets": [],
+                    "displayAspectRatio": null
+                }
+            ],
+            "actionTarget": null,
+            "_recipeType": "com.linkedin.fe5b8a3ac5a4a165c17f53b7eae4209b",
+            "accessibilityTextAttributes": [],
+            "totalCount": null,
+            "accessibilityText": "Ugonna Ezihe"
+        },
+        "lazyLoadedActions": {
+            "_recipeType": "com.linkedin.92ece182782ae4412e712925cd97f9fe",
+            "_type": "com.linkedin.voyager.dash.search.LazyLoadedActions",
+            "entityUrn": "urn:li:fsd_lazyLoadedActions:(urn:li:activity:7290291188882903042,CONTENT,SEARCH_SRP)"
+        },
+        "secondarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "6d \u2022  ",
+            "attributesV2": [
+                {
+                    "start": 5,
+                    "length": 1,
+                    "_type": "com.linkedin.voyager.dash.common.text.TextAttribute",
+                    "detailData": {
+                        "jobPostingName": null,
+                        "hyperlink": null,
+                        "profileFamiliarName": null,
+                        "color": null,
+                        "companyName": null,
+                        "icon": "IC_GLOBE_16DP",
+                        "epoch": null,
+                        "systemImage": null,
+                        "textLink": null,
+                        "listItemStyle": null,
+                        "groupName": null,
+                        "hyperlinkOpenExternally": null,
+                        "listStyle": null,
+                        "profileFullName": null,
+                        "stringFieldReference": null,
+                        "learningCourseName": null,
+                        "profileMention": null,
+                        "style": null,
+                        "schoolName": null,
+                        "hashtag": null
+                    },
+                    "_recipeType": "com.linkedin.b8a09c2c7547138a1c3aebdda8a94e12"
+                }
+            ],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "_type": "com.linkedin.voyager.dash.search.EntityResultViewModel",
+        "entityEmbeddedObject": {
+            "summary": null,
+            "image": {
+                "_type": "com.linkedin.voyager.dash.common.image.ImageViewModel",
+                "attributes": [
+                    {
+                        "scalingType": "ASPECT_FILL",
+                        "_type": "com.linkedin.voyager.dash.common.image.ImageAttribute",
+                        "detailData": {
+                            "profilePictureWithoutFrame": null,
+                            "profilePictureWithRingStatus": null,
+                            "companyLogo": null,
+                            "icon": null,
+                            "systemImage": null,
+                            "nonEntityGroupLogo": null,
+                            "vectorImage": null,
+                            "nonEntityProfessionalEventLogo": null,
+                            "profilePicture": null,
+                            "imageUrl": {
+                                "_type": "com.linkedin.voyager.dash.common.ImageUrl",
+                                "originalImageUrl": null,
+                                "originalHeight": null,
+                                "_recipeType": "com.linkedin.f2e92768122faa3236a3da8d98ae1bad",
+                                "url": "https://media.licdn.com/dms/image/v2/D4D1FAQHPfJls3xihjg/feedshare-document-cover-images_480/B4DZSxRFNvHkBI-/0/1738140834954?e=1739268000&v=beta&t=NFbgBeyVfk0I2m7X4upzulzn6xTN0z3a5kTY0jhI9L0",
+                                "originalWidth": null
+                            },
+                            "professionalEventLogo": null,
+                            "nonEntityCompanyLogo": null,
+                            "nonEntitySchoolLogo": null,
+                            "groupLogo": null,
+                            "schoolLogo": null,
+                            "ghostImage": null,
+                            "nonEntityProfilePicture": null
+                        },
+                        "tintColor": null,
+                        "_recipeType": "com.linkedin.eb94fbb1518f790c4545aafdf571c64e",
+                        "tapTargets": [],
+                        "displayAspectRatio": null
+                    }
+                ],
+                "actionTarget": null,
+                "_recipeType": "com.linkedin.fe5b8a3ac5a4a165c17f53b7eae4209b",
+                "accessibilityTextAttributes": [],
+                "totalCount": null,
+                "accessibilityText": "Image preview"
+            },
+            "headerThumbnail": null,
+            "secondarySubtitle": null,
+            "trackingUrn": null,
+            "_type": "com.linkedin.voyager.dash.search.EntityEmbeddedObject",
+            "primaryActions": [],
+            "showPlayButton": false,
+            "title": {
+                "textDirection": "USER_LOCALE",
+                "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+                "text": "Call center Project",
+                "attributesV2": [],
+                "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+                "accessibilityTextAttributesV2": [],
+                "accessibilityText": null
+            },
+            "_recipeType": "com.linkedin.bd93318ac5710b71fba68ebb50fd5bfd",
+            "renderStyle": "DEFAULT_CONTENT",
+            "primarySubtitle": null,
+            "headerTitle": null
+        },
+        "navigationUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7290291188882903042?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7290291188882903042%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29",
+        "unreadIndicatorDetails": null,
+        "_recipeType": "com.linkedin.cf4b25c18907ea8eafe915c8bfa24109",
+        "target": {
+            "updateV2Urn": "urn:li:fs_updateV2:(urn:li:activity:7290291188882903042,BLENDED_SEARCH_FEED,EMPTY,DEFAULT,false)",
+            "profile": null
+        },
+        "actorTrackingUrn": "urn:li:member:794905781",
+        "navigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/feed/update/urn:li:activity:7290291188882903042?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7290291188882903042%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29"
+        }
+    },
+    {
+        "template": "CONTENT_A",
+        "actorNavigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/in/ACoAACkKMdYBLFFxytoL87nYzOzfCsXuV0snxH0?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACkKMdYBLFFxytoL87nYzOzfCsXuV0snxH0"
+        },
+        "trackingUrn": "urn:li:activity:7288587591233236993",
+        "controlName": null,
+        "interstitialComponent": null,
+        "primaryActions": [],
+        "entityCustomTrackingInfo": null,
+        "title": {
+            "textDirection": "FIRST_STRONG",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Nargiza Mirzayeva",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": "View Nargiza Mirzayeva\u2019s profile"
+        },
+        "overflowActions": [],
+        "searchActionType": null,
+        "actorInsights": [],
+        "insightsResolutionResults": [
+            {
+                "jobPostingInsight": null,
+                "relationshipsInsight": null,
+                "serviceProviderRatingInsight": null,
+                "simpleInsight": null,
+                "jobPostingFooterInsight": null,
+                "socialActivityCountsInsight": null,
+                "labelsInsight": null
+            }
+        ],
+        "badgeIcon": null,
+        "entityUrn": "urn:li:fsd_entityResultViewModel:(urn:li:activity:7288587591233236993,SEARCH_SRP,DEFAULT)",
+        "showAdditionalCluster": false,
+        "ringStatus": null,
+        "primarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Senior Beaty Advisor Apparel Group",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "badgeText": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "\u2022 3rd+",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "trackingId": "6wElefVMRPG3H7h4H7dBZw==",
+        "summary": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "Dubai Islamic Bank I have never seen such horrible call center and customer service and even your WhatsApp chat is a different level of a comedy show\n\nyou can't reach out to anyone to fix anything and if you visit a branch you wait forever and at the end they say call call center who never take the call because u ain't a client \n\nwhat a JOKEEEEEEE , ",
+            "attributesV2": [],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "actorNavigationUrl": "https://www.linkedin.com/in/ACoAACkKMdYBLFFxytoL87nYzOzfCsXuV0snxH0?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACkKMdYBLFFxytoL87nYzOzfCsXuV0snxH0",
+        "addEntityToSearchHistory": false,
+        "image": {
+            "_type": "com.linkedin.voyager.dash.common.image.ImageViewModel",
+            "attributes": [
+                {
+                    "scalingType": null,
+                    "_type": "com.linkedin.voyager.dash.common.image.ImageAttribute",
+                    "detailData": {
+                        "profilePictureWithoutFrame": null,
+                        "profilePictureWithRingStatus": null,
+                        "companyLogo": null,
+                        "icon": null,
+                        "systemImage": null,
+                        "nonEntityGroupLogo": null,
+                        "vectorImage": null,
+                        "nonEntityProfessionalEventLogo": null,
+                        "profilePicture": null,
+                        "imageUrl": null,
+                        "professionalEventLogo": null,
+                        "nonEntityCompanyLogo": null,
+                        "nonEntitySchoolLogo": null,
+                        "groupLogo": null,
+                        "schoolLogo": null,
+                        "ghostImage": null,
+                        "nonEntityProfilePicture": {
+                            "_type": "com.linkedin.voyager.dash.common.image.NonEntityProfilePicture",
+                            "ringStatus": null,
+                            "_recipeType": "com.linkedin.4b009c1d6ea192a94bda77fb9ace3a7d",
+                            "vectorImage": {
+                                "_type": "com.linkedin.common.VectorImage",
+                                "attribution": null,
+                                "_recipeType": "com.linkedin.28db8575bcf1c65bdc4bc15948d50ee9",
+                                "digitalmediaAsset": null,
+                                "artifacts": [
+                                    {
+                                        "width": 100,
+                                        "_type": "com.linkedin.common.VectorArtifact",
+                                        "_recipeType": "com.linkedin.f0f435b4425ee2990eba8f0a4d614944",
+                                        "fileIdentifyingUrlPathSegment": "https://media.licdn.com/dms/image/v2/D4D35AQEz_cGMcbDwPg/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1661514063418?e=1739268000&v=beta&t=5eOC7HMJUAZURUGINUfJKh9jWyW2oPK_mxyNDtYbIs0",
+                                        "expiresAt": 1739268000000,
+                                        "height": 100
+                                    }
+                                ],
+                                "rootUrl": ""
+                            },
+                            "profile": {
+                                "_recipeType": "com.linkedin.e0372afc4a18480b00ca7e4906904fd7",
+                                "_type": "com.linkedin.voyager.dash.identity.profile.Profile",
+                                "entityUrn": "urn:li:fsd_profile:ACoAACkKMdYBLFFxytoL87nYzOzfCsXuV0snxH0"
+                            }
+                        }
+                    },
+                    "tintColor": null,
+                    "_recipeType": "com.linkedin.eb94fbb1518f790c4545aafdf571c64e",
+                    "tapTargets": [],
+                    "displayAspectRatio": null
+                }
+            ],
+            "actionTarget": null,
+            "_recipeType": "com.linkedin.fe5b8a3ac5a4a165c17f53b7eae4209b",
+            "accessibilityTextAttributes": [],
+            "totalCount": null,
+            "accessibilityText": "Nargiza Mirzayeva"
+        },
+        "lazyLoadedActions": {
+            "_recipeType": "com.linkedin.92ece182782ae4412e712925cd97f9fe",
+            "_type": "com.linkedin.voyager.dash.search.LazyLoadedActions",
+            "entityUrn": "urn:li:fsd_lazyLoadedActions:(urn:li:activity:7288587591233236993,CONTENT,SEARCH_SRP)"
+        },
+        "secondarySubtitle": {
+            "textDirection": "USER_LOCALE",
+            "_type": "com.linkedin.voyager.dash.common.text.TextViewModel",
+            "text": "1w \u2022  ",
+            "attributesV2": [
+                {
+                    "start": 5,
+                    "length": 1,
+                    "_type": "com.linkedin.voyager.dash.common.text.TextAttribute",
+                    "detailData": {
+                        "jobPostingName": null,
+                        "hyperlink": null,
+                        "profileFamiliarName": null,
+                        "color": null,
+                        "companyName": null,
+                        "icon": "IC_GLOBE_16DP",
+                        "epoch": null,
+                        "systemImage": null,
+                        "textLink": null,
+                        "listItemStyle": null,
+                        "groupName": null,
+                        "hyperlinkOpenExternally": null,
+                        "listStyle": null,
+                        "profileFullName": null,
+                        "stringFieldReference": null,
+                        "learningCourseName": null,
+                        "profileMention": null,
+                        "style": null,
+                        "schoolName": null,
+                        "hashtag": null
+                    },
+                    "_recipeType": "com.linkedin.b8a09c2c7547138a1c3aebdda8a94e12"
+                }
+            ],
+            "_recipeType": "com.linkedin.6a224ca38654a84754a1eb3e97c0f846",
+            "accessibilityTextAttributesV2": [],
+            "accessibilityText": null
+        },
+        "_type": "com.linkedin.voyager.dash.search.EntityResultViewModel",
+        "entityEmbeddedObject": {
+            "summary": null,
+            "image": null,
+            "headerThumbnail": null,
+            "secondarySubtitle": null,
+            "trackingUrn": null,
+            "_type": "com.linkedin.voyager.dash.search.EntityEmbeddedObject",
+            "primaryActions": [],
+            "showPlayButton": false,
+            "_recipeType": "com.linkedin.bd93318ac5710b71fba68ebb50fd5bfd",
+            "title": null,
+            "renderStyle": "DEFAULT_CONTENT",
+            "primarySubtitle": null,
+            "headerTitle": null
+        },
+        "navigationUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7288587591233236993?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7288587591233236993%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29",
+        "unreadIndicatorDetails": null,
+        "_recipeType": "com.linkedin.cf4b25c18907ea8eafe915c8bfa24109",
+        "target": {
+            "updateV2Urn": "urn:li:fs_updateV2:(urn:li:activity:7288587591233236993,BLENDED_SEARCH_FEED,EMPTY,DEFAULT,false)",
+            "profile": null
+        },
+        "actorTrackingUrn": "urn:li:member:688533974",
+        "navigationContext": {
+            "_type": "com.linkedin.voyager.dash.search.NavigationContext",
+            "openExternally": false,
+            "_recipeType": "com.linkedin.55ee9afd4182671fe7e271f615659525",
+            "url": "https://www.linkedin.com/feed/update/urn:li:activity:7288587591233236993?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7288587591233236993%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29"
+        }
+    }
+]

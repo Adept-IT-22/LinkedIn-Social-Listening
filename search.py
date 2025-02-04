@@ -1,36 +1,84 @@
 import os
+import re
 import json
 from linkedin_api import Linkedin
 
+#Create client
 LINKEDIN_PASSWORD = os.environ.get("LINKEDIN_PASSWORD")
 api = Linkedin('markothengo@gmail.com', LINKEDIN_PASSWORD)
 
-icp = {
-    
-}
+#Ideal Customer Profile
+icp = ["founder", "ceo", "leader", "manager", "specialist"]
 
+#Search Keywords
+keywords = ["call center"]
+page_size = 10
+max_pages = 5
+
+#Search Paramters
 params = {
     "start": 0,
     "origin": "GLOBAL_SEARCH_HEADER",
-    "keywords": "call center",
-        "filters": "List((key:resultType,value:List(CONTENT)),(key:contentType,value:List(STATUS_UPDATE)))"
+    "keywords": keywords,
+    "filters": "List((key:resultType,value:List(CONTENT)),(key:contentType,value:List(STATUS_UPDATE)))"
 }
 
-search = api.search(params, limit = 50)
-with open("matokeo.txt", "w", encoding="utf-8") as file:
-    search = json.dumps(search, indent=4)
-    file.write(search)
-print("Done!")
-# summary_search = list(map(lambda x: (x["summary"], x["title"]), search))
+#Search for posts based on keywords
+def search_posts(params):
+    search = api.search(params, limit = 10)
+    return search
 
-# result_list = []
-# for item in summary_search:
-#     single_post = list(mini_item["text"] for mini_item in item if mini_item is not None)
-#     result_list.append(single_post)
+#Get authors
+def get_authors():
+    authors = set([])
+    start_offset = 0 #where search should start from
 
-# for each_list in result_list:
-#     with open("results.txt", "w", encoding="utf-8") as file:
-#         each_list = str(each_list)
-#         file.write(each_list)
-#     print("Done!")
+    #run this loop max_pages(5) number of times
+    for _ in range(max_pages):
+        #set start parameter to start_offset and run search_posts
+        params["start"] = start_offset 
+        posts = search_posts(params)
 
+        #if posts returns nothing stop.
+        if not posts:
+            break
+
+        #else get name & job of each author
+        for post in posts:
+            name = post["title"]["text"]
+            job = post["primarySubtitle"]["text"]
+            person = name + " - " + job 
+            authors.add(person)
+        start_offset += page_size
+    
+    return list(authors)
+
+#Match with ICPs
+def icp_role_match():
+    qualified_authors = []
+
+    #get all authors
+    all_authors = get_authors()
+
+    #for each author split their name and job
+    for author in all_authors:
+        parts = author.split(" - ")
+
+        #if author doesn't have name/job go to next author
+        if len(parts) < 2:
+            continue
+        
+        #otherwise split name & job
+        name = parts[0].strip()
+        job = parts[1].strip()
+
+        #check if role in icp is in author's job
+        for role in icp:
+            if re.search(r"\b" + re.escape(role) + r"\b", job, flags=re.IGNORECASE):
+                qualified_authors.append(name) #add author to qualified authors list
+                break #stop checking once match is found
+
+    print(qualified_authors)
+    return qualified_authors
+
+icp_role_match()
