@@ -29,7 +29,7 @@ def search_posts(params):
     return search
 
 #Get authors
-def get_authors():
+def get_authors()->list:
     authors = set([])
     start_offset = 0 #where search should start from
 
@@ -47,14 +47,31 @@ def get_authors():
         for post in posts:
             name = post["title"]["text"]
             job = post["primarySubtitle"]["text"]
-            person = name + " - " + job 
+            company = post["actorNavigationUrl"]
+            company_urn = re.search(r"(?<=/in/)[^?]+", company)
+            if company_urn:
+                shortened_company_urn = str(company_urn.group(0))
+            company_name = find_company_name(shortened_company_urn)
+            person = name + " - " + job + " - " + company_name 
             authors.add(person)
         start_offset += page_size
     
     return list(authors)
 
+#Find Company Name
+def find_company_name(name: str) -> str:
+    #if company not found return message
+    if name is None:
+        return "Company Not Found"
+    individual_profile = api.get_profile(name)
+    company_name = individual_profile["experience"][0]["companyName"]
+    company_location = individual_profile["experience"][0]["geoLocationName"]
+    company_details = company_name + ", " + company_location
+    print(company_details)
+    return company_name
+
 #Match with ICPs
-def icp_role_match():
+def icp_role_match()->list:
     qualified_authors = []
 
     #get all authors
@@ -78,7 +95,7 @@ def icp_role_match():
                 qualified_authors.append(name) #add author to qualified authors list
                 break #stop checking once match is found
 
-    print(qualified_authors)
     return qualified_authors
 
-icp_role_match()
+#Get companies for authors
+get_authors()
