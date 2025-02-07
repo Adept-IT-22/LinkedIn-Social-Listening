@@ -1,12 +1,17 @@
-import pandas as pd
+import logging.config
 import os
 import re
 import json
+import logging
+import pandas as pd
 from linkedin_api import Linkedin
+
+#set log.info to be the default logging status
+logging.basicConfig(level=logging.info)
 
 #Create client
 LINKEDIN_PASSWORD = os.environ.get("LINKEDIN_PASSWORD")
-api = Linkedin('suonoventures@gmail.com', "suonoventures")
+api = Linkedin('suonoventures@gmail.com', LINKEDIN_PASSWORD)
 
 #Ideal Customer Profile
 icp = ["founder", "ceo", "leader", "manager", "specialist"]
@@ -25,11 +30,15 @@ params = {
 }
 
 #Search for posts based on keywords
-def search_posts(params):
-    print("Search starting...")
-    search = api.search(params, limit = 10)
-    print("Search ended!")
-    return search
+def search_posts(params: dict) -> list:
+    try:
+        print("Search starting...")
+        search = api.search(params, limit = 10)
+        print("Search ended!")
+        return search
+    except Exception as e:
+        logging.error(f"Error during search {e}")
+        return []
 
 #Get authors
 def get_authors():
