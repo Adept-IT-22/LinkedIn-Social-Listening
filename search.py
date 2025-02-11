@@ -2,19 +2,23 @@ import logging.config
 import os
 import re
 import json
+import time
 import logging
 import pandas as pd
 from linkedin_api import Linkedin
 
 #set log.info to be the default logging status
-logging.basicConfig(level=logging.info)
+#logging.basicConfig(level=logging.INFO)
+
+rate_limit_seconds = 1
 
 #Create client
 LINKEDIN_PASSWORD = os.environ.get("LINKEDIN_PASSWORD")
-api = Linkedin('suonoventures@gmail.com', LINKEDIN_PASSWORD)
+api = Linkedin('mark.mathenge@riarauniversity.ac.ke', LINKEDIN_PASSWORD)
 
 #Ideal Customer Profile
 icp = ["founder", "ceo", "leader", "manager", "specialist"]
+company_icp = []
 
 #Search Keywords
 keywords = ["call center"]
@@ -35,6 +39,7 @@ def search_posts(params: dict) -> list:
         print("Search starting...")
         search = api.search(params, limit = 10)
         print("Search ended!")
+        time.sleep(rate_limit_seconds)
         return search
     except Exception as e:
         logging.error(f"Error during search {e}")
@@ -82,7 +87,7 @@ def get_authors():
     #store info in authors.txt file
     df_authors = pd.DataFrame(authors)
     authors_csv_filename = "authors.csv"
-    if os.path.exists(authors_csv_filename):
+    if not os.path.exists(authors_csv_filename):
         df_authors.to_csv(authors_csv_filename, index=False)
     else:
         df_authors.to_csv(authors_csv_filename, mode='a', header=False, index=False)
@@ -110,6 +115,8 @@ def find_company_name(name: str) -> str:
 def icp_role_match():
     print("Matching against ICPs...")
     qualified_authors = []
+    authors_in_right_locations = []
+    right_location_right_job = []
 
     #get all authors
     all_authors = get_authors()
@@ -125,25 +132,60 @@ def icp_role_match():
         #otherwise split name & job
         name = parts[0].strip()
         job = parts[1].strip()
+        company_location = parts[2].strip()
 
-        #check if role in icp is in author's job
-        for role in icp:
-            if re.search(r"\b" + re.escape(role) + r"\b", job, flags=re.IGNORECASE):
-                qualified_authors.append(name) #add author to qualified authors list
-                break #stop checking once match is found
+        #check if job is in america, europe or africa
+        correct_location = ["United States", "Nigeria", "South Africa", "Kenya", "Egypt"]
+        for location in correct_location:
+            if re.search(r"\b" + re.escape(location) + r"\b", company_location, flags=re.IGNORECASE):
+                authors_in_right_locations.append(name + " - " + job + " - " + company_location)
+                break
 
-    #save qualified authors in csv
-    df_qualified_authors = pd.DataFrame(qualified_authors)
-
-    #if csv already exists, append. else, create new one
-    qualified_authors_csv_filename = "qualified_authors.csv"
-    if not os.path.exists(qualified_authors_csv_filename):
-        df_qualified_authors.to_csv(qualified_authors_csv_filename, index=False)
+    #save authors in right locations in csv
+    df_right_location = pd.DataFrame(authors_in_right_locations)
+    right_location_filename = "correct_location.csv"
+    if not os.path.exists(right_location_filename):
+        df_right_location.to_csv(right_location_filename, index=False)
     else:
-        df_qualified_authors.to_csv(qualified_authors_csv_filename, mode='a', header=False, index=False)
+        df_right_location.to_csv(right_location_filename, mode='a', index=False, header=False)
 
-    print("Qualified Authors saved to CSV!")
+    logging.info("Authors in right location saved to CSV!")
 
-    return df_qualified_authors
+    #filter authors from right location based on job
+    for role in icp:
+        if re.search(r"\b" + re.escape(role) + r"\b", str(authors_in_right_locations), flags=re.IGNORECASE):
+            right_location_right_job.append(name)
+            break
+
+    df_right_location_right_job = pd.DataFrame(right_location_right_job)
+    right_location_right_job_filename = "right_location_right_job.csv"
+    if not os.path.exists(right_location_right_job_filename):
+        df_right_location_right_job.to_csv(right_location_right_job_filename, index=False)
+    else:
+        df_right_location_right_job.to_csv(right_location_right_job_filename, mode='a', index=False, header=False)
+        
+    logging.info("Authors in right location with right job saved to CSV!")
+
+    return right_location_right_job
+
+    #check if role in icp is in author's job
+    # for role in icp:
+    #     if re.search(r"\b" + re.escape(role) + r"\b", job, flags=re.IGNORECASE):
+    #         qualified_authors.append(name) #add author to qualified authors list
+    #         break #stop checking once match is found
+
+    # #save qualified authors in csv
+    # df_qualified_authors = pd.DataFrame(qualified_authors)
+
+    # #if csv already exists, append. else, create new one
+    # qualified_authors_csv_filename = "qualified_authors.csv"
+    # if not os.path.exists(qualified_authors_csv_filename):
+    #     df_qualified_authors.to_csv(qualified_authors_csv_filename, index=False)
+    # else:
+    #     df_qualified_authors.to_csv(qualified_authors_csv_filename, mode='a', header=False, index=False)
+
+    # print("Qualified Authors saved to CSV!")
+    # print(f"Qualified Authors: {qualified_authors}")
+    # return df_qualified_authors
 
 icp_role_match()
