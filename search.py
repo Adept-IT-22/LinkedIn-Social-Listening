@@ -73,12 +73,13 @@ def get_authors():
             #if urn exists use it to find company name
             if company_urn:
                 shortened_company_urn = str(company_urn.group(0))
-                company_name = find_company_name(shortened_company_urn)
+                company_info = find_company_info(shortened_company_urn)
             else:
-                company_name = "Company Not Found"
+                company_info = "Company Not Found"
             
             #create person variable and add person to authors list
-            person = name + " - " + job + " - " + company_name
+            person = name + " - " + job + " - " + company_info
+            print(f"Person: {person}")
             authors.add(person)
         
         #change start offset and go again
@@ -96,19 +97,32 @@ def get_authors():
     return list(authors)
 
 #Find Company Name
-def find_company_name(name: str) -> str:
+def find_company_info(name: str) -> str:
     #get company name & location from person's profile
     individual_profile = api.get_profile(name)
 
     #company info is located in experience dictionary
-    experience = individual_profile["experience"][0]
-    company_name = experience["companyName"]
+    experience = individual_profile.get("experience")[0]
+    company_name = experience.get("companyName") 
+
     company_location = experience.get("geoLocationName")
     if not company_location:
         company_location = "Location Not Found"
 
+    company_size = experience.get("company")
+
+    #if company size data exists fetch it otherwise return -1 
+    if company_size:
+        employee_range = str(company_size.get("employeeCountRange"))
+    else:
+        employee_range = "Employee Range Not Found"
+
+    #range of employees in company
+    #employee_start_range = employee_range["start"]
+    #employee_end_range = employee_range["end"]
+
     #return company details
-    company_details = company_name + ", " + company_location
+    company_details = company_name + ", " + company_location + ", " + employee_range
     return company_details
 
 #Match with ICPs
