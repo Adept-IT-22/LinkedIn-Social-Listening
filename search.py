@@ -17,7 +17,7 @@ LINKEDIN_PASSWORD = os.environ.get("LINKEDIN_PASSWORD")
 api = Linkedin('mark.mathenge@riarauniversity.ac.ke', LINKEDIN_PASSWORD)
 
 #Ideal Customer Profile
-icp = ["founder", "ceo", "leader", "manager", "specialist"]
+icp = ["founder", "ceo", "cto", "coo", "operations", "leader", "manager", "chief" ,"hr", "human"]
 company_icp = []
 
 #Search Keywords
@@ -79,13 +79,12 @@ def get_authors():
             
             #create person variable and add person to authors list
             person = name + " - " + job + " - " + company_info
-            print(f"Person: {person}")
             authors.add(person)
         
         #change start offset and go again
         start_offset += page_size
 
-    #store info in authors.txt file
+    #store info in authors.csv file
     df_authors = pd.DataFrame(authors)
     authors_csv_filename = "authors.csv"
     if not os.path.exists(authors_csv_filename):
@@ -96,7 +95,7 @@ def get_authors():
     print("Authors saved to CSV!")
     return list(authors)
 
-#Find Company Name
+#Find Company Info
 def find_company_info(name: str) -> str:
     #get company name & location from person's profile
     individual_profile = api.get_profile(name)
@@ -114,11 +113,15 @@ def find_company_info(name: str) -> str:
     #if company size data exists fetch it otherwise return not found 
     if company_size:
         employee_range = str(company_size.get("employeeCountRange"))
+        if isinstance(employee_range, dict):
+            employee_range = f"{employee_count.get('start', 'Unknown')} - {employee_count.get('end', 'Unknown')}"
+        else:
+            str(employee_range)
     else:
         employee_range = "Employee Range Not Found"
 
     #return company details
-    company_details = company_name + " - " + company_location + " - " + employee_range
+    company_details = f"{company_name} - {company_location} - {employee_range}"
     return company_details
 
 #Match author with ICPs
@@ -148,22 +151,21 @@ def icp_location_match():
             company_name = parts[2].strip() if len(parts) > 2 else "Company Not Found"
             company_location = parts[3].strip() if len(parts) > 3 else "Location Not Found"
             employee_count = parts[4] if len(parts) > 4 else "Employee Range Not Found"
-            print(f"Name: {name}, Job Title: {job_title}, Company Name: {company_name}, Company Location: {company_location}, Employee Count: {employee_count}")
             
             #save author if they have the right job title & company based on location & employee count
-            if job_title in icp and company_location == "Kenya" and dict(employee_count).get("end"):
+            if job_title in icp and company_location == "Kenya" and ast.literal_val(employee_count).get("end", float('inf')) <= 10:
                 qualified_authors.append(author) 
                 print(f"Qualified Author: {author}")
             else:
                 continue 
 
-            #Save qualified authors to csv
-            df_qualified_authors = pd.DataFrame(qualified_authors)
-            qualified_authors_filename = "qualified_authors.csv"
-            if not os.path.exists(qualified_authors_filename):
-                df_qualified_authors.to_csv(qualified_authors_filename, index=False)
-            else:
-                df_qualified_authors.to_csv(qualified_authors_filename, mode='a', index=False, header=False)
+    #Save qualified authors to csv
+    df_qualified_authors = pd.DataFrame(qualified_authors)
+    qualified_authors_filename = "qualified_authors.csv"
+    if not os.path.exists(qualified_authors_filename):
+        df_qualified_authors.to_csv(qualified_authors_filename, index=False)
+    else:
+        df_qualified_authors.to_csv(qualified_authors_filename, mode='a', index=False, header=False)
 
     #Log success message
     logging.info("Qualified authors saved to CSV!")
