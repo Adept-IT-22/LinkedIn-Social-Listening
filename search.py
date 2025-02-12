@@ -6,7 +6,7 @@ from linkedin_api import Linkedin
 
 #Create client
 LINKEDIN_PASSWORD = os.environ.get("LINKEDIN_PASSWORD")
-api = Linkedin('suonoventures@gmail.com', "suonoventures")
+api = Linkedin('markmathengeequity@gmail.com', "sociallistening")
 
 #Ideal Customer Profile
 icp = ["founder", "ceo", "leader", "manager", "specialist"]
