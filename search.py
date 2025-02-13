@@ -1,5 +1,6 @@
 import os
 import re
+import ast
 import json
 import time
 import logging
@@ -18,7 +19,7 @@ api = Linkedin('mark.mathenge@riarauniversity.ac.ke', LINKEDIN_PASSWORD)
 
 #Ideal Customer Profile
 icp = ["founder", "ceo", "cto", "coo", "operations", "leader", "manager", "chief" ,"hr", "human"]
-company_icp = []
+locations = ["Kenya", "Nigeria", "United States", "USA", "India"]
 
 #Search Keywords
 keywords = ["call center"]
@@ -46,8 +47,8 @@ def search_posts(params: dict) -> list:
         return []
 
 #Get authors
-def get_authors():
-    print("Getting authors...")
+def get_authors() -> list:
+    logging.info("Getting authors...")
     authors = set([])
     start_offset = 0 #where search should start from
 
@@ -68,7 +69,7 @@ def get_authors():
             company = post["actorNavigationUrl"]
 
             #get urn from actornavigationurl
-            company_urn = re.search(r"(?<=/in/)[^?]+", company)
+            company_urn = re.search(r"(?<=/in/|/company/)[^?]+", company)
             
             #if urn exists use it to find company name
             if company_urn:
@@ -92,7 +93,7 @@ def get_authors():
     else:
         df_authors.to_csv(authors_csv_filename, mode='a', header=False, index=False)
 
-    print("Authors saved to CSV!")
+    logging.info("Authors saved to CSV!")
     return list(authors)
 
 #Find Company Info
@@ -101,8 +102,15 @@ def find_company_info(name: str) -> str:
     individual_profile = api.get_profile(name)
 
     #company info (located in experience dictionary)
-    experience = individual_profile.get("experience")[0]
+    experience = individual_profile.get("experience")
+    if not experience:
+        experience = "Company Not Found"
+    else:
+        experience = experience[0]
+
     company_name = experience.get("companyName") 
+    if not company_name:
+        company_name = "Company Name Not Found"
 
     company_location = experience.get("geoLocationName")
     if not company_location:
@@ -112,11 +120,11 @@ def find_company_info(name: str) -> str:
 
     #if company size data exists fetch it otherwise return not found 
     if company_size:
-        employee_range = str(company_size.get("employeeCountRange"))
+        employee_range = company_size.get("employeeCountRange")
         if isinstance(employee_range, dict):
-            employee_range = f"{employee_count.get('start', 'Unknown')} - {employee_count.get('end', 'Unknown')}"
+            employee_range = f"{employee_range.get('start', 'Unknown')} - {employee_range.get('end', 'Unknown')}"
         else:
-            str(employee_range)
+            employee_range = str(employee_range)
     else:
         employee_range = "Employee Range Not Found"
 
@@ -125,39 +133,47 @@ def find_company_info(name: str) -> str:
     return company_details
 
 #Match author with ICPs
-def icp_location_match():
+def icp_match():
     #Log process starting message
     logging.info("Matching against ICPs...")
 
     #List of qualified authors
     qualified_authors = []
     
-    if len(qualified_authors) <= 20:
-            
+    #Convert icp list to set for faster lookup
+    icp_set = {job.lower() for job in icp}
+    location_set = {location for location in locations} 
+    
 	#get all authors
-        all_authors = get_authors()
+    all_authors = get_authors()
 
-        #for each author split their name and job
-        for author in all_authors:
-            parts = author.split(" - ")
+    #for each author split their name and job
+    for author in all_authors:
+        parts = author.split(" - ")
 
-            #if author doesn't have name/job go to next author
-            if len(parts) < 2:
-                continue
-            
-            #otherwise split author info into pieces
-            name = parts[0].strip()
-            job_title = parts[1].strip()
-            company_name = parts[2].strip() if len(parts) > 2 else "Company Not Found"
-            company_location = parts[3].strip() if len(parts) > 3 else "Location Not Found"
-            employee_count = parts[4] if len(parts) > 4 else "Employee Range Not Found"
-            
-            #save author if they have the right job title & company based on location & employee count
-            if job_title in icp and company_location == "Kenya" and ast.literal_val(employee_count).get("end", float('inf')) <= 10:
-                qualified_authors.append(author) 
-                print(f"Qualified Author: {author}")
-            else:
-                continue 
+        #if author doesn't have name/job go to next author
+        if len(parts) < 2:
+            continue
+        
+        #otherwise split author info into pieces
+        name = parts[0].strip()
+        job_title = parts[1].strip()
+        company_name = parts[2].strip() if len(parts) > 2 else "Company Not Found"
+        company_location = parts[3].strip() if len(parts) > 3 else "Location Not Found"
+        employee_count = parts[4] if len(parts) > 4 else "Employee Range Not Found"
+        
+        print(f"Employee Count: {employee_count}")
+
+        #save author if they have the right job title & company based on location & employee count
+        if job_title and company_location and employee_count:
+            if instance("employee_count", dict):
+                max_employees = employee_count.get("end", float('inf'))
+            elif isinstance(employee_count, str):
+                max_employees = 0
+
+            if job_title.lower() in icp_set and company_location in location_set and max_employees <= 11:
+                logging.info("Qualified Author Found!!!")
+                qualified_authors.append(author)
 
     #Save qualified authors to csv
     df_qualified_authors = pd.DataFrame(qualified_authors)
@@ -173,4 +189,4 @@ def icp_location_match():
     #Return list of qualified authors
     return qualified_authors
 
-icp_location_match()
+icp_match()
