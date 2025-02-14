@@ -15,7 +15,7 @@ rate_limit_seconds = 1
 
 #Create client
 LINKEDIN_PASSWORD = os.environ.get("LINKEDIN_PASSWORD")
-api = Linkedin('mark.mathenge@riarauniversity.ac.ke', LINKEDIN_PASSWORD)
+api = Linkedin('skrrraper@gmail.com', 'markothengo99')
 
 #Ideal Customer Profile
 icp = ["founder", "ceo", "cto", "coo", "operations", "leader", "manager", "chief" ,"hr", "human"]
@@ -38,7 +38,7 @@ params = {
 def search_posts(params: dict) -> list:
     try:
         print("Search starting...")
-        search = api.search(params, limit = 10)
+        search = api.search(params, limit=10)
         print("Search ended!")
         time.sleep(rate_limit_seconds)
         return search
@@ -60,6 +60,7 @@ def get_authors() -> list:
 
         #if posts returns nothing stop.
         if not posts:
+            logging.error("No search results found")
             break
 
         #else get name & job of each author
@@ -69,17 +70,19 @@ def get_authors() -> list:
             company = post["actorNavigationUrl"]
 
             #get urn from actornavigationurl
-            company_urn = re.search(r"(?<=/in/|/company/)[^?]+", company)
+            company_urn = re.search(r"(?<=/in/)[^?]+", company)
             
             #if urn exists use it to find company name
             if company_urn:
                 shortened_company_urn = str(company_urn.group(0))
+                print(f"Shortened URN: {shortened_company_urn}")
                 company_info = find_company_info(shortened_company_urn)
             else:
                 company_info = "Company Not Found"
             
             #create person variable and add person to authors list
-            person = name + " - " + job + " - " + company_info
+            person = {"Name":name, "Job Title":job, "Company Info":company_info}
+            print(person)
             authors.add(person)
         
         #change start offset and go again
@@ -104,9 +107,10 @@ def find_company_info(name: str) -> str:
     #company info (located in experience dictionary)
     experience = individual_profile.get("experience")
     if not experience:
-        experience = "Company Not Found"
+        return "Company Not Found"
     else:
-        experience = experience[0]
+        if isinstance(experience, list):
+            experience = experience[0]
 
     company_name = experience.get("companyName") 
     if not company_name:
@@ -122,7 +126,7 @@ def find_company_info(name: str) -> str:
     if company_size:
         employee_range = company_size.get("employeeCountRange")
         if isinstance(employee_range, dict):
-            employee_range = f"{employee_range.get('start', 'Unknown')} - {employee_range.get('end', 'Unknown')}"
+            employee_range = f"{employee_range.get('start', 'Unknown')} to {employee_range.get('end', 'Unknown')}"
         else:
             employee_range = str(employee_range)
     else:
@@ -138,17 +142,18 @@ def icp_match():
     logging.info("Matching against ICPs...")
 
     #List of qualified authors
-    qualified_authors = []
+    qualified_authors = {}
     
     #Convert icp list to set for faster lookup
     icp_set = {job.lower() for job in icp}
-    location_set = {location for location in locations} 
+    location_set = {location.lower() for location in locations} 
     
 	#get all authors
     all_authors = get_authors()
 
     #for each author split their name and job
     for author in all_authors:
+        print(f"Author is of type: {type(author)}")
         parts = author.split(" - ")
 
         #if author doesn't have name/job go to next author
@@ -162,18 +167,16 @@ def icp_match():
         company_location = parts[3].strip() if len(parts) > 3 else "Location Not Found"
         employee_count = parts[4] if len(parts) > 4 else "Employee Range Not Found"
         
-        print(f"Employee Count: {employee_count}")
-
         #save author if they have the right job title & company based on location & employee count
         if job_title and company_location and employee_count:
-            if instance("employee_count", dict):
+            if isinstance("employee_count", dict):
                 max_employees = employee_count.get("end", float('inf'))
             elif isinstance(employee_count, str):
                 max_employees = 0
 
-            if job_title.lower() in icp_set and company_location in location_set and max_employees <= 11:
+            if job_title.lower() in icp_set and company_location.lower() in location_set and max_employees <= 11:
                 logging.info("Qualified Author Found!!!")
-                qualified_authors.append(author)
+                qualified_authors.add(author)
 
     #Save qualified authors to csv
     df_qualified_authors = pd.DataFrame(qualified_authors)
