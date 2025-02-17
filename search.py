@@ -18,8 +18,11 @@ LINKEDIN_PASSWORD = os.environ.get("LINKEDIN_PASSWORD")
 api = Linkedin('m10mathenge@gmail.com', 'markothengo99')
 
 #Ideal Customer Profile
-icp = ["founder", "ceo", "cto", "coo", "operations", "leader", "manager", "chief" ,"hr", "human"]
-locations = ["Kenya", "Nigeria", "United States", "USA", "India"]
+icp1 = {
+        "job title" : {"founder", "ceo", "cto", "coo", "operations", "leader", "manager", "chief" ,"hr", "human", "customer care"},
+        "max employees" : 10,
+        "locations" : {"Kenya", "United States", "USA", "Nigeria", "South Africa", "Egypt", "Germany", "United Kingdom", "Canada"}
+        }
 
 #Search Keywords
 keywords = ["call center"]
@@ -80,7 +83,7 @@ def get_authors() -> list:
                 company_info = "Company Not Found"
             
             #create person variable and add person to authors list
-            person = name + ", " + job + ", " + company
+            person = name + " - " + job + " - " + company_info
             authors.append(person)
         
         #change start offset and go again
@@ -140,13 +143,9 @@ def icp_match():
     logging.info("Matching against ICPs...")
 
     #List of qualified authors
-    qualified_authors = {}
+    qualified_authors = []
     
-    #Convert icp list to set for faster lookup
-    icp_set = {job.lower() for job in icp}
-    location_set = {location.lower() for location in locations} 
-    
-	#get all authors
+    #get all authors
     all_authors = get_authors()
 
     #for each author split their name and job
@@ -159,21 +158,15 @@ def icp_match():
         
         #otherwise split author info into pieces
         name = parts[0].strip()
-        job_title = parts[1].strip()
-        company_name = parts[2].strip() if len(parts) > 2 else "Company Not Found"
-        company_location = parts[3].strip() if len(parts) > 3 else "Location Not Found"
-        employee_count = parts[4] if len(parts) > 4 else "Employee Range Not Found"
+        job_title = parts[1].strip().lower()
+        company_name = parts[2].strip() if len(parts) > 2 and parts[2].strip() else "Company Not Found"
+        company_location = parts[3].strip() if len(parts) > 3 and parts[3].strip() else "Location Not Found"
+        employee_count = parts[4].strip() if len(parts) > 4 and parts[4].strip() else "Employee Range Not Found"
         
         #save author if they have the right job title & company based on location & employee count
-        if job_title and company_location and employee_count:
-            if isinstance("employee_count", dict):
-                max_employees = employee_count.get("end", float('inf'))
-            elif isinstance(employee_count, str):
-                max_employees = 0
-
-            if job_title.lower() in icp_set and company_location.lower() in location_set and max_employees <= 11:
-                logging.info("Qualified Author Found!!!")
-                qualified_authors.add(author)
+        if any(word in job_title for word in icp1["job title"]) and any(location in company_location for location in icp1["locations"]):
+            logging.info(f"Qualified Author Found: {name}")
+            qualified_authors.append(author)
 
     #Save qualified authors to csv
     df_qualified_authors = pd.DataFrame(qualified_authors)
