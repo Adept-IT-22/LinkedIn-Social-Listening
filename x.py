@@ -1,8 +1,8 @@
 import json 
 from linkedin_api import Linkedin
 
-api = Linkedin('adeptcanva@gmail.com', 'adeptcanva')
+api = Linkedin('m10mathenge@gmail.com', 'markothengo99')
 
-search - api.get_profile('munirangomo')
+search = api.get_profile('ACoAAAXt9q4BUqKj5FE20TTTfqybJH6d1mpaZ74')
 
-print(json.dumps, indent = 4))
+print(json.dumps(search, indent = 4))

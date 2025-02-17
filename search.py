@@ -15,7 +15,7 @@ rate_limit_seconds = 1
 
 #Create client
 LINKEDIN_PASSWORD = os.environ.get("LINKEDIN_PASSWORD")
-api = Linkedin('skrrraper@gmail.com', 'markothengo99')
+api = Linkedin('m10mathenge@gmail.com', 'markothengo99')
 
 #Ideal Customer Profile
 icp = ["founder", "ceo", "cto", "coo", "operations", "leader", "manager", "chief" ,"hr", "human"]
@@ -49,7 +49,7 @@ def search_posts(params: dict) -> list:
 #Get authors
 def get_authors() -> list:
     logging.info("Getting authors...")
-    authors = set([])
+    authors = []
     start_offset = 0 #where search should start from
 
     #run this loop max_pages(5) number of times
@@ -75,15 +75,13 @@ def get_authors() -> list:
             #if urn exists use it to find company name
             if company_urn:
                 shortened_company_urn = str(company_urn.group(0))
-                print(f"Shortened URN: {shortened_company_urn}")
                 company_info = find_company_info(shortened_company_urn)
             else:
                 company_info = "Company Not Found"
             
             #create person variable and add person to authors list
-            person = {"Name":name, "Job Title":job, "Company Info":company_info}
-            print(person)
-            authors.add(person)
+            person = name + ", " + job + ", " + company
+            authors.append(person)
         
         #change start offset and go again
         start_offset += page_size
@@ -153,7 +151,6 @@ def icp_match():
 
     #for each author split their name and job
     for author in all_authors:
-        print(f"Author is of type: {type(author)}")
         parts = author.split(" - ")
 
         #if author doesn't have name/job go to next author
