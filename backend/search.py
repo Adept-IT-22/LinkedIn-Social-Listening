@@ -9,8 +9,12 @@ import requests
 import pandas as pd
 import logging.config
 from fuzzywuzzy import fuzz
+from flask import Flask, jsonify
 from linkedin_api import Linkedin
 from fake_useragent import UserAgent
+
+#Create Flask object
+app = Flask(__name__)
 
 #create session
 session = requests.Session()
@@ -327,5 +331,25 @@ def save_to_excel(data_for_dataframe: list, storage_filename: str, sheet_name: s
 
     logging.info(f"Data saved to {storage_filename} in sheet {sheet_name}!")
 
+#Add flask routes
+@app.route('/', methods=['GET'])
+def generate_qualified_leads():
+    try:
+        qualified_leads = icp_match()
+        return jsonify({
+            "status" : "success",
+            "message" : f"Found {len(qualified_leads)} qualified leads",
+            "Qualified Leads" : qualified_leads
+        })
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "message" : str(e)
+        }), 500
+
 if __name__ == "__main__":
-    icp_match()
+    logging.basicConfig(level=logging.DEBUG, 
+                        encoding="utf-8",
+                        format = "%(asctime)s - %(levelname)s - %(message)s")
+    app.run(debug = True)
+

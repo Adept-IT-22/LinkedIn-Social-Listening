@@ -1,5 +1,9 @@
-lisst = [1,2,3,4,5,6,7,8,9]
+from flask import Flask
+app = Flask(__name__)
 
-for i in range(0, 8, 3):
-    x = lisst[i:i+3]
-    print(x)
+@app.route('/')
+def x():
+    return "yessssirrrrrrrrrr!"
+
+if __name__ == "__main__":
+    app.run(debug=True)
