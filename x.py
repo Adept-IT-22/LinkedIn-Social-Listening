@@ -1,8 +1,5 @@
-import json 
-from linkedin_api import Linkedin
+lisst = [1,2,3,4,5,6,7,8,9]
 
-api = Linkedin('m10mathenge@gmail.com', 'markothengo99')
-
-search = api.get_profile('ACoAAAXt9q4BUqKj5FE20TTTfqybJH6d1mpaZ74')
-
-print(json.dumps(search, indent = 4))
+for i in range(0, 8, 3):
+    x = lisst[i:i+3]
+    print(x)
