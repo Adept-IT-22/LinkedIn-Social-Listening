@@ -1,0 +1,34 @@
+.tableContainer {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 1200px;  /* or whatever max width you prefer */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 12px;
+  font-weight: 500;
+}
+
+.table td {
+  padding: 12px;
+}
+
+/* Alternating row colors */
+.table tr:nth-child(even) {
+  background-color: #f3f4f6;  /* light gray */
+}
+
+.table tr:nth-child(odd) {
+  background-color: white;
+}
+
+/* Optional hover effect */
+.table tr:hover {
+  background-color: #e5e7eb;  /* slightly darker gray on hover */
+} 
