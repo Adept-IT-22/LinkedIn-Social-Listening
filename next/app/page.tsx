@@ -1,30 +1,11 @@
 import Image from "next/image";
+import Navbar from "./components/navbar";
 
 export default function Home() {
   return (
     <div className="">
-      <nav className="navbar">
-        <ol className="navbar-list">
-          <li className="navbar-item">
-            <a className="navbar-link" href="/">Dashboard</a>
-          </li>
-          <li className="navbar-item">
-            <a className="navbar-link" href="/search">Leads</a>
-          </li>
-        </ol>
-        <div className="searchbar">
-          <input className="nav-search" type = "text" placeholder="Search" />
-        </div>
-      </nav>
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
+      <Navbar />
+      <main className="main-container flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
             Get started by editing{" "}

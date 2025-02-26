@@ -35,21 +35,21 @@ body {
   font-size: 14px;
 }
 
-.navbar-list{
+.navbar-list {
   display: flex;
   gap: 10px;
   align-items: center;
   padding: 0 16px;
 }
 
-.navbar-link{
+.navbar-link {
   color: white;
   text-decoration: none;
 }
 
-.navbar-link:hover{
+.navbar-link:hover {
   color: black;
-}   
+}
 
 .nav-search {
   height: 1.5em;
@@ -58,4 +58,8 @@ body {
   margin-right: 10px;
   color: black;
   font-style: italic;
+}
+
+.main-container {
+  margin: 3em;
 }
