@@ -32,3 +32,28 @@
 .table tr:hover {
   background-color: #e5e7eb;  /* slightly darker gray on hover */
 } 
+
+.loading{
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.error{
+  text-align: center;
+  padding: 2rem;
+  color: #ef4444;
+}
+
+.button{
+  background-color: blueviolet;
+  color: white;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.button:hover{
+  background-color: black;
+}
