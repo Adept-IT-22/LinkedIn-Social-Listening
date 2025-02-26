@@ -9,12 +9,14 @@ import requests
 import pandas as pd
 import logging.config
 from fuzzywuzzy import fuzz
+from flask_cors import CORS
 from flask import Flask, jsonify
 from linkedin_api import Linkedin
 from fake_useragent import UserAgent
 
 #Create Flask object
 app = Flask(__name__)
+CORS(app)
 
 #create session
 session = requests.Session()
@@ -206,7 +208,7 @@ def get_authors() -> list:
         start_offset += page_size
 
     #store info in authors.csv file
-    save_to_excel(authors, "Tuesday.xlsx", "All Authors")
+    save_to_excel(authors, "Wednesday.xlsx", "All Authors")
     logging.info("Authors saved to Excel!")
     return list(authors)
 
@@ -296,7 +298,7 @@ def icp_match():
             qualified_authors.append(author)
 
     #Save qualified authors to csv
-    save_to_excel(qualified_authors, "Tuesday.xlsx", "Qualified Authors")
+    save_to_excel(qualified_authors, "Wednesday.xlsx", "Qualified Authors")
     logging.info("Qualified authors saved to Excel!")
     return qualified_authors
 
