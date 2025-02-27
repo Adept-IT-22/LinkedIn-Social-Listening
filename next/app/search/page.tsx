@@ -24,14 +24,13 @@ export default function Search() {
 'use client'
 import {useState, useEffect} from 'react';
 import styles from "@/styles/Search.module.css";
-import navbarstyles from "@/styles/Navbar.module.css";
 
 interface Lead {
     name: string;
     jobTitle: string;
     company: string;
     location: string;
-    employeeCount: number;
+    employeeCount: string;
 }
 
 export default function Search() {
@@ -52,7 +51,8 @@ export default function Search() {
 
             //if fetch is succesfull set leads to qualified leads
             if (data.status === "success") {
-                setLeads(data.qualifiedLeads)
+                const parsedLeads = parseLeadData(data["Qualified Leads"] || [])
+                setLeads(parsedLeads)
             } else {
                 setError(data.message)
             }
@@ -66,48 +66,33 @@ export default function Search() {
         }
     }
 
-    //side effect to fetch leads
-    useEffect(() => {
-        fetchLeads()
-    }, [])
-
-    //search button code
-    //const handleSearch = async () => {
-        //try {
-            //setLoading(true)
-            //const response = await fetch("https://localhost:5000", {
-                //method: 'POST', 
-                //headers: {
-                    //'Content-Type': 'application/json',
-                //},
-                //body: JSON.stringify({
-                    ////search parameters
-                //})
-            //})
-            //const data = await response.json()
-            //setLeads(data)
-        //} catch (error) {
-            //setError("Error searching leads")
-            //console.error(error)
-        //} finally {
-            //setLoading(false)
-        //}
-    //}
-    //show Loading... if loading
-    if (loading) return <div>Loading...</div>
-
-    //show error if there's an error
-    if (error) return <div>Error: {error}</div>
+    //function to parse data from search
+    const parseLeadData = (leadData: string[]) : Lead[] => {
+        //split each lead string into these 5 parts
+        return leadData.map(leadString => {
+            const parts = leadString.split(" -")
+            return {
+                name: parts[0] || '',
+                jobTitle: parts[1] || '',
+                company: parts[2] || '',
+                location: parts[3] || '',
+                employeeCount: parts[4] || ''
+            }
+        })
+    }
 
     return (
         <div>
-            <main className="main-container flex flex-col items-center justify-center" style={{marginTop: "3em"}}>
-                <h1>Leads</h1>
-                <div className={styles.leadsContainer}>
-                    <div className="leads-control-buttons">
-                        <button onClick={fetchLeads}
-                        className="bg-blue-500 text-white px-4 py-2 rounded-md">Search</button>
-                    </div>
+            <main className="main-container flex flex-col items-center justify-center">
+                <h1 className={styles.header}>Leads</h1>
+                <div className={styles.buttonContainer}>
+                    <button onClick={fetchLeads}
+                    className={styles.searchButton}>Run The Search</button>
+                </div>
+                {/*show loading or error messages*/}
+                {loading && <div>Loading...</div>}
+                {error && <div>Error: {error}</div>}
+                <div className={styles.pageContent}>
                     <div className={styles.tableContainer}>
                         <table className={styles.table}>
                             <thead>
@@ -126,11 +111,31 @@ export default function Search() {
                                         <td>{lead.jobTitle}</td>
                                         <td>{lead.company}</td>
                                         <td>{lead.location}</td>
-                                        <td>{lead.location}</td>
+                                        <td>{lead.employeeCount}</td>
                                     </tr>
                                 ))}
                             </tbody>
                         </table>    
+                    </div>
+                    <div className={styles.searchContainer}>
+                        <form className={styles.searchForm}>
+                            <div className={styles.searchInput}>
+                                <label htmlFor="keyword">Keyword</label>
+                                <input id="keyword" type="text" placeholder="Input Keyword"/>
+                            </div>
+                            <div className={styles.searchInput}>
+                                <label htmlFor="icp">ICP</label>
+                                <select id="icp">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </form>
+                        <div className={styles.searchButtonContainer}>
+                            <button className={styles.searchButton}>Search</button>
+                        </div>
                     </div>
                 </div>
             </main>

@@ -68,4 +68,18 @@ body {
 .main-container{
   margin: 3em 1em;
 }
+<<<<<<< HEAD
 >>>>>>> 14e486811a864dcfe3636cd504cf5c633c7e12b7
+=======
+
+.header{
+  font-size: 2.5rem;
+  font-weight:bold;
+  margin-bottom: 2rem;
+  color: black;
+  font-family: 'Century Gothic', sans-serif;
+  letter-spacing: -0.025em;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid black;
+}
+>>>>>>> 66baf30c7d9be3ced3d41406978db971a75e73f4

@@ -1,17 +1,44 @@
-.tableContainer {
+.header{
   margin-top: 30px;
+  font-size: 1.4rem;
+  font-weight:bold;
+  color: black;
+  font-family: 'Century Gothic', sans-serif;
+  padding-top: 20px;
+}
+
+.pageContent {
+  margin-top: 20px;
   width: 100%;
-  max-width: 1200px;  /* or whatever max width you prefer */
+  display: flex;
+  gap: 20px;
+  min-height: calc(100vh - 30px);
+}
+
+.buttonContainer{
+  font-family: 'Century Gothic', sans-serif;
+  color: black;
+  padding-top: 10px;
+}
+
+.tableContainer {
+  width: 80%;
 }
 
 .table {
-  width: 100%;
+  font-family: 'Century Gothic', sans-serif	;
+  width:100%;
   border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
 }
 
-.table th {
-  text-align: left;
-  padding: 12px;
+.table thead th{
+  background-color: gainsboro;
+  font-size: 14px;	
+}
+
+.table thead th tr {
   font-weight: 500;
 }
 
@@ -55,5 +82,74 @@
 }
 
 .button:hover{
+  background-color: black;
+}
+
+
+
+.searchContainer{
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 20%;
+  height: 15rem;
+  padding:20px;
+  font-family: 'Century Gothic', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.searchForm{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.searchInput{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  }
+
+.searchInput label{
+  font-weight:bold;
+  font-size: 0.9rem;
+  color: black;
+}
+
+.searchInput input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  height: 2rem;
+  font-size: 0.8rem;
+}
+
+.searchInput select {
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  height: 2.1rem;
+  font-size: 0.8rem;
+}
+
+.searchButtonContainer{
+  text-align: center;
+  padding:5px;
+  margin-top:5px;
+}
+
+.searchButton{
+  background-color: blueviolet;
+  color: white;
+  padding:5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: 'Century Gothic', sans-serif;
+  border: 1px solid black;
+}
+
+.searchButton:hover{
   background-color: black;
 }

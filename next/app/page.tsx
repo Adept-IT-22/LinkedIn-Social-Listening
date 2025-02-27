@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <div className="">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <Navbar />
       <main className="main-container flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
@@ -49,6 +50,9 @@ export default function Home() {
         </div>
 =======
       <main className="main-container flex flex-col items-center justify-center" style={{marginTop: "3em"}}>
+=======
+      <main className="main-container" style={{marginTop: "3em"}}>
+>>>>>>> 66baf30c7d9be3ced3d41406978db971a75e73f4
         <h1>Home</h1>
 >>>>>>> 14e486811a864dcfe3636cd504cf5c633c7e12b7
       </main>
