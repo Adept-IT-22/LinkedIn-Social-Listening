@@ -153,7 +153,7 @@ def search_posts(params: dict) -> list:
                 print(f"No results for {combined_keywords}")
             time.sleep(random.uniform(5, 10))
             
-            return all_results
+        return all_results
     except Exception as e:
         logging.error(f"Error during search {e}")
         return []
@@ -333,8 +333,30 @@ def save_to_excel(data_for_dataframe: list, storage_filename: str, sheet_name: s
 
     logging.info(f"Data saved to {storage_filename} in sheet {sheet_name}!")
 
+#mockup, not the real thing
+def mockup_search():
+    return [
+        "John - CEO - Google - Mountain View - 10000",
+        "Jane - CTO - Facebook - Menlo Park - 5000",
+        "Jim - VP of Sales - Apple - Cupertino - 1000",
+        "Jill - Director of Marketing - Amazon - Seattle - 20000"
+    ]
+
 #Add flask routes
 @app.route('/', methods=['GET'])
+#def generate_mockup_leads():
+    #try:
+        #leads = mockup_search()
+        #return jsonify({
+            #"status": "success",
+            #"message": f"Found {len(leads)} mockup leads",
+            #"Qualified Leads": leads
+        #})
+    #except Exception as e:
+        #return jsonify({
+            #"status": "Error",
+            #"message": f"The following error was encountered: {str(e)}"
+        #}), 500
 def generate_qualified_leads():
     try:
         qualified_leads = icp_match()
