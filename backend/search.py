@@ -10,9 +10,9 @@ import pandas as pd
 import logging.config
 from fuzzywuzzy import fuzz
 from flask_cors import CORS
-from flask import Flask, jsonify
 from linkedin_api import Linkedin
 from fake_useragent import UserAgent
+from flask import Flask, jsonify, request
 
 #Create Flask object
 app = Flask(__name__)
@@ -46,69 +46,112 @@ linkedin_email = "m10mathenge@gmail.com"
 linkedin_password = os.environ.get("LINKEDIN_PASSWORD")
 api = Linkedin(linkedin_email, linkedin_password)
 
+#Locations
+locations ={
+    #North American Countries
+    "North American Countries": {
+    "united states", "canada"},
+    
+    #African Countries
+    "African Countries": {
+    "algeria", "angola", "benin", "botswana", "burkina faso", 
+    "burundi", "cabo verde", "cameroon", "central african republic",
+    "chad", "comoros", "democratic republic of the congo", "djibouti",
+    "egypt", "equatorial guinea", "eritrea", "eswatini", "ethiopia",
+    "gabon", "gambia", "ghana", "guinea", "guinea-bissau", "ivory coast",
+    "kenya", "lesotho", "liberia", "libya", "madagascar", "malawi",
+    "mali", "mauritania", "mauritius", "morocco", "mozambique",
+    "namibia", "niger", "nigeria", "republic of the congo", "rwanda",
+    "sao tome and principe", "senegal", "seychelles", "sierra leone",
+    "somalia", "south africa", "south sudan", "sudan", "tanzania",
+    "togo", "tunisia", "uganda", "zambia", "zimbabwe"},
+    
+    #African Cities
+    "African Cities": {
+    "lagos", "cairo", "kinshasa", "johannesburg", "nairobi",
+    "addis ababa", "dar es salaam", "alexandria", "abidjan", "casablanca",
+    "cape town", "accra", "algiers", "luanda", "dakar",
+    "khartoum", "kigali", "tunis", "kampala", "lusaka",
+    "maputo", "pretoria", "yaoundé", "bamako", "harare",
+    "mogadishu", "port harcourt", "ibadan", "ouagadougou", "antananarivo",
+    "brazzaville", "windhoek", "gaborone", "freetown", "bujumbura"},
+    
+    #European Countries
+    "European Countries": {
+    "austria", "belgium", "bulgaria", "croatia", "cyprus",
+    "czech republic", "denmark", "estonia", "finland", "france",
+    "germany", "greece", "hungary", "ireland", "italy", "latvia",
+    "lithuania", "luxembourg", "malta", "netherlands", "poland",
+    "portugal", "romania", "slovakia", "slovenia", "spain", "sweden",
+    "albania", "andorra", "belarus", "bosnia and herzegovina",
+    "iceland", "kosovo", "liechtenstein", "moldova", "monaco",
+    "montenegro", "north macedonia", "norway", "san marino", "serbia",
+    "switzerland", "ukraine", "united kingdom", "vatican city"},
+
+    #European Cities
+    "European Cities": {
+    "london", "paris", "berlin", "madrid", "rome",
+    "vienna", "amsterdam", "brussels", "stockholm", "oslo",
+    "copenhagen", "helsinki", "lisbon", "prague", "budapest",
+    "warsaw", "athens", "dublin", "zurich", "barcelona",
+    "munich", "milan", "hamburg", "frankfurt", "bucharest",
+    "sofia", "zagreb", "belgrade", "riga", "vilnius",
+    "tallinn", "luxembourg", "ljubljana", "sarajevo", "bratislava",
+    "reykjavik", "valletta", "podgorica", "skopje", "tirana"},
+    
+    #U.S. Cities
+    "U.S. Cities": {
+    "new york city", "los angeles", "chicago", "houston", "phoenix",
+    "philadelphia", "san antonio", "san diego", "dallas", "san jose",
+    "austin", "jacksonville", "fort worth", "columbus", "charlotte",
+    "san francisco", "indianapolis", "seattle", "denver",
+    "washington, d.c.", "boston", "el paso", "nashville", "detroit",
+    "oklahoma city", "portland", "las vegas", "memphis", "louisville",
+    "baltimore", "milwaukee", "albuquerque", "tucson", "fresno",
+    "sacramento", "kansas city", "mesa", "atlanta", "omaha",
+    "colorado springs", "raleigh", "miami", "long beach",
+    "virginia beach", "oakland", "minneapolis", "tulsa", "tampa",
+    "arlington", "new orleans"}
+}
+
 #Ideal Customer Profile
-icp1 = { 
-    "job title": {
+icps = { 
+    "icp1": { 
+        "job title": {
         "founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
         "customer"
     },
-    "max employees": 50,
-    "locations": {
-        # Countries
-        "united states", "canada", "australia",
-        # African Countries
-        "algeria", "angola", "benin", "botswana", "burkina faso", 
-        "burundi", "cabo verde", "cameroon", "central african republic",
-        "chad", "comoros", "democratic republic of the congo", "djibouti",
-        "egypt", "equatorial guinea", "eritrea", "eswatini", "ethiopia",
-        "gabon", "gambia", "ghana", "guinea", "guinea-bissau", "ivory coast",
-        "kenya", "lesotho", "liberia", "libya", "madagascar", "malawi",
-        "mali", "mauritania", "mauritius", "morocco", "mozambique",
-        "namibia", "niger", "nigeria", "republic of the congo", "rwanda",
-        "sao tome and principe", "senegal", "seychelles", "sierra leone",
-        "somalia", "south africa", "south sudan", "sudan", "tanzania",
-        "togo", "tunisia", "uganda", "zambia", "zimbabwe",
-        # African Cities
-        "lagos", "cairo", "kinshasa", "johannesburg", "nairobi",
-        "addis ababa", "dar es salaam", "alexandria", "abidjan", "casablanca",
-        "cape town", "accra", "algiers", "luanda", "dakar",
-        "khartoum", "kigali", "tunis", "kampala", "lusaka",
-        "maputo", "pretoria", "yaoundé", "bamako", "harare",
-        "mogadishu", "port harcourt", "ibadan", "ouagadougou", "antananarivo",
-        "brazzaville", "windhoek", "gaborone", "freetown", "bujumbura",
-        # European Countries
-        "austria", "belgium", "bulgaria", "croatia", "cyprus",
-        "czech republic", "denmark", "estonia", "finland", "france",
-        "germany", "greece", "hungary", "ireland", "italy", "latvia",
-        "lithuania", "luxembourg", "malta", "netherlands", "poland",
-        "portugal", "romania", "slovakia", "slovenia", "spain", "sweden",
-        "albania", "andorra", "belarus", "bosnia and herzegovina",
-        "iceland", "kosovo", "liechtenstein", "moldova", "monaco",
-        "montenegro", "north macedonia", "norway", "san marino", "serbia",
-        "switzerland", "ukraine", "united kingdom", "vatican city",
-        # European Cities
-        "london", "paris", "berlin", "madrid", "rome",
-        "vienna", "amsterdam", "brussels", "stockholm", "oslo",
-        "copenhagen", "helsinki", "lisbon", "prague", "budapest",
-        "warsaw", "athens", "dublin", "zurich", "barcelona",
-        "munich", "milan", "hamburg", "frankfurt", "bucharest",
-        "sofia", "zagreb", "belgrade", "riga", "vilnius",
-        "tallinn", "luxembourg", "ljubljana", "sarajevo", "bratislava",
-        "reykjavik", "valletta", "podgorica", "skopje", "tirana",
-        # U.S. Cities
-        "new york city", "los angeles", "chicago", "houston", "phoenix",
-        "philadelphia", "san antonio", "san diego", "dallas", "san jose",
-        "austin", "jacksonville", "fort worth", "columbus", "charlotte",
-        "san francisco", "indianapolis", "seattle", "denver",
-        "washington, d.c.", "boston", "el paso", "nashville", "detroit",
-        "oklahoma city", "portland", "las vegas", "memphis", "louisville",
-        "baltimore", "milwaukee", "albuquerque", "tucson", "fresno",
-        "sacramento", "kansas city", "mesa", "atlanta", "omaha",
-        "colorado springs", "raleigh", "miami", "long beach",
-        "virginia beach", "oakland", "minneapolis", "tulsa", "tampa",
-        "arlington", "new orleans"
+    "employees": {"max": 50},
+    "locations": locations
+    },
+
+    "icp2": { 
+        "job title": {
+        "founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
+        "customer"
+    },
+    "employees": {"range": (51, 200)},
+    "locations": locations
+    },
+
+    "icp3": { 
+        "job title": {
+        "founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
+        "customer"
+    },
+    "employees": {"min": 201},
+    "locations": locations
+    },
+
+    "icp4": { 
+        "job title": {
+        "founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
+        "customer"
+    },
+    "employees": {"min": 1001},
+    "locations": locations
     }
-}
+ }
 
 #Search settings
 keywords = ["call center","contact center", "call center outsourcing", 
@@ -208,7 +251,7 @@ def get_authors() -> list:
         start_offset += page_size
 
     #store info in authors.csv file
-    save_to_excel(authors, "Wednesday.xlsx", "All Authors")
+    save_to_excel(authors, "Thursday.xlsx", "All Authors")
     logging.info("Authors saved to Excel!")
     return list(authors)
 
@@ -250,7 +293,7 @@ def find_company_info(name: str) -> str:
     return company_details
 
 #Match author with ICPs
-def icp_match():
+def icp_match(icp: dict):
     #Log process starting message
     logging.info("Matching against ICPs...")
 
@@ -280,28 +323,35 @@ def icp_match():
         right_match = re.search(pattern, employee_count.strip())
         num_employees = int(right_match.group(1)) if right_match else None
 
-        # Could add debug logging to see why matches fail
-        if not any(fuzz.partial_ratio(word, job_title) > 70 for word in icp1["job title"]):
-            logging.debug(f"Failed job title match for {name}: {job_title}")
-        if not any(location.lower() in company_location.lower() for location in icp1["locations"]):
-            logging.debug(f"Failed location match for {name}: {company_location}")
-        if num_employees is None or num_employees > icp1["max employees"]:
-            logging.debug(f"Failed employee count match for {name}: {employee_count}")
+        #regex pattern to find min employees
+        pattern = r"^\d+"
+        left_match = re.search(pattern, employee_count.strip())
+        num_employees = int(left_match.group(1)) if left_match else None
 
-        #save author if they have the right job title & company based on location & employee count
-        if(
-            any(fuzz.partial_ratio(word, job_title) > 70 for word in icp1["job title"]) and
-            any(location.lower() in company_location.lower() for location in icp1["locations"]) #and
-            #(num_employees is not None and num_employees <= icp1["max employees"])
-        ):
+        #check if author matches ICP
+        job_title_match = any(fuzz.partial_ratio(word, job_title) > 70 for word in icp["job title"] ) 
+        location_match = any(location.lower() in company_location.lower() for location in icp["locations"] )
+        #employee match logic
+        employee_match = False
+        if "max" in icp["employees"]: #we're looking for max employees
+            employee_match = num_employees is not None and num_employees <= icp["employees"]["max"]
+        elif "min" in icp["employees"]: #we're looking for min employees
+            employee_match = num_employees is not None and num_employees >= icp["employees"]["min"]
+        elif "range" in icp["employees"]: #we're looking for a range of employees
+            min_employees, max_employees = icp["employees"]["range"]
+            employee_match = num_employees is not None and min_employees <= num_employees <= max_employees
+
+        #if all matches, add to qualified authors
+        if job_title_match and location_match and employee_match:
             logging.info(f"Qualified Author Found: {name}, {company_location}")
             qualified_authors.append(author)
 
     #Save qualified authors to csv
-    save_to_excel(qualified_authors, "Wednesday.xlsx", "Qualified Authors")
+    save_to_excel(qualified_authors, "Thursday.xlsx", "Qualified Authors")
     logging.info("Qualified authors saved to Excel!")
     return qualified_authors
 
+#Save data to excel
 def save_to_excel(data_for_dataframe: list, storage_filename: str, sheet_name: str = 'Sheet1') -> None:
     # Convert filename to .xlsx if it doesn't already have the extension
     if not storage_filename.endswith('.xlsx'):
@@ -337,12 +387,27 @@ def save_to_excel(data_for_dataframe: list, storage_filename: str, sheet_name: s
 def mockup_search():
     return [
         "John - CEO - Google - Mountain View - 10000",
-        "Jane - CTO - Facebook - Menlo Park - 5000",
-        "Jim - VP of Sales - Apple - Cupertino - 1000",
+        "Jane - CTO - Facebook - Menlo Park - 50",
+        "Jim - VP of Sales - Apple - Cupertino - 20",
         "Jill - Director of Marketing - Amazon - Seattle - 20000"
     ]
 
 #Add flask routes
+@app.route('/all-authors', methods = ['GET'])
+def get_all_authors():
+    try:
+        all_authors = get_authors()
+        return jsonify({
+            "status": "success",
+            "message": f"Found {len(all_authors)} authors",
+            "allAuthors": all_authors
+        })
+    except Exception as e:
+        return jsonify({
+            "status": "Error",
+            "message": str(e)
+        }), 500
+
 @app.route('/', methods=['GET'])
 #def generate_mockup_leads():
     #try:
@@ -359,12 +424,23 @@ def mockup_search():
         #}), 500
 def generate_qualified_leads():
     try:
-        qualified_leads = icp_match()
-        return jsonify({
-            "status" : "success",
-            "message" : f"Found {len(qualified_leads)} qualified leads",
-            "Qualified Leads" : qualified_leads
-        })
+        selected_icp = requests.args.get('icp', 'all')
+        icp = icps.get(selected_icp)
+
+        if icp == "all":
+            all_authors = get_authors(icp)
+            return jsonify({
+                "status": "success",
+                "message": f"Found {len(all_authors)} authors",
+                "allAuthors": all_authors
+            })
+        else:
+            qualified_leads = icp_match()
+            return jsonify({
+                "status" : "success",
+                "message" : f"Found {len(qualified_leads)} qualified leads",
+                "qualifiedLeads" : qualified_leads
+            })
     except Exception as e:
         return jsonify({
             "status": "error",
