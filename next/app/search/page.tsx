@@ -12,23 +12,25 @@ interface Lead {
 
 export default function Search() {
     //set state for leads, loading and errors
+    const [allLeads, setAllLeads] =useState<Lead[]>([])
     const [leads, setLeads] = useState<Lead[]>([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
+    const [selectedIcp, setSelectedIcp] = useState("1")
     
     //fetch leads from api
-    const fetchLeads = async () => {
+    const fetchAllAuthors = async () => {
         try {
             //set loading to true
             setLoading(true)
 
             //fetch leads from backend and turn them into json
-            const response = await fetch("http://localhost:5000")
+            const response = await fetch(`http://localhost:5000/all-authors`)
             const data = await response.json()
 
             //if fetch is succesfull set leads to qualified leads
             if (data.status === "success") {
-                const parsedLeads = parseLeadData(data["Qualified Leads"] || [])
+                const parsedLeads = parseLeadData(data["allAuthors"] || [])
                 setLeads(parsedLeads)
             } else {
                 setError(data.message)
@@ -58,17 +60,54 @@ export default function Search() {
         })
     }
 
+    const filterLeadsByIcp = (icp: string) => {
+        if (icp == 'all') {
+            setAllLeads(allLeads)
+        } else {
+            const filteredLeads = allLeads.filter(lead => {
+                const employeeCount = lead.employeeCount
+
+                //match employeecount to pattern
+                const pattern = "/(\d+)\s*to\s*(\d+) | (\d+/"
+                const match = employeeCount.match(pattern)
+
+                if (match) {
+                    const minEmployees = match[1] ? parseInt(match[1]) : parseInt(match[3])
+                    const maxEmployees = match[2] ? parseInt(match[2]) : parseInt(match[3])
+
+                    //check if icp matches employee count
+                    switch(icp){
+                        case "1":
+                            return maxEmployees <= 50
+                        case "2":
+                            return minEmployees >= 51 || maxEmployees <= 200
+                        case "3":
+                            return minEmployees >= 201
+                        case "4":
+                            return minEmployees >= 1001
+                        default:
+                            return true
+                    }
+                }
+                return false
+            })
+            setLeads(filteredLeads)
+        }
+    }
+
     return (
         <div>
             <main className="main-container flex flex-col items-center justify-center">
                 <h1 className={styles.header}>Leads</h1>
+                
                 <div className={styles.buttonContainer}>
-                    <button onClick={fetchLeads}
+                    <button onClick= {() => {fetchAllAuthors}}
                     className={styles.searchButton}>Run The Search</button>
                 </div>
                 {/*show loading or error messages*/}
                 {loading && <div>Loading...</div>}
                 {error && <div>Error: {error}</div>}
+
                 <div className={styles.pageContent}>
                     <div className={styles.tableContainer}>
                         <table className={styles.table}>
@@ -97,12 +136,18 @@ export default function Search() {
                     <div className={styles.searchContainer}>
                         <form className={styles.searchForm}>
                             <div className={styles.searchInput}>
-                                <label htmlFor="keyword">Keyword</label>
-                                <input id="keyword" type="text" placeholder="Input Keyword"/>
+                                <label htmlFor="category">Category</label>
+                                <select id="category">
+                                    <option value="Contact Center">Contact Center</option>
+                                </select>
                             </div>
                             <div className={styles.searchInput}>
                                 <label htmlFor="icp">ICP</label>
-                                <select id="icp">
+                                <select
+                                    id = "icp"
+                                    value = {selectedIcp}
+                                    onChange = {(e) => {e.target.value}}
+                                >
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -111,7 +156,12 @@ export default function Search() {
                             </div>
                         </form>
                         <div className={styles.searchButtonContainer}>
-                            <button className={styles.searchButton}>Search</button>
+                            <button 
+                                className={styles.searchButton}
+                                onClick = {() => filterLeadsByIcp(selectedIcp)}
+                            >
+                                Search
+                            </button>
                         </div>
                     </div>
                 </div>
