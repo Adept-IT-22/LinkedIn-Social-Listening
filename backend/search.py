@@ -12,7 +12,7 @@ from fuzzywuzzy import fuzz
 from flask_cors import CORS
 from linkedin_api import Linkedin
 from fake_useragent import UserAgent
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, Response, stream_with_context
 
 #Create Flask object
 app = Flask(__name__)
@@ -23,7 +23,7 @@ session = requests.Session()
 
 #Authentication Cookies & Headers
 cookies = {
-        "li_at": "AQEDAVDHmcQFX63iAAABlSfcq4EAAAGVS-kvgU4ABJVuzulfMAmE-H6V080_aaQ7cwJRnMmcdFVzy3GlpiRC0esxHMXppqaUc-AsobphBJpIXUq8Qnfvj6ImWNW2WG_H9p6om3JE4QkNCStVUutadgAz"
+        "li_at": "AQEDAVDHmcQC9vndAAABlVTenA4AAAGVeOsgDk0AQ7Gp99dGWf_g5ScpQUkKgDC3IIABN2ryIrkeaFqCOvqxcuz2uWO15axU5NI5Me2roHoGO8xQ78gZXGwgaitAL8JCWev9aINhvPsuO7zkeBZzwGLn"
         }
 
 #Initialize Session User Agent
@@ -159,8 +159,8 @@ keywords = ["call center","contact center", "call center outsourcing",
             "customer service outsourcing", "customer service automation", 
             "customer service software"
             ]
-page_size = 10
-max_pages = 10
+page_size = 5
+max_pages = 2
 
 #Search Paramters
 params = {
@@ -169,6 +169,9 @@ params = {
     "keywords": " OR ".join(keywords),
     "filters": "List((key:resultType,value:List(CONTENT)),(key:contentType,value:List(STATUS_UPDATE)))"
 }
+
+#Global variable to store mock authors
+mock_authors_cache = None
 
 #Search for posts based on keywords
 def search_posts(params: dict) -> list:
@@ -212,10 +215,9 @@ def get_companies() -> list:
 #Get authors
 def get_authors() -> list:
     logging.info("Getting authors...")
-    authors = []
     start_offset = 0 #where search should start from
 
-    #run this loop max_pages(5) number of times
+    #run this loop max_pages number of times
     for _ in range(max_pages):
         #set start parameter to start_offset and run search_posts
         params["start"] = start_offset 
@@ -245,15 +247,17 @@ def get_authors() -> list:
             #create person variable and add person to authors list
             person = name + " - " + job + " - " + company_info
             logging.info(f"NEW AUTHOR FOUND: {name}")
-            authors.append(person)
+            yield person
         
         #change start offset and go again
         start_offset += page_size
+        #delay to make it feel like real time streaming
+        time.sleep(random.uniform(5,10))
 
     #store info in authors.csv file
-    save_to_excel(authors, "Thursday.xlsx", "All Authors")
-    logging.info("Authors saved to Excel!")
-    return list(authors)
+    #save_to_excel(authors, "Friday.xlsx", "All Authors")
+    #logging.info("Authors saved to Excel!")
+    #return list(authors)
 
 #Find Company Info
 def find_company_info(name: str) -> str:
@@ -266,7 +270,7 @@ def find_company_info(name: str) -> str:
         return "Company Not Found"
     else:
         if isinstance(experience, list):
-            experience = experience[0]
+            experience = experience[0] if isinstance(experience, list) else experience
 
     company_name = experience.get("companyName") 
     if not company_name:
@@ -347,7 +351,7 @@ def icp_match(icp: dict):
             qualified_authors.append(author)
 
     #Save qualified authors to csv
-    save_to_excel(qualified_authors, "Thursday.xlsx", "Qualified Authors")
+    save_to_excel(qualified_authors, "Friday.xlsx", "Qualified Authors")
     logging.info("Qualified authors saved to Excel!")
     return qualified_authors
 
@@ -383,50 +387,33 @@ def save_to_excel(data_for_dataframe: list, storage_filename: str, sheet_name: s
 
     logging.info(f"Data saved to {storage_filename} in sheet {sheet_name}!")
 
-#mockup, not the real thing
-def mockup_search():
-    return [
-        "John - CEO - Google - Mountain View - 10000",
-        "Jane - CTO - Facebook - Menlo Park - 50",
-        "Jim - VP of Sales - Apple - Cupertino - 20",
-        "Jill - Director of Marketing - Amazon - Seattle - 20000"
-    ]
-
 #Add flask routes
 @app.route('/all-authors', methods = ['GET'])
 def get_all_authors():
-    try:
-        all_authors = get_authors()
-        return jsonify({
-            "status": "success",
-            "message": f"Found {len(all_authors)} authors",
-            "allAuthors": all_authors
-        })
-    except Exception as e:
-        return jsonify({
-            "status": "Error",
-            "message": str(e)
-        }), 500
+    #generator function to yield authors
+    def generate():
+        try:
+            #fetch all authors and yield each one
+            all_authors = get_authors()
+            for author in all_authors:
+                yield f"data: {json.dumps({"author": author})}\n\n"
+        
+        #if the fetch fails yield an error message
+        except Exception as e:
+            yield f"data: {json.dumps({"error": str(e)})}"
+    
+    #stream the authors as they roll in
+    return Response(stream_with_context(generate()), content_type='text/event-stream')
 
-@app.route('/', methods=['GET'])
-#def generate_mockup_leads():
-    #try:
-        #leads = mockup_search()
-        #return jsonify({
-            #"status": "success",
-            #"message": f"Found {len(leads)} mockup leads",
-            #"Qualified Leads": leads
-        #})
-    #except Exception as e:
-        #return jsonify({
-            #"status": "Error",
-            #"message": f"The following error was encountered: {str(e)}"
-        #}), 500
+
+@app.route('/get-qualified-leads', methods=['GET'])
 def generate_qualified_leads():
     try:
+        #get the icp in the request parameters
         selected_icp = requests.args.get('icp', 'all')
         icp = icps.get(selected_icp)
 
+        #if icp is all fetch all authors
         if icp == "all":
             all_authors = get_authors(icp)
             return jsonify({
@@ -435,21 +422,23 @@ def generate_qualified_leads():
                 "allAuthors": all_authors
             })
         else:
+            #otherwise fetch qualified leads based on icp
             qualified_leads = icp_match()
             return jsonify({
                 "status" : "success",
                 "message" : f"Found {len(qualified_leads)} qualified leads",
                 "qualifiedLeads" : qualified_leads
             })
+    #if it fails return an error
     except Exception as e:
         return jsonify({
             "status": "error",
             "message" : str(e)
         }), 500
 
+#run the program
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG, 
                         encoding="utf-8",
                         format = "%(asctime)s - %(levelname)s - %(message)s")
     app.run(debug = True)
-

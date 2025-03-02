@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import Navbar from "./components/navbar";
-=======
 import Navbar from "@/components/Navbar";
->>>>>>> 14e486811a864dcfe3636cd504cf5c633c7e12b7
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -32,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar/>
+        <Navbar />
         {children}
       </body>
     </html>
