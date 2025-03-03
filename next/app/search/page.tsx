@@ -16,15 +16,15 @@ export default function Search() {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [selectedIcp, setSelectedIcp] = useState("1");
+  const [selectedIcp, setSelectedIcp] = useState("all");
 
   //fetch leads from eventsource api
   const fetchAllAuthors = () => {
     //initialize states
-    setLoading(true);
-    setError(null);
-    setLeads([]);
-    setAllLeads([]);
+    setLoading(true); //set loading to true when a new search is run
+    setError(null); //set error to null when a new search is run
+    setLeads([]); //clear leads whenever a new search is run
+    setAllLeads([]); //clear all leads when a new search is run
 
     //create a new eventsource
     const eventSource = new EventSource("http://localhost:5000/all-authors");
@@ -74,7 +74,7 @@ export default function Search() {
 
   const filterLeadsByIcp = (icp: string) => {
     if (icp == "all") {
-      setAllLeads(allLeads);
+      setLeads(allLeads);
     } else {
       const filteredLeads = allLeads.filter((lead) => {
         const employeeCount = lead.employeeCount;
@@ -92,9 +92,9 @@ export default function Search() {
             case "1":
               return maxEmployees <= 50;
             case "2":
-              return minEmployees >= 51 || maxEmployees <= 200;
+              return minEmployees >= 51 && maxEmployees <= 200;
             case "3":
-              return minEmployees >= 201;
+              return minEmployees >= 201 && maxEmployees <= 1000;
             case "4":
               return minEmployees >= 1001;
             default:
@@ -161,6 +161,7 @@ export default function Search() {
                   value={selectedIcp}
                   onChange={(e) => setSelectedIcp(e.target.value)}
                 >
+                  <option value="all">All</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -173,7 +174,7 @@ export default function Search() {
                 className={styles.searchButton}
                 onClick={() => filterLeadsByIcp(selectedIcp)}
               >
-                Search
+                Filter
               </button>
             </div>
           </div>

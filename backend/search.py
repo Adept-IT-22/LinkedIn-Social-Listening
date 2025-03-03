@@ -23,7 +23,7 @@ session = requests.Session()
 
 #Authentication Cookies & Headers
 cookies = {
-        "li_at": "AQEDAVDHmcQC9vndAAABlVTenA4AAAGVeOsgDk0AQ7Gp99dGWf_g5ScpQUkKgDC3IIABN2ryIrkeaFqCOvqxcuz2uWO15axU5NI5Me2roHoGO8xQ78gZXGwgaitAL8JCWev9aINhvPsuO7zkeBZzwGLn"
+        "li_at": "AQEDAVhZdIACvTedAAABlVq6V0cAAAGVfsbbR00AY6n7tn4UMZjN0eUi7gedN8ExYrx8hvCPWG8fFrz4kr8VgDZK8uGVBiIGIScFBqu2NNzwI3oGe_d3tKlkD1FUBbRzVugjdR4Ys5S_A_2_d4Wdb0FA"
         }
 
 #Initialize Session User Agent
@@ -44,7 +44,7 @@ session.headers.update(get_header())
 #Create client
 linkedin_email = "m10mathenge@gmail.com"
 linkedin_password = os.environ.get("LINKEDIN_PASSWORD")
-api = Linkedin(linkedin_email, linkedin_password)
+api = Linkedin("linkedinlogin10@gmail.com", "ThisIsAStrongerPassword!")
 
 #Locations
 locations ={
@@ -139,7 +139,7 @@ icps = {
         "founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
         "customer"
     },
-    "employees": {"min": 201},
+    "employees": {"range": (201, 1000)},
     "locations": locations
     },
 
@@ -159,8 +159,8 @@ keywords = ["call center","contact center", "call center outsourcing",
             "customer service outsourcing", "customer service automation", 
             "customer service software"
             ]
-page_size = 5
-max_pages = 2
+page_size = 10 #number of authors to fetch per page
+max_pages = 3 #number of pages to fetch
 
 #Search Paramters
 params = {
@@ -213,9 +213,11 @@ def get_companies() -> list:
     return companies
 
 #Get authors
-def get_authors() -> list:
+def get_authors(): 
     logging.info("Getting authors...")
     start_offset = 0 #where search should start from
+    yield_counter = 0 #number of authors yielded
+    seen_authors = set() #set of seen authors
 
     #run this loop max_pages number of times
     for _ in range(max_pages):
@@ -246,13 +248,19 @@ def get_authors() -> list:
             
             #create person variable and add person to authors list
             person = name + " - " + job + " - " + company_info
-            logging.info(f"NEW AUTHOR FOUND: {name}")
-            yield person
+            if person not in seen_authors:
+                logging.info(f"NEW AUTHOR FOUND: {name}")
+                yield person
+                yield_counter += 1
+                seen_authors.add(person)
         
         #change start offset and go again
         start_offset += page_size
         #delay to make it feel like real time streaming
         time.sleep(random.uniform(5,10))
+
+    #number of authors yielded
+    logging.info(f"Total authors yielded: {yield_counter}")
 
     #store info in authors.csv file
     #save_to_excel(authors, "Friday.xlsx", "All Authors")
@@ -322,28 +330,25 @@ def icp_match(icp: dict):
         company_location = parts[3].strip() if len(parts) > 3 and parts[3].strip() else "Location Not Found"
         employee_count = parts[4].strip() if len(parts) > 4 and parts[4].strip() else "Employee Range Not Found"
         
-        #regex pattern to find max employees
-        pattern = r"(\d+)$"
-        right_match = re.search(pattern, employee_count.strip())
-        num_employees = int(right_match.group(1)) if right_match else None
-
         #regex pattern to find min employees
-        pattern = r"^\d+"
-        left_match = re.search(pattern, employee_count.strip())
-        num_employees = int(left_match.group(1)) if left_match else None
+        pattern = r"(\d+)\s*to\s*(\d+)"
+        match = re.search(pattern, employee_count.strip())
+        left_number = int(match.group(1)) if match else None
+        right_number = int(match.group(2)) if match else None
 
         #check if author matches ICP
         job_title_match = any(fuzz.partial_ratio(word, job_title) > 70 for word in icp["job title"] ) 
         location_match = any(location.lower() in company_location.lower() for location in icp["locations"] )
+
         #employee match logic
         employee_match = False
         if "max" in icp["employees"]: #we're looking for max employees
-            employee_match = num_employees is not None and num_employees <= icp["employees"]["max"]
+            employee_match = left_number is not None and left_number <= icp["employees"]["max"]
         elif "min" in icp["employees"]: #we're looking for min employees
-            employee_match = num_employees is not None and num_employees >= icp["employees"]["min"]
+            employee_match = right_number is not None and right_number >= icp["employees"]["min"]
         elif "range" in icp["employees"]: #we're looking for a range of employees
             min_employees, max_employees = icp["employees"]["range"]
-            employee_match = num_employees is not None and min_employees <= num_employees <= max_employees
+            employee_match = left_number is not None and right_number is not None and left_number >= min_employees and right_number <= max_employees
 
         #if all matches, add to qualified authors
         if job_title_match and location_match and employee_match:
