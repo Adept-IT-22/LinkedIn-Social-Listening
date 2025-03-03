@@ -21,9 +21,10 @@ CORS(app)
 #create session
 session = requests.Session()
 
+#CHANGE THIS COOKIE IF CODE DOESNT RUN!
 #Authentication Cookies & Headers
 cookies = {
-        "li_at": "AQEDAVDHmcQC9vndAAABlVTenA4AAAGVeOsgDk0AQ7Gp99dGWf_g5ScpQUkKgDC3IIABN2ryIrkeaFqCOvqxcuz2uWO15axU5NI5Me2roHoGO8xQ78gZXGwgaitAL8JCWev9aINhvPsuO7zkeBZzwGLn"
+        "li_at": "AQEDAUSYgmcB8XkZAAABlVhcjBcAAAGVfGkQF00AJ3xATWWaiV05zT7_KxnuVkZDXWvwVCSoUNEL9Rev9Ih5Vet3dfE4x-I-0MjroIoigExWQy4JMd_a-5CMmDCi312ngsbA0AzOnhJLr2oFkiT-c832"
         }
 
 #Initialize Session User Agent
@@ -44,7 +45,7 @@ session.headers.update(get_header())
 #Create client
 linkedin_email = "m10mathenge@gmail.com"
 linkedin_password = os.environ.get("LINKEDIN_PASSWORD")
-api = Linkedin(linkedin_email, linkedin_password)
+api = Linkedin("mark.mathenge@riarauniversity.ac.ke", "Markothengo99.")
 
 #Locations
 locations ={
