@@ -25,7 +25,7 @@ session = requests.Session()
 
 #Authentication Cookies & Headers
 cookies = {
-        "li_at": "AQEDAUSYgmcAjKJRAAABlWX3lZ4AAAGVigQZnk0AlCN4lAfVbxEKWzdTCLwTvXsd11fyrPJ2-C65cb_GPP7pYMvbKrRo1vmOZ-C49fGkxKQPZRuge1ZX5qV2iLrD3W-bcgUL5mUf3B_pyzTVLrqDwTb4" 
+        "li_at": "AQEDAVDHmcQFEQpvAAABlWZpAdMAAAGVinWF000AILF_CVeLWRAcL6sOEo0GlIQY_uJr2qMBhYnCiGcMS0xPzW1mgoFNw9PJJJhi_nGKyaiu35G7GEtLPQQOS-GEQgJbhg-ftCCLnGzHWFBoZbf7g7Ks" 
         }
 
 #Initialize Session User Agent
@@ -46,7 +46,7 @@ session.headers.update(get_header())
 #Create client
 linkedin_email = "m10mathenge@gmail.com"
 linkedin_password = os.environ.get("LINKEDIN_PASSWORD")
-api = Linkedin("mark.mathenge@riarauniversity.ac.ke", "Markothengo99!")
+api = Linkedin(linkedin_email, linkedin_password)
 
 #Locations
 locations ={
@@ -372,42 +372,21 @@ def save_to_excel(data_for_dataframe: list) -> None:
             company_name = parts[2].strip(),
             company_location = parts[3].strip(),
             employee_count = parts[4].strip() if len(parts) > 4 else 'Unknown'
+
             parsed_data.append([name, job_title, company_name, company_location, employee_count])
     
     # Create DataFrame with specific columns
     df = pd.DataFrame(parsed_data, columns=["Name", "Job Title", "Company Name", "Company Location", "Employee Count"])
     
     #Write dataframe to a ByteIO object
+    today = str(date.today())
     output = BytesIO()
     with pd.ExcelWriter(output ,engine='openpyxl') as writer:
-        df.to_excel(writer, index=False, sheet_name=date.today())
+        df.to_excel(writer, index=False, sheet_name=today)
     output.seek(0) #Move the file pointer to the beginning of the stream
 
     logging.info(f"Data saved in Excel!")
     return output
-
-mock_authors = [
-    "Alice Johnson - Software Engineer - Google - Mountain View, CA - 100,000+",
-    "Bob Smith - Data Scientist - Microsoft - Redmond, WA - 100,000+",
-    "Charlie Brown - Product Manager - Amazon - Seattle, WA - 50,000+",
-    "Diana Prince - UX Designer - Meta - Menlo Park, CA - 75,000+",
-    "Ethan Hunt - DevOps Engineer - Netflix - Los Gatos, CA - 12,000+",
-    "Fiona Gallagher - AI Researcher - OpenAI - San Francisco, CA - 500+",
-    "George Costanza - Marketing Manager - Tesla - Austin, TX - 10,000+",
-    "Hannah Baker - Cybersecurity Analyst - IBM - New York, NY - 100,000+",
-    "Isaac Newton - Machine Learning Engineer - DeepMind - London, UK - 1,500+",
-    "Jack Sparrow - Software Developer - Spotify - Stockholm, Sweden - 6,000+"
-]
-
-@app.route('/', methods=['GET'])
-def xyz():
-   return jsonify({
-       "mock authors" : mock_authors
-   })
-
-@app.route('/abc', methods=['GET'])
-def abc():
-    x = mock_authors
 
 
 #Add flask routes
@@ -480,7 +459,7 @@ def download_excel():
         #Make file downloadable
         return send_file(
             saved_file,
-            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", 
+            mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", 
             as_attachment=True,
             download_name=downloadable_excel_file
             )
