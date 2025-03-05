@@ -107,6 +107,41 @@ export default function Search() {
     }
   };
 
+  //Download Excel File
+  const downloadExcel = async() => {
+    try{
+      //fetch data from backend
+      const response = await fetch(
+        "http://localhost:5000/download-excel",
+        {method: "GET"}
+      )
+
+      //check if response is ok
+      if(!response.ok){
+        throw new Error("Failed to download file")
+      }
+
+      //convert response to binary large object
+      const blob = await response.blob()
+
+      //create url & anchor tag to download file
+      const url = window.URL.createObjectURL(blob)
+      const a = document.createElement("a")
+      document.body.appendChild(a)
+      a.href = url
+      a.download = "Social Listening Results.xlsx"
+      a.click() 
+
+      //remove url and anchor tag
+      a.remove()
+      window.URL.revokeObjectURL(url)
+    
+    } catch(error) {
+      //log any errors
+      console.log("Error encountered: ", error)
+  }
+}
+
   return (
     <div>
       <main className="main-container flex flex-col items-center justify-center">
@@ -115,6 +150,9 @@ export default function Search() {
         <div className={styles.buttonContainer}>
           <button onClick={fetchAllAuthors} className={styles.searchButton}>
             Run The Search
+          </button>
+          <button onClick={downloadExcel} className={styles.downloadButton}>
+            Download Excel
           </button>
         </div>
         {/*show loading or error messages*/}

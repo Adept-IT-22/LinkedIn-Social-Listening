@@ -8,11 +8,13 @@ import logging
 import requests
 import pandas as pd
 import logging.config
+from io import BytesIO
+from datetime import date
 from fuzzywuzzy import fuzz
 from flask_cors import CORS
 from linkedin_api import Linkedin
 from fake_useragent import UserAgent
-from flask import Flask, jsonify, request, Response, stream_with_context
+from flask import Flask, jsonify, request, Response, stream_with_context, send_file
 
 #Create Flask object
 app = Flask(__name__)
@@ -23,7 +25,7 @@ session = requests.Session()
 
 #Authentication Cookies & Headers
 cookies = {
-        "li_at": "AQEDAVhZdIACvTedAAABlVq6V0cAAAGVfsbbR00AY6n7tn4UMZjN0eUi7gedN8ExYrx8hvCPWG8fFrz4kr8VgDZK8uGVBiIGIScFBqu2NNzwI3oGe_d3tKlkD1FUBbRzVugjdR4Ys5S_A_2_d4Wdb0FA"
+        "li_at": "AQEDAUSYgmcAjKJRAAABlWX3lZ4AAAGVigQZnk0AlCN4lAfVbxEKWzdTCLwTvXsd11fyrPJ2-C65cb_GPP7pYMvbKrRo1vmOZ-C49fGkxKQPZRuge1ZX5qV2iLrD3W-bcgUL5mUf3B_pyzTVLrqDwTb4" 
         }
 
 #Initialize Session User Agent
@@ -44,7 +46,7 @@ session.headers.update(get_header())
 #Create client
 linkedin_email = "m10mathenge@gmail.com"
 linkedin_password = os.environ.get("LINKEDIN_PASSWORD")
-api = Linkedin("linkedinlogin10@gmail.com", "ThisIsAStrongerPassword!")
+api = Linkedin("mark.mathenge@riarauniversity.ac.ke", "Markothengo99!")
 
 #Locations
 locations ={
@@ -170,8 +172,8 @@ params = {
     "filters": "List((key:resultType,value:List(CONTENT)),(key:contentType,value:List(STATUS_UPDATE)))"
 }
 
-#Global variable to store mock authors
-mock_authors_cache = None
+#Global variable to store authors
+all_authors_cache = []
 
 #Search for posts based on keywords
 def search_posts(params: dict) -> list:
@@ -261,11 +263,7 @@ def get_authors():
 
     #number of authors yielded
     logging.info(f"Total authors yielded: {yield_counter}")
-
-    #store info in authors.csv file
-    #save_to_excel(authors, "Friday.xlsx", "All Authors")
-    #logging.info("Authors saved to Excel!")
-    #return list(authors)
+    return 
 
 #Find Company Info
 def find_company_info(name: str) -> str:
@@ -355,13 +353,10 @@ def icp_match(icp: dict):
             logging.info(f"Qualified Author Found: {name}, {company_location}")
             qualified_authors.append(author)
 
-    #Save qualified authors to csv
-    save_to_excel(qualified_authors, "Friday.xlsx", "Qualified Authors")
-    logging.info("Qualified authors saved to Excel!")
     return qualified_authors
 
 #Save data to excel
-def save_to_excel(data_for_dataframe: list, storage_filename: str, sheet_name: str = 'Sheet1') -> None:
+def save_to_excel(data_for_dataframe: list) -> None:
     # Convert filename to .xlsx if it doesn't already have the extension
     if not storage_filename.endswith('.xlsx'):
         storage_filename = storage_filename.rsplit('.', 1)[0] + '.xlsx'
@@ -372,35 +367,64 @@ def save_to_excel(data_for_dataframe: list, storage_filename: str, sheet_name: s
         # Split by ' - ' and handle cases where there might be extra dashes in the text
         parts = row.split(' - ')
         if len(parts) >= 4:  # Ensure we have enough parts
-            parsed_row = {
-                'Name': parts[0].strip(),
-                'Job Title': parts[1].strip(),
-                'Company Name': parts[2].strip(),
-                'Company Location': parts[3].strip(),
-                'Company Employee Count': parts[4].strip() if len(parts) > 4 else 'Unknown'
-            }
-            parsed_data.append(parsed_row)
+            name = parts[0].strip(),
+            job_title= parts[1].strip(),
+            company_name = parts[2].strip(),
+            company_location = parts[3].strip(),
+            employee_count = parts[4].strip() if len(parts) > 4 else 'Unknown'
+            parsed_data.append([name, job_title, company_name, company_location, employee_count])
     
     # Create DataFrame with specific columns
-    df = pd.DataFrame(parsed_data)
+    df = pd.DataFrame(parsed_data, columns=["Name", "Job Title", "Company Name", "Company Location", "Employee Count"])
     
-    if not os.path.exists(storage_filename):
-        df.to_excel(storage_filename, index=False)
-    else:
-        with pd.ExcelWriter(storage_filename, mode='a', engine='openpyxl', if_sheet_exists='overlay') as writer:
-            df.to_excel(writer, index=False, sheet_name=sheet_name)
+    #Write dataframe to a ByteIO object
+    output = BytesIO()
+    with pd.ExcelWriter(output ,engine='openpyxl') as writer:
+        df.to_excel(writer, index=False, sheet_name=date.today())
+    output.seek(0) #Move the file pointer to the beginning of the stream
 
-    logging.info(f"Data saved to {storage_filename} in sheet {sheet_name}!")
+    logging.info(f"Data saved in Excel!")
+    return output
+
+mock_authors = [
+    "Alice Johnson - Software Engineer - Google - Mountain View, CA - 100,000+",
+    "Bob Smith - Data Scientist - Microsoft - Redmond, WA - 100,000+",
+    "Charlie Brown - Product Manager - Amazon - Seattle, WA - 50,000+",
+    "Diana Prince - UX Designer - Meta - Menlo Park, CA - 75,000+",
+    "Ethan Hunt - DevOps Engineer - Netflix - Los Gatos, CA - 12,000+",
+    "Fiona Gallagher - AI Researcher - OpenAI - San Francisco, CA - 500+",
+    "George Costanza - Marketing Manager - Tesla - Austin, TX - 10,000+",
+    "Hannah Baker - Cybersecurity Analyst - IBM - New York, NY - 100,000+",
+    "Isaac Newton - Machine Learning Engineer - DeepMind - London, UK - 1,500+",
+    "Jack Sparrow - Software Developer - Spotify - Stockholm, Sweden - 6,000+"
+]
+
+@app.route('/', methods=['GET'])
+def xyz():
+   return jsonify({
+       "mock authors" : mock_authors
+   })
+
+@app.route('/abc', methods=['GET'])
+def abc():
+    x = mock_authors
+
 
 #Add flask routes
 @app.route('/all-authors', methods = ['GET'])
 def get_all_authors():
+    global all_authors_cache
+    
+    #Reset the cache so all-authors always starts w/a fresh list of authors
+    all_authors_cache = [] 
+
     #generator function to yield authors
     def generate():
         try:
             #fetch all authors and yield each one
             all_authors = get_authors()
             for author in all_authors:
+                all_authors_cache.append(author)
                 yield f"data: {json.dumps({"author": author})}\n\n"
         
         #if the fetch fails yield an error message
@@ -440,6 +464,33 @@ def generate_qualified_leads():
             "status": "error",
             "message" : str(e)
         }), 500
+
+#Download Excel File
+@app.route('/download-excel', methods=['GET'])
+def download_excel():
+    try:
+        downloadable_excel_file = "Social Listening Results.xlsx"
+
+        #Get qualified leads
+        qualified_leads = all_authors_cache
+
+        #save qualified leads to excel
+        saved_file = save_to_excel(qualified_leads)
+
+        #Make file downloadable
+        return send_file(
+            saved_file,
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", 
+            as_attachment=True,
+            download_name=downloadable_excel_file
+            )
+    
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "message" : str(e)
+        }), 500
+    
 
 #run the program
 if __name__ == "__main__":
