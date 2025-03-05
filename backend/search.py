@@ -8,11 +8,13 @@ import logging
 import requests
 import pandas as pd
 import logging.config
+from io import BytesIO
+from datetime import date
 from fuzzywuzzy import fuzz
 from flask_cors import CORS
 from linkedin_api import Linkedin
 from fake_useragent import UserAgent
-from flask import Flask, jsonify, request, Response, stream_with_context
+from flask import Flask, jsonify, request, Response, stream_with_context, send_file
 
 #Create Flask object
 app = Flask(__name__)
@@ -24,7 +26,7 @@ session = requests.Session()
 #CHANGE THIS COOKIE IF CODE DOESNT RUN!
 #Authentication Cookies & Headers
 cookies = {
-        "li_at": "AQEDAUSYgmcB8XkZAAABlVhcjBcAAAGVfGkQF00AJ3xATWWaiV05zT7_KxnuVkZDXWvwVCSoUNEL9Rev9Ih5Vet3dfE4x-I-0MjroIoigExWQy4JMd_a-5CMmDCi312ngsbA0AzOnhJLr2oFkiT-c832"
+        "li_at": "AQEDAVhZdIACvTedAAABlVq6V0cAAAGVfsbbR00AY6n7tn4UMZjN0eUi7gedN8ExYrx8hvCPWG8fFrz4kr8VgDZK8uGVBiIGIScFBqu2NNzwI3oGe_d3tKlkD1FUBbRzVugjdR4Ys5S_A_2_d4Wdb0FA"
         }
 
 #Initialize Session User Agent
@@ -45,14 +47,12 @@ session.headers.update(get_header())
 #Create client
 linkedin_email = "m10mathenge@gmail.com"
 linkedin_password = os.environ.get("LINKEDIN_PASSWORD")
-api = Linkedin("mark.mathenge@riarauniversity.ac.ke", "Markothengo99.")
+api = Linkedin("linkedinlogin10@gmail.com", "ThisIsAStrongerPassword!")
 
 #Locations
 locations ={
     #North American Countries
-    "North American Countries": {
-    "united states", "canada"},
-    
+    "North American Countries": { "united states", "canada"},
     #African Countries
     "African Countries": {
     "algeria", "angola", "benin", "botswana", "burkina faso", 
@@ -140,7 +140,7 @@ icps = {
         "founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
         "customer"
     },
-    "employees": {"min": 201},
+    "employees": {"range": (201, 1000)},
     "locations": locations
     },
 
@@ -160,8 +160,8 @@ keywords = ["call center","contact center", "call center outsourcing",
             "customer service outsourcing", "customer service automation", 
             "customer service software"
             ]
-page_size = 5
-max_pages = 2
+page_size = 10 #number of authors to fetch per page
+max_pages = 3 #number of pages to fetch
 
 #Search Paramters
 params = {
@@ -171,8 +171,8 @@ params = {
     "filters": "List((key:resultType,value:List(CONTENT)),(key:contentType,value:List(STATUS_UPDATE)))"
 }
 
-#Global variable to store mock authors
-mock_authors_cache = None
+#Global variable to store authors
+all_authors_cache = []
 
 #Search for posts based on keywords
 def search_posts(params: dict) -> list:
@@ -214,9 +214,11 @@ def get_companies() -> list:
     return companies
 
 #Get authors
-def get_authors() -> list:
+def get_authors(): 
     logging.info("Getting authors...")
     start_offset = 0 #where search should start from
+    yield_counter = 0 #number of authors yielded
+    seen_authors = set() #set of seen authors
 
     #run this loop max_pages number of times
     for _ in range(max_pages):
@@ -247,13 +249,19 @@ def get_authors() -> list:
             
             #create person variable and add person to authors list
             person = name + " - " + job + " - " + company_info
-            logging.info(f"NEW AUTHOR FOUND: {name}")
-            yield person
+            if person not in seen_authors:
+                logging.info(f"NEW AUTHOR FOUND: {name}")
+                yield person
+                yield_counter += 1
+                seen_authors.add(person)
         
         #change start offset and go again
         start_offset += page_size
         #delay to make it feel like real time streaming
         time.sleep(random.uniform(5,10))
+
+    #number of authors yielded
+    logging.info(f"Total authors yielded: {yield_counter}")
 
     #store info in authors.csv file
     #save_to_excel(authors, "Friday.xlsx", "All Authors")
@@ -323,41 +331,35 @@ def icp_match(icp: dict):
         company_location = parts[3].strip() if len(parts) > 3 and parts[3].strip() else "Location Not Found"
         employee_count = parts[4].strip() if len(parts) > 4 and parts[4].strip() else "Employee Range Not Found"
         
-        #regex pattern to find max employees
-        pattern = r"(\d+)$"
-        right_match = re.search(pattern, employee_count.strip())
-        num_employees = int(right_match.group(1)) if right_match else None
-
         #regex pattern to find min employees
-        pattern = r"^\d+"
-        left_match = re.search(pattern, employee_count.strip())
-        num_employees = int(left_match.group(1)) if left_match else None
+        pattern = r"(\d+)\s*to\s*(\d+)"
+        match = re.search(pattern, employee_count.strip())
+        left_number = int(match.group(1)) if match else None
+        right_number = int(match.group(2)) if match else None
 
         #check if author matches ICP
         job_title_match = any(fuzz.partial_ratio(word, job_title) > 70 for word in icp["job title"] ) 
         location_match = any(location.lower() in company_location.lower() for location in icp["locations"] )
+
         #employee match logic
         employee_match = False
         if "max" in icp["employees"]: #we're looking for max employees
-            employee_match = num_employees is not None and num_employees <= icp["employees"]["max"]
+            employee_match = left_number is not None and left_number <= icp["employees"]["max"]
         elif "min" in icp["employees"]: #we're looking for min employees
-            employee_match = num_employees is not None and num_employees >= icp["employees"]["min"]
+            employee_match = right_number is not None and right_number >= icp["employees"]["min"]
         elif "range" in icp["employees"]: #we're looking for a range of employees
             min_employees, max_employees = icp["employees"]["range"]
-            employee_match = num_employees is not None and min_employees <= num_employees <= max_employees
+            employee_match = left_number is not None and right_number is not None and left_number >= min_employees and right_number <= max_employees
 
         #if all matches, add to qualified authors
         if job_title_match and location_match and employee_match:
             logging.info(f"Qualified Author Found: {name}, {company_location}")
             qualified_authors.append(author)
 
-    #Save qualified authors to csv
-    save_to_excel(qualified_authors, "Friday.xlsx", "Qualified Authors")
-    logging.info("Qualified authors saved to Excel!")
     return qualified_authors
 
 #Save data to excel
-def save_to_excel(data_for_dataframe: list, storage_filename: str, sheet_name: str = 'Sheet1') -> None:
+def save_to_excel(data_for_dataframe: list) -> None:
     # Convert filename to .xlsx if it doesn't already have the extension
     if not storage_filename.endswith('.xlsx'):
         storage_filename = storage_filename.rsplit('.', 1)[0] + '.xlsx'
@@ -368,35 +370,43 @@ def save_to_excel(data_for_dataframe: list, storage_filename: str, sheet_name: s
         # Split by ' - ' and handle cases where there might be extra dashes in the text
         parts = row.split(' - ')
         if len(parts) >= 4:  # Ensure we have enough parts
-            parsed_row = {
-                'Name': parts[0].strip(),
-                'Job Title': parts[1].strip(),
-                'Company Name': parts[2].strip(),
-                'Company Location': parts[3].strip(),
-                'Company Employee Count': parts[4].strip() if len(parts) > 4 else 'Unknown'
-            }
-            parsed_data.append(parsed_row)
+            name = parts[0].strip(),
+            job_title= parts[1].strip(),
+            company_name = parts[2].strip(),
+            company_location = parts[3].strip(),
+            employee_count = parts[4].strip() if len(parts) > 4 else 'Unknown'
+
+            parsed_data.append([name, job_title, company_name, company_location, employee_count])
     
     # Create DataFrame with specific columns
-    df = pd.DataFrame(parsed_data)
+    df = pd.DataFrame(parsed_data, columns=["Name", "Job Title", "Company Name", "Company Location", "Employee Count"])
     
-    if not os.path.exists(storage_filename):
-        df.to_excel(storage_filename, index=False)
-    else:
-        with pd.ExcelWriter(storage_filename, mode='a', engine='openpyxl', if_sheet_exists='overlay') as writer:
-            df.to_excel(writer, index=False, sheet_name=sheet_name)
+    #Write dataframe to a ByteIO object
+    today = str(date.today())
+    output = BytesIO()
+    with pd.ExcelWriter(output ,engine='openpyxl') as writer:
+        df.to_excel(writer, index=False, sheet_name=today)
+    output.seek(0) #Move the file pointer to the beginning of the stream
 
-    logging.info(f"Data saved to {storage_filename} in sheet {sheet_name}!")
+    logging.info(f"Data saved in Excel!")
+    return output
+
 
 #Add flask routes
 @app.route('/all-authors', methods = ['GET'])
 def get_all_authors():
+    global all_authors_cache
+    
+    #Reset the cache so all-authors always starts w/a fresh list of authors
+    all_authors_cache = [] 
+
     #generator function to yield authors
     def generate():
         try:
             #fetch all authors and yield each one
             all_authors = get_authors()
             for author in all_authors:
+                all_authors_cache.append(author)
                 yield f"data: {json.dumps({"author": author})}\n\n"
         
         #if the fetch fails yield an error message
@@ -436,6 +446,33 @@ def generate_qualified_leads():
             "status": "error",
             "message" : str(e)
         }), 500
+
+#Download Excel File
+@app.route('/download-excel', methods=['GET'])
+def download_excel():
+    try:
+        downloadable_excel_file = "Social Listening Results.xlsx"
+
+        #Get qualified leads
+        qualified_leads = all_authors_cache
+
+        #save qualified leads to excel
+        saved_file = save_to_excel(qualified_leads)
+
+        #Make file downloadable
+        return send_file(
+            saved_file,
+            mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", 
+            as_attachment=True,
+            download_name=downloadable_excel_file
+            )
+    
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "message" : str(e)
+        }), 500
+    
 
 #run the program
 if __name__ == "__main__":

@@ -19,6 +19,8 @@
   font-family: 'Century Gothic', sans-serif;
   color: black;
   padding-top: 10px;
+  display: flex;
+  gap: 100px;
 }
 
 .tableContainer {
@@ -152,4 +154,13 @@
 
 .searchButton:hover{
   background-color: black;
+}
+
+.downloadButton{
+  background-color: green;
+  padding: 5px 10px;
+  color: white;
+  font-size: 0.8rem;
+  border: 1px solid black;
+  border-radius: 5px;
 }
