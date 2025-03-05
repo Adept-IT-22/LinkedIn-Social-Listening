@@ -26,7 +26,7 @@ session = requests.Session()
 #CHANGE THIS COOKIE IF CODE DOESNT RUN!
 #Authentication Cookies & Headers
 cookies = {
-        "li_at": "AQEDAVhZdIACvTedAAABlVq6V0cAAAGVfsbbR00AY6n7tn4UMZjN0eUi7gedN8ExYrx8hvCPWG8fFrz4kr8VgDZK8uGVBiIGIScFBqu2NNzwI3oGe_d3tKlkD1FUBbRzVugjdR4Ys5S_A_2_d4Wdb0FA"
+        "li_at": "AQEDAVDHmcQD18erAAABlWeCY0kAAAGVi47nSU0AIEWHrNFNe7yHZcxtlVxKHxoK_VgeVZi0ic7HHe03Cp7AlQqConFTSkHwhsUh7HatpyUqf3l-16nl3_xvtGsLaa7AFMTZQAp6LrXSZSWgjxLXytW0"
         }
 
 #Initialize Session User Agent
@@ -47,7 +47,7 @@ session.headers.update(get_header())
 #Create client
 linkedin_email = "m10mathenge@gmail.com"
 linkedin_password = os.environ.get("LINKEDIN_PASSWORD")
-api = Linkedin("linkedinlogin10@gmail.com", "ThisIsAStrongerPassword!")
+api = Linkedin(linkedin_email, "markothengo99")
 
 #Locations
 locations ={

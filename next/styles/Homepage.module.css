@@ -1,0 +1,35 @@
+.mainContainer {
+  background-color: lightgray;
+}
+.dataContainer {
+  width: 70%;
+  height: 15rem;
+  margin: 20px 20px;
+  padding: 10px 10px;
+  display: flex;
+  gap: 50px;
+}
+
+.header {
+  margin: 30px 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: black;
+  font-family: "Century Gothic", sans-serif;
+  padding-top: 20px;
+}
+
+.contentContainer {
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: 30%;
+  box-shadow: 1px 2px 4px rgb(87, 85, 85);
+}
+
+.contentContainer h1 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: black;
+  font-family: "Century Gothic", sans-serif;
+}
