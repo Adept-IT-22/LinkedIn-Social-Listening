@@ -37,6 +37,7 @@ export default function Search() {
       //check if data has an error
       if (data.error) {
         setError(data.error);
+        console.error(data.error)
         eventSource.close();
         return;
       }

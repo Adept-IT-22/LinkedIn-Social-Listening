@@ -1,22 +1,34 @@
 .mainContainer {
-  background-color: lightgray;
+  min-height: calc(100vh - 3em);
+  overflow: auto;
 }
+
 .dataContainer {
-  width: 70%;
-  height: 15rem;
-  margin: 20px 20px;
+  width: 100%;
+  height: 13rem;
+  margin: 0px 20px;
   padding: 10px 10px;
   display: flex;
   gap: 50px;
 }
 
 .header {
-  margin: 30px 20px;
+  padding-left: 10px;
+  margin-top: 30px;
+  margin-left: 20px;
   font-size: 1.4rem;
   font-weight: bold;
   color: black;
   font-family: "Century Gothic", sans-serif;
   padding-top: 20px;
+}
+
+.dataAndChartContainer{
+  width: 70%;
+  height:fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
 }
 
 .contentContainer {
@@ -28,8 +40,118 @@
 }
 
 .contentContainer h1 {
-  font-size: 1.4rem;
+  font-size: 3em;
   font-weight: bold;
   color: black;
   font-family: "Century Gothic", sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  margin-top: 0.8em;
+}
+
+.divingLine{
+  margin: 13px 10px;
+  width: 70%;
+  color:black;
+  font-weight: bold;
+}
+
+.bothChartsContainer{
+  width: 100%;
+  height: 15rem;
+  margin: 10px 20px;
+  padding: 10px 10px;
+  display: flex;
+  gap: 50px;
+}
+
+.chartContainer{
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: 37rem;
+  box-shadow: 1px 2px 4px rgb(87, 85, 85);
+  box-shadow: 1px 2px 4px rgb(87, 85, 85);
+}
+
+.containerHeader{
+  margin: 10px 10px;
+  font-weight: bold;
+  font-family: 'Century Gothic', sans-serif;
+  color: gray
+}
+
+.chartData{
+  display:flex;
+  gap:30px;
+  margin-top: 5px;
+  height: 10em;
+  padding: 10px 30px;
+}
+
+.leadData{
+  width: 13rem;
+  display:flex;
+  gap: 10px;
+}
+
+.dataList{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dataItem{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.dataItem li{
+  border:1px solid blueviolet;
+  height: 20px;
+  width: 20px;
+}
+
+.dataItem:nth-child(1) li{
+  background-color: purple ;
+}
+
+
+.dataItem:nth-child(2) li{
+  background-color: blueviolet;
+}
+
+
+.dataItem:nth-child(3) li{
+  background-color: violet;
+}
+
+
+.dataItem:nth-child(4) li{
+  background-color: palevioletred;
+}
+
+.dataItem p{
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.dataItem h3{
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+}
+
+.actualChart{
+  border-radius: 5px;
+  background-color: lightgrey;
+  width: 100%;
+  box-shadow: 1px 2px 4px rgb(87, 85, 85);
+  border: 1px solid black;
 }

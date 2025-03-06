@@ -15,6 +15,7 @@ from flask_cors import CORS
 from linkedin_api import Linkedin
 from fake_useragent import UserAgent
 from flask import Flask, jsonify, request, Response, stream_with_context, send_file
+import requests.cookies
 
 #Create Flask object
 app = Flask(__name__)
@@ -23,11 +24,16 @@ CORS(app)
 #create session
 session = requests.Session()
 
-#CHANGE THIS COOKIE IF CODE DOESNT RUN!
 #Authentication Cookies & Headers
 cookies = {
-        "li_at": "AQEDAVDHmcQD18erAAABlWeCY0kAAAGVi47nSU0AIEWHrNFNe7yHZcxtlVxKHxoK_VgeVZi0ic7HHe03Cp7AlQqConFTSkHwhsUh7HatpyUqf3l-16nl3_xvtGsLaa7AFMTZQAp6LrXSZSWgjxLXytW0"
+        "li_at": "AQEDAVh40aEEy3xNAAABlWtQCyMAAAGVj1yPI00ABuRkf0Z0_eE7-DYYloaFpO1iF6I-krPG0Rs5tWcMLvLwb0ZtTm7Saeqq4G5Z_u1ui3S2vWErxVTEd17AbQIDyS_Z53yjV7J79xXNT2jKdi2FUFpW",
+        "JSESSIONID" : "ajax:1317021214470204667" 
         }
+
+#Change cookie dictionary to RequestsCookieJar
+cookie_jar = requests.cookies.RequestsCookieJar()
+for name,value in cookies.items():
+    cookie_jar.set(name, value)
 
 #Initialize Session User Agent
 session_user_agent = None
@@ -41,13 +47,13 @@ def get_header():
     return {"User-Agent": session_user_agent}
 
 #inject cookies & headers into session
-session.cookies.update(cookies)
+session.cookies.update(cookie_jar)
 session.headers.update(get_header())
 
 #Create client
 linkedin_email = "m10mathenge@gmail.com"
 linkedin_password = os.environ.get("LINKEDIN_PASSWORD")
-api = Linkedin(linkedin_email, "markothengo99")
+api = Linkedin(username="mark.mathenge@adept-techno.com", password="Linkedin10!", cookies=cookie_jar)
 
 #Locations
 locations ={
@@ -161,7 +167,7 @@ keywords = ["call center","contact center", "call center outsourcing",
             "customer service software"
             ]
 page_size = 10 #number of authors to fetch per page
-max_pages = 3 #number of pages to fetch
+max_pages = 2 #number of pages to fetch
 
 #Search Paramters
 params = {
@@ -359,21 +365,17 @@ def icp_match(icp: dict):
     return qualified_authors
 
 #Save data to excel
-def save_to_excel(data_for_dataframe: list) -> None:
-    # Convert filename to .xlsx if it doesn't already have the extension
-    if not storage_filename.endswith('.xlsx'):
-        storage_filename = storage_filename.rsplit('.', 1)[0] + '.xlsx'
-    
+def save_to_excel(data_for_dataframe: list):
     # Parse the data into structured format
     parsed_data = []
     for row in data_for_dataframe:
         # Split by ' - ' and handle cases where there might be extra dashes in the text
         parts = row.split(' - ')
         if len(parts) >= 4:  # Ensure we have enough parts
-            name = parts[0].strip(),
-            job_title= parts[1].strip(),
-            company_name = parts[2].strip(),
-            company_location = parts[3].strip(),
+            name = parts[0].strip()
+            job_title= parts[1].strip()
+            company_name = parts[2].strip()
+            company_location = parts[3].strip()
             employee_count = parts[4].strip() if len(parts) > 4 else 'Unknown'
 
             parsed_data.append([name, job_title, company_name, company_location, employee_count])
@@ -390,7 +392,6 @@ def save_to_excel(data_for_dataframe: list) -> None:
 
     logging.info(f"Data saved in Excel!")
     return output
-
 
 #Add flask routes
 @app.route('/all-authors', methods = ['GET'])
