@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import styles from "@/styles/Search.module.css";
 
 interface Lead {
@@ -26,8 +26,16 @@ export default function Search() {
     setLeads([]); //clear leads whenever a new search is run
     setAllLeads([]); //clear all leads when a new search is run
 
+    //check if streaming is completed
+    let streamingCompleted = false;
+
     //create a new eventsource
     const eventSource = new EventSource("http://localhost:5000/all-authors");
+
+    //open connection to server
+    eventSource.onopen = () =>  {
+      console.log("Connection to server opened")
+    }
 
     //take the data from the eventsource and parse it
     eventSource.onmessage = (event) => {
@@ -51,24 +59,43 @@ export default function Search() {
       setLeads((prev) => [...prev, parsedLead]);
     };
 
-    eventSource.onerror = () => {
-      setError("Connection to server failed");
-      eventSource.close();
-      setLoading(false);
+    //check for errors in each sent event
+    eventSource.onerror = (event) => {
+      if(!streamingCompleted) {
+        console.error("EventSource failed: ", event)
+        setError("Connection to server failed");
+        eventSource.close();
+        setLoading(false);
+      }
     };
+
+    //end event
+    eventSource.addEventListener("end", () => {
+      console.log("Event stream ended")
+      streamingCompleted = true
+      setLoading(false)
+      eventSource.close()
+      })  
+    
+    //end connection if component unmounts
+    return () => {
+      eventSource.close()
+      console.log("Connection closed on clean up")
+    }
   };
 
   //function to parse data from search
   const parseLeadData = (leadData: string[]): Lead[] => {
-    //split each lead string into these 5 parts
+    //split each lead string into these 6 parts
     return leadData.map((leadString) => {
       const parts = leadString.split(" -");
       return {
         name: parts[0] || "",
         jobTitle: parts[1] || "",
         company: parts[2] || "",
-        location: parts[3] || "",
-        employeeCount: parts[4] || "",
+        industry: parts[3] || "",
+        location: parts[4] || "",
+        employeeCount: parts[5] || "",
       };
     });
   };

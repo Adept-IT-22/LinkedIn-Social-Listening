@@ -26,7 +26,7 @@ session = requests.Session()
 
 #Authentication Cookies & Headers
 cookies = {
-        "li_at": "AQEDAVh40aEEy3xNAAABlWtQCyMAAAGVj1yPI00ABuRkf0Z0_eE7-DYYloaFpO1iF6I-krPG0Rs5tWcMLvLwb0ZtTm7Saeqq4G5Z_u1ui3S2vWErxVTEd17AbQIDyS_Z53yjV7J79xXNT2jKdi2FUFpW",
+        "li_at": "AQEDAVDHmcQEYhxUAAABlX87uiAAAAGVo0g-IE4AvXBob9udp9P6I9qVPBnaJAQLepCAWX-FLvuiL2sJ4dcEJ8DJXrwPnEIrrOgyV3GyEHLs8CBIDMKvoDRc_eXGp2l9zUUK4V6DH50iP6XoM3Es3cVZ",
         "JSESSIONID" : "ajax:1317021214470204667" 
         }
 
@@ -51,9 +51,7 @@ session.cookies.update(cookie_jar)
 session.headers.update(get_header())
 
 #Create client
-linkedin_email = "m10mathenge@gmail.com"
-linkedin_password = os.environ.get("LINKEDIN_PASSWORD")
-api = Linkedin(username="mark.mathenge@adept-techno.com", password="Linkedin10!", cookies=cookie_jar)
+api = Linkedin(username="m10mathenge@gmail.com", password="markothengo99", cookies=cookie_jar)
 
 #Locations
 locations ={
@@ -166,8 +164,8 @@ keywords = ["call center","contact center", "call center outsourcing",
             "customer service outsourcing", "customer service automation", 
             "customer service software"
             ]
-page_size = 10 #number of authors to fetch per page
-max_pages = 2 #number of pages to fetch
+page_size = 3 #number of authors to fetch per page
+max_pages = 1 #number of pages to fetch
 
 #Search Paramters
 params = {
@@ -211,14 +209,6 @@ def search_posts(params: dict) -> list:
         logging.error(f"Error during search {e}")
         return []
 
-#Get companies
-def get_companies() -> list:
-    logging.info("Getting companies...")
-    companies = []
-    results = api.search_companies(keywords=keywords)
-    companies.append(results)
-    return companies
-
 #Get authors
 def get_authors(): 
     logging.info("Getting authors...")
@@ -256,7 +246,7 @@ def get_authors():
             #create person variable and add person to authors list
             person = name + " - " + job + " - " + company_info
             if person not in seen_authors:
-                logging.info(f"NEW AUTHOR FOUND: {name}")
+                logging.info(f"NEW AUTHOR FOUND: {person}") #CHANGE BACK TO NAME NOT PERSON
                 yield person
                 yield_counter += 1
                 seen_authors.add(person)
@@ -269,10 +259,6 @@ def get_authors():
     #number of authors yielded
     logging.info(f"Total authors yielded: {yield_counter}")
 
-    #store info in authors.csv file
-    #save_to_excel(authors, "Friday.xlsx", "All Authors")
-    #logging.info("Authors saved to Excel!")
-    #return list(authors)
 
 #Find Company Info
 def find_company_info(name: str) -> str:
@@ -287,16 +273,24 @@ def find_company_info(name: str) -> str:
         if isinstance(experience, list):
             experience = experience[0] if isinstance(experience, list) else experience
 
+    #Find Company Name
     company_name = experience.get("companyName") 
     if not company_name:
         company_name = "Company Name Not Found"
 
+    #Find Company Location
     company_location = experience.get("geoLocationName")
     if not company_location:
         company_location = "Location Not Found"
 
-    company_size = experience.get("company")
+    #Find Company Industry
+    company_industry = experience.get("company", {}).get("industries", [])
+    company_industry = company_industry[0] if company_industry else "Company Not Found"
+    if not company_industry:
+        company_industry = "Industry Not Found"
 
+    #Find Company Size
+    company_size = experience.get("company")
     #if company size data exists fetch it otherwise return not found 
     if company_size:
         employee_range = company_size.get("employeeCountRange")
@@ -308,7 +302,7 @@ def find_company_info(name: str) -> str:
         employee_range = "Employee Range Not Found"
 
     #return company details
-    company_details = f"{company_name} - {company_location} - {employee_range}"
+    company_details = f"{company_name} - {company_location} - {company_industry} - {employee_range}"
     return company_details
 
 #Match author with ICPs
@@ -334,8 +328,9 @@ def icp_match(icp: dict):
         name = parts[0].strip()
         job_title = parts[1].strip().lower()
         company_name = parts[2].strip() if len(parts) > 2 and parts[2].strip() else "Company Not Found"
-        company_location = parts[3].strip() if len(parts) > 3 and parts[3].strip() else "Location Not Found"
-        employee_count = parts[4].strip() if len(parts) > 4 and parts[4].strip() else "Employee Range Not Found"
+        company_industry = parts[3].strip() if len(parts) > 3 and parts[3].strip() else "Industry Not Found"
+        company_location = parts[4].strip() if len(parts) > 4 and parts[4].strip() else "Location Not Found"
+        employee_count = parts[5].strip() if len(parts) > 5 and parts[5].strip() else "Employee Range Not Found"
         
         #regex pattern to find min employees
         pattern = r"(\d+)\s*to\s*(\d+)"
@@ -371,17 +366,18 @@ def save_to_excel(data_for_dataframe: list):
     for row in data_for_dataframe:
         # Split by ' - ' and handle cases where there might be extra dashes in the text
         parts = row.split(' - ')
-        if len(parts) >= 4:  # Ensure we have enough parts
+        if len(parts) >= 5:  # Ensure we have enough parts
             name = parts[0].strip()
             job_title= parts[1].strip()
             company_name = parts[2].strip()
-            company_location = parts[3].strip()
-            employee_count = parts[4].strip() if len(parts) > 4 else 'Unknown'
+            company_industry = parts[3].strip()
+            company_location = parts[4].strip()
+            employee_count = parts[5].strip() if len(parts) > 5 else 'Unknown'
 
-            parsed_data.append([name, job_title, company_name, company_location, employee_count])
+            parsed_data.append([name, job_title, company_name, company_industry, company_location, employee_count])
     
     # Create DataFrame with specific columns
-    df = pd.DataFrame(parsed_data, columns=["Name", "Job Title", "Company Name", "Company Location", "Employee Count"])
+    df = pd.DataFrame(parsed_data, columns=["Name", "Job Title", "Company Name", "Company Industry" "Company Location", "Employee Count"])
     
     #Write dataframe to a ByteIO object
     today = str(date.today())
