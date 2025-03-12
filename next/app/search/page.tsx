@@ -6,6 +6,7 @@ interface Lead {
   name: string;
   jobTitle: string;
   company: string;
+  industry: string;
   location: string;
   employeeCount: string;
 }
@@ -195,6 +196,7 @@ export default function Search() {
                   <th>Name</th>
                   <th>Job Title</th>
                   <th>Company</th>
+                  <th>Industry</th>
                   <th>Location</th>
                   <th>Employee Count</th>
                 </tr>
@@ -206,6 +208,7 @@ export default function Search() {
                     <td>{lead.jobTitle}</td>
                     <td>{lead.company}</td>
                     <td>{lead.location}</td>
+                    <td>{lead.industry}</td>
                     <td>{lead.employeeCount}</td>
                   </tr>
                 ))}

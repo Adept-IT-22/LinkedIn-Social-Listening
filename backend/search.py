@@ -5,6 +5,7 @@ import json
 import time
 import random
 import logging
+import psycopg
 import requests
 import pandas as pd
 import logging.config
@@ -321,7 +322,7 @@ def icp_match(icp: dict):
         parts = author.split(" - ")
 
         #if author doesn't have name/job go to next author
-        if len(parts) < 2:
+        if len(parts) < 6:
             continue
         
         #otherwise split author info into pieces
@@ -400,12 +401,36 @@ def get_all_authors():
     #generator function to yield authors
     def generate():
         try:
-            #fetch all authors and yield each one
-            all_authors = get_authors()
-            for author in all_authors:
-                all_authors_cache.append(author)
-                yield f"data: {json.dumps({"author": author})}\n\n"
-        
+            with psycopg.connect(conninfo="host=localhost dbname=sl port=5432 user=postgres password=markothengo99") as conn:
+                with conn.cursor() as cur:
+                    #fetch all authors and yield each one
+                    all_authors = get_authors()
+                    for author in all_authors:
+                        all_authors_cache.append(author)
+                        yield f"data: {json.dumps({"author": author})}\n\n"
+                        parts = author.split(" - ")
+                        name = parts[0].strip()
+                        job_title = parts[1].strip()
+                        company_name = parts[2].strip()
+                        company_industry = parts[3].strip
+                        company_location = parts[4].strip()
+                        employee_size = parts[5].strip()
+                        try:
+                            cur.execute(
+                                "INSERT INTO authors (name, title) VALUES (%s, %s)",
+                                        (name, job_title)
+                                    )
+                            
+                            cur.execute(
+                                "INSERT INTO companies (name, industry, location, size) VALUES (%s, %s, %s, %s)",
+                                        (company_name, company_industry, company_location, employee_size)
+                                    )
+                            logging.info("Data inserted into Authors!")
+                        except Exception as e:
+                            logging.error("Error: ", e)
+
+                conn.commit()
+
         #if the fetch fails yield an error message
         except Exception as e:
             yield f"data: {json.dumps({"error": str(e)})}"
