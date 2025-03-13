@@ -390,7 +390,43 @@ def save_to_excel(data_for_dataframe: list):
     logging.info(f"Data saved in Excel!")
     return output
 
-#Add flask routes
+mock_authors = [
+    "Alice Johnson - Software Engineer - Google - Tech - Mountain View, CA - 100,000+",
+    "Bob Smith - Data Scientist - Microsoft - Enteretainment - Redmond, WA - 100,000+",
+    "Charlie Brown - Product Manager - Amazon - Sports - Seattle, WA - 50,000+",
+    "Diana Prince - UX Designer - Meta - Finance - Menlo Park, CA - 75,000+",
+    "Ethan Hunt - DevOps Engineer - Netflix - Agriculture - Los Gatos, CA - 12,000+",
+    "Fiona Gallagher - AI Researcher - OpenAI - Tech - San Francisco, CA - 500+",
+    "George Costanza - Marketing Manager - Tesla - Entertainment - Austin, TX - 10,000+",
+    "Hannah Baker - Cybersecurity Analyst - IBM - Sports - New York, NY - 100,000+",
+    "Isaac Newton - Machine Learning Engineer - DeepMind - Tech - London, UK - 1,500+",
+    "Jack Sparrow - Software Developer - Spotify - Tech - Stockholm, Sweden - 6,000+"
+]
+
+@app.route('/get-mocks', methods=['GET'])
+def get_mocks():
+    with psycopg.connect(conninfo="host=localhost dbname=sl user=postgres port=5432 password=markothengo99") as conn:
+        with conn.cursor() as cur:
+            for author in mock_authors:
+                parts = author.split(" - ")
+                name = parts[0].strip()
+                title = parts[1].strip()
+                company = parts[2].strip()
+                industry = parts[3].strip()
+                location = parts[4].strip()
+                size = parts[5].strip() 
+                cur.execute("INSERT INTO companies (name, industry, location, employee_count) VALUES (%s, %s, %s, %s) RETURNING company_id",
+                            (company, industry, location, size)           
+                            )
+                company_id = cur.fetchone()[0]
+                cur.execute("INSERT INTO authors (name, title, company_id) VALUES (%s, %s, %s)",
+                            (name, title, company_id) 
+                            )
+        conn.commit()
+    conn.close()
+    return mock_authors
+
+#Add Routes
 @app.route('/all-authors', methods = ['GET'])
 def get_all_authors():
     global all_authors_cache
@@ -412,7 +448,7 @@ def get_all_authors():
                         name = parts[0].strip()
                         job_title = parts[1].strip()
                         company_name = parts[2].strip()
-                        company_industry = parts[3].strip
+                        company_industry = parts[3].strip()
                         company_location = parts[4].strip()
                         employee_size = parts[5].strip()
                         try:
@@ -422,7 +458,7 @@ def get_all_authors():
                                     )
                             
                             cur.execute(
-                                "INSERT INTO companies (name, industry, location, size) VALUES (%s, %s, %s, %s)",
+                                "INSERT INTO companies (name, industry, location, employee_count) VALUES (%s, %s, %s, %s)",
                                         (company_name, company_industry, company_location, employee_size)
                                     )
                             logging.info("Data inserted into Authors!")
@@ -430,7 +466,6 @@ def get_all_authors():
                             logging.error("Error: ", e)
 
                 conn.commit()
-
         #if the fetch fails yield an error message
         except Exception as e:
             yield f"data: {json.dumps({"error": str(e)})}"
