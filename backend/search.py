@@ -453,14 +453,15 @@ def get_all_authors():
                         employee_size = parts[5].strip()
                         try:
                             cur.execute(
-                                "INSERT INTO authors (name, title) VALUES (%s, %s)",
-                                        (name, job_title)
-                                    )
-                            
-                            cur.execute(
-                                "INSERT INTO companies (name, industry, location, employee_count) VALUES (%s, %s, %s, %s)",
+                                "INSERT INTO companies (name, industry, location, employee_count) VALUES (%s, %s, %s, %s) RETURNING company_id",
                                         (company_name, company_industry, company_location, employee_size)
                                     )
+                            company_id = cur.fetchone()[0]
+                            cur.execute(
+                                "INSERT INTO authors (name, title, company_id) VALUES (%s, %s, %s)",
+                                        (name, job_title, company_id)
+                                    )
+                            
                             logging.info("Data inserted into Authors!")
                         except Exception as e:
                             logging.error("Error: ", e)
