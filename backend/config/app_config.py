@@ -7,7 +7,7 @@ load_dotenv(override=True)
 class Config:
     #Linkedin settings
     LINKEDIN_USERNAME = os.getenv("LINKEDIN_USERNAME")
-    LINKEDIN_PASSWORD = os.getenv("LINKEDIN_PASSWORD", "markothengo99")
+    LINKEDIN_PASSWORD = os.getenv("LINKEDIN_PASSWORD")
     #authentication and session cookies
     LINKEDIN_COOKIES = {
         "li_at": os.getenv("LINKEDIN_LI_AT"),
