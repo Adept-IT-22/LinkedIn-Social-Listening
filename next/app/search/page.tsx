@@ -31,7 +31,7 @@ export default function Search() {
     let streamingCompleted = false;
 
     //create a new eventsource
-    const eventSource = new EventSource("http://localhost:5000/all-authors");
+    const eventSource = new EventSource("http://localhost:5000/get-mocks");
 
     //open connection to server
     eventSource.onopen = () =>  {
