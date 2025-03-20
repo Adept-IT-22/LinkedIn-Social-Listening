@@ -1,12 +1,11 @@
 "use client";
-import { useState} from "react";
+import { useState, useEffect } from "react";
 import styles from "@/styles/Search.module.css";
 
 interface Lead {
   name: string;
   jobTitle: string;
   company: string;
-  industry: string;
   location: string;
   employeeCount: string;
 }
@@ -27,16 +26,8 @@ export default function Search() {
     setLeads([]); //clear leads whenever a new search is run
     setAllLeads([]); //clear all leads when a new search is run
 
-    //check if streaming is completed
-    let streamingCompleted = false;
-
     //create a new eventsource
-    const eventSource = new EventSource("http://localhost:5000/get-mocks");
-
-    //open connection to server
-    eventSource.onopen = () =>  {
-      console.log("Connection to server opened")
-    }
+    const eventSource = new EventSource("http://localhost:5000/all-authors");
 
     //take the data from the eventsource and parse it
     eventSource.onmessage = (event) => {
@@ -46,7 +37,6 @@ export default function Search() {
       //check if data has an error
       if (data.error) {
         setError(data.error);
-        console.error(data.error)
         eventSource.close();
         return;
       }
@@ -60,43 +50,24 @@ export default function Search() {
       setLeads((prev) => [...prev, parsedLead]);
     };
 
-    //check for errors in each sent event
-    eventSource.onerror = (event) => {
-      if(!streamingCompleted) {
-        console.error("EventSource failed: ", event)
-        setError("Connection to server failed");
-        eventSource.close();
-        setLoading(false);
-      }
+    eventSource.onerror = () => {
+      setError("Connection to server failed");
+      eventSource.close();
+      setLoading(false);
     };
-
-    //end event
-    eventSource.addEventListener("end", () => {
-      console.log("Event stream ended")
-      streamingCompleted = true
-      setLoading(false)
-      eventSource.close()
-      })  
-    
-    //end connection if component unmounts
-    return () => {
-      eventSource.close()
-      console.log("Connection closed on clean up")
-    }
   };
 
   //function to parse data from search
   const parseLeadData = (leadData: string[]): Lead[] => {
-    //split each lead string into these 6 parts
+    //split each lead string into these 5 parts
     return leadData.map((leadString) => {
       const parts = leadString.split(" -");
       return {
         name: parts[0] || "",
         jobTitle: parts[1] || "",
         company: parts[2] || "",
-        industry: parts[3] || "",
-        location: parts[4] || "",
-        employeeCount: parts[5] || "",
+        location: parts[3] || "",
+        employeeCount: parts[4] || "",
       };
     });
   };
@@ -137,39 +108,37 @@ export default function Search() {
   };
 
   //Download Excel File
-  const downloadExcel = async() => {
-    try{
+  const downloadExcel = async () => {
+    try {
       //fetch data from backend
-      const response = await fetch(
-        "http://localhost:5000/download-excel",
-        {method: "GET"}
-      )
+      const response = await fetch("http://localhost:5000/download-excel", {
+        method: "GET",
+      });
 
       //check if response is ok
-      if(!response.ok){
-        throw new Error("Failed to download file")
+      if (!response.ok) {
+        throw new Error("Failed to download file");
       }
 
       //convert response to binary large object
-      const blob = await response.blob()
+      const blob = await response.blob();
 
       //create url & anchor tag to download file
-      const url = window.URL.createObjectURL(blob)
-      const a = document.createElement("a")
-      document.body.appendChild(a)
-      a.href = url
-      a.download = "Social Listening Results.xlsx"
-      a.click() 
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      document.body.appendChild(a);
+      a.href = url;
+      a.download = "Social Listening Results.xlsx";
+      a.click();
 
       //remove url and anchor tag
-      a.remove()
-      window.URL.revokeObjectURL(url)
-    
-    } catch(error) {
+      a.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
       //log any errors
-      console.log("Error encountered: ", error)
-  }
-}
+      console.log("Error encountered: ", error);
+    }
+  };
 
   return (
     <div>
@@ -196,7 +165,6 @@ export default function Search() {
                   <th>Name</th>
                   <th>Job Title</th>
                   <th>Company</th>
-                  <th>Industry</th>
                   <th>Location</th>
                   <th>Employee Count</th>
                 </tr>
@@ -208,7 +176,6 @@ export default function Search() {
                     <td>{lead.jobTitle}</td>
                     <td>{lead.company}</td>
                     <td>{lead.location}</td>
-                    <td>{lead.industry}</td>
                     <td>{lead.employeeCount}</td>
                   </tr>
                 ))}
