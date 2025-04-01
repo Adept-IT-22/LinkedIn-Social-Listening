@@ -1,3 +1,4 @@
+from config import logging_config
 import os
 import re
 import ast
@@ -15,6 +16,7 @@ from fuzzywuzzy import fuzz
 from flask_cors import CORS
 from linkedin_api import Linkedin
 from fake_useragent import UserAgent
+from transformers import pipeline, AutoTokenizer
 from flask import Flask, jsonify, request, Response, stream_with_context, send_file
 import requests.cookies
 
@@ -176,11 +178,40 @@ params = {
     "filters": "List((key:resultType,value:List(CONTENT)),(key:contentType,value:List(STATUS_UPDATE)))"
 }
 
-#Global variable to store authors
+#Global variable to store posts & authors
 all_authors_cache = []
+
+    
+#perform sentiment analysis of each post
+model = "siebert/sentiment-roberta-large-english"
+sentiment_analyzer = pipeline(task="sentiment-analysis", model=model)
+
+def sentiment_analysis(text, keywords):
+    try:
+        #tokenize the text
+        tokenizer = AutoTokenizer.from_pretrained(model)
+        tokens = tokenizer(
+            text,
+            truncation = True,
+            max_length = 4096,
+        )
+        truncated_text = tokenizer.decode(tokens["input_ids"])
+
+        analysis = sentiment_analyzer(truncated_text)[0] #analyze the 1st 4096 tokens
+        return {
+            "text": text,
+            "sentiment" : analysis["label"],
+            "score" : analysis["score"],
+            "words_found" : any(keyword in text.lower() for keyword in keywords),
+            "truncated": len(tokens["input_ids"]) >= 4096
+        }
+    except Exception as e:
+        logging.error("Analysis failed for text (first 200 characters): %s | Error %s", text[:200], str(e))
+        return None
 
 #Search for posts based on keywords
 def search_posts(params: dict) -> list:
+    all_posts = []
     all_results = []
     try:
         for i in range(0, len(keywords), 3):
@@ -197,6 +228,17 @@ def search_posts(params: dict) -> list:
             #Run the search
             search_results = api.search(current_params, limit=10)
 
+            #extract the actual linkedin post
+            for result in search_results:
+                summary = result.get("summary")
+                linkedin_post = summary.get("text") if isinstance(summary, dict) else "Post not found" 
+                #perform sentiment analysis on post
+                if linkedin_post:
+                    analysis = sentiment_analysis(linkedin_post, keywords)
+                    #store analysis in all posts
+                    if analysis:
+                        all_posts.append(analysis)
+
             #Add results to all_results
             if search_results:
                 all_results.extend(search_results)
@@ -205,7 +247,9 @@ def search_posts(params: dict) -> list:
                 print(f"No results for {combined_keywords}")
             time.sleep(random.uniform(5, 10))
             
-        return all_results
+        #return all_results
+        return all_posts
+
     except Exception as e:
         logging.error(f"Error during search {e}")
         return []
@@ -403,6 +447,10 @@ mock_authors = [
     "Jack Sparrow - Software Developer - Spotify - Tech - Stockholm, Sweden - 6,000+"
 ]
 
+@app.route('/', methods = ['GET'])
+def search():
+    return search_posts(params)
+
 @app.route('/get-mocks', methods=['GET'])
 def get_mocks():
     with psycopg.connect(conninfo="host=localhost dbname=sl user=postgres port=5432 password=markothengo99") as conn:
@@ -534,7 +582,8 @@ def download_excel():
 
 #run the program
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.DEBUG, 
-                        encoding="utf-8",
-                        format = "%(asctime)s - %(levelname)s - %(message)s")
+    #initialize logging configurations
+    logging_config.configure_logging()
+
+    #run the flask app
     app.run(debug = True)
