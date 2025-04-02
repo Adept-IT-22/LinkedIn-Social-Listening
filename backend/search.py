@@ -123,43 +123,155 @@ locations ={
 }
 
 #Ideal Customer Profile
-icps = { 
-    "icp1": { 
-        "job title": {
-        "founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
-        "customer"
-    },
-    "employees": {"max": 50},
-    "locations": locations
-    },
+#icps = { 
+    #"icp1": { 
+        #"job title": {
+        #"founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
+        #"customer"
+    #},
+    #"employees": {"max": 50},
+    #"locations": locations
+    #},
 
-    "icp2": { 
-        "job title": {
-        "founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
-        "customer"
-    },
-    "employees": {"range": (51, 200)},
-    "locations": locations
-    },
+    #"icp2": { 
+        #"job title": {
+        #"founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
+        #"customer"
+    #},
+    #"employees": {"range": (51, 200)},
+    #"locations": locations
+    #},
 
-    "icp3": { 
-        "job title": {
-        "founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
-        "customer"
-    },
-    "employees": {"range": (201, 1000)},
-    "locations": locations
-    },
+    #"icp3": { 
+        #"job title": {
+        #"founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
+        #"customer"
+    #},
+    #"employees": {"range": (201, 1000)},
+    #"locations": locations
+    #},
 
-    "icp4": { 
-        "job title": {
-        "founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
-        "customer"
+    #"icp4": { 
+        #"job title": {
+        #"founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
+        #"customer"
+    #},
+    #"employees": {"min": 1001},
+    #"locations": locations
+    #}
+ #}
+icps = {
+    "Small Businesses (0-50 seats)": {
+        "job_titles": {
+            "Founder", "CEO", "Marketing Manager", "Customer Service Manager", 
+            "Entrepreneur", "Small Business Owner"
+        },
+        "employees": {"max": 50},
+        "revenue": {"max": "Ksh 50M"},
+        "industries": {
+            "Individuals", "Local start-ups", "Retailers", "Small professionals", 
+            "Research companies", "Beverage distributors", "Debt collectors"
+        },
+        "locations" : locations,
+        "pain_points": {
+            "Inefficient customer service operations",
+            "High operational costs for in-house contact centers",
+            "Limited access to advanced analytics"
+        },
+        "value_proposition": {
+            "Omni-channel support solutions",
+            "Scalable solutions",
+            "Affordable solution within budget",
+            "Trusted long-term partner"
+        },
+        "decision_factors": ["Cost efficiency", "Risk mitigation", "Technology integration"],
+        "sales_cycle": "1-3 months",
+        "discovery_channels": ["Referrals", "Website", "Email", "LinkedIn", "SME events"]
     },
-    "employees": {"min": 1001},
-    "locations": locations
+    
+    "Mid-Size Companies (51-250 seats)": {
+        "job_titles": {
+            "CEO", "CFO", "CTO", "Head of Customer Care", "Operations Manager", 
+            "IT Manager", "Customer Experience Manager"
+        },
+        "employees": {"range": (51, 250)},
+        "revenue": {"range": ("Ksh 51M", "Ksh 100M")},
+        "industries": {
+            "Mid-size e-commerce", "Manufacturing", "Tier 2 healthcare providers",
+            "Tier 2 banks", "Tier 2 SACCOs", "Tier 2 insurance", "Fintechs"
+        },
+        "locations" : locations,
+        "pain_points": {
+            "Need for efficient customer support",
+            "Managing growth and customer expansion",
+            "Integration with current systems"
+        },
+        "value_proposition": {
+            "Quality control for high standards",
+            "Experience in customer support",
+            "Trusted long-term partner",
+            "Data solutions integration"
+        },
+        "decision_factors": ["Experience", "Quality", "Affordable rate", "Speed"],
+        "sales_cycle": "3-6 months",
+        "discovery_channels": ["Industry expos", "Trade shows", "Tech workshops", "Referrals"]
+    },
+    
+    "Large Enterprises (251+ seats)": {
+        "job_titles": {
+            "CEO", "CFO", "CTO", "CMO", "IT Security Manager", 
+            "VP Customer Experience", "Chief Data Officer"
+        },
+        "employees": {"min": 251},
+        "revenue": {"min": "Ksh 100M"},
+        "industries": {
+            "Large e-commerce", "Manufacturing & transport", "Tier 1 healthcare",
+            "Tier 1 banks", "Tier 1 insurance", "Tier 1 telcos"
+        },
+        "locations" : locations,
+        "pain_points": {
+            "Competitive differentiation",
+            "High-quality service delivery",
+            "Expanding client base needs",
+            "System integration challenges"
+        },
+        "value_proposition": {
+            "Quality assurance processes",
+            "Trusted partner with compliance",
+            "Large-scale operation expertise",
+            "Data security and integration"
+        },
+        "decision_factors": ["Price", "Experience", "Compliance", "Tech support"],
+        "sales_cycle": "6+ months",
+        "discovery_channels": ["Executive networking", "Industry summits", "RFP responses"]
+    },
+    
+    "BPO Providers (100-1000+ seats)": {
+        "job_titles": {
+            "Regional Business Development Manager", "Operations Manager",
+            "Client Relations Manager", "Chief Operations Officer"
+        },
+        "employees": {"range": (100, 1000)},
+        "revenue": {"min": "$100M"},
+        "industries": {"Mid-Large BPOs", "International outsourcing firms"},
+        "locations" : locations,
+            "pain_points": {
+            "Specialized BPO services",
+            "Security and data compliance",
+            "Quality assurance at scale",
+            "Large workforce management"
+        },
+        "value_proposition": {
+            "Specialized BPO services",
+            "Security and data compliance",
+            "Quality assurance",
+            "Large workforce management"
+        },
+        "decision_factors": ["Compliance", "Team size", "Quality", "Experience"],
+        "sales_cycle": "2-6 months",
+        "discovery_channels": ["BPO conferences", "Outsourcing summits", "Global networking"]
     }
- }
+}
 
 #Search settings
 keywords = ["call center","contact center", "call center outsourcing", 
@@ -180,7 +292,7 @@ params = {
 
 #Global variable to store posts & authors
 all_authors_cache = []
-
+icp_score = 0
     
 #perform sentiment analysis of each post
 model = "siebert/sentiment-roberta-large-english"
@@ -206,7 +318,7 @@ def sentiment_analysis(text, keywords):
             "truncated": len(tokens["input_ids"]) >= 4096
         }
     except Exception as e:
-        logging.error("Analysis failed for text (first 200 characters): %s | Error %s", text[:200], str(e))
+        logging.error("Analysis failed for text (first 50 characters): %s | Error %s", text[:50], str(e))
         return None
 
 #Search for posts based on keywords
@@ -377,15 +489,17 @@ def icp_match(icp: dict):
         company_location = parts[4].strip() if len(parts) > 4 and parts[4].strip() else "Location Not Found"
         employee_count = parts[5].strip() if len(parts) > 5 and parts[5].strip() else "Employee Range Not Found"
         
+        #job title match
+
+
+       #check if location is right 
+
+
         #regex pattern to find min employees
         pattern = r"(\d+)\s*to\s*(\d+)"
         match = re.search(pattern, employee_count.strip())
         left_number = int(match.group(1)) if match else None
         right_number = int(match.group(2)) if match else None
-
-        #check if author matches ICP
-        job_title_match = any(fuzz.partial_ratio(word, job_title) > 70 for word in icp["job title"] ) 
-        location_match = any(location.lower() in company_location.lower() for location in icp["locations"] )
 
         #employee match logic
         employee_match = False
@@ -403,6 +517,72 @@ def icp_match(icp: dict):
             qualified_authors.append(author)
 
     return qualified_authors
+
+def check_job_title(job_title, icp):
+    #job title match
+    job_title_score = 0
+
+    #job title that has passed fuzzy matching
+    matched_title = None
+
+    #get score from fuzzy mactching
+    for title in icp["job_titles"]:
+        match_score = fuzz.partial_ratio(title.lower(), job_title.lower())
+
+        if match_score > 70:
+            matched_title = title
+            break
+
+    #if match was found, rank it
+    if matched_title:
+        if any(keyword in matched_title.lower() for keyword in ["founder", "chief", "ceo", "cto", "cfo"]):
+            job_title_score += 25
+        elif "director" in matched_title.lower() or "vp" in matched_title.lower() or "head" in matched_title.lower():
+            job_title_score += 20
+        elif "manager" in matched_title.lower():
+            job_title_score += 15
+        elif "specialist" in matched_title.lower() or " coordinator" in matched_title.lower():
+            job_title_score += 10
+        else:
+            job_title_score += 5
+
+    #add job title score to overall icp score
+    return job_title_score
+
+def check_company_location(company_location, icp):
+    company_location_score = 0
+    matched_location = None
+    
+    # Create a flat dictionary of locations mapped to scores
+    location_scores = {}
+
+    # Assign predefined scores to each location
+    for location in icp["locations"].get("North American Countries", []):
+        location_scores[location.lower()] = 25
+    for location in icp["locations"].get("U.S. Cities", []):
+        location_scores[location.lower()] = 25
+    for location in icp["locations"].get("European Countries", []):
+        location_scores[location.lower()] = 25
+    for location in icp["locations"].get("European Cities", []):
+        location_scores[location.lower()] = 25
+    for location in icp["locations"].get("African Countries", []):
+        location_scores[location.lower()] = 15
+    for location in icp["locations"].get("African Cities", []):
+        location_scores[location.lower()] = 15
+
+    # Perform fuzzy matching then score
+    for loc, score in location_scores.items():
+        location_fuzzy_score = fuzz.partial_ratio(loc, company_location.lower())
+        if location_fuzzy_score > 70:
+            matched_location = loc
+            company_location_score = score
+            break  # Stop at the first match
+
+    # Default score for non-matching locations
+    if not matched_location:
+        company_location_score = 5  
+
+    return company_location_score
 
 #Save data to excel
 def save_to_excel(data_for_dataframe: list):
