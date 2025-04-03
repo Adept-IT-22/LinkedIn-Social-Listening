@@ -294,32 +294,32 @@ params = {
 all_authors_cache = []
 icp_score = 0
     
-#perform sentiment analysis of each post
-model = "siebert/sentiment-roberta-large-english"
-sentiment_analyzer = pipeline(task="sentiment-analysis", model=model)
+##perform sentiment analysis of each post
+#model = "siebert/sentiment-roberta-large-english"
+#sentiment_analyzer = pipeline(task="sentiment-analysis", model=model)
 
-def sentiment_analysis(text, keywords):
-    try:
-        #tokenize the text
-        tokenizer = AutoTokenizer.from_pretrained(model)
-        tokens = tokenizer(
-            text,
-            truncation = True,
-            max_length = 4096,
-        )
-        truncated_text = tokenizer.decode(tokens["input_ids"])
+#def sentiment_analysis(text, keywords):
+    #try:
+        ##tokenize the text
+        #tokenizer = AutoTokenizer.from_pretrained(model)
+        #tokens = tokenizer(
+            #text,
+            #truncation = True,
+            #max_length = 4096,
+        #)
+        #truncated_text = tokenizer.decode(tokens["input_ids"])
 
-        analysis = sentiment_analyzer(truncated_text)[0] #analyze the 1st 4096 tokens
-        return {
-            "text": text,
-            "sentiment" : analysis["label"],
-            "score" : analysis["score"],
-            "words_found" : any(keyword in text.lower() for keyword in keywords),
-            "truncated": len(tokens["input_ids"]) >= 4096
-        }
-    except Exception as e:
-        logging.error("Analysis failed for text (first 50 characters): %s | Error %s", text[:50], str(e))
-        return None
+        #analysis = sentiment_analyzer(truncated_text)[0] #analyze the 1st 4096 tokens
+        #return {
+            #"text": text,
+            #"sentiment" : analysis["label"],
+            #"score" : analysis["score"],
+            #"words_found" : any(keyword in text.lower() for keyword in keywords),
+            #"truncated": len(tokens["input_ids"]) >= 4096
+        #}
+    #except Exception as e:
+        #logging.error("Analysis failed for text (first 50 characters): %s | Error %s", text[:50], str(e))
+        #return None
 
 #Search for posts based on keywords
 def search_posts(params: dict) -> list:
@@ -341,15 +341,15 @@ def search_posts(params: dict) -> list:
             search_results = api.search(current_params, limit=10)
 
             #extract the actual linkedin post
-            for result in search_results:
-                summary = result.get("summary")
-                linkedin_post = summary.get("text") if isinstance(summary, dict) else "Post not found" 
-                #perform sentiment analysis on post
-                if linkedin_post:
-                    analysis = sentiment_analysis(linkedin_post, keywords)
-                    #store analysis in all posts
-                    if analysis:
-                        all_posts.append(analysis)
+            #for result in search_results:
+                #summary = result.get("summary")
+                #linkedin_post = summary.get("text") if isinstance(summary, dict) else "Post not found" 
+                ##perform sentiment analysis on post
+                #if linkedin_post:
+                    #analysis = sentiment_analysis(linkedin_post, keywords)
+                    ##store analysis in all posts
+                    #if analysis:
+                        #all_posts.append(analysis)
 
             #Add results to all_results
             if search_results:
@@ -359,8 +359,8 @@ def search_posts(params: dict) -> list:
                 print(f"No results for {combined_keywords}")
             time.sleep(random.uniform(5, 10))
             
-        #return all_results
-        return all_posts
+        return all_results
+        #return all_posts
 
     except Exception as e:
         logging.error(f"Error during search {e}")
@@ -463,7 +463,7 @@ def find_company_info(name: str) -> str:
     return company_details
 
 #Match author with ICPs
-def icp_match(icp: dict):
+def icp_scoring():
     #Log process starting message
     logging.info("Matching against ICPs...")
 
@@ -489,35 +489,32 @@ def icp_match(icp: dict):
         company_location = parts[4].strip() if len(parts) > 4 and parts[4].strip() else "Location Not Found"
         employee_count = parts[5].strip() if len(parts) > 5 and parts[5].strip() else "Employee Range Not Found"
         
+        #define icp based on company size
+        chosen_icp = icp_based_on_size(employee_count, icps)
+
         #job title match
+        job_title_match = check_job_title(job_title, chosen_icp)
 
+        #location match
+        location_match = check_company_location(company_location, chosen_icp)
+       
+        #industry match
+        industry_match = check_company_industry(company_industry, chosen_icp)
 
-       #check if location is right 
-
-
-        #regex pattern to find min employees
-        pattern = r"(\d+)\s*to\s*(\d+)"
-        match = re.search(pattern, employee_count.strip())
-        left_number = int(match.group(1)) if match else None
-        right_number = int(match.group(2)) if match else None
-
-        #employee match logic
-        employee_match = False
-        if "max" in icp["employees"]: #we're looking for max employees
-            employee_match = left_number is not None and left_number <= icp["employees"]["max"]
-        elif "min" in icp["employees"]: #we're looking for min employees
-            employee_match = right_number is not None and right_number >= icp["employees"]["min"]
-        elif "range" in icp["employees"]: #we're looking for a range of employees
-            min_employees, max_employees = icp["employees"]["range"]
-            employee_match = left_number is not None and right_number is not None and left_number >= min_employees and right_number <= max_employees
+        #size match
+        size_match = check_company_size(chosen_icp)
 
         #if all matches, add to qualified authors
-        if job_title_match and location_match and employee_match:
-            logging.info(f"Qualified Author Found: {name}, {company_location}")
+        if job_title_match > 0 and location_match > 0 and industry_match > 0 and size_match > 0:
+            logging.info(f"Qualified Author Found: Name: {name}, Job Title: {job_title}, Job Title Score: {job_title_match},"
+                         f"Company Name: {company_name}, Company Industry: {company_industry}, Industry Score: {industry_match}," 
+                         f"Company Location: {company_location}, Location Score:{location_match}, "
+                         f"Company Size: {employee_count}: Size Score: {size_match}")
             qualified_authors.append(author)
 
     return qualified_authors
 
+#check job title 
 def check_job_title(job_title, icp):
     #job title match
     job_title_score = 0
@@ -549,6 +546,7 @@ def check_job_title(job_title, icp):
     #add job title score to overall icp score
     return job_title_score
 
+#check company location 
 def check_company_location(company_location, icp):
     company_location_score = 0
     matched_location = None
@@ -584,6 +582,78 @@ def check_company_location(company_location, icp):
 
     return company_location_score
 
+#check company industry
+def check_company_industry(company_industry, icp):
+    company_industry_score = 0
+    matched_industry = None
+
+    for industry in icp["industries"]:
+        fuzzy_industry_score = fuzz.partial_ratio(company_industry.lower(), industry.lower())
+
+        if fuzzy_industry_score > 70:
+            matched_industry = industry
+
+    if matched_industry:
+        if any(keyword in matched_industry.lower() for keyword in ["Manufacturing", "Telecommunications", "Finance", "Banking", "Healthcare", "Insurance", "Retail", "Energy"]):
+            company_industry_score += 25
+        elif any(keyword in matched_industry.lower() for keyword in ["Travel", "Hospitality", "Real Estate", "Legal", "Software and IT Services"]):
+            company_industry_score += 15
+        else:
+            company_industry_score += 5
+
+    return company_industry_score
+
+#determine icp based on size
+def icp_based_on_size(employee_count, icps):
+    #regex pattern to find employee count
+    pattern = r"(\d+)\s*to\s*(\d+)"
+    match = re.search(pattern, employee_count.strip())
+
+    #if employee count not found return 0
+    if not match:
+        return None
+    
+    #else store min and max employee count
+    left_number = int(match.group(1)) if match else None
+    right_number = int(match.group(2)) if match else None
+
+    for icp_name, icp_details in icps.items():
+        #if icp has a max employee count 
+        if "max" in icp_details["employees"] and right_number <= icp_details["employees"]["max"]:
+            return icp_details
+        #if icp has a minimum employee count
+        elif "min" in icp_details["employees"] and left_number >= icp_details["employees"]["min"]:
+            return icp_details
+        #if icp has a range
+        elif "range" in icp_details["employees"]:
+            min_employees, max_employees = icp_details["employees"]["range"]
+            if min_employees <= left_number and max_employees >= right_number:
+                return icp_details
+    return None
+
+#check company size
+def check_company_size(icp):
+    company_size_score = 0
+    #if employee count has a max amount
+    if "max" in icp["employees"]:
+        if icp["employees"]["max"] <= 50:
+            company_size_score += 5
+    
+    #if employee count has a min amount
+    elif "min" in icp["employees"]:
+        if icp["employees"]["min"] >= 250:
+            company_size_score += 20
+
+    #if employee count has a range
+    elif "range" in icp["employees"]:
+        min_number, max_number = icp["employees"]["range"]
+        if max_number >= 1000:
+            company_size_score += 25
+        elif min_number >= 51 and max_number <= 250:
+            company_size_score += 15
+
+    return company_size_score
+
 #Save data to excel
 def save_to_excel(data_for_dataframe: list):
     # Parse the data into structured format
@@ -615,16 +685,16 @@ def save_to_excel(data_for_dataframe: list):
     return output
 
 mock_authors = [
-    "Alice Johnson - Software Engineer - Google - Tech - Mountain View, CA - 100,000+",
-    "Bob Smith - Data Scientist - Microsoft - Enteretainment - Redmond, WA - 100,000+",
-    "Charlie Brown - Product Manager - Amazon - Sports - Seattle, WA - 50,000+",
-    "Diana Prince - UX Designer - Meta - Finance - Menlo Park, CA - 75,000+",
-    "Ethan Hunt - DevOps Engineer - Netflix - Agriculture - Los Gatos, CA - 12,000+",
-    "Fiona Gallagher - AI Researcher - OpenAI - Tech - San Francisco, CA - 500+",
-    "George Costanza - Marketing Manager - Tesla - Entertainment - Austin, TX - 10,000+",
-    "Hannah Baker - Cybersecurity Analyst - IBM - Sports - New York, NY - 100,000+",
-    "Isaac Newton - Machine Learning Engineer - DeepMind - Tech - London, UK - 1,500+",
-    "Jack Sparrow - Software Developer - Spotify - Tech - Stockholm, Sweden - 6,000+"
+    "Alice Johnson - Software Engineer - Google - Tech - Mountain View, CA - 11 to 50",
+    "Bob Smith - Data Scientist - Microsoft - Enteretainment - Redmond, WA - 2 to 10",
+    "Charlie Brown - Product Manager - Amazon - Sports - Seattle, WA - 501 to 1000",
+    "Diana Prince - UX Designer - Meta - Finance - Menlo Park, CA - 51 to 200",
+    "Ethan Hunt - DevOps Engineer - Netflix - Agriculture - Los Gatos, CA - 1001 to 5000",
+    "Fiona Gallagher - AI Researcher - OpenAI - Tech - San Francisco, CA - 501 to 1000",
+    "George Costanza - Marketing Manager - Tesla - Entertainment - Austin, TX - 1001 to 5000",
+    "Hannah Baker - Cybersecurity Analyst - IBM - Sports - New York, NY - 11 to 50",
+    "Isaac Newton - Machine Learning Engineer - DeepMind - Tech - London, UK - 2 to 10",
+    "Jack Sparrow - Software Developer - Spotify - Tech - Stockholm, Sweden - 51 to 200"
 ]
 
 @app.route('/', methods = ['GET'])
@@ -653,6 +723,55 @@ def get_mocks():
         conn.commit()
     conn.close()
     return mock_authors
+
+@app.route('/mock-icp-scoring', methods=['GET'])
+def mock_icp_scoring():
+    #Log process starting message
+    logging.info("Matching Mock ICPs...")
+
+    #List of qualified authors
+    qualified_authors = []
+    
+    #for each author split their name and job
+    for author in mock_authors:
+        parts = author.split(" - ")
+
+        #if author doesn't have name/job go to next author
+        if len(parts) < 6:
+            continue
+        
+        #otherwise split author info into pieces
+        name = parts[0].strip()
+        job_title = parts[1].strip().lower()
+        company_name = parts[2].strip() if len(parts) > 2 and parts[2].strip() else "Company Not Found"
+        company_industry = parts[3].strip() if len(parts) > 3 and parts[3].strip() else "Industry Not Found"
+        company_location = parts[4].strip() if len(parts) > 4 and parts[4].strip() else "Location Not Found"
+        employee_count = parts[5].strip() if len(parts) > 5 and parts[5].strip() else "Employee Range Not Found"
+        
+        #define icp based on company size
+        chosen_icp = icp_based_on_size(employee_count, icps)
+        
+        #job title match
+        job_title_match = check_job_title(job_title, chosen_icp)
+        print(f"Debug: Job Title Match = {job_title_match}")
+
+        #location match
+        location_match = check_company_location(company_location, chosen_icp)
+        print(f"Debug: Location Match = {location_match}")
+       
+        #industry match
+        industry_match = check_company_industry(company_industry, chosen_icp)
+        print(f"Debug: industry Match = {industry_match}")
+
+        #size match
+        size_match = check_company_size(chosen_icp)
+        print(f"Debug: size Match = {size_match}")
+
+        #if all matches, add to qualified authors
+        if job_title_match > 0 and location_match > 0 and industry_match > 0 and size_match > 0:
+            qualified_authors.append(author)
+
+    return qualified_authors
 
 #Add Routes
 @app.route('/all-authors', methods = ['GET'])
@@ -707,7 +826,7 @@ def get_all_authors():
 def generate_qualified_leads():
     try:
         #get the icp in the request parameters
-        selected_icp = requests.args.get('icp', 'all')
+        selected_icp = request.args.get('icp', 'all')
         icp = icps.get(selected_icp)
 
         #if icp is all fetch all authors
@@ -720,7 +839,7 @@ def generate_qualified_leads():
             })
         else:
             #otherwise fetch qualified leads based on icp
-            qualified_leads = icp_match()
+            qualified_leads = icp_scoring()
             return jsonify({
                 "status" : "success",
                 "message" : f"Found {len(qualified_leads)} qualified leads",
