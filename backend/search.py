@@ -20,6 +20,8 @@ from transformers import pipeline, AutoTokenizer
 from flask import Flask, jsonify, request, Response, stream_with_context, send_file
 import requests.cookies
 
+from utils import icp
+
 #Create Flask object
 app = Flask(__name__)
 CORS(app)
@@ -123,6 +125,7 @@ locations ={
 }
 
 #Ideal Customer Profile
+icps = icp.icps
 #icps = { 
     #"icp1": { 
         #"job title": {
