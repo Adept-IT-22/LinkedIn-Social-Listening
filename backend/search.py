@@ -19,7 +19,6 @@ from fake_useragent import UserAgent
 from transformers import pipeline, AutoTokenizer
 from flask import Flask, jsonify, request, Response, stream_with_context, send_file
 import requests.cookies
-
 from utils import icp
 
 #Create Flask object
@@ -126,155 +125,6 @@ locations ={
 
 #Ideal Customer Profile
 icps = icp.icps
-#icps = { 
-    #"icp1": { 
-        #"job title": {
-        #"founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
-        #"customer"
-    #},
-    #"employees": {"max": 50},
-    #"locations": locations
-    #},
-
-    #"icp2": { 
-        #"job title": {
-        #"founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
-        #"customer"
-    #},
-    #"employees": {"range": (51, 200)},
-    #"locations": locations
-    #},
-
-    #"icp3": { 
-        #"job title": {
-        #"founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
-        #"customer"
-    #},
-    #"employees": {"range": (201, 1000)},
-    #"locations": locations
-    #},
-
-    #"icp4": { 
-        #"job title": {
-        #"founder", "ceo", "cto", "cfo", "chief", "president", "outsourcing", 
-        #"customer"
-    #},
-    #"employees": {"min": 1001},
-    #"locations": locations
-    #}
- #}
-icps = {
-    "Small Businesses (0-50 seats)": {
-        "job_titles": {
-            "Founder", "CEO", "Marketing Manager", "Customer Service Manager", 
-            "Entrepreneur", "Small Business Owner"
-        },
-        "employees": {"max": 50},
-        "revenue": {"max": "Ksh 50M"},
-        "industries": {
-            "Individuals", "Local start-ups", "Retailers", "Small professionals", 
-            "Research companies", "Beverage distributors", "Debt collectors"
-        },
-        "locations" : locations,
-        "pain_points": {
-            "Inefficient customer service operations",
-            "High operational costs for in-house contact centers",
-            "Limited access to advanced analytics"
-        },
-        "value_proposition": {
-            "Omni-channel support solutions",
-            "Scalable solutions",
-            "Affordable solution within budget",
-            "Trusted long-term partner"
-        },
-        "decision_factors": ["Cost efficiency", "Risk mitigation", "Technology integration"],
-        "sales_cycle": "1-3 months",
-        "discovery_channels": ["Referrals", "Website", "Email", "LinkedIn", "SME events"]
-    },
-    
-    "Mid-Size Companies (51-250 seats)": {
-        "job_titles": {
-            "CEO", "CFO", "CTO", "Head of Customer Care", "Operations Manager", 
-            "IT Manager", "Customer Experience Manager"
-        },
-        "employees": {"range": (51, 250)},
-        "revenue": {"range": ("Ksh 51M", "Ksh 100M")},
-        "industries": {
-            "Mid-size e-commerce", "Manufacturing", "Tier 2 healthcare providers",
-            "Tier 2 banks", "Tier 2 SACCOs", "Tier 2 insurance", "Fintechs"
-        },
-        "locations" : locations,
-        "pain_points": {
-            "Need for efficient customer support",
-            "Managing growth and customer expansion",
-            "Integration with current systems"
-        },
-        "value_proposition": {
-            "Quality control for high standards",
-            "Experience in customer support",
-            "Trusted long-term partner",
-            "Data solutions integration"
-        },
-        "decision_factors": ["Experience", "Quality", "Affordable rate", "Speed"],
-        "sales_cycle": "3-6 months",
-        "discovery_channels": ["Industry expos", "Trade shows", "Tech workshops", "Referrals"]
-    },
-    
-    "Large Enterprises (251+ seats)": {
-        "job_titles": {
-            "CEO", "CFO", "CTO", "CMO", "IT Security Manager", 
-            "VP Customer Experience", "Chief Data Officer"
-        },
-        "employees": {"min": 251},
-        "revenue": {"min": "Ksh 100M"},
-        "industries": {
-            "Large e-commerce", "Manufacturing & transport", "Tier 1 healthcare",
-            "Tier 1 banks", "Tier 1 insurance", "Tier 1 telcos"
-        },
-        "locations" : locations,
-        "pain_points": {
-            "Competitive differentiation",
-            "High-quality service delivery",
-            "Expanding client base needs",
-            "System integration challenges"
-        },
-        "value_proposition": {
-            "Quality assurance processes",
-            "Trusted partner with compliance",
-            "Large-scale operation expertise",
-            "Data security and integration"
-        },
-        "decision_factors": ["Price", "Experience", "Compliance", "Tech support"],
-        "sales_cycle": "6+ months",
-        "discovery_channels": ["Executive networking", "Industry summits", "RFP responses"]
-    },
-    
-    "BPO Providers (100-1000+ seats)": {
-        "job_titles": {
-            "Regional Business Development Manager", "Operations Manager",
-            "Client Relations Manager", "Chief Operations Officer"
-        },
-        "employees": {"range": (100, 1000)},
-        "revenue": {"min": "$100M"},
-        "industries": {"Mid-Large BPOs", "International outsourcing firms"},
-        "locations" : locations,
-            "pain_points": {
-            "Specialized BPO services",
-            "Security and data compliance",
-            "Quality assurance at scale",
-            "Large workforce management"
-        },
-        "value_proposition": {
-            "Specialized BPO services",
-            "Security and data compliance",
-            "Quality assurance",
-            "Large workforce management"
-        },
-        "decision_factors": ["Compliance", "Team size", "Quality", "Experience"],
-        "sales_cycle": "2-6 months",
-        "discovery_channels": ["BPO conferences", "Outsourcing summits", "Global networking"]
-    }
-}
 
 #Search settings
 keywords = ["call center","contact center", "call center outsourcing", 
@@ -312,7 +162,10 @@ def sentiment_analysis(text, keywords):
         )
         truncated_text = tokenizer.decode(tokens["input_ids"])
 
+        #analyze the text
         analysis = sentiment_analyzer(truncated_text)[0] #analyze the 1st 4096 tokens
+
+        #return the results
         return {
             "text": text,
             "sentiment" : analysis["label"],

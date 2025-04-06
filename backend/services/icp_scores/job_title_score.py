@@ -7,7 +7,7 @@ TITLE_SCORES = {
 }
 
 def score_job_title(job_title: str, icp_details: dict) -> int:
-    if not job_title or not icp_details["job_titles"]:
+    if not job_title or "job_titles" not in icp_details:
         return 0
 
     #score
@@ -32,13 +32,14 @@ def score_job_title(job_title: str, icp_details: dict) -> int:
     logging.info(f"Matched Job Title: {matched_job_title} and Highest Score: {highest_score}")
 
     #rank the job title
-    if any(keyword in matched_job_title.lower() for keyword in ["founder", "chief", "ceo", "cto", "cfo"]):
+    lowercase_title = matched_job_title.lower()
+    if any(keyword in lowercase_title for keyword in ["founder", "chief", "ceo", "cto", "cfo"]):
         job_title_score += 25
-    elif any(keyword in matched_job_title.lower() for keyword in ["director", "vp", "head"]):
+    elif any(keyword in lowercase_title for keyword in ["director", "vp", "head"]):
         job_title_score += 20
-    elif "manager" in matched_job_title.lower():
+    elif "manager" in lowercase_title:
         job_title_score += 15
-    elif any(keyword in matched_job_title.lower() for keyword in ["specialist", " coordinator"]):
+    elif any(keyword in lowercase_title for keyword in ["specialist", " coordinator"]):
         job_title_score += 10
     else:
         job_title_score += 5

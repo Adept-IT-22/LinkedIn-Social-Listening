@@ -1,7 +1,7 @@
 #This module scores the author's company location
 from fuzzywuzzy import fuzz
 
-def score_company_location(company_location:str, icp:dict) -> int:
+def score_company_location(company_location:str, icp_details:dict) -> int:
     company_location_score = 0
     matched_company_location = None
     
@@ -9,17 +9,17 @@ def score_company_location(company_location:str, icp:dict) -> int:
     location_scores = {}
 
     # Assign predefined scores to each location
-    for location in icp["locations"].get("North American Countries", []):
+    for location in icp_details["locations"].get("North American Countries", []):
         location_scores[location.lower()] = 25
-    for location in icp["locations"].get("U.S. Cities", []):
+    for location in icp_details["locations"].get("U.S. Cities", []):
         location_scores[location.lower()] = 25
-    for location in icp["locations"].get("European Countries", []):
+    for location in icp_details["locations"].get("European Countries", []):
         location_scores[location.lower()] = 25
-    for location in icp["locations"].get("European Cities", []):
+    for location in icp_details["locations"].get("European Cities", []):
         location_scores[location.lower()] = 25
-    for location in icp["locations"].get("African Countries", []):
+    for location in icp_details["locations"].get("African Countries", []):
         location_scores[location.lower()] = 15
-    for location in icp["locations"].get("African Cities", []):
+    for location in icp_details["locations"].get("African Cities", []):
         location_scores[location.lower()] = 15
 
     # Perform fuzzy matching then score
