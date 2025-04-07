@@ -515,7 +515,7 @@ def icp_scoring():
     return qualified_authors
 
 #check job title 
-def check_job_title(job_title, icp):
+def check_job_title(job_title: str, icp: dict) -> int:
     #job title match
     job_title_score = 0
 
@@ -547,7 +547,7 @@ def check_job_title(job_title, icp):
     return job_title_score
 
 #check company location 
-def check_company_location(company_location, icp):
+def check_company_location(company_location: str, icp: dict) -> int:
     company_location_score = 0
     matched_location = None
     
@@ -583,7 +583,7 @@ def check_company_location(company_location, icp):
     return company_location_score
 
 #check company industry
-def check_company_industry(company_industry, icp):
+def check_company_industry(company_industry: str, icp: dict) -> int:
     company_industry_score = 0
     matched_industry = None
 
@@ -604,7 +604,7 @@ def check_company_industry(company_industry, icp):
     return company_industry_score
 
 #determine icp based on size
-def icp_based_on_size(employee_count, icps):
+def icp_based_on_size(employee_count: str, icps: dict)->(dict | None):
     #regex pattern to find employee count
     pattern = r"(\d+)\s*to\s*(\d+)"
     match = re.search(pattern, employee_count.strip())
@@ -632,7 +632,7 @@ def icp_based_on_size(employee_count, icps):
     return None
 
 #check company size
-def check_company_size(icp):
+def check_company_size(icp: dict) -> int:
     company_size_score = 0
     #if employee count has a max amount
     if "max" in icp["employees"]:

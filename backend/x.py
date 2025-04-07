@@ -1,14 +1,16 @@
-class Person:
-    def __init__(self, name, age):
-        self.age = age
-        self.name = name
+dictionary = {
+    "xyz": {
+        "a": "aaa", 
+        "b": "bbb"
+    },
+    "efg": {
+        "e": "eee",
+        "f": "fff"
+    }
+}
 
-    def show_name(self):
-        return self.name
-
-person1 = Person("Mark", 28)
-
-#shows you which class the object person1 belongs to
-print(person1.__class__)
-#shows you the attributes of the object person1
-print(person1.__dict__)
+for name, values in dictionary.items():
+    print(f"Name Type: {type(name)}")
+    print(f"Value Type: {type(values)}")
+    print(name)
+    print(values)
