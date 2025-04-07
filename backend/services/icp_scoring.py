@@ -42,7 +42,7 @@ def parse_authors(author_str: str)-> Optional[Author]:
     
 #method to do icp scoring
 def icp_scoring(min_score: int = 50) -> Dict[str, int]:
-    logging.info("Icp Scoring Starting...")
+    logger.info("Icp Scoring Starting...")
 
     #set to store authors whose score is >50
     qualified_authors = {}
@@ -51,7 +51,7 @@ def icp_scoring(min_score: int = 50) -> Dict[str, int]:
     try:
         authors = get_authors()
     except Exception as e:
-        logging.error("Couldn't fetch authors: %s", e)
+        logger.error("Couldn't fetch authors: %s", e)
         return {}
 
     #parse author string
@@ -63,14 +63,17 @@ def icp_scoring(min_score: int = 50) -> Dict[str, int]:
         #find icp of author
         author_icp = find_icp.find_icp(author.employee_count)
         if not author_icp:
-            logging.error("ICP Not Found")
+            logger.error("ICP Not Found")
+
+        #log values of each field
+        logger.info("Job Title: %s, Industry: %s, Location: %s, ICP: %s", author.job_title, author.company_industry, author.company_location, author_icp)
 
         #calculate icp score
         score = (
-            job_title_score.score_job_title(author.job_title, author_icp) 
-            + company_industry_score.score_company_industry(author.company_industry, author_icp)
-            + company_location_score.score_company_location(author.company_location, author_icp)
-            + company_size_score.score_company_size(author.employee_count, author_icp)
+            job_title_score.score_job_title(author.job_title, author_icp) or 0 
+            + company_industry_score.score_company_industry(author.company_industry, author_icp) or 0
+            + company_location_score.score_company_location(author.company_location, author_icp) or 0
+            + company_size_score.score_company_size(author_icp) or 0
         )
 
         #score cant be above 100
@@ -79,7 +82,7 @@ def icp_scoring(min_score: int = 50) -> Dict[str, int]:
         #if score > 50 add author to qualified authors
         if total_score >= min_score:
             qualified_authors[author] = score
-            logging.info(f"Qualified: {author.name}, {total_score}")
+            logger.info(f"Qualified: {author.name}, {total_score}")
 
-    logging.info(f"Found {len(qualified_authors)} Qualified Authors!")
+    logger.info(f"Found {len(qualified_authors)} Qualified Authors!")
     return qualified_authors
