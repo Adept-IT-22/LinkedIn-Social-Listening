@@ -2,8 +2,12 @@
 import logging
 from typing import Dict, List, Optional, Union
 from dataclasses import dataclass
-from get_authors_service import get_authors
-from icp_scores import find_icp, job_title_score, company_industry_score, company_location_score, company_size_score
+from services.get_authors_service import get_authors
+from services.icp_scores import find_icp, job_title_score, company_industry_score, company_location_score, company_size_score
+
+
+#initialize module logger
+logger = logging.getLogger(__name__)
 
 @dataclass
 class Author:

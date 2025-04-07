@@ -2,6 +2,10 @@
 import logging
 from fuzzywuzzy import fuzz
 
+
+#initialize module logger
+logger = logging.getLogger(__name__)
+
 #ADD WHEN BACK IN OFFICE!
 TITLE_SCORES = {
 }

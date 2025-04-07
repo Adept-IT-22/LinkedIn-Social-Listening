@@ -2,23 +2,28 @@ import logging
 from config import logging_config
 from transformers import pipeline, AutoTokenizer
 
+#initialize module logger
+logger = logging.getLogger(__name__)
+
 def sentiment_analysis(text, keywords):
-    #perform sentiment analysis of each post
+    #set up pipeline with model and tokenizer
     model = "siebert/sentiment-roberta-large-english"
-    sentiment_analyzer = pipeline(task="sentiment-analysis", model=model)
+    tokenizer = AutoTokenizer.from_pretrained(model)
+    sentiment_analyzer = pipeline(task="sentiment-analysis", model=model, tokenizer=tokenizer)
 
     try:
-        #tokenize the text
-        tokenizer = AutoTokenizer.from_pretrained(model)
+        #split text into tokens
         tokens = tokenizer(
             text,
             truncation = True,
-            max_length = 4096,
+            return_length = True
         )
-        truncated_text = tokenizer.decode(tokens["input_ids"])
+        
+        #check if text was too long and got cut
+        truncated = tokens["length"][0] > tokenizer.model_max_length
 
         #analyze the text
-        analysis = sentiment_analyzer(truncated_text)[0] #analyze the 1st 4096 tokens
+        analysis = sentiment_analyzer(text)[0] #analyze the 1st 4096 tokens
 
         #return the results
         return {
@@ -26,7 +31,7 @@ def sentiment_analysis(text, keywords):
             "sentiment" : analysis["label"],
             "score" : analysis["score"],
             "words_found" : (keyword in text.lower() for keyword in keywords),
-            "truncated": len(tokens["input_ids"]) >= 4096
+            "truncated": truncated 
         }
 
     except Exception as e:

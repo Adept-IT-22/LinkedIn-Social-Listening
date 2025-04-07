@@ -1,6 +1,10 @@
 #This module scores the company size
 import logging
 
+
+#initialize module logger
+logger = logging.getLogger(__name__)
+
 def score_company_size(icp_details: dict) -> int:
     if "employees" not in icp_details:
         return 0

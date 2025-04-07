@@ -5,8 +5,12 @@ import time
 import random
 import logging
 from config import app_config
-from search_service import search_posts
-from get_company import find_company_info
+from services.search_service import search_posts
+from services.get_company import find_company_info
+
+
+#initialize module logger
+logger = logging.getLogger(__name__)
 
 #imported variables
 MAX_PAGES = app_config.MAX_PAGES

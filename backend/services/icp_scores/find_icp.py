@@ -4,6 +4,10 @@ import re
 import logging
 from utils import icp
 
+
+#initialize module logger
+logger = logging.getLogger(__name__)
+
 #define icps
 icps = icp.icps
 

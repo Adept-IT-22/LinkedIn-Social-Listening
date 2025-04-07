@@ -162,17 +162,17 @@ icp_score = 0
         #)
         #truncated_text = tokenizer.decode(tokens["input_ids"])
 
-        analysis = sentiment_analyzer(truncated_text)[0] #analyze the 1st 4096 tokens
-        return {
-            "text": text,
-            "sentiment" : analysis["label"],
-            "score" : analysis["score"],
-            "words_found" : any(keyword in text.lower() for keyword in keywords),
-            "truncated": len(tokens["input_ids"]) >= 4096
-        }
-    except Exception as e:
-        logging.error("Analysis failed for text (first 50 characters): %s | Error %s", text[:50], str(e))
-        return None
+        #analysis = sentiment_analyzer(truncated_text)[0] #analyze the 1st 4096 tokens
+        #return {
+            #"text": text,
+            #"sentiment" : analysis["label"],
+            #"score" : analysis["score"],
+            #"words_found" : any(keyword in text.lower() for keyword in keywords),
+            #"truncated": len(tokens["input_ids"]) >= 4096
+        #}
+    #except Exception as e:
+        #logging.error("Analysis failed for text (first 50 characters): %s | Error %s", text[:50], str(e))
+        #return None
 
 #Search for posts based on keywords
 def search_posts(params: dict) -> list:

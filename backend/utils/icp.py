@@ -1,5 +1,5 @@
 #This module contains ICPs
-from locations import Locations
+from utils.locations import Locations
 
 icps = {
     "Small Businesses": {

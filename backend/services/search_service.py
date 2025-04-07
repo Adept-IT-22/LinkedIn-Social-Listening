@@ -4,17 +4,17 @@ import time
 import random
 import logging
 from config import app_config
-from sentiment_service import sentiment_analysis
-from linkedin_service import get_linkedin_client
+from services.linkedin_service import get_linkedin_client
+
+#initialize module logger
+logger = logging.getLogger(__name__)
 
 #initialize keywords
-keywords = app_config.KEYWORDS
+keywords = [keyword.strip() for keyword in app_config.KEYWORDS.split(',') if keyword.strip()]
 
 #Search for posts based on keywords
 def search_posts(params: dict) -> list:
     all_results = [] #stores all results
-    all_posts = [] #stores posts of all results before sentiment analysis
-    positive_results = [] #stores results of +ve posts
     try:
         for i in range(0, len(keywords), 3):
             #Get next 3 keywords or remaining if less than 3
@@ -31,33 +31,18 @@ def search_posts(params: dict) -> list:
             api = get_linkedin_client()
             search_results = api.search(current_params, limit=10)
             
-            #log results
+            #Add results to all_results
             if search_results:
-                logging.info(f"Found {len(search_results)} people for group {keyword_group}")
-
-                #Extract posts from results
-                for result in search_results:
-                    summary = result.get("summary")
-                    linkedin_post = summary.get("text") if isinstance(summary, dict) else "Post Not Found"
-                    if linkedin_post:
-                        all_posts.append(linkedin_post)
-                        all_results.append(result)
+                all_results.extend(search_results)
+                logger.info(f"Found {len(search_results)} people for group {keyword_group}")
             else:
-                logging.info(f"No results for {combined_keywords}")
-            
-            #wait 5-10 before searching through another group of keywords
+                logger.info(f"No results for {combined_keywords}")
+
+            #time between searches
             time.sleep(random.uniform(5, 10))
-
-        #Perform sentiment analysis
-        analysis = sentiment_analysis(all_posts, keywords)
-
-        #take +ve posts and return the corresponding search result
-        if analysis:
-            post_index = [i for i, post in enumerate(analysis) if post["label"] == "POSITIVE"]
-            positive_results = [all_results[i] for i in post_index]
-        
-        return positive_results
+            
+        return all_results
 
     except Exception as e:
-        logging.error(f"Error during search {e}")
+        logger.error("Error fetching search results: %s", str(e))
         return []

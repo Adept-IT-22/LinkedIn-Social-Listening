@@ -3,11 +3,12 @@
 import random
 import requests
 import fake_useragent
+import requests.cookies
 from config import app_config
 from linkedin_api import Linkedin
 
 # Authentication Cookies
-cookies = app_config.Config.LINKEDIN_COOKIES
+cookies = app_config.LINKEDIN_COOKIES
 
 # Put Cookies in CookieJar
 cookie_jar = requests.cookies.RequestsCookieJar()
@@ -26,10 +27,10 @@ def get_header():
     return {"User-Agent": session_user_agent}
 
 # Create client with cookies and headers
-linkedin_username = app_config.Config.LINKEDIN_USERNAME
-linkedin_password = app_config.Config.LINKEDIN_PASSWORD
+linkedin_username = app_config.LINKEDIN_USERNAME
+linkedin_password = app_config.LINKEDIN_PASSWORD
 headers = get_header()
-api = Linkedin(linkedin_username, linkedin_password, cookies=cookie_jar, headers=headers)
+api = Linkedin(linkedin_username, linkedin_password, cookies=cookie_jar)
 
 # Get Client
 def get_linkedin_client():

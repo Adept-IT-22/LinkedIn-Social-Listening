@@ -1,6 +1,10 @@
 #This module is used to find companies and info about them
 import logging
-from linkedin_service import get_linkedin_client
+from services.linkedin_service import get_linkedin_client
+
+
+#initialize module logger
+logger = logging.getLogger(__name__)
 
 def find_company_info(profile_urn: str) -> str:
     try:
