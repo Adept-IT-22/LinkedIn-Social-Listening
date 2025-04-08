@@ -6,7 +6,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 def score_company_size(icp_details: dict) -> int:
-    if "employees" not in icp_details:
+    if not icp_details or "employees" not in icp_details:
         return 0
     
     #score

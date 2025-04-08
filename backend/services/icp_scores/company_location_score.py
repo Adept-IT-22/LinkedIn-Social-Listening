@@ -2,6 +2,9 @@
 from fuzzywuzzy import fuzz
 
 def score_company_location(company_location:str, icp_details:dict) -> int:
+    if not icp_details:
+        return 0
+
     company_location_score = 0
     matched_company_location = None
     

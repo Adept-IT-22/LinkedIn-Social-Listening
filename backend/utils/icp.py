@@ -1,5 +1,6 @@
 #This module contains ICPs
-from utils.locations import Locations
+from utils.locations import locations
+from utils.industries import industries
 
 icps = {
     "Small Businesses": {
@@ -9,11 +10,8 @@ icps = {
         },
         "employees": {"max": 50},
         "revenue": {"max": "Ksh 50M"},
-        "industries": {
-            "Nonprofit", "Corporate Services", "Retail", "Corporate Services", 
-            "Research", "Food & Beverages" 
-        },
-        "locations" : Locations.locations
+        "industries": industries,
+        "locations" : locations
     },
     
     "Mid-Size Companies": {
@@ -23,11 +21,8 @@ icps = {
         },
         "employees": {"range": (51, 250)},
         "revenue": {"range": ("Ksh 51M", "Ksh 100M")},
-        "industries": {
-            "Retail", "Manufacturing", "Health Care",
-            "Banking", "Finance", "Insurance", 
-        },
-        "locations" : Locations.locations
+        "industries": industries,
+        "locations" : locations
     },
     
     "Large Enterprises": {
@@ -37,11 +32,8 @@ icps = {
         },
         "employees": {"min": 251},
         "revenue": {"min": "Ksh 100M"},
-        "industries": {
-            "Retail", "Manufacturing", "Transport", "Health Care",
-            "Banking", "Insurance", "Telecommunications"
-        },
-        "locations" : Locations.locations
+        "industries": industries,
+        "locations" : locations
     },
     
     "BPO Providers": {
@@ -51,7 +43,7 @@ icps = {
         },
         "employees": {"range": (100, 1000)},
         "revenue": {"min": "$100M"},
-        "industries": {"Corporate Services", "Outsourcing"},
-        "locations" : Locations.locations
+        "industries": industries,
+        "locations" : locations
     }
 }

@@ -10,7 +10,7 @@ from tenacity import(
     stop_after_attempt,
     wait_exponential_jitter,
     retry_if_exception_type,
-    before_sleep_log
+    before_log
 )
 
 #initialize module logger
@@ -30,9 +30,9 @@ keywords = [keyword.strip() for keyword in app_config.KEYWORDS.split(',') if key
         retry=retry_if_exception_type(
             (ConnectionError)
         ),
-        before_sleep=before_sleep_log(
-            logger,
-            logging.WARNING
+        before_sleep=before_log(
+            logger=logger,
+            log_level=30
         )
 )
 

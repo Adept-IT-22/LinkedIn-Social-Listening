@@ -11,7 +11,7 @@ TITLE_SCORES = {
 }
 
 def score_job_title(job_title: str, icp_details: dict) -> int:
-    if not job_title or "job_titles" not in icp_details:
+    if not job_title or not icp_details or "job_titles" not in icp_details:
         return 0
 
     #score

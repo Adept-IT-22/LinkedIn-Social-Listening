@@ -22,7 +22,7 @@ seen_authors = set() #set of seen authors
 
 def get_authors(): 
     try:
-        logging.info("Getting authors...")
+        logger.info("Getting authors...")
         start_offset = 0 #where search should start from
         yield_counter = 0 #number of authors yielded
 
@@ -35,7 +35,7 @@ def get_authors():
 
             #if posts returns nothing stop.
             if not posts:
-                logging.error("No search results found")
+                logger.error("No search results found")
                 break
 
             #else get name & job of each author
@@ -57,7 +57,7 @@ def get_authors():
                 #create person variable and add person to authors list
                 person = name + " - " + job + " - " + company_info
                 if person not in seen_authors:
-                    logging.info(f"NEW AUTHOR FOUND: {person}") #CHANGE BACK TO NAME NOT PERSON
+                    logger.info(f"NEW AUTHOR FOUND: {person}") #CHANGE BACK TO NAME NOT PERSON
                     yield person
                     yield_counter += 1
                     seen_authors.add(person)
@@ -68,8 +68,8 @@ def get_authors():
             time.sleep(random.uniform(5,10))
 
         #number of authors yielded
-        logging.info(f"Total authors yielded: {yield_counter}")
+        logger.info(f"Total authors yielded: {yield_counter}")
     
     except Exception as e:
-        logging.error(f"Error fetching authors: %s", e)
+        logger.error(f"Error fetching authors: %s", e)
         return

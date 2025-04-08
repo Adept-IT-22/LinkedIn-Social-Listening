@@ -8,6 +8,8 @@ interface Lead {
   company: string;
   location: string;
   employeeCount: string;
+  icp: string;
+  score: number;
 }
 
 export default function Search() {
@@ -20,65 +22,155 @@ export default function Search() {
 
   //fetch leads from eventsource api
   const fetchAllAuthors = () => {
-    //initialize states
-    setLoading(true); //set loading to true when a new search is run
-    setError(null); //set error to null when a new search is run
-    setLeads([]); //clear leads whenever a new search is run
-    setAllLeads([]); //clear all leads when a new search is run
+  // Initialize states
+  setLoading(true);
+  setError(null);
+  setLeads([]);
+  setAllLeads([]);
 
-    //create a new eventsource
-    const eventSource = new EventSource("http://localhost:5000/all-authors");
+  // Create a new EventSource
+  const eventSource = new EventSource("http://localhost:5000/stream-leads");
 
-    //take the data from the eventsource and parse it
-    eventSource.onmessage = (event) => {
+  eventSource.onmessage = (event) => {
+    try {
       console.log("Received data: ", event.data);
       const data = JSON.parse(event.data);
 
-      //check if data has an error
-      if (data.error) {
+      // Check if data has an error
+      if (data?.error) {
         setError(data.error);
         eventSource.close();
         return;
       }
 
-      //otherwise parse the data and put it in leads & all leads
-      const author = data.author;
-      const parsedLead = parseLeadData([author])[0];
+      // Validate required fields
+      if (!data?.author || !data?.icp || data?.score === undefined) {
+        console.warn("Incomplete data received:", data);
+        return;
+      }
 
-      //update leads and all leads
-      setAllLeads((prev) => [...prev, parsedLead]);
-      setLeads((prev) => [...prev, parsedLead]);
-    };
+      // Parse and enhance the lead data
+      const parsedLead = parseLeadData([data.author])[0];
+      const leadWithDetails: Lead = {
+        ...parsedLead,
+        icp: data.icp,
+        score: data.score
+      };
 
-    eventSource.onerror = () => {
+      // Update state using functional updates
+      setAllLeads(prev => [...prev, leadWithDetails]);
+      setLeads(prev => [...prev, leadWithDetails]);
+
+    } catch (parseError) {
+      console.error("Error parsing event data:", parseError);
+      setError("Failed to parse lead data");
+      eventSource.close();
+    }
+  };
+
+  eventSource.onerror = () => {
+    // Only handle error if not already closed
+    if (eventSource.readyState !== EventSource.CLOSED) {
       setError("Connection to server failed");
       eventSource.close();
       setLoading(false);
-    };
+    }
   };
 
-  //function to parse data from search
-  const parseLeadData = (leadData: string[]): Lead[] => {
-    //split each lead string into these 5 parts
-    return leadData.map((leadString) => {
-      const parts = leadString.split(" -");
-      return {
-        name: parts[0] || "",
-        jobTitle: parts[1] || "",
-        company: parts[2] || "",
-        location: parts[3] || "",
-        employeeCount: parts[4] || "",
-      };
-    });
+  // Cleanup function for component unmount
+  return () => {
+    eventSource.close();
   };
+};
+  //const fetchAllAuthors = () => {
+    ////initialize states
+    //setLoading(true); //set loading to true when a new search is run
+    //setError(null); //set error to null when a new search is run
+    //setLeads([]); //clear leads whenever a new search is run
+    //setAllLeads([]); //clear all leads when a new search is run
+
+    ////create a new eventsource
+    //const eventSource = new EventSource("http://localhost:5000/stream-leads");
+
+    ////take the data from the eventsource and parse it
+    //eventSource.onmessage = (event) => {
+      //console.log("Received data: ", event.data);
+      //const data = JSON.parse(event.data);
+
+      ////check if data has an error
+      //if (data.error) {
+        //setError(data.error);
+        //eventSource.close();
+        //return;
+      //}
+
+      ////otherwise parse the data and put it in leads & all leads
+      //const {author, icp, score} = data;
+      //const parsedLead = parseLeadData([author])[0];
+
+      ////add icp and score
+      //const leadWithDetails: Lead = {
+        //...parsedLead,
+        //icp: icp,
+        //score: score
+      //}
+
+      ////update leads and all leads
+      //setAllLeads((prev) => [...prev, leadWithDetails]);
+      //setLeads((prev) => [...prev, leadWithDetails]);
+    //};
+
+    //eventSource.onerror = () => {
+      //setError("Connection to server failed");
+      //eventSource.close();
+      //setLoading(false);
+    //};
+  //};
+
+  //function to parse data from search
+  const parseLeadData = (leadData: any[]): Lead[] => {
+  return leadData.map(lead => ({
+    name: lead.name || "",
+    jobTitle: lead.jobTitle || "",
+    company: lead.company || "",
+    location: lead.location || "",
+    employeeCount: lead.employeeCount || "",
+    icp: lead.icp || "Unknown",
+    score: lead.score || 0
+  }));
+};
+  //const parseLeadData = (leadData: string[]): Lead[] => {
+    ////split each lead string into these 5 parts
+    //return leadData.map((leadString) => {
+      //const parts = leadString.split(" -");
+      //return {
+        //name: parts[0] || "",
+        //jobTitle: parts[1] || "",
+        //company: parts[2] || "",
+        //location: parts[3] || "",
+        //employeeCount: parts[4] || "",
+        //icp: "Unknown",
+        //score: 0
+      //};
+    //});
+  //};
 
   const filterLeadsByIcp = (icp: string) => {
     if (icp == "all") {
       setLeads(allLeads);
     } else {
       const filteredLeads = allLeads.filter((lead) => {
+        // First try to use the icp field if available
+      if (lead.icp) {
+        switch (icp) {
+          case "1": return lead.icp === "Small Businesses";
+          case "2": return lead.icp === "Mid-Size Companies";
+          case "3": return lead.icp === "Large Enterprises";
+          case "4": return lead.icp === "BPO Providers";
+          default: return true;
+        }
+      }
         const employeeCount = lead.employeeCount;
-
         //match employee count to pattern
         const pattern = /(\d+)\s*to\s*(\d+)/;
         const match = employeeCount.match(pattern);
@@ -167,6 +259,8 @@ export default function Search() {
                   <th>Company</th>
                   <th>Location</th>
                   <th>Employee Count</th>
+                  <th>ICP</th>
+                  <th>Score</th>
                 </tr>
               </thead>
               <tbody>
@@ -177,6 +271,8 @@ export default function Search() {
                     <td>{lead.company}</td>
                     <td>{lead.location}</td>
                     <td>{lead.employeeCount}</td>
+                    <td>{lead.icp}</td>
+                    <td>{lead.score}</td>
                   </tr>
                 ))}
               </tbody>

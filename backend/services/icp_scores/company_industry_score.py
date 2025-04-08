@@ -1,45 +1,67 @@
-#This module scores a company's industry
-from fuzzywuzzy import fuzz
+from utils.industries import industries
+from fuzzywuzzy import fuzz, process
+from typing import Optional, Dict, Set
 
-#industry scores
-industry_scores = {
-    "high": 25,
-    "above_average": 20,
-    "average": 15,
-    "below_average": 10
+# Industry scores with consistent case (all lowercase)
+INDUSTRY_SCORES = {
+    "score_25": {
+        "manufacturing", "finance", "retail", "telecommunications", 
+        "software and it services", "transportation and logistics"
+    },
+    "score_20": {
+        "healthcare", "energy and mining", "real estate", "hospitality", 
+        "consumer goods", "insurance", "utilities"
+    },
+    "score_15": {
+        "education", "entertainment", "legal", "government administration", 
+        "construction", "recreation and travel", "automotive"
+    },
+    "score_10": {
+        "design", "public safety", "agriculture", "nonprofit"
+    },
+    "score_5": {
+        "textiles", "arts", "think tanks", "museums & institutions", 
+        "libraries", "wine and spirits"
+    }
 }
 
-
-def score_company_industry(company_industry: str, icp_details: dict) -> int:
-    if not company_industry or "industries" not in icp_details:
+def score_company_industry(company_industry: Optional[str], icp_details: Dict) -> int:
+    """Score a company's industry based on ICP preferences."""
+    if not company_industry or not icp_details or "industries" not in icp_details:
         return 0
     
-    #score
-    company_industry_score = 0
-
-    #industry match
-    matched_company_industry = None
-
-    #highest matched score
-    highest_score = 0
-
-    #fuzzy matching
-    for industry in icp_details["industries"]:
-        current_score = fuzz.partial_ratio(industry.lower(), company_industry.lower())
-        if current_score > highest_score:
-            matched_company_industry = industry
-
-    if highest_score < 70:
+    # Find industry with fuzzy matching
+    matched_industry = find_industry(company_industry)
+    if not matched_industry:
         return 0
     
-    #rank industries
-    lowercase_industry = matched_company_industry.lower()
-    if any(keyword in lowercase_industry for keyword in ["manufacturing"]):
-       return industry_scores["high"] 
-    elif any(keyword in lowercase_industry for keyword in ["retail"]):
-       return industry_scores["above_average"]
-    elif any(keyword in lowercase_industry for keyword in ["education", "health care", "finance"]):
-       return industry_scores["average"]
-    elif any(keyword in lowercase_industry for keyword in ["technology", "education", "nonprofit"]):
-       return industry_scores["below_average"]
-     
+    # Get score (all comparisons in lowercase)
+    industry_key = matched_industry.lower()
+    
+    if industry_key in INDUSTRY_SCORES["score_25"]:
+        return 25
+    if industry_key in INDUSTRY_SCORES["score_20"]:
+        return 20
+    if industry_key in INDUSTRY_SCORES["score_15"]:
+        return 15
+    if industry_key in INDUSTRY_SCORES["score_10"]:
+        return 10
+    if industry_key in INDUSTRY_SCORES["score_5"]:
+        return 5
+    
+    return 0
+
+def find_industry(input_industry: str, threshold: int = 70) -> Optional[str]:
+    """Fuzzy match an industry string to our canonical list."""
+    if not input_industry.strip():
+        return None
+    
+    # Flatten industry mapping
+    industry_mapping = {}
+    for industry_key, sub_industries in industries.items():
+        for sub in sub_industries:
+            industry_mapping[sub] = industry_key
+    
+    # Get best match
+    match, score = process.extractOne(input_industry, industry_mapping.keys())
+    return industry_mapping[match] if score >= threshold else None
