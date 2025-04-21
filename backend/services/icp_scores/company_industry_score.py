@@ -1,12 +1,15 @@
 from utils.industries import industries
 from fuzzywuzzy import fuzz, process
 from typing import Optional, Dict, Set
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Industry scores with consistent case (all lowercase)
 INDUSTRY_SCORES = {
     "score_25": {
         "manufacturing", "finance", "retail", "telecommunications", 
-        "software and it services", "transportation and logistics"
+        "software and it services", "corporate services", "transportation and logistics"
     },
     "score_20": {
         "healthcare", "energy and mining", "real estate", "hospitality", 
@@ -25,10 +28,23 @@ INDUSTRY_SCORES = {
     }
 }
 
+#default industries in case icp is not found
+DEFAULT_COMPANY_INDUSTRIES = set()
+for industry_groups in industries.values():
+    DEFAULT_COMPANY_INDUSTRIES.update(industry_groups)
+
 def score_company_industry(company_industry: Optional[str], icp_details: Dict) -> int:
     """Score a company's industry based on ICP preferences."""
-    if not company_industry or not icp_details or "industries" not in icp_details:
+    if not company_industry or not icp_details:
         return 0
+
+    #get industry
+    icp_industries = icp_details.get("industries", [])
+
+    #if industries not found use default
+    if not icp_industries:
+        logger.warning("Industries not found. Using default")
+        icp_industries = {"Default": DEFAULT_COMPANY_INDUSTRIES}
     
     # Find industry with fuzzy matching
     matched_industry = find_industry(company_industry)
@@ -64,4 +80,5 @@ def find_industry(input_industry: str, threshold: int = 70) -> Optional[str]:
     
     # Get best match
     match, score = process.extractOne(input_industry, industry_mapping.keys())
+    logger.info("Matched industry: %s => Score: %d", match, score)
     return industry_mapping[match] if score >= threshold else None

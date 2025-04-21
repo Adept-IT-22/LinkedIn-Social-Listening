@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from utils.icp import icps
 from services.get_authors_service import get_authors
 from services.icp_scores import find_icp, job_title_score, company_industry_score, company_location_score, company_size_score
+from services.icp_scores.total_score import icp_scorer
 
 
 #initialize module logger
@@ -45,6 +46,9 @@ def parse_authors(author_str: str)-> Optional[Author]:
 def icp_scoring(min_score: int = 0) -> List[Dict[str, Union[Dict, str, int]]]:
     logger.info("Icp Scoring Starting...")
 
+    #create an instance of the icp scorer class
+    scorer = icp_scorer()
+
     #set to store authors whose score is >50
     qualified_authors = {}
 
@@ -64,37 +68,30 @@ def icp_scoring(min_score: int = 0) -> List[Dict[str, Union[Dict, str, int]]]:
                 continue
 
             #find icp of author
-            found_icp = find_icp.find_icp(author.employee_count)
+            found_icp = scorer.get_icp(author.employee_count)
             if not found_icp:
-                logger.error("ICP Not Found for %s", author.name)
+                logger.error("ICP Not Found for author %s", author.name)
                 continue
 
             #initialize the key and value of found icp
-            icp_key = list(found_icp.keys())[0]
-            author_icp = list(found_icp.values())[0]
+            icp_key, author_icp = found_icp
 
             #log values of each field
-            logger.info("Job Title: %s, Industry: %s, Location: %s, ICP: %s", author.job_title, author.company_industry, author.company_location, icp_key)
+            logger.info("Job Title: %s\n, Industry: %s\n, Location: %s\n, ICP: %s\n", author.job_title, author.company_industry, author.company_location, icp_key)
 
             #calculate icp score
-            title_score= job_title_score.score_job_title(author.job_title, author_icp) or 0 
-            industry_score= company_industry_score.score_company_industry(author.company_industry, author_icp) or 0
-            location_score= company_location_score.score_company_location(author.company_location, author_icp) or 0
-            size_score= company_size_score.score_company_size(author_icp) or 0
+            author_data ={
+                "job_title": author.job_title,
+                "company_industry": author.company_industry,
+                "company_location": author.company_location,
+                "employee_count": author.employee_count
+            }
 
-            #calculate total score
-            total_score = min(
-                title_score + industry_score + location_score + size_score,
-                100
-            )
-
-            logger.info(
-                "Title Score: %d, Insustry Score: %d, Location Score: %d, Size Score: %d", 
-                title_score, industry_score, location_score, size_score
-            )
+            total_score = scorer.total_score(author_data)
 
             #if score > 50 add author to qualified authors
             if total_score >= min_score:
+                qualified_authors[author.name] = total_score
                 yield {
                     "author": {
                         "name": author.name,
@@ -103,7 +100,7 @@ def icp_scoring(min_score: int = 0) -> List[Dict[str, Union[Dict, str, int]]]:
                         "location": author.company_location,
                         "employee_count": author.employee_count
                     },
-                    "icp": next((key for key, value in icps.items() if value == author_icp), "Unknown"),
+                    "icp": icp_key,
                     "score": total_score
                 }
                 logger.info(f"Qualified: {author.name}, {total_score}")

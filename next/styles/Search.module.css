@@ -1,9 +1,9 @@
-.header{
+.header {
   margin-top: 30px;
   font-size: 1.4rem;
-  font-weight:bold;
+  font-weight: bold;
   color: black;
-  font-family: 'Century Gothic', sans-serif;
+  font-family: "Century Gothic", sans-serif;
   padding-top: 20px;
 }
 
@@ -15,8 +15,8 @@
   min-height: calc(100vh - 30px);
 }
 
-.buttonContainer{
-  font-family: 'Century Gothic', sans-serif;
+.buttonContainer {
+  font-family: "Century Gothic", sans-serif;
   color: black;
   padding-top: 10px;
   display: flex;
@@ -28,16 +28,16 @@
 }
 
 .table {
-  font-family: 'Century Gothic', sans-serif	;
-  width:100%;
+  font-family: "Century Gothic", sans-serif;
+  width: 100%;
   border-collapse: collapse;
   font-size: 13px;
-  text-align: left;
+  text-align: center;
 }
 
-.table thead th{
+.table thead th {
   background-color: gainsboro;
-  font-size: 14px;	
+  font-size: 14px;
 }
 
 .table thead th tr {
@@ -50,7 +50,7 @@
 
 /* Alternating row colors */
 .table tr:nth-child(even) {
-  background-color: #f3f4f6;  /* light gray */
+  background-color: #f3f4f6; /* light gray */
 }
 
 .table tr:nth-child(odd) {
@@ -59,22 +59,22 @@
 
 /* Optional hover effect */
 .table tr:hover {
-  background-color: #e5e7eb;  /* slightly darker gray on hover */
-} 
+  background-color: #e5e7eb; /* slightly darker gray on hover */
+}
 
-.loading{
+.loading {
   text-align: center;
   padding: 2rem;
   color: #666;
 }
 
-.error{
+.error {
   text-align: center;
   padding: 2rem;
   color: #ef4444;
 }
 
-.button{
+.button {
   background-color: blueviolet;
   color: white;
   border-radius: 5px;
@@ -83,38 +83,36 @@
   cursor: pointer;
 }
 
-.button:hover{
+.button:hover {
   background-color: black;
 }
 
-
-
-.searchContainer{
+.searchContainer {
   border: 1px solid black;
   border-radius: 5px;
   width: 20%;
   height: 15rem;
-  padding:20px;
-  font-family: 'Century Gothic', sans-serif;
+  padding: 20px;
+  font-family: "Century Gothic", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.searchForm{
+.searchForm {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.searchInput{
+.searchInput {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  }
+}
 
-.searchInput label{
-  font-weight:bold;
+.searchInput label {
+  font-weight: bold;
   font-size: 0.9rem;
   color: black;
 }
@@ -135,32 +133,48 @@
   font-size: 0.8rem;
 }
 
-.searchButtonContainer{
+.searchButtonContainer {
   text-align: center;
-  padding:5px;
-  margin-top:5px;
+  padding: 5px;
+  margin-top: 5px;
 }
 
-.searchButton{
+.searchButton {
   background-color: blueviolet;
   color: white;
-  padding:5px;
+  padding: 5px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 0.8rem;
-  font-family: 'Century Gothic', sans-serif;
+  font-family: "Century Gothic", sans-serif;
   border: 1px solid black;
 }
 
-.searchButton:hover{
+.searchButton:hover {
   background-color: black;
 }
 
-.downloadButton{
+.downloadButton {
   background-color: green;
   padding: 5px 10px;
   color: white;
   font-size: 0.8rem;
   border: 1px solid black;
   border-radius: 5px;
+}
+
+.icp-1 {
+  background-color: #ffebee; /* Light red for Small Businesses */
+}
+
+.icp-2 {
+  background-color: #e8f5e9; /* Light green for Mid-Size */
+}
+
+.icp-3 {
+  background-color: #e3f2fd; /* Light blue for Large Enterprises */
+}
+
+.icp-4 {
+  background-color: #f3e5f5; /* Light purple for BPO Providers */
 }

@@ -1,13 +1,11 @@
 #This module contains ICPs
 from utils.locations import locations
 from utils.industries import industries
+from utils.job_titles import job_titles
 
 icps = {
     "Small Businesses": {
-        "job_titles": {
-            "Founder", "CEO", "Marketing Manager", "Customer Service Manager", 
-            "Entrepreneur", "Small Business Owner"
-        },
+        "job_titles": job_titles,
         "employees": {"max": 50},
         "revenue": {"max": "Ksh 50M"},
         "industries": industries,
@@ -15,10 +13,7 @@ icps = {
     },
     
     "Mid-Size Companies": {
-        "job_titles": {
-            "CEO", "CFO", "CTO", "Head of Customer Care", "Operations Manager", 
-            "IT Manager", "Customer Experience Manager"
-        },
+        "job_titles": job_titles,
         "employees": {"range": (51, 250)},
         "revenue": {"range": ("Ksh 51M", "Ksh 100M")},
         "industries": industries,
@@ -26,10 +21,7 @@ icps = {
     },
     
     "Large Enterprises": {
-        "job_titles": {
-            "CEO", "CFO", "CTO", "CMO", "IT Security Manager", 
-            "VP Customer Experience", "Chief Data Officer"
-        },
+        "job_titles": job_titles,
         "employees": {"min": 251},
         "revenue": {"min": "Ksh 100M"},
         "industries": industries,
@@ -37,10 +29,7 @@ icps = {
     },
     
     "BPO Providers": {
-        "job_titles": {
-            "Regional Business Development Manager", "Operations Manager",
-            "Client Relations Manager", "Chief Operations Officer"
-        },
+        "job_titles": job_titles,
         "employees": {"range": (100, 1000)},
         "revenue": {"min": "$100M"},
         "industries": industries,

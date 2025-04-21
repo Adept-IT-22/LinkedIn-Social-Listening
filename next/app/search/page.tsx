@@ -4,16 +4,16 @@ import styles from "@/styles/Search.module.css";
 
 interface Lead {
   name: string;
-  jobTitle: string;
+  job_title: string;
   company: string;
   location: string;
-  employeeCount: string;
+  employee_count: string;
   icp: string;
   score: number;
 }
 
 export default function Search() {
-  //set state for leads, loading and errors
+  //set state for leads, loading ,errors and ICP
   const [allLeads, setAllLeads] = useState<Lead[]>([]);
   const [leads, setLeads] = useState<Lead[]>([]);
   const [loading, setLoading] = useState(false);
@@ -22,137 +22,147 @@ export default function Search() {
 
   //fetch leads from eventsource api
   const fetchAllAuthors = () => {
-  // Initialize states
-  setLoading(true);
-  setError(null);
-  setLeads([]);
-  setAllLeads([]);
+    // Initialize states
+    setLoading(true);
+    setError(null);
+    setLeads([]);
+    setAllLeads([]);
 
-  // Create a new EventSource
-  const eventSource = new EventSource("http://localhost:5000/stream-leads");
+    // Create a new EventSource
+    const eventSource = new EventSource("http://localhost:5000/stream-leads");
 
-  eventSource.onmessage = (event) => {
-    try {
-      console.log("Received data: ", event.data);
-      const data = JSON.parse(event.data);
+    eventSource.onmessage = (event) => {
+      try {
+        console.log("Received data: ", event.data);
+        const data = JSON.parse(event.data);
 
-      // Check if data has an error
-      if (data?.error) {
-        setError(data.error);
+        // Check if data has an error
+        if (data?.error) {
+          setError(data.error);
+          eventSource.close();
+          return;
+        }
+
+        // Validate required fields
+        if (!data?.author || !data?.icp || data?.score === undefined) {
+          console.warn("Incomplete data received:", data);
+          return;
+        }
+
+        // Parse and enhance the lead data
+        const parsedLead = parseLeadData([data.author])[0];
+        const leadWithDetails: Lead = {
+          ...parsedLead,
+          icp: data.icp,
+          score: data.score,
+        };
+
+        // Update state using functional updates
+        setAllLeads((prev) => [...prev, leadWithDetails]);
+        setLeads((prev) => [...prev, leadWithDetails]);
+      } catch (parseError) {
+        console.error("Error parsing event data:", parseError);
+        setError("Failed to parse lead data");
         eventSource.close();
-        return;
       }
+    };
 
-      // Validate required fields
-      if (!data?.author || !data?.icp || data?.score === undefined) {
-        console.warn("Incomplete data received:", data);
-        return;
+    eventSource.onerror = () => {
+      // Only handle error if not already closed
+      if (eventSource.readyState !== EventSource.CLOSED) {
+        if (eventSource.readyState == EventSource.CONNECTING) {
+          console.log("Streaming has been completed.");
+          eventSource.close();
+          setLoading(false);
+        } else {
+          setError("Connection to server failed");
+          eventSource.close();
+          setLoading(false);
+        }
       }
+    };
 
-      // Parse and enhance the lead data
-      const parsedLead = parseLeadData([data.author])[0];
-      const leadWithDetails: Lead = {
-        ...parsedLead,
-        icp: data.icp,
-        score: data.score
-      };
-
-      // Update state using functional updates
-      setAllLeads(prev => [...prev, leadWithDetails]);
-      setLeads(prev => [...prev, leadWithDetails]);
-
-    } catch (parseError) {
-      console.error("Error parsing event data:", parseError);
-      setError("Failed to parse lead data");
+    // Cleanup function for component unmount
+    return () => {
       eventSource.close();
-    }
+    };
   };
-
-  eventSource.onerror = () => {
-    // Only handle error if not already closed
-    if (eventSource.readyState !== EventSource.CLOSED) {
-      setError("Connection to server failed");
-      eventSource.close();
-      setLoading(false);
-    }
-  };
-
-  // Cleanup function for component unmount
-  return () => {
-    eventSource.close();
-  };
-};
   //const fetchAllAuthors = () => {
-    ////initialize states
-    //setLoading(true); //set loading to true when a new search is run
-    //setError(null); //set error to null when a new search is run
-    //setLeads([]); //clear leads whenever a new search is run
-    //setAllLeads([]); //clear all leads when a new search is run
+  ////initialize states
+  //setLoading(true); //set loading to true when a new search is run
+  //setError(null); //set error to null when a new search is run
+  //setLeads([]); //clear leads whenever a new search is run
+  //setAllLeads([]); //clear all leads when a new search is run
 
-    ////create a new eventsource
-    //const eventSource = new EventSource("http://localhost:5000/stream-leads");
+  ////create a new eventsource
+  //const eventSource = new EventSource("http://localhost:5000/stream-leads");
 
-    ////take the data from the eventsource and parse it
-    //eventSource.onmessage = (event) => {
-      //console.log("Received data: ", event.data);
-      //const data = JSON.parse(event.data);
+  ////take the data from the eventsource and parse it
+  //eventSource.onmessage = (event) => {
+  //console.log("Received data: ", event.data);
+  //const data = JSON.parse(event.data);
 
-      ////check if data has an error
-      //if (data.error) {
-        //setError(data.error);
-        //eventSource.close();
-        //return;
-      //}
+  ////check if data has an error
+  //if (data.error) {
+  //setError(data.error);
+  //eventSource.close();
+  //return;
+  //}
 
-      ////otherwise parse the data and put it in leads & all leads
-      //const {author, icp, score} = data;
-      //const parsedLead = parseLeadData([author])[0];
+  ////otherwise parse the data and put it in leads & all leads
+  //const {author, icp, score} = data;
+  //const parsedLead = parseLeadData([author])[0];
 
-      ////add icp and score
-      //const leadWithDetails: Lead = {
-        //...parsedLead,
-        //icp: icp,
-        //score: score
-      //}
+  ////add icp and score
+  //const leadWithDetails: Lead = {
+  //...parsedLead,
+  //icp: icp,
+  //score: score
+  //}
 
-      ////update leads and all leads
-      //setAllLeads((prev) => [...prev, leadWithDetails]);
-      //setLeads((prev) => [...prev, leadWithDetails]);
-    //};
+  ////update leads and all leads
+  //setAllLeads((prev) => [...prev, leadWithDetails]);
+  //setLeads((prev) => [...prev, leadWithDetails]);
+  //};
 
-    //eventSource.onerror = () => {
-      //setError("Connection to server failed");
-      //eventSource.close();
-      //setLoading(false);
-    //};
+  //eventSource.onerror = () => {
+  //setError("Connection to server failed");
+  //eventSource.close();
+  //setLoading(false);
+  //};
   //};
 
   //function to parse data from search
   const parseLeadData = (leadData: any[]): Lead[] => {
-  return leadData.map(lead => ({
-    name: lead.name || "",
-    jobTitle: lead.jobTitle || "",
-    company: lead.company || "",
-    location: lead.location || "",
-    employeeCount: lead.employeeCount || "",
-    icp: lead.icp || "Unknown",
-    score: lead.score || 0
-  }));
-};
+    try {
+      return leadData.map((lead) => ({
+        name: lead.name || "",
+        job_title: lead.job_title || "",
+        company: lead.company || "",
+        location: lead.location || "",
+        employee_count: lead.employee_count || "",
+        icp: lead.icp || "Unknown",
+        score: lead.score || 0,
+      }));
+    } catch (e) {
+      console.error("Error parsing leads", e);
+      return [];
+    }
+  };
   //const parseLeadData = (leadData: string[]): Lead[] => {
-    ////split each lead string into these 5 parts
-    //return leadData.map((leadString) => {
-      //const parts = leadString.split(" -");
-      //return {
-        //name: parts[0] || "",
-        //jobTitle: parts[1] || "",
-        //company: parts[2] || "",
-        //location: parts[3] || "",
-        //employeeCount: parts[4] || "",
-        //icp: "Unknown",
-        //score: 0
-      //};
-    //});
+  ////split each lead string into these 5 parts
+  //return leadData.map((leadString) => {
+  //const parts = leadString.split(" -");
+  //return {
+  //name: parts[0] || "",
+  //jobTitle: parts[1] || "",
+  //company: parts[2] || "",
+  //location: parts[3] || "",
+  //employeeCount: parts[4] || "",
+  //icp: "Unknown",
+  //score: 0
+  //};
+  //});
   //};
 
   const filterLeadsByIcp = (icp: string) => {
@@ -161,16 +171,21 @@ export default function Search() {
     } else {
       const filteredLeads = allLeads.filter((lead) => {
         // First try to use the icp field if available
-      if (lead.icp) {
-        switch (icp) {
-          case "1": return lead.icp === "Small Businesses";
-          case "2": return lead.icp === "Mid-Size Companies";
-          case "3": return lead.icp === "Large Enterprises";
-          case "4": return lead.icp === "BPO Providers";
-          default: return true;
+        if (lead.icp) {
+          switch (icp) {
+            case "1":
+              return lead.icp === "Small Businesses";
+            case "2":
+              return lead.icp === "Mid-Size Companies";
+            case "3":
+              return lead.icp === "Large Enterprises";
+            case "4":
+              return lead.icp === "BPO Providers";
+            default:
+              return true;
+          }
         }
-      }
-        const employeeCount = lead.employeeCount;
+        const employeeCount = lead.employee_count;
         //match employee count to pattern
         const pattern = /(\d+)\s*to\s*(\d+)/;
         const match = employeeCount.match(pattern);
@@ -264,17 +279,39 @@ export default function Search() {
                 </tr>
               </thead>
               <tbody>
-                {leads.map((lead, index) => (
-                  <tr key={index}>
-                    <td>{lead.name}</td>
-                    <td>{lead.jobTitle}</td>
-                    <td>{lead.company}</td>
-                    <td>{lead.location}</td>
-                    <td>{lead.employeeCount}</td>
-                    <td>{lead.icp}</td>
-                    <td>{lead.score}</td>
-                  </tr>
-                ))}
+                {leads.map((lead, index) => {
+                  let icpClass = ""; //variable to hold icp class
+
+                  switch (lead.icp.toLowerCase()) {
+                    case "small businesses":
+                      icpClass = "icp-1";
+                      break;
+                    case "mid-size companies":
+                      icpClass = "icp-2";
+                      break;
+                    case "large enterprises":
+                      icpClass = "icp-3";
+                      break;
+                    case "bpo providers":
+                      icpClass = "icp-4";
+                      break;
+                    default:
+                      icpClass = "";
+                      break;
+                  }
+
+                  return (
+                    <tr key={index} className={icpClass}>
+                      <td>{lead.name}</td>
+                      <td>{lead.job_title}</td>
+                      <td>{lead.company}</td>
+                      <td>{lead.location}</td>
+                      <td>{lead.employee_count}</td>
+                      <td>{lead.icp}</td>
+                      <td>{lead.score}</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

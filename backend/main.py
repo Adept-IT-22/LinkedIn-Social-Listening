@@ -8,6 +8,7 @@ from config import logging_config
 from services.icp_scoring import icp_scoring
 from flask import Flask, jsonify, Response, stream_with_context
 from flask_cors import CORS
+from services.icp_scores.total_score import icp_scorer
 
 #create a flask app
 app = Flask(__name__)
@@ -68,12 +69,12 @@ def stream_leads():
                         else:
                             # Extract data from the scored lead
                             author = scored_lead.get('author', {})
+                            name = author.get('name', '')
+                            job_title = author.get('job_title', '')
                             company_name = author.get('company', '')
                             company_industry = author.get('company_industry', '')
                             company_location = author.get('location', '')
                             employee_size = author.get('employee_count', '')
-                            name = author.get('name', '')
-                            job_title = author.get('job_title', '')
                             
                             # Store in DB
                             try:
@@ -90,6 +91,7 @@ def stream_leads():
                             except Exception as e:
                                 logger.error(f"Database error: {str(e)}")
                             
+                            logger.info(f"Scored lead: {scored_lead}")
                             yield f"data: {json.dumps(scored_lead)}\n\n"
                             
                 conn.commit()
@@ -98,6 +100,10 @@ def stream_leads():
             yield f"data: {json.dumps({'error': str(e)})}\n\n"
     
     return Response(stream_with_context(generate()), mimetype='text/event-stream')
+
+@app.route('/total_scores', methods= ["GET"])
+def total_scores():
+    return icp_scorer.total_score()
 
 if __name__ == "__main__":
     #run the flask app

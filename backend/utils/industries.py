@@ -61,7 +61,9 @@ industries = {
         "Renewables & Environment",
         "Shipbuilding"
     },
-    "Textiles": {},
+    "Textiles": {
+        "Textile Manufacturing"
+    },
     "Finance": {
         "Banking",
         "Capital Markets",
@@ -124,7 +126,10 @@ industries = {
         "Sporting Goods",
         "Tobacco"
     },
-    "Wine and Spirits": {},
+    "Wine and Spirits": {
+        "Winemaking",
+        "Distilling"
+    },
     "Agriculture": {
         "Dairy",
         "Farming",
