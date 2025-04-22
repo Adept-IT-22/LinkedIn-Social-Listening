@@ -27,8 +27,10 @@ def score_company_size(icp_details: dict) -> int:
 
     #min employee logic
     if "min" in icp_details["employees"]:
-        if icp_details["employees"]["min"] >= 250:
+        if icp_details["employees"]["min"] >= 250 and icp_details["employees"]["min"] < 1000:
             company_size_score += 20
+        elif icp_details["employees"]["min"] >= 1000:
+            company_size_score += 25
 
     #range logic
     if "range" in icp_details["employees"]:

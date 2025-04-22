@@ -53,6 +53,8 @@ def score_company_industry(company_industry: Optional[str], icp_details: Dict) -
     
     # Get score (all comparisons in lowercase)
     industry_key = matched_industry.lower()
+
+    logger.info("Scoring matched industry: %s", industry_key)
     
     if industry_key in INDUSTRY_SCORES["score_25"]:
         return 25
@@ -80,5 +82,7 @@ def find_industry(input_industry: str, threshold: int = 70) -> Optional[str]:
     
     # Get best match
     match, score = process.extractOne(input_industry, industry_mapping.keys())
-    logger.info("Matched industry: %s => Score: %d", match, score)
-    return industry_mapping[match] if score >= threshold else None
+    canonical = industry_mapping.get(match)
+
+    logger.info("Matched industry: %s, Canonical: %s => Score: %d", match, canonical, score)
+    return canonical if score >= threshold else None

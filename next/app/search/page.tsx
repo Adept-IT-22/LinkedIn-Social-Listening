@@ -6,6 +6,7 @@ interface Lead {
   name: string;
   job_title: string;
   company: string;
+  industry:string;
   location: string;
   employee_count: string;
   icp: string;
@@ -87,50 +88,6 @@ export default function Search() {
       eventSource.close();
     };
   };
-  //const fetchAllAuthors = () => {
-  ////initialize states
-  //setLoading(true); //set loading to true when a new search is run
-  //setError(null); //set error to null when a new search is run
-  //setLeads([]); //clear leads whenever a new search is run
-  //setAllLeads([]); //clear all leads when a new search is run
-
-  ////create a new eventsource
-  //const eventSource = new EventSource("http://localhost:5000/stream-leads");
-
-  ////take the data from the eventsource and parse it
-  //eventSource.onmessage = (event) => {
-  //console.log("Received data: ", event.data);
-  //const data = JSON.parse(event.data);
-
-  ////check if data has an error
-  //if (data.error) {
-  //setError(data.error);
-  //eventSource.close();
-  //return;
-  //}
-
-  ////otherwise parse the data and put it in leads & all leads
-  //const {author, icp, score} = data;
-  //const parsedLead = parseLeadData([author])[0];
-
-  ////add icp and score
-  //const leadWithDetails: Lead = {
-  //...parsedLead,
-  //icp: icp,
-  //score: score
-  //}
-
-  ////update leads and all leads
-  //setAllLeads((prev) => [...prev, leadWithDetails]);
-  //setLeads((prev) => [...prev, leadWithDetails]);
-  //};
-
-  //eventSource.onerror = () => {
-  //setError("Connection to server failed");
-  //eventSource.close();
-  //setLoading(false);
-  //};
-  //};
 
   //function to parse data from search
   const parseLeadData = (leadData: any[]): Lead[] => {
@@ -139,6 +96,7 @@ export default function Search() {
         name: lead.name || "",
         job_title: lead.job_title || "",
         company: lead.company || "",
+        industry: lead.industry || "",
         location: lead.location || "",
         employee_count: lead.employee_count || "",
         icp: lead.icp || "Unknown",
@@ -149,21 +107,6 @@ export default function Search() {
       return [];
     }
   };
-  //const parseLeadData = (leadData: string[]): Lead[] => {
-  ////split each lead string into these 5 parts
-  //return leadData.map((leadString) => {
-  //const parts = leadString.split(" -");
-  //return {
-  //name: parts[0] || "",
-  //jobTitle: parts[1] || "",
-  //company: parts[2] || "",
-  //location: parts[3] || "",
-  //employeeCount: parts[4] || "",
-  //icp: "Unknown",
-  //score: 0
-  //};
-  //});
-  //};
 
   const filterLeadsByIcp = (icp: string) => {
     if (icp == "all") {
@@ -272,6 +215,7 @@ export default function Search() {
                   <th>Name</th>
                   <th>Job Title</th>
                   <th>Company</th>
+                  <th>Industry</th>
                   <th>Location</th>
                   <th>Employee Count</th>
                   <th>ICP</th>
@@ -305,6 +249,7 @@ export default function Search() {
                       <td>{lead.name}</td>
                       <td>{lead.job_title}</td>
                       <td>{lead.company}</td>
+                      <td>{lead.industry}</td>
                       <td>{lead.location}</td>
                       <td>{lead.employee_count}</td>
                       <td>{lead.icp}</td>

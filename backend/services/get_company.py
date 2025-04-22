@@ -50,4 +50,4 @@ def find_company_info(profile_urn: str) -> str:
     
     except Exception as e:
         logging.error(f"Error getting company info: %s", e)
-        return "Error fetching company info"
+        return "Company Not Found"

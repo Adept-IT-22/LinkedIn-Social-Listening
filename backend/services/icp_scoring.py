@@ -1,6 +1,6 @@
 #This module scores authors based on icp
 import logging
-from typing import Dict, List, Optional, Union
+from typing import Dict, List, Optional, Union, Generator
 from dataclasses import dataclass
 from utils.icp import icps
 from services.get_authors_service import get_authors
@@ -10,6 +10,9 @@ from services.icp_scores.total_score import icp_scorer
 
 #initialize module logger
 logger = logging.getLogger(__name__)
+
+#minimum score
+MIN_SCORE = 10
 
 @dataclass(frozen=True)
 class Author:
@@ -43,7 +46,7 @@ def parse_authors(author_str: str)-> Optional[Author]:
     )
     
 #method to do icp scoring
-def icp_scoring(min_score: int = 0) -> List[Dict[str, Union[Dict, str, int]]]:
+def icp_scoring(min_score: int = MIN_SCORE) -> Generator[Dict[str, Union[Dict, str, int]], None, None]:
     logger.info("Icp Scoring Starting...")
 
     #create an instance of the icp scorer class
@@ -89,14 +92,15 @@ def icp_scoring(min_score: int = 0) -> List[Dict[str, Union[Dict, str, int]]]:
 
             total_score = scorer.total_score(author_data)
 
-            #if score > 50 add author to qualified authors
-            if total_score >= min_score:
+            #if score > min score add author to qualified authors
+            if total_score > MIN_SCORE:
                 qualified_authors[author.name] = total_score
                 yield {
                     "author": {
                         "name": author.name,
                         "job_title": author.job_title,
                         "company": author.company_name,
+                        "industry": author.company_industry,
                         "location": author.company_location,
                         "employee_count": author.employee_count
                     },

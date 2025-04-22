@@ -34,5 +34,9 @@ class TestCompanySizeScore(unittest.TestCase):
         icp = {"employees": {"range": (1000,)}}  # Invalid range
         self.assertEqual(score_company_size(icp), 0)
 
+    def test_unknown(self):
+        icp = {"employees": {"min": 10000}}
+        self.assertEqual(score_company_size(icp), 25)
+
 if __name__ == "__main__":
     unittest.main()

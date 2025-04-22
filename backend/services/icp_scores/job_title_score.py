@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 #default job titles in case icp is not found and fallback icp is returned
 DEFAULT_JOB_TITLES = {
-    "Founder", "CEO", "CTO", "CFO", "COO", "Director", 
+    "Founder", "CEO", "CTO", "CFO", "COO", "Director", "Customer Service"
     "Manager", "Team Lead", "VP", "Head of Department"    
 }
 
@@ -55,7 +55,7 @@ def score_job_title(job_title: str, icp_details: dict) -> int:
     elif any(keyword in lowercase_title for keyword in ["director", "vp", "head"]):
         logger.info("Job Title Score is 20\n")
         return 20
-    elif "manager" or "lead" in lowercase_title:
+    elif "manager" or "lead" or "customer" in lowercase_title:
         logger.info("Job Title Score is 15\n")
         return 15
     elif any(keyword in lowercase_title for keyword in ["specialist", " coordinator"]):
