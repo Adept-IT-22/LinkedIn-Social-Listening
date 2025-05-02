@@ -53,7 +53,6 @@ def score_company_industry(company_industry: Optional[str], icp_details: Dict) -
     
     # Get score (all comparisons in lowercase)
     industry_key = matched_industry.lower()
-
     logger.info("Scoring matched industry: %s", industry_key)
     
     if industry_key in INDUSTRY_SCORES["score_25"]:
