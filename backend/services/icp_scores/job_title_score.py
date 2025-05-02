@@ -53,9 +53,9 @@ def score_job_title(job_title: str, icp_details: dict) -> int:
             highest_score = current_score
             logger.info(f"Matched Job Title: {job_title}, Current Score: {current_score}")
 
-    #if fuzzy score > 60 a valid job title has been found
+    #if fuzzy score > 70 a valid job title has been found
     logger.info("Matching done. Highest score is: %d\n", highest_score)
-    if highest_score < 60:
+    if highest_score < 70:
         logger.info("No strong match found. Best score was %d\n", highest_score)
         return 0
 

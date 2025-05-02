@@ -26,13 +26,5 @@ icps = {
         "revenue": {"min": "Ksh 100M"},
         "industries": industries,
         "locations" : locations
-    },
-    
-    "BPO Providers": {
-        "job_titles": JOB_TITLES,
-        "employees": {"range": (100, 1000)},
-        "revenue": {"min": "$100M"},
-        "industries": industries,
-        "locations" : locations
     }
 }
