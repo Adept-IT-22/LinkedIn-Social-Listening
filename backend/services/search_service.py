@@ -1,25 +1,28 @@
 #This module will handle searching for posts on linkedin
 
+import json
 import time
 import random
 import logging
 from config import app_config
+from utils.keywords import KEYWORDS
+from utils.negative_keywords import NEGATIVE_KEYWORDS
 from services.linkedin_service import get_linkedin_client
 from tenacity import(
     retry,
     stop_after_attempt,
     wait_exponential_jitter,
     retry_if_exception_type,
-    before_log
+    before_log,
+    after_log
 )
 
 #initialize module logger
 logger = logging.getLogger(__name__)
 
 #initialize keywords
-keywords = [keyword.strip() for keyword in app_config.KEYWORDS.split(',') if keyword.strip()]
+keywords = [word.strip().lower() for words in KEYWORDS.values() for word in words]
 
-#retry decorator
 @retry(
         stop = stop_after_attempt(5),
         wait=wait_exponential_jitter(
@@ -33,24 +36,29 @@ keywords = [keyword.strip() for keyword in app_config.KEYWORDS.split(',') if key
         before_sleep=before_log(
             logger=logger,
             log_level=30
+        ),
+        after=after_log(
+            logger=logger,
+            log_level=30,
+            sec_format="%0.3f"
         )
 )
 
 #search function wrapper
-def robust_search(api, params):
+def linkedin_search(api, params):
+    time.sleep(random.uniform(3, 5))
     return api.search(params, limit=10)
-
+    
 #Search for posts based on keywords
 def search_posts(params: dict) -> list:
     all_results = [] #stores all results
     api = get_linkedin_client()
 
     try:
-        for i in range(0, len(keywords), 3):
-            #Get next 3 keywords or remaining if less than 3
-            keyword_group = keywords[i:i+3]
+        #Split the 90 keywords into 15 groups of 6
+        for i in range(0, len(keywords), 6):
+            keyword_group = keywords[i:i+6]
             combined_keywords = " OR ".join(keyword_group)
-
             logger.info(f"Search for {combined_keywords} starting...")
 
             #Create copy of params for each group
@@ -58,21 +66,36 @@ def search_posts(params: dict) -> list:
             current_params["keywords"] = combined_keywords
 
             #Connect to linkedin & Run the search
-            
-            search_results = robust_search(api, current_params)
-            
+            search_results = linkedin_search(api, current_params)
+
             #Add results to all_results
             if search_results:
-                all_results.extend(search_results)
-                logger.info(f"Found {len(search_results)} people for group {keyword_group}")
+                #Filter negative keywords
+                #for result in search_results:
+                    #post = result.get("summary", {}).get ("text", "")
+                    #if check_for_neg_keywords(post, NEGATIVE_KEYWORDS) == True:
+                        #continue
+                    #else:
+                        #all_results.append(result)
+                        #logger.info(f"Result added to all_results.")
+                logger.info(f"Found {len(all_results)} qualified people for group {keyword_group}")
             else:
                 logger.info(f"No results for {combined_keywords}")
 
             #time between searches
-            time.sleep(random.uniform(5, 10))
-            
+            time.sleep(random.uniform(20, 60))
+
+        logger.info(f"Here are all the qualified results: {all_results}")
         return all_results
 
     except Exception as e:
         logger.error("Error fetching search results: %s", str(e))
         return []
+
+#check if post contains any negative keywords
+def check_for_neg_keywords(post: str, negative_keywords: dict) -> bool:
+    return any(keyword.lower() in post.lower() for keywords in negative_keywords.values() for keyword in keywords)
+
+#filter for intent phrases
+def check_for_intent(post: str, intent_phrases: dict) -> bool:
+    return any(phrase.lower() in post.lower() for phrases in intent_phrases.values() for phrase in phrases)

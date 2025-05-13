@@ -1,4 +1,5 @@
 import os
+from utils.keywords import KEYWORDS
 from dotenv import load_dotenv
 
 #load variables in this file into env variables
@@ -23,16 +24,16 @@ DB_CONFIG = {
 }
 
 #Search settings
-KEYWORDS = os.getenv("KEYWORDS")
 PAGE_SIZE = int(os.getenv("PAGE_SIZE"))
 MAX_PAGES = int(os.getenv("MAX_PAGES"))
 
 #Search parameters
+keywords = set(kw.strip().lower() for words in KEYWORDS.values() for kw in words)
 SEARCH_PARAMS = {
     "start": 0,
     "origin": "GLOBAL_SEARCH_HEADER",
-    "keywords": " OR ".join(KEYWORDS),
-    "filters": "List((key:resultType,value:List(CONTENT)),(key:contentType,value:List(STATUS_UPDATE)))"
+    "keywords": " OR ".join(keywords),
+    "filters": "List((key:resultjType,value:List(CONTENT)),(key:contentType,value:List(STATUS_UPDATE)))"
 }
 
 #Flask settings

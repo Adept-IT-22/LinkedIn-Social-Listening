@@ -40,6 +40,7 @@ def get_authors():
 
             #else get name & job of each author
             for post in posts:
+                print(f"Here's a post: {post}")
                 name = post["title"]["text"]
                 job = post["primarySubtitle"]["text"]
                 company = post["actorNavigationUrl"]
