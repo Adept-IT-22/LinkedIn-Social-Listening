@@ -22,6 +22,7 @@ class Author:
     company_industry: str = "Industry Not Found"
     company_location: str = "Location Not Found"
     employee_count: str = "Employee Count Not Found"
+    linkedin_post: str = "LinkedIn Post Not Found"
 
 #method to parse each string
 def parse_authors(author_str: str)-> Optional[Author]:
@@ -33,7 +34,7 @@ def parse_authors(author_str: str)-> Optional[Author]:
         return None
 
     #if there are missing values add empty quotes 
-    parts += [""] * (6 - len(parts))
+    parts += [""] * (7 - len(parts))
 
     #store each part in a variable and return 
     return Author (
@@ -42,7 +43,8 @@ def parse_authors(author_str: str)-> Optional[Author]:
         company_name = parts[2] if len(parts) > 2 and parts[2] else "Company Not Found",
         company_location = parts[3] if len(parts) > 3 and parts[3] else "Location Not Found",
         company_industry = parts[4] if len(parts) > 4 and parts[4] else "Industry Not Found",
-        employee_count = parts[5] if len(parts) > 5 and parts[5] else "Employee Count Not Found"       
+        employee_count = parts[5] if len(parts) > 5 and parts[5] else "Employee Count Not Found",
+        linkedin_post = parts[6] if len(parts) > 6 and parts[6] else "LinkedIn Post Not Found"
     )
     
 #method to do icp scoring
@@ -93,7 +95,7 @@ def icp_scoring(min_score: int = MIN_SCORE) -> Generator[Dict[str, Union[Dict, s
             total_score = scorer.total_score(author_data)
 
             #if score > min score add author to qualified authors
-            if total_score > MIN_SCORE:
+            if total_score > min_score:
                 qualified_authors[author.name] = total_score
                 yield {
                     "author": {
@@ -102,7 +104,8 @@ def icp_scoring(min_score: int = MIN_SCORE) -> Generator[Dict[str, Union[Dict, s
                         "company": author.company_name,
                         "industry": author.company_industry,
                         "location": author.company_location,
-                        "employee_count": author.employee_count
+                        "employee_count": author.employee_count,
+                        "linkedin_post": author.linkedin_post
                     },
                     "icp": icp_key,
                     "score": total_score

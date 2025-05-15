@@ -4,7 +4,6 @@ import json
 import time
 import random
 import logging
-from config import app_config
 from utils.keywords import KEYWORDS
 from utils.negative_keywords import NEGATIVE_KEYWORDS
 from services.linkedin_service import get_linkedin_client
@@ -70,22 +69,15 @@ def search_posts(params: dict) -> list:
 
             #Add results to all_results
             if search_results:
-                #Filter negative keywords
-                #for result in search_results:
-                    #post = result.get("summary", {}).get ("text", "")
-                    #if check_for_neg_keywords(post, NEGATIVE_KEYWORDS) == True:
-                        #continue
-                    #else:
-                        #all_results.append(result)
-                        #logger.info(f"Result added to all_results.")
-                logger.info(f"Found {len(all_results)} qualified people for group {keyword_group}")
+                all_results.extend(search_results)
+                logger.info(f"Found {len(all_results)} people for group {keyword_group}")
             else:
                 logger.info(f"No results for {combined_keywords}")
 
             #time between searches
             time.sleep(random.uniform(20, 60))
 
-        logger.info(f"Here are all the qualified results: {all_results}")
+        logger.info(f"Total qualified results: {len(all_results)}")
         return all_results
 
     except Exception as e:

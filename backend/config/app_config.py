@@ -33,7 +33,7 @@ SEARCH_PARAMS = {
     "start": 0,
     "origin": "GLOBAL_SEARCH_HEADER",
     "keywords": " OR ".join(keywords),
-    "filters": "List((key:resultjType,value:List(CONTENT)),(key:contentType,value:List(STATUS_UPDATE)))"
+    "filters": "List((key:resultType,value:List(CONTENT)),(key:contentType,value:List(STATUS_UPDATE)))"
 }
 
 #Flask settings

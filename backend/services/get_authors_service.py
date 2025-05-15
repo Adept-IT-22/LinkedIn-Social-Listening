@@ -7,6 +7,7 @@ import logging
 from config import app_config
 from services.search_service import search_posts
 from services.get_company import find_company_info
+from utils.negative_keywords import NEGATIVE_KEYWORDS
 
 
 #initialize module logger
@@ -19,6 +20,7 @@ PAGE_SIZE = app_config.PAGE_SIZE
 
 #global module variable
 seen_authors = set() #set of seen authors
+qualified_authors = []
 
 def get_authors(): 
     try:
@@ -40,10 +42,20 @@ def get_authors():
 
             #else get name & job of each author
             for post in posts:
-                print(f"Here's a post: {post}")
                 name = post["title"]["text"]
                 job = post["primarySubtitle"]["text"]
                 company = post["actorNavigationUrl"]
+                post_summary = post.get("summary", {})
+                actual_post = post_summary.get("text", "Post Not Found")
+
+                logger.info("===========================================")
+                logger.info("Linkedin Post: %s", actual_post)
+                if has_neg_keywords(actual_post, NEGATIVE_KEYWORDS):
+                    logger.info("The above post failed filtering")
+                    continue
+
+                #log that a post without negative keywords has been found
+                logger.info("Post without negative keywords found: %s\n", actual_post)
 
                 #get urn from actornavigationurl
                 company_urn = re.search(r"(?<=/in/)[^?]+", company)
@@ -56,7 +68,7 @@ def get_authors():
                     company_info = "Company Not Found"
                 
                 #create person variable and add person to authors list
-                person = name + " - " + job + " - " + company_info
+                person = name + " - " + job + " - " + company_info + " - " + actual_post
                 if person not in seen_authors:
                     logger.info(f"NEW AUTHOR FOUND: {person}") #CHANGE BACK TO NAME NOT PERSON
                     yield person
@@ -70,7 +82,18 @@ def get_authors():
 
         #number of authors yielded
         logger.info(f"Total authors yielded: {yield_counter}")
-    
+
     except Exception as e:
         logger.error(f"Error fetching authors: %s", e)
         return
+
+#check for negative keywords
+def has_neg_keywords(post: str, negative_keywords: dict)->bool:
+    if not post:
+        logger.warning("LinkedIn post not found")
+        return True
+    return any(
+        keyword.lower() in post.lower() 
+        for keywords in negative_keywords.values() 
+        for keyword in keywords
+    )

@@ -11,6 +11,7 @@ interface Lead {
   employee_count: string;
   icp: string;
   score: number;
+  linkedin_post: string;
 }
 
 export default function Search() {
@@ -99,6 +100,7 @@ export default function Search() {
         industry: lead.industry || "",
         location: lead.location || "",
         employee_count: lead.employee_count || "",
+        linkedin_post: lead.linkedin_post || "",
         icp: lead.icp || "Unknown",
         score: lead.score || 0,
       }));
@@ -218,6 +220,7 @@ export default function Search() {
                   <th>Industry</th>
                   <th>Location</th>
                   <th>Employee Count</th>
+                  <th>LinkedIn Post</th>
                   <th>ICP</th>
                   <th>Score</th>
                 </tr>
@@ -252,6 +255,7 @@ export default function Search() {
                       <td>{lead.industry}</td>
                       <td>{lead.location}</td>
                       <td>{lead.employee_count}</td>
+                      <td>{lead.linkedin_post}</td>
                       <td>{lead.icp}</td>
                       <td>{lead.score}</td>
                     </tr>

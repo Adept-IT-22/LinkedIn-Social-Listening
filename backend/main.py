@@ -5,10 +5,18 @@ import psycopg
 import logging
 from typing import Dict, Any
 from config import logging_config
+from config.app_config import DB_CONFIG
 from services.icp_scoring import icp_scoring
 from flask import Flask, jsonify, Response, stream_with_context
 from flask_cors import CORS
 from services.icp_scores.total_score import icp_scorer
+
+#DB Configs
+host = DB_CONFIG.get("host")
+port = DB_CONFIG.get("port")
+user_name = DB_CONFIG.get("user")
+password = DB_CONFIG.get("password")
+db_name = DB_CONFIG.get("name")
 
 #create a flask app
 app = Flask(__name__)
@@ -61,7 +69,7 @@ def lead_data() -> Dict[str, Any]:
 def stream_leads():
     def generate():
         try:
-            with psycopg.connect(conninfo="host=localhost dbname=sl port=5432 user=postgres password=markothengo99") as conn:
+            with psycopg.connect(conninfo=f"host={host} dbname={db_name} port={port} user={user_name} password={password}") as conn:
                 with conn.cursor() as cur:
                     for scored_lead in icp_scoring(min_score=MIN_SCORE):
                         if "error" in scored_lead:
@@ -75,6 +83,7 @@ def stream_leads():
                             company_industry = author.get('company_industry', '')
                             company_location = author.get('location', '')
                             employee_size = author.get('employee_count', '')
+                            linkedin_post = author.get('linkedin_post', '')
                             
                             # Store in DB
                             try:
@@ -84,8 +93,8 @@ def stream_leads():
                                 )
                                 company_id = cur.fetchone()[0]
                                 cur.execute(
-                                    "INSERT INTO authors (name, title, company_id) VALUES (%s, %s, %s)",
-                                    (name, job_title, company_id)
+                                    "INSERT INTO authors (name, title, company_id, linkedin_post) VALUES (%s, %s, %s, %s)",
+                                    (name, job_title, company_id, linkedin_post)
                                 )
                                 logger.info("Data inserted into Authors!")
                             except Exception as e:
