@@ -3,6 +3,21 @@
 locations ={
     #North American Countries
     "North American Countries": { "united states", "canada"},
+
+    #U.S. Cities
+    "U.S. Cities": {
+    "new york city", "los angeles", "chicago", "houston", "phoenix",
+    "philadelphia", "san antonio", "san diego", "dallas", "san jose",
+    "austin", "jacksonville", "fort worth", "columbus", "charlotte",
+    "san francisco", "indianapolis", "seattle", "denver",
+    "washington, d.c.", "boston", "el paso", "nashville", "detroit",
+    "oklahoma city", "portland", "las vegas", "memphis", "louisville",
+    "baltimore", "milwaukee", "albuquerque", "tucson", "fresno",
+    "sacramento", "kansas city", "mesa", "atlanta", "omaha",
+    "colorado springs", "raleigh", "miami", "long beach",
+    "virginia beach", "oakland", "minneapolis", "tulsa", "tampa",
+    "arlington", "new orleans"},
+
     #African Countries
     "African Countries": {
     "algeria", "angola", "benin", "botswana", "burkina faso", 
@@ -49,18 +64,4 @@ locations ={
     "sofia", "zagreb", "belgrade", "riga", "vilnius",
     "tallinn", "luxembourg", "ljubljana", "sarajevo", "bratislava",
     "reykjavik", "valletta", "podgorica", "skopje", "tirana"},
-    
-    #U.S. Cities
-    "U.S. Cities": {
-    "new york city", "los angeles", "chicago", "houston", "phoenix",
-    "philadelphia", "san antonio", "san diego", "dallas", "san jose",
-    "austin", "jacksonville", "fort worth", "columbus", "charlotte",
-    "san francisco", "indianapolis", "seattle", "denver",
-    "washington, d.c.", "boston", "el paso", "nashville", "detroit",
-    "oklahoma city", "portland", "las vegas", "memphis", "louisville",
-    "baltimore", "milwaukee", "albuquerque", "tucson", "fresno",
-    "sacramento", "kansas city", "mesa", "atlanta", "omaha",
-    "colorado springs", "raleigh", "miami", "long beach",
-    "virginia beach", "oakland", "minneapolis", "tulsa", "tampa",
-    "arlington", "new orleans"}
 }

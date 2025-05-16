@@ -17,6 +17,10 @@ def score_company_location(company_location:str, icp_details:dict) -> int:
 
     icp_locations = icp_details.get("locations", set())
 
+    #Any company not in africa, europe or north america should be dismissed
+    if company_location not in icp_locations:
+        return 0
+
     if not icp_locations:
         logger.warning("No location found. Setting to default")
         icp_locations = {"Default": DEFAULT_COMPANY_LOCATIONS}
@@ -39,7 +43,7 @@ def score_company_location(company_location:str, icp_details:dict) -> int:
         location_scores[location.lower()] = 15
     #fallback if icp is not found
     for location in icp_locations.get("Default", []):
-        location_scores[location.lower()] = 10
+        location_scores[location.lower()] = 0
 
     # Perform fuzzy matching then return score
     for loc, score in location_scores.items():

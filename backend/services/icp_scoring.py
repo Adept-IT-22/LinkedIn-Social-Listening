@@ -12,7 +12,7 @@ from services.icp_scores.total_score import icp_scorer
 logger = logging.getLogger(__name__)
 
 #minimum score
-MIN_SCORE = 10
+MIN_SCORE = 60
 
 @dataclass(frozen=True)
 class Author:

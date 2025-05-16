@@ -29,7 +29,7 @@ logging_config.configure_logging()
 logger = logging.getLogger(__name__)
     
 #minimum score for a lead to become qualified
-MIN_SCORE = 0
+MIN_SCORE = 60
 
 #endpoint to retrieve qualified leads based on icp scoring.
 @app.route('/lead-data', methods=['GET'])
