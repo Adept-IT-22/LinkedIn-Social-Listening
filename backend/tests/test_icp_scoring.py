@@ -29,7 +29,7 @@ class TestICPScoring(unittest.TestCase):
         mock_scorer_class.return_value = mock_scorer
 
         # Act
-        results = list(icp_scoring(min_score=50))
+        results = list(icp_scoring(min_score=60))
 
         # Assert
         self.assertEqual(len(results), 1)
@@ -62,7 +62,7 @@ class TestICPScoring(unittest.TestCase):
         mock_scorer_class.return_value = mock_scorer
 
         # Act
-        results = list(icp_scoring(min_score=50))
+        results = list(icp_scoring(min_score=60))
 
         # Assert
         self.assertEqual(results, [])

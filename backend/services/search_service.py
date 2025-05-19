@@ -4,6 +4,7 @@ import json
 import time
 import random
 import logging
+from fuzzywuzzy import fuzz
 from utils.keywords import KEYWORDS
 from utils.negative_keywords import NEGATIVE_KEYWORDS
 from services.linkedin_service import get_linkedin_client
@@ -85,9 +86,33 @@ def search_posts(params: dict) -> list:
         return []
 
 #check if post contains any negative keywords
-def check_for_neg_keywords(post: str, negative_keywords: dict) -> bool:
-    return any(keyword.lower() in post.lower() for keywords in negative_keywords.values() for keyword in keywords)
+def check_for_neg_keywords(post: str, negative_keywords: dict, threshold: int = 80) -> bool:
+    post = post.lower()
+    
+    #Get keyword from negative keywords dictionary
+    for keywords in negative_keywords.values():
+        for keyword in keywords:
+            keyword = keyword.lower()
+
+            #Match keyword to post
+            similarity = fuzz.partial_ratio(keyword, post)
+            if similarity > threshold:
+                return True
+
+    return False
 
 #filter for intent phrases
-def check_for_intent(post: str, intent_phrases: dict) -> bool:
-    return any(phrase.lower() in post.lower() for phrases in intent_phrases.values() for phrase in phrases)
+def check_for_intent(post: str, intent_phrases: dict, threshold:int = 50) -> bool:
+    post = post.lower()
+
+    #get phrases from intent phrases dictionary
+    for phrases in intent_phrases.values():
+        for phrase in phrases:
+            phrase = phrase.lower()
+
+            #Match phrase to post
+            similarity = fuzz.partial_ratio(phrase, post)
+            if similarity >= threshold:
+                return True
+    
+    return False

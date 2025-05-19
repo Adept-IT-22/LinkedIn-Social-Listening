@@ -5,9 +5,10 @@ import time
 import random
 import logging
 from config import app_config
-from services.search_service import search_posts
+from services.search_service import search_posts, check_for_neg_keywords, check_for_intent
 from services.get_company import find_company_info
 from utils.negative_keywords import NEGATIVE_KEYWORDS
+from utils.intent_phrases import INTENT_PHRASES
 
 
 #initialize module logger
@@ -20,7 +21,6 @@ PAGE_SIZE = app_config.PAGE_SIZE
 
 #global module variable
 seen_authors = set() #set of seen authors
-qualified_authors = []
 
 def get_authors(): 
     try:
@@ -48,14 +48,18 @@ def get_authors():
                 post_summary = post.get("summary", {})
                 actual_post = post_summary.get("text", "Post Not Found")
 
-                logger.info("===========================================")
-                logger.info("Linkedin Post: %s", actual_post)
-                if has_neg_keywords(actual_post, NEGATIVE_KEYWORDS):
-                    logger.info("The above post failed filtering")
+                #check if post has negative keywords. Return True if it does.
+                if check_for_neg_keywords(actual_post, NEGATIVE_KEYWORDS):
+                    logger.warning("SKIPPED DUE TO NEGATIVE KEYWORDS")
                     continue
 
-                #log that a post without negative keywords has been found
-                logger.info("Post without negative keywords found: %s\n", actual_post)
+                #check if post has intent phrases. return True if it does.
+                #if not check_for_intent(actual_post, INTENT_PHRASES):
+                    #logger.warning("SKIPPED DUE TO LACK OF INTENT PHRASES")
+                    #continue
+
+                logger.info("===========================================")
+                logger.info("Linkedin Post: %s", actual_post)
 
                 #get urn from actornavigationurl
                 company_urn = re.search(r"(?<=/in/)[^?]+", company)
@@ -86,14 +90,3 @@ def get_authors():
     except Exception as e:
         logger.error(f"Error fetching authors: %s", e)
         return
-
-#check for negative keywords
-def has_neg_keywords(post: str, negative_keywords: dict)->bool:
-    if not post:
-        logger.warning("LinkedIn post not found")
-        return True
-    return any(
-        keyword.lower() in post.lower() 
-        for keywords in negative_keywords.values() 
-        for keyword in keywords
-    )

@@ -21,6 +21,7 @@ export default function Search() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [selectedIcp, setSelectedIcp] = useState("all");
+  const [expandedPost, setExpandedPost] = useState<{[key: number]: boolean}>({})
 
   //fetch leads from eventsource api
   const fetchAllAuthors = () => {
@@ -159,6 +160,11 @@ export default function Search() {
     }
   };
 
+  //Expand Post
+  const togglePost = (index: number) => {
+    setExpandedPost((prev) => ({...prev, [index]: !prev[index]}))
+  }
+
   //Download Excel File
   const downloadExcel = async () => {
     try {
@@ -255,7 +261,17 @@ export default function Search() {
                       <td>{lead.industry}</td>
                       <td>{lead.location}</td>
                       <td>{lead.employee_count}</td>
-                      <td>{lead.linkedin_post}</td>
+                      <td>{
+                          lead.linkedin_post.length > 100 ?
+                          <>
+                          ({expandedPost[index]? lead.linkedin_post : `${lead.linkedin_post.slice(0, 100)}...`}
+                            <button onClick = {()=>togglePost(index)} style={{color:"blue", cursor: "pointer"}}>
+                              {expandedPost[index]? "See less" : "See more" }
+                            </button>
+                          )
+                          </>
+                          :(lead.linkedin_post)
+                        }</td>
                       <td>{lead.icp}</td>
                       <td>{lead.score}</td>
                     </tr>

@@ -17,10 +17,6 @@ def score_company_location(company_location:str, icp_details:dict) -> int:
 
     icp_locations = icp_details.get("locations", set())
 
-    #Any company not in africa, europe or north america should be dismissed
-    if company_location not in icp_locations:
-        return 0
-
     if not icp_locations:
         logger.warning("No location found. Setting to default")
         icp_locations = {"Default": DEFAULT_COMPANY_LOCATIONS}

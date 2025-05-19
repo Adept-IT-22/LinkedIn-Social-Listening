@@ -7,9 +7,10 @@ from typing import Dict, Any
 from config import logging_config
 from config.app_config import DB_CONFIG
 from services.icp_scoring import icp_scoring
-from flask import Flask, jsonify, Response, stream_with_context
+from flask import Flask, jsonify, Response, stream_with_context, request, send_file
 from flask_cors import CORS
 from services.icp_scores.total_score import icp_scorer
+from services.download_excel import save_as_excel
 
 #DB Configs
 host = DB_CONFIG.get("host")
@@ -30,6 +31,9 @@ logger = logging.getLogger(__name__)
     
 #minimum score for a lead to become qualified
 MIN_SCORE = 60
+
+#store all icp_scoring results
+all_authors_cache = []
 
 #endpoint to retrieve qualified leads based on icp scoring.
 @app.route('/lead-data', methods=['GET'])
@@ -75,6 +79,7 @@ def stream_leads():
                         if "error" in scored_lead:
                             yield f"data: {json.dumps(scored_lead)}\n\n"
                         else:
+                            all_authors_cache.append(scored_lead)
                             # Extract data from the scored lead
                             author = scored_lead.get('author', {})
                             name = author.get('name', '')
@@ -114,6 +119,34 @@ def stream_leads():
 def total_scores():
     return icp_scorer.total_score()
 
+#Download Excel
+@app.route('/download-excel', methods=['GET'])
+def download_excel():
+    global all_authors_cache
+    local_all_authors_cache = all_authors_cache
+    try:
+        filename = "Social Listening Results.xlsx"
+
+        #Get qualified leads
+        qualified_leads = local_all_authors_cache
+
+        #save qualified leads to excel
+        saved_file = save_as_excel(qualified_leads)
+
+        #Make file downloadable
+        return send_file(
+            saved_file,
+            mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", 
+            as_attachment=True,
+            download_name=filename
+            )
+    
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "message" : str(e)
+        }), 500
+    
 if __name__ == "__main__":
     #run the flask app
     logger.info("Starting flask app...")
