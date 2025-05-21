@@ -5,9 +5,9 @@ import time
 import random
 import logging
 from fuzzywuzzy import fuzz
-from utils.keywords import KEYWORDS
-from utils.negative_keywords import NEGATIVE_KEYWORDS
-from services.linkedin_service import get_linkedin_client
+from backend.utils.keywords import KEYWORDS
+from backend.utils.negative_keywords import NEGATIVE_KEYWORDS
+from backend.services.linkedin_service import get_linkedin_client
 from tenacity import(
     retry,
     stop_after_attempt,
@@ -70,8 +70,9 @@ def search_posts(params: dict) -> list:
 
             #Add results to all_results
             if search_results:
+                previous_length = len(all_results)
                 all_results.extend(search_results)
-                logger.info(f"Found {len(all_results)} people for group {keyword_group}")
+                logger.info(f"Found {len(all_results) - previous_length} people for group {keyword_group}")
             else:
                 logger.info(f"No results for {combined_keywords}")
 

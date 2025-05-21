@@ -4,3 +4,6 @@ venv/
 
 #ignore .env file
 .env
+
+#ignore database password
+db_password.txt

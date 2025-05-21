@@ -1,5 +1,5 @@
 import os
-from utils.keywords import KEYWORDS
+from backend.utils.keywords import KEYWORDS
 from dotenv import load_dotenv
 
 #load variables in this file into env variables
@@ -18,10 +18,18 @@ LINKEDIN_COOKIES = {
 DB_CONFIG = {
 "host" : os.getenv("DB_HOST"),
 "name" : os.getenv("DB_NAME"),
-"port" : os.getenv("DB_PORT"),
+"port" : int(os.getenv("DB_PORT")),
 "user" : os.getenv("DB_USER"),
-"password" : os.getenv("DB_PASSWORD"),
+"password" : None,
 }
+
+#Load password from docker if available. If not, load from db_password.txt
+password_file = "/run/secrets/db_password"
+if os.path.exists(password_file):
+    with open(password_file, "r") as f:
+        DB_CONFIG["password"] = f.read().strip() 
+else:
+    DB_CONFIG["password"] = os.getenv("DB_PASSWORD")
 
 #Search settings
 PAGE_SIZE = int(os.getenv("PAGE_SIZE"))
@@ -32,11 +40,11 @@ keywords = set(kw.strip().lower() for words in KEYWORDS.values() for kw in words
 SEARCH_PARAMS = {
     "start": 0,
     "origin": "GLOBAL_SEARCH_HEADER",
-    "keywords": " OR ".join(keywords),
+    "keywords": " OR ".join(keywords) + "AND (Kenya OR Nairobi)",
     "filters": "List((key:resultType,value:List(CONTENT)),(key:contentType,value:List(STATUS_UPDATE)))"
 }
 
 #Flask settings
-DEBUG = os.getenv("DEBUG")
+DEBUG = os.getenv("DEBUG", "true").lower() == "true"
 
     

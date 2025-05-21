@@ -1,7 +1,7 @@
 #This module contains ICPs
-from utils.locations import locations
-from utils.industries import industries
-from utils.job_titles import JOB_TITLES
+from backend.utils.locations import locations
+from backend.utils.industries import industries
+from backend.utils.job_titles import JOB_TITLES
 
 icps = {
     "Small Businesses": {

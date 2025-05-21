@@ -2,10 +2,10 @@
 import logging
 from typing import Dict, List, Optional, Union, Generator
 from dataclasses import dataclass
-from utils.icp import icps
-from services.get_authors_service import get_authors
-from services.icp_scores import find_icp, job_title_score, company_industry_score, company_location_score, company_size_score
-from services.icp_scores.total_score import icp_scorer
+from backend.utils.icp import icps
+from backend.services.get_authors_service import get_authors
+from backend.services.icp_scores import find_icp, job_title_score, company_industry_score, company_location_score, company_size_score
+from backend.services.icp_scores.total_score import icp_scorer
 
 
 #initialize module logger
@@ -54,7 +54,7 @@ def icp_scoring(min_score: int = MIN_SCORE) -> Generator[Dict[str, Union[Dict, s
     #create an instance of the icp scorer class
     scorer = icp_scorer()
 
-    #set to store authors whose score is >50
+    #set to store authors whose score is > min score
     qualified_authors = {}
 
     #get all the authors

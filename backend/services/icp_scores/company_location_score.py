@@ -1,6 +1,6 @@
 #This module scores the author's company location
 from fuzzywuzzy import fuzz
-from utils.locations import locations
+from backend.utils.locations import locations
 import logging
 
 #initialize logger for this module
@@ -11,9 +11,9 @@ DEFAULT_COMPANY_LOCATIONS = set()
 for location_group in locations.values():
     DEFAULT_COMPANY_LOCATIONS.update(location_group)
 
-def score_company_location(company_location:str, icp_details:dict) -> int:
+def score_company_location(company_location:str, icp_details:dict) -> int | None:
     if not company_location or not icp_details:
-        return 0
+        return None #Don't score or show
 
     icp_locations = icp_details.get("locations", set())
 
@@ -48,5 +48,6 @@ def score_company_location(company_location:str, icp_details:dict) -> int:
             logger.info("Matched location: %s => Score: %d", loc, score)
             return score
 
-    # Return 5 as the default score for non-matching locations
-    return 5
+    #Dont score or show if match isn't found
+    logger.info("Company location isn't in desired location: %s\n", company_location)
+    return None

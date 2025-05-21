@@ -2,7 +2,7 @@
 
 import re
 import logging
-from utils import icp
+from backend.utils import icp
 from typing import Dict, Optional
 
 

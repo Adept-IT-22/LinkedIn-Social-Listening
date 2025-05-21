@@ -30,10 +30,10 @@ def save_as_excel(data_for_dataframe: list):
     
     #Write dataframe to a ByteIO object
     today = str(date.today())
-    output = BytesIO()
-    with pd.ExcelWriter(output ,engine='openpyxl') as writer:
+    buffer = BytesIO()
+    with pd.ExcelWriter(buffer ,engine='openpyxl') as writer:
         df.to_excel(writer, index=False, sheet_name=today)
-    output.seek(0) #Move the file pointer to the beginning of the stream
+    buffer.seek(0) #Move the file pointer to the beginning of the stream
 
     logging.info(f"Data saved in Excel!")
-    return output
+    return buffer

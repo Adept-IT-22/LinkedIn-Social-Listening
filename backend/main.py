@@ -4,13 +4,14 @@ import json
 import psycopg
 import logging
 from typing import Dict, Any
-from config import logging_config
-from config.app_config import DB_CONFIG
-from services.icp_scoring import icp_scoring
+from backend.config import logging_config
+from backend.config.app_config import DB_CONFIG
+from backend.services.icp_scoring import icp_scoring
 from flask import Flask, jsonify, Response, stream_with_context, request, send_file
 from flask_cors import CORS
-from services.icp_scores.total_score import icp_scorer
-from services.download_excel import save_as_excel
+from backend.services.icp_scores.total_score import icp_scorer
+from backend.services.download_excel import save_as_excel
+from backend.services.db_service import check_if_duplicate_post_exists, add_data_into_database
 
 #DB Configs
 host = DB_CONFIG.get("host")
@@ -34,6 +35,10 @@ MIN_SCORE = 60
 
 #store all icp_scoring results
 all_authors_cache = []
+
+@app.route("/", methods=['GET'])
+def landing_page():
+    return jsonify({"message": "Gunicorn Works! Flask is up & running!"})
 
 #endpoint to retrieve qualified leads based on icp scoring.
 @app.route('/lead-data', methods=['GET'])
@@ -73,42 +78,33 @@ def lead_data() -> Dict[str, Any]:
 def stream_leads():
     def generate():
         try:
-            with psycopg.connect(conninfo=f"host={host} dbname={db_name} port={port} user={user_name} password={password}") as conn:
-                with conn.cursor() as cur:
-                    for scored_lead in icp_scoring(min_score=MIN_SCORE):
-                        if "error" in scored_lead:
-                            yield f"data: {json.dumps(scored_lead)}\n\n"
-                        else:
-                            all_authors_cache.append(scored_lead)
-                            # Extract data from the scored lead
-                            author = scored_lead.get('author', {})
-                            name = author.get('name', '')
-                            job_title = author.get('job_title', '')
-                            company_name = author.get('company', '')
-                            company_industry = author.get('company_industry', '')
-                            company_location = author.get('location', '')
-                            employee_size = author.get('employee_count', '')
-                            linkedin_post = author.get('linkedin_post', '')
+            for scored_lead in icp_scoring(min_score=MIN_SCORE):
+                score = scored_lead.get("score", 0)
+                if "error" in scored_lead:
+                    yield f"data: {json.dumps(scored_lead)}\n\n"
+                else:
+                    all_authors_cache.append(scored_lead)
+
+                    # Extract data from the scored lead
+                    author = scored_lead.get('author', {})
+                    author_name = author.get('name', '')
+                    job_title = author.get('job_title', '')
+                    company_name = author.get('company', '')
+                    company_industry = author.get('company_industry', '')
+                    company_location = author.get('location', '')
+                    employee_count = author.get('employee_count', '')
+                    linkedin_post = author.get('linkedin_post', '')
+
+                    #if post exists in database move to the next one
+                    if check_if_duplicate_post_exists(linkedin_post):
+                        logger.info("Data saving skipped. Post already exists")
+                        continue
+                    
+                    #Otherwise store in DB
+                    add_data_into_database(author_name, job_title, company_name, company_industry, company_location, employee_count, linkedin_post, score)
+
+                    yield f"data: {json.dumps(scored_lead)}\n\n"
                             
-                            # Store in DB
-                            try:
-                                cur.execute(
-                                    "INSERT INTO companies (name, industry, location, employee_count) VALUES (%s, %s, %s, %s) RETURNING company_id",
-                                    (company_name, company_industry, company_location, employee_size)
-                                )
-                                company_id = cur.fetchone()[0]
-                                cur.execute(
-                                    "INSERT INTO authors (name, title, company_id, linkedin_post) VALUES (%s, %s, %s, %s)",
-                                    (name, job_title, company_id, linkedin_post)
-                                )
-                                logger.info("Data inserted into Authors!")
-                            except Exception as e:
-                                logger.error(f"Database error: {str(e)}")
-                            
-                            logger.info(f"Scored lead: {scored_lead}")
-                            yield f"data: {json.dumps(scored_lead)}\n\n"
-                            
-                conn.commit()
         except Exception as e:
             logger.error(f"Streaming error: {str(e)}")
             yield f"data: {json.dumps({'error': str(e)})}\n\n"
@@ -131,7 +127,9 @@ def download_excel():
         qualified_leads = local_all_authors_cache
 
         #save qualified leads to excel
+        logger.info("Saving data to excel...")
         saved_file = save_as_excel(qualified_leads)
+        logger.info("Saving to excel done.")
 
         #Make file downloadable
         return send_file(

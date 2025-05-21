@@ -3,12 +3,12 @@
 #find the icp -> calculate each score -> add them together
 #-> return the score
 import logging
-from utils import icp
-from services.icp_scores.find_icp import find_icp
-from services.icp_scores.job_title_score import score_job_title
-from services.icp_scores.company_size_score import score_company_size
-from services.icp_scores.company_industry_score import score_company_industry
-from services.icp_scores.company_location_score import score_company_location
+from backend.utils import icp
+from backend.services.icp_scores.find_icp import find_icp
+from backend.services.icp_scores.job_title_score import score_job_title
+from backend.services.icp_scores.company_size_score import score_company_size
+from backend.services.icp_scores.company_industry_score import score_company_industry
+from backend.services.icp_scores.company_location_score import score_company_location
 
 logger = logging.getLogger(__name__)
 

@@ -1,0 +1,29 @@
+services:
+  linkedinsociallistening:
+    image: linkedinsociallistening
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5002:5002
+    env_file:
+      - ./backend/.env
+
+  db:
+    image: postgres:17
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: social_listening
+      POSTGRES_USER: mark_mathenge
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    secrets:
+      - db_password 
+
+
+secrets:
+  db_password: 
+    file: db_password.txt
+
+volumes:
+  pgdata:
