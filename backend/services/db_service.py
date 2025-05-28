@@ -2,7 +2,7 @@
 
 import psycopg
 import logging
-from backend.config.app_config import DB_CONFIG
+from config.app_config import DB_CONFIG
 
 #logger config
 logger = logging.getLogger(__name__)

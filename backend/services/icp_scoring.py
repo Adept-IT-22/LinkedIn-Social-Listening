@@ -2,10 +2,10 @@
 import logging
 from typing import Dict, List, Optional, Union, Generator
 from dataclasses import dataclass
-from backend.utils.icp import icps
-from backend.services.get_authors_service import get_authors
-from backend.services.icp_scores import find_icp, job_title_score, company_industry_score, company_location_score, company_size_score
-from backend.services.icp_scores.total_score import icp_scorer
+from utils.icp import icps
+from services.get_authors_service import get_authors
+from services.icp_scores import find_icp, job_title_score, company_industry_score, company_location_score, company_size_score
+from services.icp_scores.total_score import icp_scorer
 
 
 #initialize module logger

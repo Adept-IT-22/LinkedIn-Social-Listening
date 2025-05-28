@@ -5,9 +5,9 @@ import time
 import random
 import logging
 from fuzzywuzzy import fuzz
-from backend.utils.keywords import KEYWORDS
-from backend.utils.negative_keywords import NEGATIVE_KEYWORDS
-from backend.services.linkedin_service import get_linkedin_client
+from utils.keywords import KEYWORDS
+from utils.negative_keywords import NEGATIVE_KEYWORDS
+from services.linkedin_service import get_linkedin_client
 from tenacity import(
     retry,
     stop_after_attempt,

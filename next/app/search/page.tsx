@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import styles from "@/styles/Search.module.css";
 
 interface Lead {
@@ -31,8 +31,11 @@ export default function Search() {
     setLeads([]);
     setAllLeads([]);
 
+    //set backend url
+    const backendUrl = process.env.BACKEND_URL;
+
     // Create a new EventSource
-    const eventSource = new EventSource("http://localhost:5000/stream-leads");
+    const eventSource = new EventSource(`${backendUrl}/stream-leads`);
 
     eventSource.onmessage = (event) => {
       try {
@@ -92,7 +95,8 @@ export default function Search() {
   };
 
   //function to parse data from search
-  const parseLeadData = (leadData: any[]): Lead[] => {
+  type rawLead = Partial<Lead>; //Since we don't 100% know what data type will come from the backend.
+  const parseLeadData = (leadData: rawLead[]): Lead[] => {
     try {
       return leadData.map((lead) => ({
         name: lead.name || "",

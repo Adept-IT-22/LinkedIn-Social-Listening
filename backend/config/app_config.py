@@ -1,5 +1,5 @@
 import os
-from backend.utils.keywords import KEYWORDS
+from utils.keywords import KEYWORDS
 from dotenv import load_dotenv
 
 #load variables in this file into env variables

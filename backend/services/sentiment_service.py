@@ -1,5 +1,5 @@
 import logging
-from backend.config import logging_config
+from config import logging_config
 from transformers import pipeline, AutoTokenizer
 
 #initialize module logger

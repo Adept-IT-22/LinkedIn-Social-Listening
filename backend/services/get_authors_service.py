@@ -4,11 +4,11 @@ import re
 import time
 import random
 import logging
-from backend.config import app_config
-from backend.services.search_service import search_posts, check_for_neg_keywords, check_for_intent
-from backend.services.get_company import find_company_info
-from backend.utils.negative_keywords import NEGATIVE_KEYWORDS
-from backend.utils.intent_phrases import INTENT_PHRASES
+from config import app_config
+from services.search_service import search_posts, check_for_neg_keywords, check_for_intent
+from services.get_company import find_company_info
+from utils.negative_keywords import NEGATIVE_KEYWORDS
+from utils.intent_phrases import INTENT_PHRASES
 
 
 #initialize module logger

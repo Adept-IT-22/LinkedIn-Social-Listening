@@ -4,7 +4,7 @@ import random
 import requests
 import fake_useragent
 import requests.cookies
-from backend.config import app_config
+from config import app_config
 from linkedin_api import Linkedin
 
 # Authentication Cookies

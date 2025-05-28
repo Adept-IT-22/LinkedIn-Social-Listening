@@ -4,14 +4,14 @@ import json
 import psycopg
 import logging
 from typing import Dict, Any
-from backend.config import logging_config
-from backend.config.app_config import DB_CONFIG
-from backend.services.icp_scoring import icp_scoring
+from config import logging_config
+from config.app_config import DB_CONFIG
+from services.icp_scoring import icp_scoring
 from flask import Flask, jsonify, Response, stream_with_context, request, send_file
 from flask_cors import CORS
-from backend.services.icp_scores.total_score import icp_scorer
-from backend.services.download_excel import save_as_excel
-from backend.services.db_service import check_if_duplicate_post_exists, add_data_into_database
+from services.icp_scores.total_score import icp_scorer
+from services.download_excel import save_as_excel
+from services.db_service import check_if_duplicate_post_exists, add_data_into_database
 
 #DB Configs
 host = DB_CONFIG.get("host")

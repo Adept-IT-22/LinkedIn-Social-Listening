@@ -1,16 +1,17 @@
 #This module scores the author's company location
 from fuzzywuzzy import fuzz
-from backend.utils.locations import locations
+from utils.locations import locations
 import logging
 
 #initialize logger for this module
 logger = logging.getLogger(__name__)
 
-#company locations in case icp is not found
+#use locations from locations.py if icp is not found
 DEFAULT_COMPANY_LOCATIONS = set()
 for location_group in locations.values():
     DEFAULT_COMPANY_LOCATIONS.update(location_group)
 
+#Calculate the location's score
 def score_company_location(company_location:str, icp_details:dict) -> int | None:
     if not company_location or not icp_details:
         return None #Don't score or show
@@ -44,7 +45,7 @@ def score_company_location(company_location:str, icp_details:dict) -> int | None
     # Perform fuzzy matching then return score
     for loc, score in location_scores.items():
         location_fuzzy_score = fuzz.partial_ratio(loc, company_location.lower())
-        if location_fuzzy_score > 70:
+        if location_fuzzy_score > 80:
             logger.info("Matched location: %s => Score: %d", loc, score)
             return score
 

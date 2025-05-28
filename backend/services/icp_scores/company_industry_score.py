@@ -1,4 +1,4 @@
-from backend.utils.industries import industries
+from utils.industries import industries
 from fuzzywuzzy import process
 from typing import Optional, Dict, Set
 import logging

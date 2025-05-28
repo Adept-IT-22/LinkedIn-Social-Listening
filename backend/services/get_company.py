@@ -1,6 +1,6 @@
 #This module is used to find companies and info about them
 import logging
-from backend.services.linkedin_service import get_linkedin_client
+from services.linkedin_service import get_linkedin_client
 
 
 #initialize module logger
