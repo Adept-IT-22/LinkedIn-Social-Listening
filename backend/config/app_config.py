@@ -20,7 +20,7 @@ DB_CONFIG = {
 "name" : os.getenv("DB_NAME"),
 "port" : int(os.getenv("DB_PORT")),
 "user" : os.getenv("DB_USER"),
-"password" : None,
+"password" : os.getenv("DB_PASSWORD"),
 }
 
 #Load password from docker if available. If not, load from db_password.txt

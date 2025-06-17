@@ -35,7 +35,7 @@ def find_icp(employee_count: str) -> Optional[tuple[str, dict]]:
         known_num = re.search(r"(\d+)\s*to\s*unknown", employee_count.lower())
         if known_num:
             employee_count = known_num.group(1)
-            logger.info("Employee Count: %d", employee_count)
+            logger.info("Employee Count: %s", employee_count)
         else:
             return ("Unknown", fallback_icp)
 

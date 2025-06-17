@@ -3,10 +3,7 @@ services:
   #PRODUCTION (standalone mode)
   frontend-prod:
     profiles: ["frontend-prod"]
-    build:
-      context: ./next
-      target: production
-      dockerfile: ./Dockerfile
+    image: adolfiscariot/social_listening:frontend-1.0.0
     ports:
       - "3001:3000"
     environment:
@@ -14,17 +11,17 @@ services:
     restart:
       unless-stopped
     depends_on:
-      - db
+      - linkedinsociallistening
     networks:
       - app-network
+    env_file:
+      - ./next/.env
 
   # BACKEND
   linkedinsociallistening:
     image: linkedinsociallistening
     profiles: ["backend"]
-    build:
-      context: ./backend
-      dockerfile: ./Dockerfile
+    image: adolfisacriot/social_listening:backend-1.0.0
     ports:
       - "5002:5002"
     env_file:
@@ -39,6 +36,8 @@ services:
   # DATABASE
   db:
     image: postgres:17
+    ports:
+      - "5433:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     environment:

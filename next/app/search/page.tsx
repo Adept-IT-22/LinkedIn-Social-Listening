@@ -2,6 +2,10 @@
 import { useState} from "react";
 import styles from "@/styles/Search.module.css";
 
+//set backend url
+const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+
+//create the Lead's interface
 interface Lead {
   name: string;
   job_title: string;
@@ -31,10 +35,10 @@ export default function Search() {
     setLeads([]);
     setAllLeads([]);
 
-    //set backend url
-    const backendUrl = process.env.BACKEND_URL;
+
 
     // Create a new EventSource
+    console.log(`Backend being used: ${backendUrl}`);
     const eventSource = new EventSource(`${backendUrl}/stream-leads`);
 
     eventSource.onmessage = (event) => {
@@ -173,7 +177,7 @@ export default function Search() {
   const downloadExcel = async () => {
     try {
       //fetch data from backend
-      const response = await fetch("http://localhost:5000/download-excel", {
+      const response = await fetch(`${backendUrl}/download-excel`, {
         method: "GET",
       });
 
