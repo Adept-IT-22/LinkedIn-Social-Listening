@@ -19,9 +19,8 @@ services:
 
   # BACKEND
   linkedinsociallistening:
-    image: linkedinsociallistening
     profiles: ["backend"]
-    image: adolfisacriot/social_listening:backend-1.0.0
+    image: adolfiscariot/social_listening:backend-1.0.0
     ports:
       - "5002:5002"
     env_file:
