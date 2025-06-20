@@ -2,6 +2,7 @@
 
 import psycopg
 import logging
+from datetime import date
 from config.app_config import DB_CONFIG
 
 #logger config
@@ -70,3 +71,49 @@ def add_data_into_database(
             except:
                 pass
         return
+
+#Fetch data from database for download excel function
+def fetch_data_for_download_excel(target_date: date = None) -> list:
+    leads_data = []
+    try:
+        logger.info("Fetching today's leads for excel file...")
+        if target_date is None:
+            target_date = date.today()
+
+        with psycopg.connect(conninfo = DB_URL) as conn:
+            with conn.cursor() as cur:
+                sql_query = """
+                SELECT 
+                    p.post_id,
+                    p.author_id,
+                    p.linkedin_post AS linkedin_post, 
+                    a.name AS author_name,
+                    a.title, 
+                    a.company_id,
+                    a.score,
+                    c.name AS company_name,
+                    c.location,
+                    c.employee_count,
+                    c.industry, 
+                FROM
+                    posts AS p
+                JOIN 
+                    authors AS a on p.author_id = a.author_id
+                LEFT JOIN
+                    companies AS c on a.company_id = c.company_id
+                WHERE
+                    DATE(p.created_at) = %s
+                ORDER BY
+                    p.created_at DESC
+                """
+                cur.execute(sql_query, (target_date,))
+
+                leads_data = cur.fetchall()
+
+                logger.info("Data fetched for excel file")
+
+    except Exception as e:
+        logger.error(f"Failed to fetch data from database: {str(e)}", exc_info=True)
+        raise
+
+    return leads_data       
